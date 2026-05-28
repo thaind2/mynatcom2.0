@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Natcom 2.0 — Đề xuất chi tiết (Đợt 1)</title>
+<meta name="description" content="Đề xuất chi tiết tính năng — Đợt 1: Selfcare, Natcash, Engagement Engine, Giải trí số. RingMe Vietnam x Natcom." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b1020;
+    --bg-2:#0f1530;
+    --surface:#121935;
+    --surface-2:#172046;
+    --line:#243064;
+    --text:#e8ecff;
+    --text-dim:#aab4d8;
+    --text-mute:#7a86b8;
+    --brand:#ff5a1f;
+    --brand-2:#ffb199;
+    --accent:#4ad6c2;
+    --accent-2:#7c5cff;
+    --danger:#ff6b6b;
+    --warn:#ffc857;
+    --ok:#3ddc97;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+    --max:1240px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 10% -10%, #1a2356 0%, transparent 60%), radial-gradient(1200px 600px at 110% 10%, #2a1840 0%, transparent 55%), var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code,pre{font-family:'JetBrains Mono',ui-monospace,Consolas,monospace}
+  .container{max-width:var(--max);margin:0 auto;padding:0 28px}
+
+  /* Top bar */
+  .topbar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(10px);background:rgba(11,16,32,.8);border-bottom:1px solid var(--line)}
+  .topbar-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+  .brand-dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--accent-2));box-shadow:0 0 16px var(--brand)}
+  .breadcrumb{font-size:13px;color:var(--text-mute);margin-left:14px}
+  .breadcrumb a{color:var(--text-dim)}
+  .topbar nav{display:flex;align-items:center;gap:6px}
+  .nav-pill{padding:6px 12px;border-radius:999px;font-size:13px;color:var(--text-dim);border:1px solid transparent}
+  .nav-pill:hover{color:var(--text);background:rgba(255,255,255,.04);text-decoration:none}
+  .nav-pill.disabled{opacity:.4;cursor:not-allowed}
+  .nav-pill.disabled:hover{background:none;color:var(--text-dim)}
+  .nav-pill.active{border-color:var(--brand);color:var(--text);background:rgba(255,90,31,.1)}
+
+  /* Hero */
+  .hero{padding:60px 0 30px}
+  .hero-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:48px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--text-dim);font-size:12px;letter-spacing:.4px;text-transform:uppercase}
+  .eyebrow .pulse{width:8px;height:8px;background:var(--brand);border-radius:50%;box-shadow:0 0 0 0 rgba(255,90,31,.6);animation:pulse 1.8s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,90,31,.6)}70%{box-shadow:0 0 0 12px rgba(255,90,31,0)}100%{box-shadow:0 0 0 0 rgba(255,90,31,0)}}
+  h1.hero-title{font-size:48px;line-height:1.08;margin:18px 0 14px;font-weight:800;letter-spacing:-.5px}
+  .hero-title span{background:linear-gradient(90deg,var(--brand),var(--accent-2) 60%,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero-sub{color:var(--text-dim);font-size:18px;max-width:62ch}
+  .hero-meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px}
+  .chip{padding:8px 12px;border-radius:999px;border:1px solid var(--line);font-size:13px;color:var(--text-dim);background:rgba(255,255,255,.02)}
+  .hero-card{background:linear-gradient(180deg,var(--surface),var(--surface-2));border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+  .scope-list{margin:0;padding:0;list-style:none}
+  .scope-list li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
+  .scope-list li:last-child{border-bottom:none}
+  .scope-list .num{flex-shrink:0;width:28px;height:28px;border-radius:8px;background:rgba(255,90,31,.15);color:var(--brand);display:grid;place-items:center;font-weight:700;font-size:13px}
+  .scope-list .lbl{color:var(--text)}
+  .scope-list .lbl small{display:block;color:var(--text-mute);font-size:12px;font-weight:400;margin-top:2px}
+
+  /* Layout with sidebar */
+  .doc{display:grid;grid-template-columns:240px 1fr;gap:48px;padding:40px 0 96px}
+  .toc{position:sticky;top:80px;align-self:start;border-left:1px solid var(--line);padding-left:18px;max-height:calc(100vh - 100px);overflow:auto}
+  .toc h4{font-size:11px;letter-spacing:1.4px;color:var(--text-mute);text-transform:uppercase;margin:0 0 12px}
+  .toc ol{list-style:none;padding:0;margin:0;counter-reset:item}
+  .toc li{margin:6px 0;font-size:13px;counter-increment:item}
+  .toc li a{color:var(--text-dim);display:flex;gap:8px;padding:6px 8px;border-radius:8px}
+  .toc li a::before{content:counter(item, decimal-leading-zero);color:var(--text-mute);font-variant-numeric:tabular-nums;font-weight:600}
+  .toc li a:hover{background:rgba(255,255,255,.04);color:var(--text);text-decoration:none}
+  .toc li a.active{background:rgba(255,90,31,.1);color:var(--text)}
+
+  /* Sections */
+  section.block{padding:32px 0;border-bottom:1px dashed var(--line)}
+  section.block:last-child{border-bottom:none}
+  .kicker{font-size:12px;letter-spacing:1.4px;color:var(--brand);text-transform:uppercase;font-weight:700}
+  h2.section{font-size:30px;line-height:1.2;margin:6px 0 6px;font-weight:800;letter-spacing:-.3px}
+  h3{font-size:20px;margin:28px 0 8px;font-weight:700}
+  h4{font-size:16px;margin:18px 0 6px;font-weight:700;color:var(--text)}
+  p{margin:10px 0;color:var(--text-dim)}
+  p strong, li strong{color:var(--text)}
+  ul,ol{color:var(--text-dim);padding-left:22px}
+  ul li, ol li{margin:6px 0}
+  blockquote{margin:18px 0;padding:14px 18px;border-left:3px solid var(--brand);background:rgba(255,90,31,.06);border-radius:8px;color:var(--text)}
+
+  /* Cards */
+  .grid{display:grid;gap:18px}
+  .grid.cols-2{grid-template-columns:1fr 1fr}
+  .grid.cols-3{grid-template-columns:1fr 1fr 1fr}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;transition:transform .15s ease,border-color .15s ease}
+  .card:hover{transform:translateY(-2px);border-color:#3a4a99}
+
+  /* Personas */
+  .persona{display:grid;grid-template-columns:auto 1fr;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+  .persona .avatar{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:22px;color:#fff;flex-shrink:0;border:2px solid var(--line)}
+  .persona .avatar.m{background:linear-gradient(135deg,#ff5a1f,#7c5cff)}
+  .persona .avatar.j{background:linear-gradient(135deg,#4ad6c2,#7c5cff)}
+  .persona .avatar.s{background:linear-gradient(135deg,#ffc857,#ff5a1f)}
+  .persona .avatar.p{background:linear-gradient(135deg,#3ddc97,#4ad6c2)}
+  .persona .avatar.w{background:linear-gradient(135deg,#7c5cff,#ff6b6b)}
+  .persona h4{margin:0 0 4px;font-size:17px}
+  .persona .meta{color:var(--text-mute);font-size:12px;text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px}
+  .persona .quote{padding:10px 12px;border-left:2px solid var(--brand);background:rgba(255,90,31,.06);border-radius:6px;font-style:italic;color:var(--text);margin:10px 0;font-size:14px}
+  .persona table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+  .persona table td{padding:4px 0;vertical-align:top;border:none}
+  .persona table td:first-child{color:var(--text-mute);width:34%;text-transform:uppercase;letter-spacing:.4px;font-size:11px;font-weight:600;padding-right:10px}
+  .persona table td:last-child{color:var(--text-dim)}
+
+  /* Roadmap timeline */
+  .timeline{position:relative;margin:20px 0 0;padding-left:0}
+  .timeline-track{position:relative;height:6px;background:var(--surface);border-radius:3px;margin:30px 0 30px}
+  .timeline-track .seg{position:absolute;top:0;height:6px;border-radius:3px}
+  .timeline-track .s1{left:0%;width:33%;background:linear-gradient(90deg,var(--brand),#ff8a5a)}
+  .timeline-track .s2{left:33%;width:34%;background:linear-gradient(90deg,#ff8a5a,var(--accent-2))}
+  .timeline-track .s3{left:67%;width:33%;background:linear-gradient(90deg,var(--accent-2),var(--accent))}
+  .timeline-labels{display:grid;grid-template-columns:repeat(6,1fr);gap:0;font-size:11px;color:var(--text-mute);letter-spacing:.4px;text-transform:uppercase}
+  .timeline-labels span{text-align:center}
+  .roadmap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+  .roadmap-phase{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .roadmap-phase h4{margin:0 0 4px;font-size:15px}
+  .roadmap-phase .when{font-size:11px;color:var(--brand);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+  .roadmap-phase ul{margin:10px 0 0;padding-left:18px;font-size:13px}
+  .roadmap-phase ul li{margin:4px 0}
+  .roadmap-phase .gate{margin-top:12px;padding:8px 10px;background:rgba(74,214,194,.07);border:1px dashed rgba(74,214,194,.4);border-radius:6px;font-size:12px;color:var(--text)}
+
+  /* Feature filter & table */
+  .filter-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:18px 0;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+  .filter-bar label{font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:.6px;font-weight:600}
+  .filter-bar select, .filter-bar input{background:var(--bg-2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:13px;font-family:inherit;outline:none}
+  .filter-bar select:focus, .filter-bar input:focus{border-color:var(--brand)}
+  .filter-bar .count{margin-left:auto;font-size:13px;color:var(--text-mute)}
+  .filter-bar .count strong{color:var(--brand)}
+
+  table.feat{width:100%;border-collapse:collapse;font-size:14px;background:var(--surface);border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+  table.feat th,table.feat td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+  table.feat th{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--text-mute);background:rgba(255,255,255,.02);font-weight:700;position:sticky;top:60px}
+  table.feat tr:last-child td{border-bottom:none}
+  table.feat tr.hidden{display:none}
+  table.feat tr:hover{background:rgba(255,255,255,.02)}
+  .badge{display:inline-block;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+  .b-must{background:rgba(255,90,31,.15);color:#ff8a5a}
+  .b-should{background:rgba(255,200,87,.15);color:#ffc857}
+  .b-could{background:rgba(74,214,194,.12);color:#4ad6c2}
+  .b-p1{background:rgba(255,90,31,.15);color:#ff8a5a}
+  .b-p2{background:rgba(124,92,255,.15);color:#a48cff}
+  .b-p3{background:rgba(74,214,194,.12);color:#4ad6c2}
+  .b-sz{background:rgba(255,255,255,.06);color:var(--text-dim)}
+  .grp-pill{display:inline-block;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:.3px}
+  .grp-selfcare{background:rgba(74,214,194,.12);color:#4ad6c2}
+  .grp-natcash{background:rgba(255,90,31,.15);color:#ff8a5a}
+  .grp-engage{background:rgba(124,92,255,.15);color:#a48cff}
+  .grp-fun{background:rgba(255,200,87,.15);color:#ffc857}
+
+  /* Cross-cutting principles */
+  .principle{display:flex;align-items:flex-start;gap:14px;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+  .principle .ic{flex-shrink:0;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:18px;background:linear-gradient(135deg,rgba(255,90,31,.18),rgba(124,92,255,.18));border:1px solid var(--line)}
+
+  /* Stat row */
+  .big-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 6px}
+  .big-stats .b{padding:18px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,rgba(124,92,255,.08),transparent)}
+  .big-stats .b .v{font-size:26px;font-weight:800;color:var(--text)}
+  .big-stats .b .k{font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:.6px;margin-top:4px}
+
+  /* CTA */
+  .cta{margin-top:48px;padding:28px;border-radius:16px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(255,90,31,.12),rgba(124,92,255,.12))}
+  .cta h3{margin-top:0}
+
+  footer{padding:24px 0 60px;color:var(--text-mute);font-size:13px;border-top:1px solid var(--line)}
+
+  /* Mobile */
+  @media (max-width: 980px){
+    .hero-grid, .doc, .grid.cols-2, .grid.cols-3, .roadmap-grid{grid-template-columns:1fr}
+    .toc{position:static;border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:14px}
+    h1.hero-title{font-size:34px}
+    .persona{grid-template-columns:1fr}
+    .big-stats{grid-template-columns:repeat(2,1fr)}
+    table.feat{font-size:13px}
+    table.feat th,table.feat td{padding:8px 6px}
+  }
+
+  /* Print */
+  @media print{
+    body{background:#fff;color:#111}
+    .topbar,.toc,.cta,.hero-card,.filter-bar{display:none}
+    .doc{grid-template-columns:1fr;padding:0}
+    section.block{break-inside:avoid;page-break-inside:avoid;border-color:#ddd}
+    .card,.persona,.principle,.roadmap-phase,.big-stats .b{background:#fff;border-color:#ddd;box-shadow:none}
+    p,ul li,ol li,.hero-sub,.persona table td:last-child{color:#222}
+    .hero-title span,.kicker{color:#d24a14 !important;-webkit-text-fill-color:#d24a14}
+    table.feat th{position:static;background:#f5f5f5;color:#444}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div style="display:flex;align-items:center">
+      <div class="brand"><span class="brand-dot"></span> RingMe × Natcom</div>
+      <div class="breadcrumb">&nbsp;/&nbsp;<a href="../index.html">Phase 1</a>&nbsp;/&nbsp;<span style="color:var(--text)">Phase 2 — Đợt 1</span></div>
+    </div>
+    <nav>
+      <a class="nav-pill active" href="#">Trang chủ Đợt 1</a>
+      <a class="nav-pill disabled" title="Sẽ phát hành ở Bước 1.B">Selfcare</a>
+      <a class="nav-pill disabled" title="Sẽ phát hành ở Bước 1.B">Natcash</a>
+      <a class="nav-pill disabled" title="Sẽ phát hành ở Bước 1.B">Engagement</a>
+      <a class="nav-pill disabled" title="Sẽ phát hành ở Bước 1.B">Giải trí</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero container">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow"><span class="pulse"></span> Đề xuất chi tiết · Đợt 1 · Bước 1.A</span>
+      <h1 class="hero-title">Khung sườn Đợt 1 — <span>Personas, Roadmap & Feature Map</span></h1>
+      <p class="hero-sub">Tài liệu này là <strong>khung sườn để anh duyệt trước</strong>. Sau khi anh OK personas, roadmap và bảng tổng hợp tính năng, em sẽ phát hành chi tiết từng nhóm (Selfcare, Natcash, Engagement Engine, Giải trí số) ở Bước 1.B.</p>
+      <div class="hero-meta">
+        <span class="chip">Đợt 1: 4 nhóm · Phase 1</span>
+        <span class="chip">~49 tính năng chi tiết</span>
+        <span class="chip">5 personas</span>
+        <span class="chip">Tiếp theo: 4 trang con chi tiết</span>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <div style="font-size:11px;color:var(--brand);letter-spacing:1.4px;text-transform:uppercase;margin-bottom:12px;font-weight:700">Đợt 1 sẽ giao</div>
+      <ol class="scope-list" style="counter-reset:none">
+        <li><span class="num">1</span><span class="lbl">Selfcare nhà mạng<small>10 tính năng — nền tảng selfcare nâng cấp</small></span></li>
+        <li><span class="num">2</span><span class="lbl">Natcash trong superapp<small>12 tính năng — tích hợp ví, kiều hối, sòl</small></span></li>
+        <li><span class="num">3</span><span class="lbl">Engagement Engine<small>21 tính năng — loyalty + minigame + cộng đồng</small></span></li>
+        <li><span class="num">4</span><span class="lbl">Giải trí số<small>6 tính năng nền tảng — mở rộng ở Đợt 2</small></span></li>
+      </ol>
+      <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--text-mute)">
+        Đợt 2 (sau khi Đợt 1 chốt): <strong>Tiện ích đời sống</strong> + <strong>Marketplace</strong> + <strong>Dịch vụ công</strong>.
+      </div>
+    </aside>
+  </div>
+</section>
+
+<div class="container doc">
+  <aside class="toc">
+    <h4>Mục lục</h4>
+    <ol>
+      <li><a href="#recap">Recap chiến lược</a></li>
+      <li><a href="#personas">5 Personas khách hàng</a></li>
+      <li><a href="#roadmap">Roadmap Phase 1 chi tiết</a></li>
+      <li><a href="#feature-map">Bảng tổng hợp 49 tính năng</a></li>
+      <li><a href="#principles">Nguyên tắc thiết kế chéo</a></li>
+      <li><a href="#next">Bước tiếp theo</a></li>
+    </ol>
+  </aside>
+
+  <main>
+
+    <!-- 1. RECAP -->
+    <section id="recap" class="block">
+      <div class="kicker">01 · Recap</div>
+      <h2 class="section">Chiến lược đã chốt ở Phase 1 (recap)</h2>
+      <p>Để mọi quyết định ở Đợt 1 đều quy về được nguyên tắc chung, em recap 4 trụ chiến lược đã được duyệt ở phase trước:</p>
+      <div class="big-stats">
+        <div class="b"><div class="v">#1</div><div class="k">Nhà mạng Haiti — 51% thị phần, 4tr+ thuê bao</div></div>
+        <div class="b"><div class="v">2 tr</div><div class="k">User Natcash sẵn có — trái tim hệ sinh thái</div></div>
+        <div class="b"><div class="v">Superapp + Miniapp</div><div class="k">Kiến trúc mở, mở rộng nhanh không sửa core</div></div>
+        <div class="b"><div class="v">Văn hóa Haiti</div><div class="k">Kim chỉ nam — Creole, Borlette, Konbit, Kompa, Lakou</div></div>
+      </div>
+      <p style="margin-top:14px"><strong>4 KPI lãnh đạo Natcom quan tâm</strong> dẫn dắt mọi quyết định feature trong Đợt 1: <strong>Install rate · Activation rate · DAU · MAU</strong>. Nếu một tính năng không trả lời được câu hỏi "phục vụ KPI nào, ở mức nào", tính năng đó sẽ bị xem xét lại.</p>
+      <blockquote><strong>Nguyên tắc chốt:</strong> Đợt 1 không phải là "làm tất cả tính năng có thể nghĩ ra". Đợt 1 là <strong>chọn đúng tập tính năng tối thiểu để Phase 1 launch thắng</strong> — tức là đạt MAU đủ lớn, có dữ liệu để cải tiến và mở Phase 2.</blockquote>
+    </section>
+
+    <!-- 2. PERSONAS -->
+    <section id="personas" class="block">
+      <div class="kicker">02 · Personas</div>
+      <h2 class="section">5 Personas khách hàng Natcom Haiti</h2>
+      <p>5 nhân vật đại diện 5 phân khúc khách hàng mà My Natcom 2.0 cần phục vụ. Mỗi tính năng chi tiết ở Bước 1.B sẽ tham chiếu lại personas này — "tính năng X phục vụ persona nào, giải đau điểm gì". Đây là <strong>nhân vật giả lập dựa trên dữ liệu nhân khẩu học và insight văn hóa</strong>, anh review và bổ sung theo dữ liệu nội bộ Natcom nếu có.</p>
+
+      <div class="grid cols-2" style="margin-top:18px">
+
+        <!-- Persona 1 -->
+        <div class="persona">
+          <div class="avatar m">M</div>
+          <div>
+            <h4>Marie — Tiểu thương đô thị</h4>
+            <div class="meta">Persona 1 · Khoảng 25% base khách hàng</div>
+            <div class="quote">"Tôi cần nhận tiền của khách nhanh và an toàn. Cuối tháng tôi muốn biết mình đã thu được bao nhiêu mà không phải ngồi cộng sổ."</div>
+            <table>
+              <tr><td>Tuổi · Giới</td><td>35 · Nữ</td></tr>
+              <tr><td>Nghề · Nơi sống</td><td>Bán tạp hóa · Pétion-Ville (Port-au-Prince)</td></tr>
+              <tr><td>Thu nhập</td><td>~15.000–25.000 HTG/tháng</td></tr>
+              <tr><td>Thiết bị</td><td>Smartphone tầm trung (Tecno/Infinix ~120 USD)</td></tr>
+              <tr><td>App đang dùng</td><td>WhatsApp, Facebook, Natcash, TikTok</td></tr>
+              <tr><td>Mong đợi</td><td>Nhận thanh toán QR, quản lý dòng tiền đơn giản, vay vốn nhỏ khi cần nhập hàng</td></tr>
+              <tr><td>Đau điểm</td><td>Mất thời gian đi nạp/rút; lo bảo mật; không có công cụ theo dõi doanh thu</td></tr>
+              <tr><td>Phục vụ nhóm</td><td>Natcash (chính), Selfcare, Marketplace (Đợt 2)</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Persona 2 -->
+        <div class="persona">
+          <div class="avatar j">J</div>
+          <div>
+            <h4>Jean — Lao động phổ thông</h4>
+            <div class="meta">Persona 2 · Khoảng 35% base khách hàng</div>
+            <div class="quote">"Tôi muốn chơi borlette ngay khi đang chờ khách, nghe Kompa lúc lái xe, và mua data rẻ. Không thích app phức tạp."</div>
+            <table>
+              <tr><td>Tuổi · Giới</td><td>42 · Nam</td></tr>
+              <tr><td>Nghề · Nơi sống</td><td>Lái xe tap-tap · Cap-Haïtien</td></tr>
+              <tr><td>Thu nhập</td><td>~10.000–15.000 HTG/tháng</td></tr>
+              <tr><td>Thiết bị</td><td>Smartphone low-end (~60 USD), pin yếu</td></tr>
+              <tr><td>App đang dùng</td><td>WhatsApp (voice), Natcash cơ bản, radio FM</td></tr>
+              <tr><td>Mong đợi</td><td>Borlette online; nghe nhạc miễn data; dự đoán bóng đá; cước rẻ; thưởng đều đặn</td></tr>
+              <tr><td>Đau điểm</td><td>Data đắt; tốn thời gian nạp tiền; đọc kém nên ngại UI nhiều chữ</td></tr>
+              <tr><td>Phục vụ nhóm</td><td>Engagement Engine (chính), Selfcare, Giải trí</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Persona 3 -->
+        <div class="persona">
+          <div class="avatar s">S</div>
+          <div>
+            <h4>Stephania — Giới trẻ thành thị</h4>
+            <div class="meta">Persona 3 · Khoảng 20% base khách hàng (lớp đang tăng nhanh)</div>
+            <div class="quote">"Mình mở TikTok, WhatsApp, Instagram cả ngày. Mình thích app nào cho mình xem video không tốn data và có gì hay ho mới mẻ."</div>
+            <table>
+              <tr><td>Tuổi · Giới</td><td>19 · Nữ</td></tr>
+              <tr><td>Nghề · Nơi sống</td><td>Sinh viên ĐH Quisqueya · Port-au-Prince</td></tr>
+              <tr><td>Thu nhập</td><td>~3.000–5.000 HTG/tháng (bố mẹ chu cấp)</td></tr>
+              <tr><td>Thiết bị</td><td>Samsung A-series (~200 USD)</td></tr>
+              <tr><td>App đang dùng</td><td>TikTok, Instagram, WhatsApp, YouTube, Snapchat</td></tr>
+              <tr><td>Mong đợi</td><td>Nội dung Haiti hấp dẫn (Kompa, video creator), game nhẹ, social với bạn bè, gói data sinh viên</td></tr>
+              <tr><td>Đau điểm</td><td>Data hết nhanh; ít có app Haiti chất lượng; phụ thuộc app nước ngoài</td></tr>
+              <tr><td>Phục vụ nhóm</td><td>Giải trí (chính), Engagement Engine, Selfcare</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Persona 4 -->
+        <div class="persona">
+          <div class="avatar p">P</div>
+          <div>
+            <h4>Pierre — Nông dân vùng sâu</h4>
+            <div class="meta">Persona 4 · Khoảng 15% base khách hàng</div>
+            <div class="quote">"Tôi cần biết khi nào con trai gửi tiền về, và muốn nghe thông báo khi có bão. App phải gọi ra được tiếng, đừng bắt tôi đọc nhiều."</div>
+            <table>
+              <tr><td>Tuổi · Giới</td><td>50 · Nam</td></tr>
+              <tr><td>Nghề · Nơi sống</td><td>Trồng lúa và mía · Artibonite</td></tr>
+              <tr><td>Thu nhập</td><td>~5.000–10.000 HTG/tháng (theo mùa)</td></tr>
+              <tr><td>Thiết bị</td><td>Feature phone hoặc smartphone rẻ (~50 USD), sóng 2G/3G chập chờn</td></tr>
+              <tr><td>App đang dùng</td><td>Chủ yếu thoại; nhận tin SMS, USSD Natcash; nghe radio địa phương</td></tr>
+              <tr><td>Mong đợi</td><td>Nhận tiền dễ qua đại lý; biết giá nông sản; cảnh báo thời tiết/thiên tai; UX đơn giản tối đa</td></tr>
+              <tr><td>Đau điểm</td><td>Đọc viết hạn chế; sóng yếu; pin yếu; app phức tạp gây nản</td></tr>
+              <tr><td>Phục vụ nhóm</td><td>Selfcare (USSD fallback), Natcash (qua đại lý), Dịch vụ công (Đợt 2)</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Persona 5 -->
+        <div class="persona">
+          <div class="avatar w">W</div>
+          <div>
+            <h4>Wisline — Diaspora Miami</h4>
+            <div class="meta">Persona 5 · ~3–4tr người Haiti ở nước ngoài, ~5% base hiện tại nhưng giá trị giao dịch cực cao</div>
+            <div class="quote">"Mỗi tháng tôi gửi 300 đô về cho mẹ và em gái. Tôi muốn nó tới ngay và muốn biết họ đã nhận. Phí Western Union cao quá."</div>
+            <table>
+              <tr><td>Tuổi · Giới</td><td>32 · Nữ</td></tr>
+              <tr><td>Nghề · Nơi sống</td><td>Y tá · Miami, Florida (Mỹ)</td></tr>
+              <tr><td>Thu nhập</td><td>~4.000 USD/tháng</td></tr>
+              <tr><td>Thiết bị</td><td>iPhone tầm khá</td></tr>
+              <tr><td>App đang dùng</td><td>Remitly, Western Union, WhatsApp, Instagram</td></tr>
+              <tr><td>Mong đợi</td><td>Gửi tiền nhanh & rẻ; gửi data/gói cước thay tiền mặt; biết khi người thân đã nhận; cảm thấy gắn kết với Haiti</td></tr>
+              <tr><td>Đau điểm</td><td>Phí kiều hối 5–10%; chờ lâu; lo người nhận không lấy được; xa cách văn hóa</td></tr>
+              <tr><td>Phục vụ nhóm</td><td>Natcash (chính - kiều hối), Engagement Engine (Kado Lakay), Giải trí (kết nối văn hóa)</td></tr>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <p style="margin-top:18px;font-size:13px;color:var(--text-mute)"><strong>Ghi chú:</strong> 5 personas này KHÔNG bao phủ hết base khách hàng Natcom (ví dụ phân khúc B2B/doanh nghiệp FTTH chưa có đại diện). Đây là 5 phân khúc <strong>quan trọng nhất với My Natcom 2.0</strong> ở Phase 1 — chiếm ~95% lượng người dùng tiềm năng của superapp.</p>
+    </section>
+
+    <!-- 3. ROADMAP -->
+    <section id="roadmap" class="block">
+      <div class="kicker">03 · Roadmap</div>
+      <h2 class="section">Roadmap Phase 1 chi tiết — 6 tháng đến launch</h2>
+      <p>Phase 1 đã được chốt là 6 tháng đầu sau khi định hướng được phê duyệt. Em chia thành 3 giai đoạn 2 tháng/giai đoạn, mỗi giai đoạn có <strong>gating criteria</strong> rõ ràng (điều kiện chuyển sang giai đoạn sau).</p>
+
+      <div class="timeline-track">
+        <div class="seg s1"></div>
+        <div class="seg s2"></div>
+        <div class="seg s3"></div>
+      </div>
+      <div class="timeline-labels">
+        <span>T1</span><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span>
+      </div>
+
+      <div class="roadmap-grid">
+        <div class="roadmap-phase">
+          <div class="when">Tháng 1–2 · Foundation</div>
+          <h4>Đặt nền móng kỹ thuật & UX</h4>
+          <ul>
+            <li>Hoàn thiện UI/UX system, design tokens, ngôn ngữ Creole</li>
+            <li>Dựng kiến trúc Flutter app skeleton + microservice gateway</li>
+            <li>One ID Natcom — đăng nhập một lần toàn hệ thống</li>
+            <li>Miniapp engine v1 (tải động, sandbox bảo mật)</li>
+            <li>SSO bridge với Natcash hiện tại — không phá vỡ user flow cũ</li>
+            <li>CI/CD, monitoring, alerting, rollback tự động</li>
+          </ul>
+          <div class="gate"><strong>Gate ra T3:</strong> Demo skeleton app chạy được với 1 miniapp test + One ID + bridge Natcash. Audit bảo mật cấp 1 đạt.</div>
+        </div>
+
+        <div class="roadmap-phase">
+          <div class="when">Tháng 3–4 · MVP Build</div>
+          <h4>Xây 4 nhóm tính năng cốt lõi</h4>
+          <ul>
+            <li><strong>Selfcare</strong> — 10 tính năng must (top-up, gói data, hóa đơn, FTTH, USSD fallback)</li>
+            <li><strong>Natcash trong app</strong> — 8/12 tính năng must (P2P, QR pay, hóa đơn, top-up, kiều hối basic)</li>
+            <li><strong>Engagement Engine</strong> — 12/21 tính năng must (Zanmi Mwen, QR đại lý, Welcome, Misyon Lè Premye, First cashback, Borlette Lakou, Daily Streak, Wou Lachans, Defi Mwa, Auto-pay, Cultural Calendar...)</li>
+            <li><strong>Giải trí</strong> — 5/10 tính năng must (music Kompa, video on-demand basic, podcast Creole)</li>
+            <li>Beta khép kín nội bộ Natcom (~200 nhân viên)</li>
+          </ul>
+          <div class="gate"><strong>Gate ra T5:</strong> Beta nội bộ Crash-free rate ≥ 99%, NPS ≥ 30, mỗi user beta dùng ít nhất 5/4 nhóm.</div>
+        </div>
+
+        <div class="roadmap-phase">
+          <div class="when">Tháng 5–6 · Polish & Launch</div>
+          <h4>Hoàn thiện và phát hành công khai</h4>
+          <ul>
+            <li>Beta mở rộng (~5.000–10.000 user trên cả Port-au-Prince + Cap-Haïtien)</li>
+            <li>Polish UX, sửa lỗi, tối ưu pin & data</li>
+            <li>Triển khai mạng đại lý (training, QR onboarding, hoa hồng)</li>
+            <li>Campaign marketing tiền-launch: ưu đãi early bird, mời nghệ sĩ Kompa quảng bá</li>
+            <li>Phối hợp Banque de la République d'Haïti hoàn tất compliance ví</li>
+            <li>Soft launch → Public launch quốc gia</li>
+          </ul>
+          <div class="gate"><strong>Mục tiêu launch:</strong> ≥ 500K downloads trong 30 ngày đầu, MAU ≥ 250K trong 60 ngày, ≥ 60% user beta active sau 30 ngày.</div>
+        </div>
+      </div>
+
+      <p style="margin-top:20px;font-size:13px;color:var(--text-mute)"><strong>Lưu ý:</strong> Các con số mục tiêu (downloads, MAU, crash-free rate) ở đây là <strong>đề xuất tham chiếu</strong>. Số chính thức cần Natcom xác nhận dựa trên KPI nội bộ và benchmark thị trường Haiti.</p>
+    </section>
+
+    <!-- 4. FEATURE MAP -->
+    <section id="feature-map" class="block">
+      <div class="kicker">04 · Feature map</div>
+      <h2 class="section">Bảng tổng hợp 49 tính năng Đợt 1</h2>
+      <p>Mỗi tính năng có 3 nhãn: <strong>Nhóm</strong> (Selfcare/Natcash/Engage/Giải trí), <strong>Ưu tiên MoSCoW</strong> (Must/Should/Could), và <strong>Effort</strong> (S/M/L/XL). Phase placement = Phase 1 toàn bộ (vì Đợt 1 phục vụ Phase 1 launch). Anh có thể lọc nhanh để xem subset.</p>
+
+      <div class="filter-bar">
+        <label for="f-group">Nhóm:</label>
+        <select id="f-group">
+          <option value="">Tất cả</option>
+          <option value="Selfcare">Selfcare</option>
+          <option value="Natcash">Natcash</option>
+          <option value="Engage">Engagement Engine</option>
+          <option value="Giải trí">Giải trí</option>
+        </select>
+        <label for="f-prio" style="margin-left:8px">Ưu tiên:</label>
+        <select id="f-prio">
+          <option value="">Tất cả</option>
+          <option value="Must">Must</option>
+          <option value="Should">Should</option>
+          <option value="Could">Could</option>
+        </select>
+        <label for="f-size" style="margin-left:8px">Effort:</label>
+        <select id="f-size">
+          <option value="">Tất cả</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+        <label for="f-search" style="margin-left:8px">Tìm:</label>
+        <input id="f-search" type="text" placeholder="Tên tính năng..." style="min-width:140px"/>
+        <div class="count">Hiển thị: <strong id="row-count">49</strong> / 49</div>
+      </div>
+
+      <div style="overflow-x:auto">
+      <table class="feat" id="feat-table">
+        <thead>
+          <tr>
+            <th style="width:28px">#</th>
+            <th style="width:100px">Nhóm</th>
+            <th>Tính năng</th>
+            <th>Mô tả ngắn</th>
+            <th style="width:90px">Ưu tiên</th>
+            <th style="width:60px">Effort</th>
+            <th>KPI chính</th>
+          </tr>
+        </thead>
+        <tbody id="feat-body">
+          <!-- SELFCARE -->
+          <tr data-group="Selfcare" data-prio="Must" data-size="M"><td>1</td><td><span class="grp-pill grp-selfcare">Selfcare</span></td><td>Quản lý đa thuê bao (multi-account)</td><td>Một tài khoản quản lý nhiều số Natcom, chuyển nhanh giữa các số</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>Activation, DAU</td></tr>
+          <tr data-group="Selfcare" data-prio="Must" data-size="S"><td>2</td><td><span class="grp-pill grp-selfcare">Selfcare</span></td><td>Tra cứu cước & lịch sử giao dịch</td><td>Xem cước hiện tại, sao kê chi tiết, xuất file</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>DAU, retention</td></tr>
+          <tr data-group="Selfcare" data-prio="Must" data-size="M"><td>3</td><td><span class="grp-pill grp-selfcare">Selfcare</span></td><td>Mua/đổi gói data</td><td>Catalog gói, mua nhanh, thanh toán qua Natcash, lịch sử gói</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>ARPU data</td></tr>
+          <tr data-group="Selfcare" data-prio="Must" data-size="S"><td>4</td><td><span class="grp-pill grp-selfcare">Selfcare</span></td><td>Mua gói thoại & SMS</td><td>Gói gọi nội/ngoại mạng, SMS, gói combo</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>ARPU voice</td></tr>
+          <tr data-group="Selfcare" data-prio="Must" data-size="M"><td>5</td><td><span class="grp-pill grp-selfcare">Selfcare</span></td><td>Quản lý FTTH</td><td>Xem cước, đăng ký/đổi gói, báo sự cố, lịch hẹn kỹ thuật</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>FTTH retention</td></tr>
+          <tr data-group="Selfcare" data-prio="Should" data-size="M"><td>6</td><td><span class="grp-pill grp-selfcare">Selfcare</span></td><td>Roaming & gói quốc tế</td><td>Bật/tắt roaming, mua gói roaming, giá theo quốc gia</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">M</span></td><td>ARPU roaming</td></tr>
+          <tr data-group="Selfcare" data-prio="Should" data-size="S"><td>7</td><td><span class="grp-pill grp-selfcare">Selfcare</span></td><td>Quản lý dịch vụ phụ trợ (VAS)</td><td>Bật/tắt ringback tone, caller ID, voicemail, dịch vụ tăng kèm</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">S</span></td><td>VAS revenue</td></tr>
+          <tr data-group="Selfcare" data-prio="Must" data-size="L"><td>8</td><td><span class="grp-pill grp-selfcare">Selfcare</span></td><td>SIM chính chủ (KYC online)</td><td>Đăng ký SIM chính chủ qua app: chụp CCCD, selfie, ký số</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">L</span></td><td>Compliance, fraud↓</td></tr>
+          <tr data-group="Selfcare" data-prio="Should" data-size="M"><td>9</td><td><span class="grp-pill grp-selfcare">Selfcare</span></td><td>Báo sự cố & tra cứu vùng phủ</td><td>Bản đồ vùng phủ, ghi nhận sự cố, theo dõi tiến độ xử lý</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">M</span></td><td>CSAT, NPS</td></tr>
+          <tr data-group="Selfcare" data-prio="Must" data-size="S"><td>10</td><td><span class="grp-pill grp-selfcare">Selfcare</span></td><td>Notification center</td><td>Cảnh báo cước, gói sắp hết, lịch nạp, ưu đãi cá nhân hóa</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>DAU</td></tr>
+
+          <!-- NATCASH -->
+          <tr data-group="Natcash" data-prio="Must" data-size="L"><td>11</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>SSO migration Natcash → My Natcom</td><td>User Natcash hiện tại đăng nhập My Natcom = 1 click, không tạo lại tài khoản</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">L</span></td><td>Migration rate</td></tr>
+          <tr data-group="Natcash" data-prio="Must" data-size="M"><td>12</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Cash-in/cash-out qua đại lý</td><td>Mạng đại lý mở rộng, QR đại lý, hoa hồng tự động</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>Transaction volume</td></tr>
+          <tr data-group="Natcash" data-prio="Must" data-size="M"><td>13</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Chuyển tiền P2P</td><td>Gửi tiền cho số Natcom khác hoặc tài khoản Natcash, instant</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>P2P volume</td></tr>
+          <tr data-group="Natcash" data-prio="Must" data-size="L"><td>14</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Thanh toán QR merchant</td><td>Quét QR tại cửa hàng trả qua Natcash, hoa hồng merchant</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">L</span></td><td>Merchant adoption</td></tr>
+          <tr data-group="Natcash" data-prio="Must" data-size="M"><td>15</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Thanh toán hóa đơn</td><td>Điện, nước, internet, học phí, truyền hình cáp — trong 1 app</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>Bill payment volume</td></tr>
+          <tr data-group="Natcash" data-prio="Must" data-size="S"><td>16</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Top-up cho mình & người khác</td><td>Nạp data/gói cước cho số bất kỳ, gửi tặng</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>Top-up volume</td></tr>
+          <tr data-group="Natcash" data-prio="Must" data-size="XL"><td>17</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Kiều hối quốc tế (incoming)</td><td>Nhận tiền từ diaspora ở Mỹ/CH Dominica/Canada/Pháp vào Natcash</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">XL</span></td><td>Remittance volume</td></tr>
+          <tr data-group="Natcash" data-prio="Should" data-size="L"><td>18</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Sòl/Sangue — hụi số cộng đồng</td><td>Nhóm 5–20 người chơi hụi rotating savings trên Natcash, lịch tự động</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">L</span></td><td>Community wallet</td></tr>
+          <tr data-group="Natcash" data-prio="Could" data-size="XL"><td>19</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Nano-loan</td><td>Vay vi mô 1.000–10.000 HTG dựa trên hành vi Natcash, scoring AI</td><td><span class="badge b-could">Could</span></td><td><span class="badge b-sz">XL</span></td><td>Loan revenue</td></tr>
+          <tr data-group="Natcash" data-prio="Could" data-size="L"><td>20</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Micro-insurance</td><td>Bảo hiểm vi mô (tai nạn, sức khỏe, tang ma) phí theo tháng từ Natcash</td><td><span class="badge b-could">Could</span></td><td><span class="badge b-sz">L</span></td><td>Insurance ARPU</td></tr>
+          <tr data-group="Natcash" data-prio="Should" data-size="M"><td>21</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Tiết kiệm có lãi</td><td>Khóa tiết kiệm có thời hạn trong ví, lãi suất hấp dẫn</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">M</span></td><td>Savings AUM</td></tr>
+          <tr data-group="Natcash" data-prio="Must" data-size="S"><td>22</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Sổ giao dịch & xuất sao kê</td><td>Lịch sử chi tiết, filter, export PDF/CSV, biểu đồ chi tiêu</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>Trust, retention</td></tr>
+
+          <!-- ENGAGEMENT ENGINE -->
+          <tr data-group="Engage" data-prio="Must" data-size="M"><td>23</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Zanmi Mwen — Mời bạn (Referral)</td><td>Mời bạn cài app + đăng ký Natcash, cả hai nhận data + Points; thưởng X2 nếu mời từ Digicel</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>Install rate</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="S"><td>24</td><td><span class="grp-pill grp-engage">Engage</span></td><td>QR đại lý SIM</td><td>Đại lý có QR riêng — scan để cài app + nhận bonus + hoa hồng đại lý</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>Install rural</td></tr>
+          <tr data-group="Engage" data-prio="Should" data-size="L"><td>25</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Kado Lakay — Quà từ diaspora</td><td>Diaspora tải app "remit" → tặng data/gói/Natcash cho người thân tại Haiti</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">L</span></td><td>Install diaspora-driven</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="S"><td>26</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Welcome bonus 7 ngày</td><td>Cài app: 1GB data + 1 lượt Borlette + voucher 50 HTG, unlock dần theo từng ngày</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>First-open, D7</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="M"><td>27</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Misyon Lè Premye — 7 nhiệm vụ tuần đầu</td><td>Onboarding gamified: 7 nhiệm vụ trong 7 ngày, hoàn thành cả 7 = Sertifika Lakay + bonus lớn</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>Activation, D7</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="S"><td>28</td><td><span class="grp-pill grp-engage">Engage</span></td><td>First transaction cashback</td><td>Giao dịch Natcash đầu tiên trong app → cashback 50% (cap 100 HTG)</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>% Natcash adoption</td></tr>
+          <tr data-group="Engage" data-prio="Should" data-size="S"><td>29</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Profile = Points</td><td>Mỗi bước hoàn thiện profile (avatar, ID, sinh trắc học, link family) = points</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">S</span></td><td>KYC rate</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="L"><td>30</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Borlette Lakou — Vé số hằng ngày</td><td>1 lượt quay miễn phí/ngày + giải lớn cuối tuần (cần license loterie)</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">L</span></td><td>DAU</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="S"><td>31</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Daily Streak</td><td>Streak chuỗi ngày, 7 ngày = 1GB data, 30 ngày = gói tháng miễn phí; reset nếu bỏ ngày</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>DAU</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="M"><td>32</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Wou Lachans — Vòng quay theo hành động</td><td>Sau mỗi giao dịch giá trị → vòng quay variable reward</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>DAU, transaction freq</td></tr>
+          <tr data-group="Engage" data-prio="Should" data-size="S"><td>33</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Tip Cash Jou — Thẻ cào số</td><td>1 thẻ cào ảo/ngày, mô phỏng thẻ cào giấy truyền thống</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">S</span></td><td>DAU</td></tr>
+          <tr data-group="Engage" data-prio="Should" data-size="M"><td>34</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Devine pou Genyen — Dự đoán bóng đá</td><td>Dự đoán tỉ số trận đội tuyển Haiti, CONCACAF, World Cup, CLB châu Âu phổ biến</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">M</span></td><td>DAU events</td></tr>
+          <tr data-group="Engage" data-prio="Could" data-size="L"><td>35</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Casual Game Suite (H5)</td><td>5 game: Tap-Tap Run, Match Kompa, Mo Kreyòl, Domino, Kanaval Mask. Energy nạp bằng hành động thật.</td><td><span class="badge b-could">Could</span></td><td><span class="badge b-sz">L</span></td><td>DAU, session length</td></tr>
+          <tr data-group="Engage" data-prio="Should" data-size="M"><td>36</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Misyon Jou — Nhiệm vụ ngày AI</td><td>3 quest/ngày cá nhân hóa bằng AI theo hành vi user</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">M</span></td><td>DAU</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="M"><td>37</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Defi Mwa — Thử thách tháng</td><td>Tích điểm cả tháng → 4 mốc Bronze/Silver/Gold/Diamond, thưởng tăng dần</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>MAU</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="S"><td>38</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Auto-pay subscriptions</td><td>Auto-pay gói cước hằng tháng qua Natcash, giảm 5–10% + points X2</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>MAU, churn↓</td></tr>
+          <tr data-group="Engage" data-prio="Should" data-size="L"><td>39</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Pakèt Familial — Tài khoản gia đình</td><td>Add 3–5 thành viên gia đình, share data + rewards + tier-up chung</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">L</span></td><td>Household MAU</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="M"><td>40</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Cultural Calendar Events</td><td>Mỗi tháng 1 event lớn theo lịch văn hóa Haiti (Kanaval, Fèt Drapo, Fèt Endepandans, Fèt Gede, World Cup)</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>MAU đợt</td></tr>
+          <tr data-group="Engage" data-prio="Could" data-size="M"><td>41</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Konbit Challenge</td><td>Nhóm 10 người cùng đăng ký thử thách tháng, cả nhóm đạt = cả nhóm thưởng</td><td><span class="badge b-could">Could</span></td><td><span class="badge b-sz">M</span></td><td>Viral K-factor</td></tr>
+          <tr data-group="Engage" data-prio="Should" data-size="S"><td>42</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Pataje pou Genyen — Share thắng</td><td>Khi user thắng Borlette/streak → share lên WhatsApp/Facebook = bonus + referral kèm</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">S</span></td><td>Organic acquisition</td></tr>
+          <tr data-group="Engage" data-prio="Should" data-size="M"><td>43</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Gift transfer trong app</td><td>Tặng data/gói cước/Natcash/lượt Borlette cho bạn bè — người nhận phải cài app</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">M</span></td><td>Acquisition, freq</td></tr>
+
+          <!-- GIẢI TRÍ -->
+          <tr data-group="Giải trí" data-prio="Must" data-size="L"><td>44</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Music streaming (Kompa, Rabòday, Rasin)</td><td>Catalog nhạc Haiti là trọng tâm, kết hợp Latin/Caribbean; gói miễn data Natcom</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">L</span></td><td>DAU, session length</td></tr>
+          <tr data-group="Giải trí" data-prio="Must" data-size="XL"><td>45</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Video on-demand (VOD)</td><td>Phim Haiti + Latin America + Hollywood, gói thuê bao tháng qua Natcash</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">XL</span></td><td>VOD ARPU</td></tr>
+          <tr data-group="Giải trí" data-prio="Should" data-size="L"><td>46</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Video ngắn — creator Haiti</td><td>Feed TikTok-style với content tiếng Creole, creator hub, monetize qua tips Natcash</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">L</span></td><td>DAU, session length</td></tr>
+          <tr data-group="Giải trí" data-prio="Should" data-size="L"><td>47</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Livestream sự kiện</td><td>Kanaval, bóng đá đội tuyển Haiti, concert nghệ sĩ Kompa, lễ tôn giáo</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">L</span></td><td>Peak DAU events</td></tr>
+          <tr data-group="Giải trí" data-prio="Must" data-size="M"><td>48</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Podcast & radio Creole</td><td>Đài radio FM Haiti live + podcast tin tức Creole; lưu offline</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>Rural DAU</td></tr>
+          <tr data-group="Giải trí" data-prio="Could" data-size="M"><td>49</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Karaoke</td><td>Hát Kompa karaoke, chia sẻ bản thu, leaderboard</td><td><span class="badge b-could">Could</span></td><td><span class="badge b-sz">M</span></td><td>Session length</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="grid cols-3" style="margin-top:24px">
+        <div class="card">
+          <h4 style="margin-top:0;color:var(--brand)">Tổng phân bổ ưu tiên</h4>
+          <p><strong>Must:</strong> 29 tính năng (59%) — bắt buộc phải có ở launch Phase 1.<br/><strong>Should:</strong> 15 tính năng (31%) — đưa vào nếu effort cho phép, không thì đẩy Đợt 2.<br/><strong>Could:</strong> 5 tính năng (10%) — nice-to-have, có thể cắt.</p>
+        </div>
+        <div class="card">
+          <h4 style="margin-top:0;color:var(--brand)">Phân bổ effort</h4>
+          <p><strong>S (1–2 tuần):</strong> 14 tính năng<br/><strong>M (3–6 tuần):</strong> 20 tính năng<br/><strong>L (2–3 tháng):</strong> 12 tính năng<br/><strong>XL (>3 tháng):</strong> 3 tính năng</p>
+        </div>
+        <div class="card">
+          <h4 style="margin-top:0;color:var(--brand)">Tổng theo nhóm</h4>
+          <p><strong>Selfcare:</strong> 10 tính năng<br/><strong>Natcash:</strong> 12 tính năng<br/><strong>Engagement Engine:</strong> 21 tính năng (đậm nhất)<br/><strong>Giải trí:</strong> 6 tính năng (mở rộng Đợt 2)</p>
+        </div>
+      </div>
+
+      <p style="margin-top:18px;font-size:13px;color:var(--text-mute)"><strong>Lưu ý đọc bảng:</strong> Engagement Engine có nhiều tính năng hơn nhóm khác vì là cỗ máy phục vụ 4 KPI cốt lõi, mỗi cơ chế nhỏ nhưng phải đủ phối hợp. Giải trí trong Đợt 1 chỉ chứa 6 tính năng nền tảng; phần mở rộng (Karaoke, audio book, live commerce, creator monetization sâu) sẽ ở Đợt 2 và Phase 2.</p>
+    </section>
+
+    <!-- 5. PRINCIPLES -->
+    <section id="principles" class="block">
+      <div class="kicker">05 · Design principles</div>
+      <h2 class="section">Nguyên tắc thiết kế chéo (áp dụng cho mọi tính năng)</h2>
+      <p>Đây là <strong>"luật chơi" mọi tính năng phải tuân thủ</strong>, không có ngoại lệ. Khi review chi tiết ở Bước 1.B, em sẽ check từng tính năng có đạt các nguyên tắc này không.</p>
+
+      <div class="grid cols-2" style="margin-top:18px">
+        <div class="principle"><div class="ic">🇭🇹</div><div><h4>1. Creole là mặc định</h4><p style="margin:0">Ngôn ngữ mặc định là Haitian Creole. Pháp/Anh là lựa chọn. Mọi push notification, voice prompt, tên dịch vụ — ưu tiên Creole tự nhiên, không dịch máy.</p></div></div>
+        <div class="principle"><div class="ic">📶</div><div><h4>2. Offline-capable cho 2G/3G</h4><p style="margin:0">Mọi tính năng cốt lõi phải mở được offline ở mức cơ bản: xem cước cũ, đọc tin nhắn, giao dịch pending. Hạ tầng Haiti chưa đồng đều.</p></div></div>
+        <div class="principle"><div class="ic">🔋</div><div><h4>3. Battery & data efficient</h4><p style="margin:0">App phải dưới 40MB cài đặt (nhỏ hơn MyID 3.5 lần). Background data hạn chế. Image lazy-load. Video adaptive bitrate.</p></div></div>
+        <div class="principle"><div class="ic">🎙️</div><div><h4>4. Voice-first cho user literacy thấp</h4><p style="margin:0">Voice search trong miniapp, voice messaging trong gift transfer, voice prompt onboarding. Phục vụ Pierre (persona 4) và phân khúc nông thôn.</p></div></div>
+        <div class="principle"><div class="ic">👨‍👩‍👧</div><div><h4>5. Multi-profile / quick switch</h4><p style="margin:0">Thiết bị thường được chia sẻ trong gia đình Haiti. Một số máy phải đăng nhập được nhiều số Natcom, switch nhanh không cần đăng xuất.</p></div></div>
+        <div class="principle"><div class="ic">📞</div><div><h4>6. USSD fallback</h4><p style="margin:0">Mỗi tính năng quan trọng (xem cước, mua data, chuyển tiền) phải có USSD tương đương cho user không smartphone. Đây là cam kết phục vụ phổ thông.</p></div></div>
+        <div class="principle"><div class="ic">🔒</div><div><h4>7. Bảo mật cấp banking</h4><p style="margin:0">Vì có Natcash, áp chuẩn ngân hàng từ ngày 1: mã hóa đầu cuối, sinh trắc học, audit log, anti-fraud AI, complaint của Banque de la République d'Haïti.</p></div></div>
+        <div class="principle"><div class="ic">♿</div><div><h4>8. Accessibility</h4><p style="margin:0">Font size adjustable, color contrast WCAG AA, hỗ trợ screen reader cơ bản. Không loại trừ người khuyết tật hay người già.</p></div></div>
+        <div class="principle"><div class="ic">🔔</div><div><h4>9. Push notifications có giới hạn</h4><p style="margin:0">Tối đa 3 push/ngày/user (trừ giao dịch tài chính). User toàn quyền tắt từng nhóm. Không spam — đây là nguyên tắc tôn trọng.</p></div></div>
+        <div class="principle"><div class="ic">📊</div><div><h4>10. Observable, recoverable</h4><p style="margin:0">Mọi sự cố phải log đầy đủ, có dashboard real-time, alert tự động. Rollback feature qua feature flag không cần redeploy. Downtime tài chính = uy tín quốc gia.</p></div></div>
+      </div>
+    </section>
+
+    <!-- 6. NEXT -->
+    <section id="next" class="block">
+      <div class="kicker">06 · Next</div>
+      <h2 class="section">Bước tiếp theo — sau khi anh duyệt</h2>
+      <p>Khi anh OK 3 phần trong tài liệu này (Personas + Roadmap + Feature Map), em sẽ chạy <strong>Bước 1.B</strong> trong 1 đợt:</p>
+      <ol>
+        <li><strong>Trang con Selfcare</strong> — 10 thẻ chi tiết, 2–3 wireframe (màn hình mua gói data, quản lý đa thuê bao, notification center)</li>
+        <li><strong>Trang con Natcash</strong> — 12 thẻ chi tiết, 2–3 wireframe (màn QR pay, kiều hối incoming, sổ giao dịch)</li>
+        <li><strong>Trang con Engagement Engine</strong> — 21 thẻ chi tiết, 2–3 wireframe (màn Borlette Lakou quay, Daily Streak dashboard, Defi Mwa tier-up)</li>
+        <li><strong>Trang con Giải trí</strong> — 6 thẻ chi tiết, 2–3 wireframe (player nhạc Kompa, livestream Kanaval, podcast Creole)</li>
+      </ol>
+      <p>Mỗi trang con dùng cùng template 10 mục đã thống nhất ở turn trước. Tổng cộng <strong>49 thẻ × 10 mục = ~490 ô thông tin</strong>, kèm 8–12 wireframe SVG.</p>
+
+      <div class="cta">
+        <h3>Câu hỏi cần anh chốt ở Bước 1.A</h3>
+        <ol>
+          <li><strong>5 Personas:</strong> có đại diện đủ chưa? Có cần thêm phân khúc B2B/doanh nghiệp FTTH không?</li>
+          <li><strong>Roadmap 3 giai đoạn × 2 tháng:</strong> có hợp lý với năng lực của Natcom + RingMe không? Có cần kéo dài Phase 1 sang 8 tháng để giảm áp lực?</li>
+          <li><strong>Feature Map 49 tính năng:</strong> có muốn cắt/thêm tính năng nào? Đặc biệt các Could (Nano-loan, Micro-insurance, Casual Game Suite, Karaoke) — anh muốn giữ trong Đợt 1 hay đẩy sang Đợt 2?</li>
+          <li><strong>Nguyên tắc thiết kế chéo:</strong> có nguyên tắc nào anh muốn bổ sung hoặc bỏ?</li>
+        </ol>
+        <p style="margin-bottom:0">Khi anh có câu trả lời, em điều chỉnh tài liệu này rồi chạy Bước 1.B ngay.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="container">
+    <strong>RingMe Vietnam</strong> · Đề xuất chi tiết My Natcom 2.0 — Phase 2, Đợt 1, Bước 1.A · 28/05/2026 · Tài liệu nội bộ, dùng để trình lãnh đạo Natcom.
+  </div>
+</footer>
+
+<script>
+  // TOC scrollspy
+  const links = document.querySelectorAll('.toc a');
+  const targets = [...links].map(a => document.querySelector(a.getAttribute('href')));
+  function onScroll(){
+    let idx = 0;
+    const y = window.scrollY + 140;
+    targets.forEach((el,i) => { if(el && el.offsetTop <= y) idx = i; });
+    links.forEach(l => l.classList.remove('active'));
+    if(links[idx]) links[idx].classList.add('active');
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Feature filter
+  const fGroup = document.getElementById('f-group');
+  const fPrio  = document.getElementById('f-prio');
+  const fSize  = document.getElementById('f-size');
+  const fSearch= document.getElementById('f-search');
+  const rows = [...document.querySelectorAll('#feat-body tr')];
+  const total = rows.length;
+  const countEl = document.getElementById('row-count');
+  function applyFilter(){
+    const g = fGroup.value, p = fPrio.value, s = fSize.value, q = fSearch.value.toLowerCase().trim();
+    let visible = 0;
+    rows.forEach(r => {
+      const matchG = !g || r.dataset.group === g;
+      const matchP = !p || r.dataset.prio  === p;
+      const matchS = !s || r.dataset.size  === s;
+      const matchQ = !q || r.textContent.toLowerCase().includes(q);
+      const show = matchG && matchP && matchS && matchQ;
+      r.classList.toggle('hidden', !show);
+      if(show) visible++;
+    });
+    countEl.textContent = visible;
+  }
+  [fGroup, fPrio, fSize].forEach(el => el.addEventListener('change', applyFilter));
+  fSearch.addEventListener('input', applyFilter);
+</script>
+
+</body>
+</html>
