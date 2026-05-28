@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Natcash trong My Natcom (basic) — My Natcom 2.0 · Đợt 1</title>
+<meta name="description" content="Chi tiết nhóm Natcash trong My Natcom (basic) — Đề xuất My Natcom 2.0 Phase 2 Đợt 1, RingMe Vietnam x Natcom." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shared.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div style="display:flex;align-items:center">
+      <div class="brand"><span class="brand-dot"></span> RingMe × Natcom</div>
+      <div class="breadcrumb">&nbsp;/&nbsp;<a href="../index.html">Phase 1</a>&nbsp;/&nbsp;<a href="index.html">Phase 2 — Đợt 1</a>&nbsp;/&nbsp;<span style="color:var(--text)">Natcash trong My Natcom (basic)</span></div>
+    </div>
+    <nav>
+      <a class="nav-pill" href="index.html">Trang chủ Đợt 1</a>
+      <a class="nav-pill" href="selfcare.html">Selfcare</a>
+      <a class="nav-pill active" href="natcash.html">Natcash</a>
+      <a class="nav-pill" href="engagement.html">Engagement</a>
+      <a class="nav-pill" href="entertainment.html">Giải trí</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero container">
+  <span class="eyebrow">Nhóm 2 · Đợt 1 · Bước 1.B</span>
+  <h1>💳 Natcash trong My Natcom (basic) — <span>tổng quan & danh sách tính năng</span></h1>
+  <p>Tích hợp sâu Natcash hiện có (2 triệu user giao dịch) làm trái tim thanh toán của superapp — 7 tính năng cốt lõi cho Đợt 1. Các tính năng nâng cao (kiều hối, sòl, nano-loan, micro-insurance, tiết kiệm) chuyển sang Đợt 2.</p>
+</section>
+
+<div class="container">
+  <section class="block">
+    <div class="notice">
+      <h3>Trang chi tiết — đang chuẩn bị phát hành</h3>
+      <p>Trang này hiện liệt kê danh sách tính năng của nhóm. <strong>Chi tiết đầy đủ theo template 10 mục</strong> (định nghĩa, persona, user flow, wireframe, edge case, phụ thuộc, acceptance criteria, KPI riêng, priority, phase) sẽ được RingMe phát hành trong các turn tiếp theo của Bước 1.B sau khi Natcom phê duyệt khung sườn ở <a href="index.html">trang chủ Đợt 1</a>.</p>
+    </div>
+
+    <div class="kicker">Danh sách tính năng</div>
+    <h2 class="section">7 tính năng trong nhóm Natcash trong My Natcom (basic)</h2>
+
+    <div style="overflow-x:auto;margin-top:18px">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:32px">#</th>
+          <th>Tính năng</th>
+          <th>Mô tả ngắn</th>
+          <th style="width:90px">Ưu tiên</th>
+          <th style="width:60px">Effort</th>
+          <th style="width:160px">KPI chính</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>SSO migration Natcash → My Natcom</strong></td>
+            <td style="color:var(--text-dim)">User Natcash hiện tại đăng nhập My Natcom = 1 click, không tạo lại tài khoản</td>
+            <td><span class="badge b-must">Must</span></td>
+            <td><span class="badge b-sz">L</span></td>
+            <td style="color:var(--text-dim);font-size:13px">Migration rate</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>Cash-in/cash-out qua đại lý</strong></td>
+            <td style="color:var(--text-dim)">Mạng đại lý mở rộng, QR đại lý, hoa hồng tự động</td>
+            <td><span class="badge b-must">Must</span></td>
+            <td><span class="badge b-sz">M</span></td>
+            <td style="color:var(--text-dim);font-size:13px">Transaction volume</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>Chuyển tiền P2P</strong></td>
+            <td style="color:var(--text-dim)">Gửi tiền cho số Natcom khác hoặc tài khoản Natcash, instant</td>
+            <td><span class="badge b-must">Must</span></td>
+            <td><span class="badge b-sz">M</span></td>
+            <td style="color:var(--text-dim);font-size:13px">P2P volume</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>Thanh toán QR merchant</strong></td>
+            <td style="color:var(--text-dim)">Quét QR tại cửa hàng trả qua Natcash, hoa hồng merchant</td>
+            <td><span class="badge b-must">Must</span></td>
+            <td><span class="badge b-sz">L</span></td>
+            <td style="color:var(--text-dim);font-size:13px">Merchant adoption</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><strong>Thanh toán hóa đơn</strong></td>
+            <td style="color:var(--text-dim)">Điện, nước, internet, học phí, truyền hình cáp — trong 1 app</td>
+            <td><span class="badge b-must">Must</span></td>
+            <td><span class="badge b-sz">M</span></td>
+            <td style="color:var(--text-dim);font-size:13px">Bill payment volume</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><strong>Top-up cho mình & người khác</strong></td>
+            <td style="color:var(--text-dim)">Nạp data/gói cước cho số bất kỳ, gửi tặng</td>
+            <td><span class="badge b-must">Must</span></td>
+            <td><span class="badge b-sz">S</span></td>
+            <td style="color:var(--text-dim);font-size:13px">Top-up volume</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><strong>Sổ giao dịch & xuất sao kê</strong></td>
+            <td style="color:var(--text-dim)">Lịch sử chi tiết, filter, export PDF/CSV, biểu đồ chi tiêu</td>
+            <td><span class="badge b-must">Must</span></td>
+            <td><span class="badge b-sz">S</span></td>
+            <td style="color:var(--text-dim);font-size:13px">Trust, retention</td>
+          </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p style="margin-top:24px;color:var(--text-mute);font-size:13px"><strong>Bước tiếp theo:</strong> Khi Natcom duyệt khung sườn ở trang chủ Đợt 1, RingMe sẽ phát hành chi tiết từng tính năng theo template 10 mục đã thống nhất, kèm 2–3 wireframe SVG cho các màn hình then chốt của nhóm này.</p>
+  </section>
+</div>
+
+<footer>
+  <div class="container">
+    <strong>RingMe Vietnam</strong> · Natcash trong My Natcom (basic) — My Natcom 2.0 Phase 2 Đợt 1 · 28/05/2026 · Tài liệu chính thức trình Ban Lãnh đạo Natcom.
+  </div>
+</footer>
+
+</body>
+</html>

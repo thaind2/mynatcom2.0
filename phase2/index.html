@@ -120,12 +120,13 @@
   .timeline{position:relative;margin:20px 0 0;padding-left:0}
   .timeline-track{position:relative;height:6px;background:var(--surface);border-radius:3px;margin:30px 0 30px}
   .timeline-track .seg{position:absolute;top:0;height:6px;border-radius:3px}
-  .timeline-track .s1{left:0%;width:33%;background:linear-gradient(90deg,var(--brand),#ff8a5a)}
-  .timeline-track .s2{left:33%;width:34%;background:linear-gradient(90deg,#ff8a5a,var(--accent-2))}
-  .timeline-track .s3{left:67%;width:33%;background:linear-gradient(90deg,var(--accent-2),var(--accent))}
-  .timeline-labels{display:grid;grid-template-columns:repeat(6,1fr);gap:0;font-size:11px;color:var(--text-mute);letter-spacing:.4px;text-transform:uppercase}
+  .timeline-track .s1{left:0%;width:25%;background:linear-gradient(90deg,var(--brand),#ff8a5a)}
+  .timeline-track .s2{left:25%;width:25%;background:linear-gradient(90deg,#ff8a5a,#c673ff)}
+  .timeline-track .s3{left:50%;width:25%;background:linear-gradient(90deg,#c673ff,var(--accent-2))}
+  .timeline-track .s4{left:75%;width:25%;background:linear-gradient(90deg,var(--accent-2),var(--accent))}
+  .timeline-labels{display:grid;grid-template-columns:repeat(8,1fr);gap:0;font-size:11px;color:var(--text-mute);letter-spacing:.4px;text-transform:uppercase}
   .timeline-labels span{text-align:center}
-  .roadmap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+  .roadmap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:20px}
   .roadmap-phase{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
   .roadmap-phase h4{margin:0 0 4px;font-size:15px}
   .roadmap-phase .when{font-size:11px;color:var(--brand);text-transform:uppercase;letter-spacing:1px;font-weight:700}
@@ -210,11 +211,11 @@
       <div class="breadcrumb">&nbsp;/&nbsp;<a href="../index.html">Phase 1</a>&nbsp;/&nbsp;<span style="color:var(--text)">Phase 2 — Đợt 1</span></div>
     </div>
     <nav>
-      <a class="nav-pill active" href="#">Trang chủ Đợt 1</a>
-      <a class="nav-pill disabled" title="Sẽ phát hành ở Bước 1.B">Selfcare</a>
-      <a class="nav-pill disabled" title="Sẽ phát hành ở Bước 1.B">Natcash</a>
-      <a class="nav-pill disabled" title="Sẽ phát hành ở Bước 1.B">Engagement</a>
-      <a class="nav-pill disabled" title="Sẽ phát hành ở Bước 1.B">Giải trí</a>
+      <a class="nav-pill active" href="index.html">Trang chủ Đợt 1</a>
+      <a class="nav-pill" href="selfcare.html">Selfcare</a>
+      <a class="nav-pill" href="natcash.html">Natcash</a>
+      <a class="nav-pill" href="engagement.html">Engagement</a>
+      <a class="nav-pill" href="entertainment.html">Giải trí</a>
     </nav>
   </div>
 </header>
@@ -223,26 +224,26 @@
 <section class="hero container">
   <div class="hero-grid">
     <div>
-      <span class="eyebrow"><span class="pulse"></span> Đề xuất chi tiết · Đợt 1 · Bước 1.A</span>
+      <span class="eyebrow"><span class="pulse"></span> Đề xuất chi tiết · Đợt 1 · Bước 1.A (v2 — đã cập nhật theo phản hồi Natcom)</span>
       <h1 class="hero-title">Khung sườn Đợt 1 — <span>Personas, Roadmap & Feature Map</span></h1>
-      <p class="hero-sub">Tài liệu này là <strong>khung sườn để anh duyệt trước</strong>. Sau khi anh OK personas, roadmap và bảng tổng hợp tính năng, em sẽ phát hành chi tiết từng nhóm (Selfcare, Natcash, Engagement Engine, Giải trí số) ở Bước 1.B.</p>
+      <p class="hero-sub">Tài liệu này là <strong>khung sườn chiến lược</strong> RingMe Vietnam trình Ban Lãnh đạo Natcom phê duyệt. Sau khi Natcom thông qua personas, roadmap và bảng tổng hợp tính năng, RingMe sẽ phát hành chi tiết từng nhóm (Selfcare, Natcash, Engagement Engine, Giải trí số) ở Bước 1.B — truy cập qua thanh điều hướng phía trên.</p>
       <div class="hero-meta">
         <span class="chip">Đợt 1: 4 nhóm · Phase 1</span>
-        <span class="chip">~49 tính năng chi tiết</span>
-        <span class="chip">5 personas</span>
-        <span class="chip">Tiếp theo: 4 trang con chi tiết</span>
+        <span class="chip">44 tính năng chi tiết</span>
+        <span class="chip">6 personas (gồm B2B)</span>
+        <span class="chip">Roadmap 8 tháng</span>
       </div>
     </div>
     <aside class="hero-card">
       <div style="font-size:11px;color:var(--brand);letter-spacing:1.4px;text-transform:uppercase;margin-bottom:12px;font-weight:700">Đợt 1 sẽ giao</div>
       <ol class="scope-list" style="counter-reset:none">
         <li><span class="num">1</span><span class="lbl">Selfcare nhà mạng<small>10 tính năng — nền tảng selfcare nâng cấp</small></span></li>
-        <li><span class="num">2</span><span class="lbl">Natcash trong superapp<small>12 tính năng — tích hợp ví, kiều hối, sòl</small></span></li>
+        <li><span class="num">2</span><span class="lbl">Natcash basic trong superapp<small>7 tính năng cốt lõi — chuyển/nhận/thanh toán</small></span></li>
         <li><span class="num">3</span><span class="lbl">Engagement Engine<small>21 tính năng — loyalty + minigame + cộng đồng</small></span></li>
         <li><span class="num">4</span><span class="lbl">Giải trí số<small>6 tính năng nền tảng — mở rộng ở Đợt 2</small></span></li>
       </ol>
       <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--text-mute)">
-        Đợt 2 (sau khi Đợt 1 chốt): <strong>Tiện ích đời sống</strong> + <strong>Marketplace</strong> + <strong>Dịch vụ công</strong>.
+        Đợt 2 (sau khi Đợt 1 chốt): <strong>Natcash advanced</strong> (kiều hối, sòl, nano-loan, micro-insurance, tiết kiệm) + <strong>Tiện ích đời sống</strong> + <strong>Marketplace</strong> + <strong>Dịch vụ công</strong>.
       </div>
     </aside>
   </div>
@@ -267,7 +268,7 @@
     <section id="recap" class="block">
       <div class="kicker">01 · Recap</div>
       <h2 class="section">Chiến lược đã chốt ở Phase 1 (recap)</h2>
-      <p>Để mọi quyết định ở Đợt 1 đều quy về được nguyên tắc chung, em recap 4 trụ chiến lược đã được duyệt ở phase trước:</p>
+      <p>Để mọi quyết định ở Đợt 1 đều quy về được nguyên tắc chung, RingMe tóm lược 4 trụ chiến lược đã được Natcom phê duyệt ở Phase 1:</p>
       <div class="big-stats">
         <div class="b"><div class="v">#1</div><div class="k">Nhà mạng Haiti — 51% thị phần, 4tr+ thuê bao</div></div>
         <div class="b"><div class="v">2 tr</div><div class="k">User Natcash sẵn có — trái tim hệ sinh thái</div></div>
@@ -281,8 +282,8 @@
     <!-- 2. PERSONAS -->
     <section id="personas" class="block">
       <div class="kicker">02 · Personas</div>
-      <h2 class="section">5 Personas khách hàng Natcom Haiti</h2>
-      <p>5 nhân vật đại diện 5 phân khúc khách hàng mà My Natcom 2.0 cần phục vụ. Mỗi tính năng chi tiết ở Bước 1.B sẽ tham chiếu lại personas này — "tính năng X phục vụ persona nào, giải đau điểm gì". Đây là <strong>nhân vật giả lập dựa trên dữ liệu nhân khẩu học và insight văn hóa</strong>, anh review và bổ sung theo dữ liệu nội bộ Natcom nếu có.</p>
+      <h2 class="section">6 Personas khách hàng Natcom Haiti</h2>
+      <p>6 nhân vật đại diện 6 phân khúc khách hàng mà My Natcom 2.0 cần phục vụ. Mỗi tính năng chi tiết ở Bước 1.B sẽ tham chiếu lại personas này — "tính năng X phục vụ persona nào, giải đau điểm gì". Đây là <strong>nhân vật giả lập do RingMe dựng dựa trên dữ liệu nhân khẩu học và insight văn hóa công khai</strong>; Natcom có thể bổ sung hoặc thay thế bằng dữ liệu khách hàng nội bộ nếu có.</p>
 
       <div class="grid cols-2" style="margin-top:18px">
 
@@ -371,7 +372,7 @@
           <div class="avatar w">W</div>
           <div>
             <h4>Wisline — Diaspora Miami</h4>
-            <div class="meta">Persona 5 · ~3–4tr người Haiti ở nước ngoài, ~5% base hiện tại nhưng giá trị giao dịch cực cao</div>
+            <div class="meta">Persona 5 · ~3–4tr người Haiti ở nước ngoài, ~5% base nhưng giá trị giao dịch cực cao</div>
             <div class="quote">"Mỗi tháng tôi gửi 300 đô về cho mẹ và em gái. Tôi muốn nó tới ngay và muốn biết họ đã nhận. Phí Western Union cao quá."</div>
             <table>
               <tr><td>Tuổi · Giới</td><td>32 · Nữ</td></tr>
@@ -386,77 +387,111 @@
           </div>
         </div>
 
+        <!-- Persona 6 -->
+        <div class="persona" style="grid-column:1 / -1;border-color:rgba(255,90,31,.45);background:linear-gradient(180deg,rgba(255,90,31,.04),rgba(124,92,255,.02))">
+          <div class="avatar" style="background:linear-gradient(135deg,#ff5a1f,#4ad6c2);color:#fff;width:64px;height:64px;display:grid;place-items:center;border-radius:50%;font-weight:800;font-size:22px;flex-shrink:0;border:2px solid var(--line)">B</div>
+          <div>
+            <h4>Patrick — Chủ doanh nghiệp SME (B2B) <span style="font-size:11px;color:var(--brand);background:rgba(255,90,31,.15);padding:2px 8px;border-radius:6px;margin-left:6px;letter-spacing:.4px;text-transform:uppercase;font-weight:700">mới — phân khúc B2B</span></h4>
+            <div class="meta">Persona 6 · ~3% base nhưng ARPU cao gấp 5–10 lần · Đại diện ~15.000 SME đang dùng dịch vụ Natcom</div>
+            <div class="quote">"Tôi cần FTTH ổn định cho xưởng, nhận thanh toán từ khách hàng diaspora, và một báo cáo doanh thu cuối tháng mà tôi không phải tự cộng. Hỗ trợ kỹ thuật phải nhanh — mỗi giờ mạng chết là tôi mất tiền."</div>
+            <table>
+              <tr><td>Tuổi · Giới</td><td>45 · Nam</td></tr>
+              <tr><td>Nghề · Nơi sống</td><td>Chủ xưởng may 12 nhân viên, có nhập hàng từ Cộng hòa Dominica · Port-au-Prince</td></tr>
+              <tr><td>Doanh thu</td><td>~80.000 HTG/tháng doanh thu (~600 USD)</td></tr>
+              <tr><td>Thiết bị</td><td>Smartphone tầm khá (iPhone hoặc Samsung S-series), laptop cho kế toán</td></tr>
+              <tr><td>App đang dùng</td><td>WhatsApp Business, email, kế toán cơ bản (Excel/Sage), Natcash + MonCash để nhận thanh toán đa kênh</td></tr>
+              <tr><td>Mong đợi</td><td>Tài khoản doanh nghiệp gộp nhiều số nhân viên; báo cáo doanh thu Natcash tự động; QR merchant có theo dõi đơn hàng; FTTH SLA cao; CSKH ưu tiên với hotline doanh nghiệp</td></tr>
+              <tr><td>Đau điểm</td><td>Quản lý hóa đơn nhiều dịch vụ rời rạc; mất thời gian phối hợp Natcom × Natcash × ngân hàng; chưa có công cụ nhìn được dòng tiền theo thời gian thực; sợ mất khách khi mạng yếu</td></tr>
+              <tr><td>Phục vụ nhóm</td><td>Selfcare doanh nghiệp (FTTH, multi-account), Natcash B2B (merchant analytics, payout), Marketplace (Đợt 2 — bán hàng online), Dịch vụ công (đăng ký kinh doanh, thuế — Đợt 2)</td></tr>
+            </table>
+          </div>
+        </div>
+
       </div>
 
-      <p style="margin-top:18px;font-size:13px;color:var(--text-mute)"><strong>Ghi chú:</strong> 5 personas này KHÔNG bao phủ hết base khách hàng Natcom (ví dụ phân khúc B2B/doanh nghiệp FTTH chưa có đại diện). Đây là 5 phân khúc <strong>quan trọng nhất với My Natcom 2.0</strong> ở Phase 1 — chiếm ~95% lượng người dùng tiềm năng của superapp.</p>
+      <p style="margin-top:18px;font-size:13px;color:var(--text-mute)"><strong>Phân bổ ước tính:</strong> Marie 25% · Jean 30% · Stephania 20% · Pierre 15% · Wisline 5% · Patrick 3% (tổng phủ ~98% base khách hàng tiềm năng My Natcom 2.0). Các phân khúc còn lại (~2%) là tổ chức chính phủ, NGO, doanh nghiệp lớn — sẽ được xử lý riêng ở các chiến lược B2G/Enterprise sau.</p>
     </section>
 
     <!-- 3. ROADMAP -->
     <section id="roadmap" class="block">
       <div class="kicker">03 · Roadmap</div>
-      <h2 class="section">Roadmap Phase 1 chi tiết — 6 tháng đến launch</h2>
-      <p>Phase 1 đã được chốt là 6 tháng đầu sau khi định hướng được phê duyệt. Em chia thành 3 giai đoạn 2 tháng/giai đoạn, mỗi giai đoạn có <strong>gating criteria</strong> rõ ràng (điều kiện chuyển sang giai đoạn sau).</p>
+      <h2 class="section">Roadmap Phase 1 chi tiết — 8 tháng đến launch</h2>
+      <p>Sau phản hồi từ Natcom, RingMe đã giãn timeline từ 6 sang <strong>8 tháng</strong> để giảm áp lực, tăng chất lượng beta, và có thời gian phối hợp pháp lý — đặc biệt với Banque de la République d'Haïti. Phase 1 được chia thành <strong>4 giai đoạn × 2 tháng</strong>, mỗi giai đoạn có <strong>gating criteria</strong> rõ ràng (điều kiện chuyển sang giai đoạn sau).</p>
 
       <div class="timeline-track">
         <div class="seg s1"></div>
         <div class="seg s2"></div>
         <div class="seg s3"></div>
+        <div class="seg s4"></div>
       </div>
       <div class="timeline-labels">
-        <span>T1</span><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span>
+        <span>T1</span><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span><span>T8</span>
       </div>
 
       <div class="roadmap-grid">
         <div class="roadmap-phase">
-          <div class="when">Tháng 1–2 · Foundation</div>
+          <div class="when">Giai đoạn A · Tháng 1–2 · Foundation</div>
           <h4>Đặt nền móng kỹ thuật & UX</h4>
           <ul>
-            <li>Hoàn thiện UI/UX system, design tokens, ngôn ngữ Creole</li>
+            <li>Hoàn thiện UI/UX system, design tokens, ngôn ngữ Creole/Pháp/Anh</li>
             <li>Dựng kiến trúc Flutter app skeleton + microservice gateway</li>
             <li>One ID Natcom — đăng nhập một lần toàn hệ thống</li>
             <li>Miniapp engine v1 (tải động, sandbox bảo mật)</li>
             <li>SSO bridge với Natcash hiện tại — không phá vỡ user flow cũ</li>
             <li>CI/CD, monitoring, alerting, rollback tự động</li>
+            <li>Khởi động làm việc với Banque de la République d'Haïti (compliance ví)</li>
           </ul>
-          <div class="gate"><strong>Gate ra T3:</strong> Demo skeleton app chạy được với 1 miniapp test + One ID + bridge Natcash. Audit bảo mật cấp 1 đạt.</div>
+          <div class="gate"><strong>Gate ra Giai đoạn B:</strong> Demo skeleton app chạy được với 1 miniapp test + One ID + bridge Natcash. Audit bảo mật cấp 1 đạt. Kế hoạch compliance được BRH chấp thuận sơ bộ.</div>
         </div>
 
         <div class="roadmap-phase">
-          <div class="when">Tháng 3–4 · MVP Build</div>
-          <h4>Xây 4 nhóm tính năng cốt lõi</h4>
+          <div class="when">Giai đoạn B · Tháng 3–4 · Core Build (Selfcare + Natcash)</div>
+          <h4>Xây 2 nhóm nền tảng</h4>
           <ul>
-            <li><strong>Selfcare</strong> — 10 tính năng must (top-up, gói data, hóa đơn, FTTH, USSD fallback)</li>
-            <li><strong>Natcash trong app</strong> — 8/12 tính năng must (P2P, QR pay, hóa đơn, top-up, kiều hối basic)</li>
-            <li><strong>Engagement Engine</strong> — 12/21 tính năng must (Zanmi Mwen, QR đại lý, Welcome, Misyon Lè Premye, First cashback, Borlette Lakou, Daily Streak, Wou Lachans, Defi Mwa, Auto-pay, Cultural Calendar...)</li>
-            <li><strong>Giải trí</strong> — 5/10 tính năng must (music Kompa, video on-demand basic, podcast Creole)</li>
+            <li><strong>Selfcare</strong> — 10 tính năng must (tra cứu cước, mua gói data/voice, FTTH, multi-account, KYC online, notification, USSD fallback)</li>
+            <li><strong>Natcash basic</strong> — 7 tính năng must (SSO migration, cash-in/out đại lý, P2P, QR merchant, hóa đơn, top-up, sổ giao dịch)</li>
+            <li>Tích hợp test với hạ tầng Natcom production (dual-run với hệ thống cũ)</li>
+            <li>Alpha test nội bộ ban dự án (~50 người)</li>
+          </ul>
+          <div class="gate"><strong>Gate ra Giai đoạn C:</strong> 17/17 tính năng Selfcare + Natcash basic chạy ổn định trong môi trường production-like. Crash-free rate ≥ 99,5%. Bảo mật cấp 2 đạt (penetration test).</div>
+        </div>
+
+        <div class="roadmap-phase">
+          <div class="when">Giai đoạn C · Tháng 5–6 · Growth Build (Engagement + Giải trí)</div>
+          <h4>Xây 2 nhóm tăng trưởng</h4>
+          <ul>
+            <li><strong>Engagement Engine</strong> — 21 tính năng (loyalty, minigame, Borlette Lakou, Daily Streak, Wou Lachans, Defi Mwa, Cultural Calendar, Zanmi Mwen, Misyon Lè Premye, Pakèt Familial...)</li>
+            <li><strong>Giải trí số</strong> — 6 tính năng (music Kompa, VOD, video ngắn creator, livestream, podcast Creole, karaoke)</li>
+            <li>Đàm phán & ký hợp đồng đối tác nội dung Kompa, loterie có license cho Borlette Lakou</li>
             <li>Beta khép kín nội bộ Natcom (~200 nhân viên)</li>
           </ul>
-          <div class="gate"><strong>Gate ra T5:</strong> Beta nội bộ Crash-free rate ≥ 99%, NPS ≥ 30, mỗi user beta dùng ít nhất 5/4 nhóm.</div>
+          <div class="gate"><strong>Gate ra Giai đoạn D:</strong> Beta nội bộ Crash-free ≥ 99,5%, NPS ≥ 35, mỗi user beta dùng tối thiểu 5/4 nhóm tính năng. License loterie và hợp đồng nội dung ký xong.</div>
         </div>
 
         <div class="roadmap-phase">
-          <div class="when">Tháng 5–6 · Polish & Launch</div>
+          <div class="when">Giai đoạn D · Tháng 7–8 · Polish, Beta & Launch</div>
           <h4>Hoàn thiện và phát hành công khai</h4>
           <ul>
-            <li>Beta mở rộng (~5.000–10.000 user trên cả Port-au-Prince + Cap-Haïtien)</li>
-            <li>Polish UX, sửa lỗi, tối ưu pin & data</li>
-            <li>Triển khai mạng đại lý (training, QR onboarding, hoa hồng)</li>
-            <li>Campaign marketing tiền-launch: ưu đãi early bird, mời nghệ sĩ Kompa quảng bá</li>
-            <li>Phối hợp Banque de la République d'Haïti hoàn tất compliance ví</li>
+            <li>Beta mở rộng (~5.000–10.000 user trên Port-au-Prince + Cap-Haïtien)</li>
+            <li>Polish UX, sửa lỗi, tối ưu pin & data; A/B test các cơ chế Engagement Engine</li>
+            <li>Triển khai mạng đại lý mở rộng (training, QR onboarding, cơ chế hoa hồng)</li>
+            <li>Campaign marketing tiền-launch: ưu đãi early bird, KOL Kompa, sự kiện Kanaval 2027 nếu trùng lịch</li>
+            <li>BRH cấp phép chính thức cho ví Natcash trong My Natcom</li>
             <li>Soft launch → Public launch quốc gia</li>
           </ul>
-          <div class="gate"><strong>Mục tiêu launch:</strong> ≥ 500K downloads trong 30 ngày đầu, MAU ≥ 250K trong 60 ngày, ≥ 60% user beta active sau 30 ngày.</div>
+          <div class="gate"><strong>Mục tiêu launch:</strong> ≥ 500K downloads trong 30 ngày đầu, MAU ≥ 300K trong 60 ngày, ≥ 60% user beta active sau 30 ngày. Crash-free ≥ 99,7% trên production.</div>
         </div>
       </div>
 
-      <p style="margin-top:20px;font-size:13px;color:var(--text-mute)"><strong>Lưu ý:</strong> Các con số mục tiêu (downloads, MAU, crash-free rate) ở đây là <strong>đề xuất tham chiếu</strong>. Số chính thức cần Natcom xác nhận dựa trên KPI nội bộ và benchmark thị trường Haiti.</p>
+      <p style="margin-top:20px;font-size:13px;color:var(--text-mute)"><strong>Lưu ý:</strong> Các con số mục tiêu (downloads, MAU, crash-free rate) ở đây là <strong>đề xuất tham chiếu</strong> của RingMe. Số chính thức đề nghị Natcom xác nhận dựa trên KPI nội bộ và benchmark thị trường Haiti. Việc giãn từ 6 sang 8 tháng tăng chi phí cơ hội khoảng 30%, nhưng giảm rủi ro pháp lý ví và đảm bảo chất lượng beta — RingMe đánh giá là đánh đổi xứng đáng.</p>
     </section>
 
     <!-- 4. FEATURE MAP -->
     <section id="feature-map" class="block">
       <div class="kicker">04 · Feature map</div>
-      <h2 class="section">Bảng tổng hợp 49 tính năng Đợt 1</h2>
-      <p>Mỗi tính năng có 3 nhãn: <strong>Nhóm</strong> (Selfcare/Natcash/Engage/Giải trí), <strong>Ưu tiên MoSCoW</strong> (Must/Should/Could), và <strong>Effort</strong> (S/M/L/XL). Phase placement = Phase 1 toàn bộ (vì Đợt 1 phục vụ Phase 1 launch). Anh có thể lọc nhanh để xem subset.</p>
+      <h2 class="section">Bảng tổng hợp 44 tính năng Đợt 1</h2>
+      <p>Mỗi tính năng có 3 nhãn: <strong>Nhóm</strong> (Selfcare/Natcash/Engage/Giải trí), <strong>Ưu tiên MoSCoW</strong> (Must/Should/Could), và <strong>Effort</strong> (S/M/L/XL). Phase placement = Phase 1 toàn bộ (vì Đợt 1 phục vụ Phase 1 launch). Có thể lọc nhanh để xem subset theo nhóm, ưu tiên, effort hoặc từ khóa.</p>
+      <p style="font-size:14px;background:rgba(124,92,255,.08);border:1px dashed rgba(124,92,255,.4);border-radius:8px;padding:12px 14px;color:var(--text)"><strong>Cập nhật theo phản hồi Natcom (28/05/2026):</strong> RingMe đã tách 5 tính năng Natcash nâng cao (kiều hối quốc tế, sòl, nano-loan, micro-insurance, tiết kiệm có lãi) khỏi Đợt 1 và chuyển sang Đợt 2 — vì các tính năng này có rào cản pháp lý và phụ thuộc đối tác cao, làm Phase 1 launch sẽ kéo dài thêm 2–3 tháng. Đợt 1 chỉ giữ <strong>Natcash basic</strong> (7 tính năng cốt lõi) để có thể launch trong 8 tháng.</p>
 
       <div class="filter-bar">
         <label for="f-group">Nhóm:</label>
@@ -484,7 +519,7 @@
         </select>
         <label for="f-search" style="margin-left:8px">Tìm:</label>
         <input id="f-search" type="text" placeholder="Tên tính năng..." style="min-width:140px"/>
-        <div class="count">Hiển thị: <strong id="row-count">49</strong> / 49</div>
+        <div class="count">Hiển thị: <strong id="row-count">44</strong> / 44</div>
       </div>
 
       <div style="overflow-x:auto">
@@ -520,43 +555,38 @@
           <tr data-group="Natcash" data-prio="Must" data-size="L"><td>14</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Thanh toán QR merchant</td><td>Quét QR tại cửa hàng trả qua Natcash, hoa hồng merchant</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">L</span></td><td>Merchant adoption</td></tr>
           <tr data-group="Natcash" data-prio="Must" data-size="M"><td>15</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Thanh toán hóa đơn</td><td>Điện, nước, internet, học phí, truyền hình cáp — trong 1 app</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>Bill payment volume</td></tr>
           <tr data-group="Natcash" data-prio="Must" data-size="S"><td>16</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Top-up cho mình & người khác</td><td>Nạp data/gói cước cho số bất kỳ, gửi tặng</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>Top-up volume</td></tr>
-          <tr data-group="Natcash" data-prio="Must" data-size="XL"><td>17</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Kiều hối quốc tế (incoming)</td><td>Nhận tiền từ diaspora ở Mỹ/CH Dominica/Canada/Pháp vào Natcash</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">XL</span></td><td>Remittance volume</td></tr>
-          <tr data-group="Natcash" data-prio="Should" data-size="L"><td>18</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Sòl/Sangue — hụi số cộng đồng</td><td>Nhóm 5–20 người chơi hụi rotating savings trên Natcash, lịch tự động</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">L</span></td><td>Community wallet</td></tr>
-          <tr data-group="Natcash" data-prio="Could" data-size="XL"><td>19</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Nano-loan</td><td>Vay vi mô 1.000–10.000 HTG dựa trên hành vi Natcash, scoring AI</td><td><span class="badge b-could">Could</span></td><td><span class="badge b-sz">XL</span></td><td>Loan revenue</td></tr>
-          <tr data-group="Natcash" data-prio="Could" data-size="L"><td>20</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Micro-insurance</td><td>Bảo hiểm vi mô (tai nạn, sức khỏe, tang ma) phí theo tháng từ Natcash</td><td><span class="badge b-could">Could</span></td><td><span class="badge b-sz">L</span></td><td>Insurance ARPU</td></tr>
-          <tr data-group="Natcash" data-prio="Should" data-size="M"><td>21</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Tiết kiệm có lãi</td><td>Khóa tiết kiệm có thời hạn trong ví, lãi suất hấp dẫn</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">M</span></td><td>Savings AUM</td></tr>
-          <tr data-group="Natcash" data-prio="Must" data-size="S"><td>22</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Sổ giao dịch & xuất sao kê</td><td>Lịch sử chi tiết, filter, export PDF/CSV, biểu đồ chi tiêu</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>Trust, retention</td></tr>
+          <tr data-group="Natcash" data-prio="Must" data-size="S"><td>17</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Sổ giao dịch & xuất sao kê</td><td>Lịch sử chi tiết, filter, export PDF/CSV, biểu đồ chi tiêu</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>Trust, retention</td></tr>
 
           <!-- ENGAGEMENT ENGINE -->
-          <tr data-group="Engage" data-prio="Must" data-size="M"><td>23</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Zanmi Mwen — Mời bạn (Referral)</td><td>Mời bạn cài app + đăng ký Natcash, cả hai nhận data + Points; thưởng X2 nếu mời từ Digicel</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>Install rate</td></tr>
-          <tr data-group="Engage" data-prio="Must" data-size="S"><td>24</td><td><span class="grp-pill grp-engage">Engage</span></td><td>QR đại lý SIM</td><td>Đại lý có QR riêng — scan để cài app + nhận bonus + hoa hồng đại lý</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>Install rural</td></tr>
-          <tr data-group="Engage" data-prio="Should" data-size="L"><td>25</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Kado Lakay — Quà từ diaspora</td><td>Diaspora tải app "remit" → tặng data/gói/Natcash cho người thân tại Haiti</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">L</span></td><td>Install diaspora-driven</td></tr>
-          <tr data-group="Engage" data-prio="Must" data-size="S"><td>26</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Welcome bonus 7 ngày</td><td>Cài app: 1GB data + 1 lượt Borlette + voucher 50 HTG, unlock dần theo từng ngày</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>First-open, D7</td></tr>
-          <tr data-group="Engage" data-prio="Must" data-size="M"><td>27</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Misyon Lè Premye — 7 nhiệm vụ tuần đầu</td><td>Onboarding gamified: 7 nhiệm vụ trong 7 ngày, hoàn thành cả 7 = Sertifika Lakay + bonus lớn</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>Activation, D7</td></tr>
-          <tr data-group="Engage" data-prio="Must" data-size="S"><td>28</td><td><span class="grp-pill grp-engage">Engage</span></td><td>First transaction cashback</td><td>Giao dịch Natcash đầu tiên trong app → cashback 50% (cap 100 HTG)</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>% Natcash adoption</td></tr>
-          <tr data-group="Engage" data-prio="Should" data-size="S"><td>29</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Profile = Points</td><td>Mỗi bước hoàn thiện profile (avatar, ID, sinh trắc học, link family) = points</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">S</span></td><td>KYC rate</td></tr>
-          <tr data-group="Engage" data-prio="Must" data-size="L"><td>30</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Borlette Lakou — Vé số hằng ngày</td><td>1 lượt quay miễn phí/ngày + giải lớn cuối tuần (cần license loterie)</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">L</span></td><td>DAU</td></tr>
-          <tr data-group="Engage" data-prio="Must" data-size="S"><td>31</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Daily Streak</td><td>Streak chuỗi ngày, 7 ngày = 1GB data, 30 ngày = gói tháng miễn phí; reset nếu bỏ ngày</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>DAU</td></tr>
-          <tr data-group="Engage" data-prio="Must" data-size="M"><td>32</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Wou Lachans — Vòng quay theo hành động</td><td>Sau mỗi giao dịch giá trị → vòng quay variable reward</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>DAU, transaction freq</td></tr>
-          <tr data-group="Engage" data-prio="Should" data-size="S"><td>33</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Tip Cash Jou — Thẻ cào số</td><td>1 thẻ cào ảo/ngày, mô phỏng thẻ cào giấy truyền thống</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">S</span></td><td>DAU</td></tr>
-          <tr data-group="Engage" data-prio="Should" data-size="M"><td>34</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Devine pou Genyen — Dự đoán bóng đá</td><td>Dự đoán tỉ số trận đội tuyển Haiti, CONCACAF, World Cup, CLB châu Âu phổ biến</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">M</span></td><td>DAU events</td></tr>
-          <tr data-group="Engage" data-prio="Could" data-size="L"><td>35</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Casual Game Suite (H5)</td><td>5 game: Tap-Tap Run, Match Kompa, Mo Kreyòl, Domino, Kanaval Mask. Energy nạp bằng hành động thật.</td><td><span class="badge b-could">Could</span></td><td><span class="badge b-sz">L</span></td><td>DAU, session length</td></tr>
-          <tr data-group="Engage" data-prio="Should" data-size="M"><td>36</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Misyon Jou — Nhiệm vụ ngày AI</td><td>3 quest/ngày cá nhân hóa bằng AI theo hành vi user</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">M</span></td><td>DAU</td></tr>
-          <tr data-group="Engage" data-prio="Must" data-size="M"><td>37</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Defi Mwa — Thử thách tháng</td><td>Tích điểm cả tháng → 4 mốc Bronze/Silver/Gold/Diamond, thưởng tăng dần</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>MAU</td></tr>
-          <tr data-group="Engage" data-prio="Must" data-size="S"><td>38</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Auto-pay subscriptions</td><td>Auto-pay gói cước hằng tháng qua Natcash, giảm 5–10% + points X2</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>MAU, churn↓</td></tr>
-          <tr data-group="Engage" data-prio="Should" data-size="L"><td>39</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Pakèt Familial — Tài khoản gia đình</td><td>Add 3–5 thành viên gia đình, share data + rewards + tier-up chung</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">L</span></td><td>Household MAU</td></tr>
-          <tr data-group="Engage" data-prio="Must" data-size="M"><td>40</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Cultural Calendar Events</td><td>Mỗi tháng 1 event lớn theo lịch văn hóa Haiti (Kanaval, Fèt Drapo, Fèt Endepandans, Fèt Gede, World Cup)</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>MAU đợt</td></tr>
-          <tr data-group="Engage" data-prio="Could" data-size="M"><td>41</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Konbit Challenge</td><td>Nhóm 10 người cùng đăng ký thử thách tháng, cả nhóm đạt = cả nhóm thưởng</td><td><span class="badge b-could">Could</span></td><td><span class="badge b-sz">M</span></td><td>Viral K-factor</td></tr>
-          <tr data-group="Engage" data-prio="Should" data-size="S"><td>42</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Pataje pou Genyen — Share thắng</td><td>Khi user thắng Borlette/streak → share lên WhatsApp/Facebook = bonus + referral kèm</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">S</span></td><td>Organic acquisition</td></tr>
-          <tr data-group="Engage" data-prio="Should" data-size="M"><td>43</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Gift transfer trong app</td><td>Tặng data/gói cước/Natcash/lượt Borlette cho bạn bè — người nhận phải cài app</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">M</span></td><td>Acquisition, freq</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="M"><td>18</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Zanmi Mwen — Mời bạn (Referral)</td><td>Mời bạn cài app + đăng ký Natcash, cả hai nhận data + Points; thưởng X2 nếu mời từ Digicel</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>Install rate</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="S"><td>19</td><td><span class="grp-pill grp-engage">Engage</span></td><td>QR đại lý SIM</td><td>Đại lý có QR riêng — scan để cài app + nhận bonus + hoa hồng đại lý</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>Install rural</td></tr>
+          <tr data-group="Engage" data-prio="Should" data-size="L"><td>20</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Kado Lakay — Quà từ diaspora</td><td>Diaspora tải app "remit" → tặng data/gói/Natcash cho người thân tại Haiti</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">L</span></td><td>Install diaspora-driven</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="S"><td>21</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Welcome bonus 7 ngày</td><td>Cài app: 1GB data + 1 lượt Borlette + voucher 50 HTG, unlock dần theo từng ngày</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>First-open, D7</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="M"><td>22</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Misyon Lè Premye — 7 nhiệm vụ tuần đầu</td><td>Onboarding gamified: 7 nhiệm vụ trong 7 ngày, hoàn thành cả 7 = Sertifika Lakay + bonus lớn</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>Activation, D7</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="S"><td>23</td><td><span class="grp-pill grp-engage">Engage</span></td><td>First transaction cashback</td><td>Giao dịch Natcash đầu tiên trong app → cashback 50% (cap 100 HTG)</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>% Natcash adoption</td></tr>
+          <tr data-group="Engage" data-prio="Should" data-size="S"><td>24</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Profile = Points</td><td>Mỗi bước hoàn thiện profile (avatar, ID, sinh trắc học, link family) = points</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">S</span></td><td>KYC rate</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="L"><td>25</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Borlette Lakou — Vé số hằng ngày</td><td>1 lượt quay miễn phí/ngày + giải lớn cuối tuần (cần license loterie)</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">L</span></td><td>DAU</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="S"><td>26</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Daily Streak</td><td>Streak chuỗi ngày, 7 ngày = 1GB data, 30 ngày = gói tháng miễn phí; reset nếu bỏ ngày</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>DAU</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="M"><td>27</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Wou Lachans — Vòng quay theo hành động</td><td>Sau mỗi giao dịch giá trị → vòng quay variable reward</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>DAU, transaction freq</td></tr>
+          <tr data-group="Engage" data-prio="Should" data-size="S"><td>28</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Tip Cash Jou — Thẻ cào số</td><td>1 thẻ cào ảo/ngày, mô phỏng thẻ cào giấy truyền thống</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">S</span></td><td>DAU</td></tr>
+          <tr data-group="Engage" data-prio="Should" data-size="M"><td>29</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Devine pou Genyen — Dự đoán bóng đá</td><td>Dự đoán tỉ số trận đội tuyển Haiti, CONCACAF, World Cup, CLB châu Âu phổ biến</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">M</span></td><td>DAU events</td></tr>
+          <tr data-group="Engage" data-prio="Could" data-size="L"><td>30</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Casual Game Suite (H5)</td><td>5 game: Tap-Tap Run, Match Kompa, Mo Kreyòl, Domino, Kanaval Mask. Energy nạp bằng hành động thật.</td><td><span class="badge b-could">Could</span></td><td><span class="badge b-sz">L</span></td><td>DAU, session length</td></tr>
+          <tr data-group="Engage" data-prio="Should" data-size="M"><td>31</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Misyon Jou — Nhiệm vụ ngày AI</td><td>3 quest/ngày cá nhân hóa bằng AI theo hành vi user</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">M</span></td><td>DAU</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="M"><td>32</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Defi Mwa — Thử thách tháng</td><td>Tích điểm cả tháng → 4 mốc Bronze/Silver/Gold/Diamond, thưởng tăng dần</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>MAU</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="S"><td>33</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Auto-pay subscriptions</td><td>Auto-pay gói cước hằng tháng qua Natcash, giảm 5–10% + points X2</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">S</span></td><td>MAU, churn↓</td></tr>
+          <tr data-group="Engage" data-prio="Should" data-size="L"><td>34</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Pakèt Familial — Tài khoản gia đình</td><td>Add 3–5 thành viên gia đình, share data + rewards + tier-up chung</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">L</span></td><td>Household MAU</td></tr>
+          <tr data-group="Engage" data-prio="Must" data-size="M"><td>35</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Cultural Calendar Events</td><td>Mỗi tháng 1 event lớn theo lịch văn hóa Haiti (Kanaval, Fèt Drapo, Fèt Endepandans, Fèt Gede, World Cup)</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>MAU đợt</td></tr>
+          <tr data-group="Engage" data-prio="Could" data-size="M"><td>36</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Konbit Challenge</td><td>Nhóm 10 người cùng đăng ký thử thách tháng, cả nhóm đạt = cả nhóm thưởng</td><td><span class="badge b-could">Could</span></td><td><span class="badge b-sz">M</span></td><td>Viral K-factor</td></tr>
+          <tr data-group="Engage" data-prio="Should" data-size="S"><td>37</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Pataje pou Genyen — Share thắng</td><td>Khi user thắng Borlette/streak → share lên WhatsApp/Facebook = bonus + referral kèm</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">S</span></td><td>Organic acquisition</td></tr>
+          <tr data-group="Engage" data-prio="Should" data-size="M"><td>38</td><td><span class="grp-pill grp-engage">Engage</span></td><td>Gift transfer trong app</td><td>Tặng data/gói cước/Natcash/lượt Borlette cho bạn bè — người nhận phải cài app</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">M</span></td><td>Acquisition, freq</td></tr>
 
           <!-- GIẢI TRÍ -->
-          <tr data-group="Giải trí" data-prio="Must" data-size="L"><td>44</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Music streaming (Kompa, Rabòday, Rasin)</td><td>Catalog nhạc Haiti là trọng tâm, kết hợp Latin/Caribbean; gói miễn data Natcom</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">L</span></td><td>DAU, session length</td></tr>
-          <tr data-group="Giải trí" data-prio="Must" data-size="XL"><td>45</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Video on-demand (VOD)</td><td>Phim Haiti + Latin America + Hollywood, gói thuê bao tháng qua Natcash</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">XL</span></td><td>VOD ARPU</td></tr>
-          <tr data-group="Giải trí" data-prio="Should" data-size="L"><td>46</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Video ngắn — creator Haiti</td><td>Feed TikTok-style với content tiếng Creole, creator hub, monetize qua tips Natcash</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">L</span></td><td>DAU, session length</td></tr>
-          <tr data-group="Giải trí" data-prio="Should" data-size="L"><td>47</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Livestream sự kiện</td><td>Kanaval, bóng đá đội tuyển Haiti, concert nghệ sĩ Kompa, lễ tôn giáo</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">L</span></td><td>Peak DAU events</td></tr>
-          <tr data-group="Giải trí" data-prio="Must" data-size="M"><td>48</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Podcast & radio Creole</td><td>Đài radio FM Haiti live + podcast tin tức Creole; lưu offline</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>Rural DAU</td></tr>
-          <tr data-group="Giải trí" data-prio="Could" data-size="M"><td>49</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Karaoke</td><td>Hát Kompa karaoke, chia sẻ bản thu, leaderboard</td><td><span class="badge b-could">Could</span></td><td><span class="badge b-sz">M</span></td><td>Session length</td></tr>
+          <tr data-group="Giải trí" data-prio="Must" data-size="L"><td>39</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Music streaming (Kompa, Rabòday, Rasin)</td><td>Catalog nhạc Haiti là trọng tâm, kết hợp Latin/Caribbean; gói miễn data Natcom</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">L</span></td><td>DAU, session length</td></tr>
+          <tr data-group="Giải trí" data-prio="Must" data-size="XL"><td>40</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Video on-demand (VOD)</td><td>Phim Haiti + Latin America + Hollywood, gói thuê bao tháng qua Natcash</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">XL</span></td><td>VOD ARPU</td></tr>
+          <tr data-group="Giải trí" data-prio="Should" data-size="L"><td>41</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Video ngắn — creator Haiti</td><td>Feed TikTok-style với content tiếng Creole, creator hub, monetize qua tips Natcash</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">L</span></td><td>DAU, session length</td></tr>
+          <tr data-group="Giải trí" data-prio="Should" data-size="L"><td>42</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Livestream sự kiện</td><td>Kanaval, bóng đá đội tuyển Haiti, concert nghệ sĩ Kompa, lễ tôn giáo</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">L</span></td><td>Peak DAU events</td></tr>
+          <tr data-group="Giải trí" data-prio="Must" data-size="M"><td>43</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Podcast & radio Creole</td><td>Đài radio FM Haiti live + podcast tin tức Creole; lưu offline</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">M</span></td><td>Rural DAU</td></tr>
+          <tr data-group="Giải trí" data-prio="Could" data-size="M"><td>44</td><td><span class="grp-pill grp-fun">Giải trí</span></td><td>Karaoke</td><td>Hát Kompa karaoke, chia sẻ bản thu, leaderboard</td><td><span class="badge b-could">Could</span></td><td><span class="badge b-sz">M</span></td><td>Session length</td></tr>
         </tbody>
       </table>
       </div>
@@ -564,26 +594,43 @@
       <div class="grid cols-3" style="margin-top:24px">
         <div class="card">
           <h4 style="margin-top:0;color:var(--brand)">Tổng phân bổ ưu tiên</h4>
-          <p><strong>Must:</strong> 29 tính năng (59%) — bắt buộc phải có ở launch Phase 1.<br/><strong>Should:</strong> 15 tính năng (31%) — đưa vào nếu effort cho phép, không thì đẩy Đợt 2.<br/><strong>Could:</strong> 5 tính năng (10%) — nice-to-have, có thể cắt.</p>
+          <p><strong>Must:</strong> 28 tính năng (64%) — bắt buộc phải có ở launch Phase 1.<br/><strong>Should:</strong> 13 tính năng (29%) — đưa vào nếu effort cho phép, không thì đẩy Đợt 2.<br/><strong>Could:</strong> 3 tính năng (7%) — nice-to-have, có thể cắt.</p>
         </div>
         <div class="card">
           <h4 style="margin-top:0;color:var(--brand)">Phân bổ effort</h4>
-          <p><strong>S (1–2 tuần):</strong> 14 tính năng<br/><strong>M (3–6 tuần):</strong> 20 tính năng<br/><strong>L (2–3 tháng):</strong> 12 tính năng<br/><strong>XL (>3 tháng):</strong> 3 tính năng</p>
+          <p><strong>S (1–2 tuần):</strong> 14 tính năng<br/><strong>M (3–6 tuần):</strong> 19 tính năng<br/><strong>L (2–3 tháng):</strong> 10 tính năng<br/><strong>XL (>3 tháng):</strong> 1 tính năng</p>
         </div>
         <div class="card">
           <h4 style="margin-top:0;color:var(--brand)">Tổng theo nhóm</h4>
-          <p><strong>Selfcare:</strong> 10 tính năng<br/><strong>Natcash:</strong> 12 tính năng<br/><strong>Engagement Engine:</strong> 21 tính năng (đậm nhất)<br/><strong>Giải trí:</strong> 6 tính năng (mở rộng Đợt 2)</p>
+          <p><strong>Selfcare:</strong> 10 tính năng<br/><strong>Natcash basic:</strong> 7 tính năng (5 nâng cao → Đợt 2)<br/><strong>Engagement Engine:</strong> 21 tính năng (đậm nhất)<br/><strong>Giải trí:</strong> 6 tính năng (mở rộng Đợt 2)</p>
         </div>
       </div>
 
-      <p style="margin-top:18px;font-size:13px;color:var(--text-mute)"><strong>Lưu ý đọc bảng:</strong> Engagement Engine có nhiều tính năng hơn nhóm khác vì là cỗ máy phục vụ 4 KPI cốt lõi, mỗi cơ chế nhỏ nhưng phải đủ phối hợp. Giải trí trong Đợt 1 chỉ chứa 6 tính năng nền tảng; phần mở rộng (Karaoke, audio book, live commerce, creator monetization sâu) sẽ ở Đợt 2 và Phase 2.</p>
+      <h3 style="margin-top:32px">Natcash advanced — 5 tính năng chuyển sang Đợt 2</h3>
+      <p>Sau khi rà soát rào cản pháp lý và phụ thuộc đối tác, RingMe đề xuất chuyển 5 tính năng Natcash sau sang Đợt 2 để không kéo dài Phase 1. Việc tách này giữ cho Phase 1 launch gọn và nhanh, đồng thời cho phép Đợt 2 đầu tư nghiêm túc cho mảng Natcash nâng cao như một sản phẩm chiến lược riêng.</p>
+      <div style="overflow-x:auto">
+      <table class="feat" style="opacity:.9">
+        <thead>
+          <tr><th style="width:28px">#</th><th style="width:100px">Nhóm</th><th>Tính năng</th><th>Mô tả ngắn</th><th style="width:90px">Ưu tiên gốc</th><th style="width:60px">Effort</th><th>Lý do chuyển</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>D1</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Kiều hối quốc tế (incoming)</td><td>Nhận từ diaspora ở Mỹ/CH Dominica/Canada/Pháp</td><td><span class="badge b-must">Must</span></td><td><span class="badge b-sz">XL</span></td><td>Cần đối tác MTO (Western Union/Remitly/MoneyGram) và compliance FATF — phải có giai đoạn riêng</td></tr>
+          <tr><td>D2</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Sòl/Sangue — hụi số cộng đồng</td><td>Rotating savings nhóm 5–20 người trên Natcash</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">L</span></td><td>Sản phẩm cần thiết kế kỹ về cơ chế và giáo dục người dùng; ưu tiên launch sau khi có MAU cơ sở</td></tr>
+          <tr><td>D3</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Nano-loan</td><td>Vay vi mô 1.000–10.000 HTG, scoring AI</td><td><span class="badge b-could">Could</span></td><td><span class="badge b-sz">XL</span></td><td>Yêu cầu license tín dụng + thiết lập rủi ro; cần dữ liệu hành vi sau Đợt 1 để training scoring</td></tr>
+          <tr><td>D4</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Micro-insurance</td><td>Bảo hiểm vi mô (tai nạn, sức khỏe, tang ma)</td><td><span class="badge b-could">Could</span></td><td><span class="badge b-sz">L</span></td><td>Cần đối tác bảo hiểm và license; phù hợp launch như sản phẩm thứ phát</td></tr>
+          <tr><td>D5</td><td><span class="grp-pill grp-natcash">Natcash</span></td><td>Tiết kiệm có lãi</td><td>Khóa tiết kiệm có thời hạn, lãi suất hấp dẫn</td><td><span class="badge b-should">Should</span></td><td><span class="badge b-sz">M</span></td><td>Cần license huy động vốn và phối hợp ngân hàng; làm sau khi ví đạt scale</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <p style="margin-top:18px;font-size:13px;color:var(--text-mute)"><strong>Lưu ý đọc bảng chính:</strong> Engagement Engine có nhiều tính năng hơn nhóm khác vì là cỗ máy phục vụ 4 KPI cốt lõi, mỗi cơ chế nhỏ nhưng phải đủ phối hợp. Giải trí trong Đợt 1 chỉ chứa 6 tính năng nền tảng; phần mở rộng (audio book, live commerce, creator monetization sâu) ở Đợt 2.</p>
     </section>
 
     <!-- 5. PRINCIPLES -->
     <section id="principles" class="block">
       <div class="kicker">05 · Design principles</div>
       <h2 class="section">Nguyên tắc thiết kế chéo (áp dụng cho mọi tính năng)</h2>
-      <p>Đây là <strong>"luật chơi" mọi tính năng phải tuân thủ</strong>, không có ngoại lệ. Khi review chi tiết ở Bước 1.B, em sẽ check từng tính năng có đạt các nguyên tắc này không.</p>
+      <p>Đây là <strong>"luật chơi" mọi tính năng phải tuân thủ</strong>, không có ngoại lệ. Mọi thẻ chi tiết tính năng ở Bước 1.B sẽ có ô <em>"Tuân thủ nguyên tắc nào?"</em> để đảm bảo không thiếu sót.</p>
 
       <div class="grid cols-2" style="margin-top:18px">
         <div class="principle"><div class="ic">🇭🇹</div><div><h4>1. Creole là mặc định</h4><p style="margin:0">Ngôn ngữ mặc định là Haitian Creole. Pháp/Anh là lựa chọn. Mọi push notification, voice prompt, tên dịch vụ — ưu tiên Creole tự nhiên, không dịch máy.</p></div></div>
@@ -602,25 +649,26 @@
     <!-- 6. NEXT -->
     <section id="next" class="block">
       <div class="kicker">06 · Next</div>
-      <h2 class="section">Bước tiếp theo — sau khi anh duyệt</h2>
-      <p>Khi anh OK 3 phần trong tài liệu này (Personas + Roadmap + Feature Map), em sẽ chạy <strong>Bước 1.B</strong> trong 1 đợt:</p>
+      <h2 class="section">Bước tiếp theo — sau khi Natcom phê duyệt</h2>
+      <p>Sau khi Ban Lãnh đạo Natcom phê duyệt 3 phần trong tài liệu này (Personas + Roadmap + Feature Map), RingMe sẽ phát hành <strong>Bước 1.B</strong> — 4 trang con chi tiết tương ứng 4 nhóm tính năng, đã có khung sẵn ở các route:</p>
       <ol>
-        <li><strong>Trang con Selfcare</strong> — 10 thẻ chi tiết, 2–3 wireframe (màn hình mua gói data, quản lý đa thuê bao, notification center)</li>
-        <li><strong>Trang con Natcash</strong> — 12 thẻ chi tiết, 2–3 wireframe (màn QR pay, kiều hối incoming, sổ giao dịch)</li>
-        <li><strong>Trang con Engagement Engine</strong> — 21 thẻ chi tiết, 2–3 wireframe (màn Borlette Lakou quay, Daily Streak dashboard, Defi Mwa tier-up)</li>
-        <li><strong>Trang con Giải trí</strong> — 6 thẻ chi tiết, 2–3 wireframe (player nhạc Kompa, livestream Kanaval, podcast Creole)</li>
+        <li><a href="selfcare.html" style="font-weight:600"><strong>Trang con Selfcare</strong></a> — 10 thẻ chi tiết, 2–3 wireframe (màn mua gói data, quản lý đa thuê bao, notification center)</li>
+        <li><a href="natcash.html" style="font-weight:600"><strong>Trang con Natcash basic</strong></a> — 7 thẻ chi tiết, 2–3 wireframe (màn QR pay, P2P transfer, sổ giao dịch)</li>
+        <li><a href="engagement.html" style="font-weight:600"><strong>Trang con Engagement Engine</strong></a> — 21 thẻ chi tiết, 2–3 wireframe (màn Borlette Lakou quay, Daily Streak dashboard, Defi Mwa tier-up)</li>
+        <li><a href="entertainment.html" style="font-weight:600"><strong>Trang con Giải trí</strong></a> — 6 thẻ chi tiết, 2–3 wireframe (player nhạc Kompa, livestream Kanaval, podcast Creole)</li>
       </ol>
-      <p>Mỗi trang con dùng cùng template 10 mục đã thống nhất ở turn trước. Tổng cộng <strong>49 thẻ × 10 mục = ~490 ô thông tin</strong>, kèm 8–12 wireframe SVG.</p>
+      <p>Mỗi trang con dùng cùng template 10 mục đã được Natcom thống nhất. Tổng cộng <strong>44 thẻ × 10 mục = ~440 ô thông tin</strong>, kèm 8–12 wireframe SVG.</p>
 
       <div class="cta">
-        <h3>Câu hỏi cần anh chốt ở Bước 1.A</h3>
+        <h3>Cập nhật phạm vi theo phản hồi Natcom — 28/05/2026</h3>
+        <p>Bản v2 này đã tích hợp 4 điểm điều chỉnh từ phía Natcom:</p>
         <ol>
-          <li><strong>5 Personas:</strong> có đại diện đủ chưa? Có cần thêm phân khúc B2B/doanh nghiệp FTTH không?</li>
-          <li><strong>Roadmap 3 giai đoạn × 2 tháng:</strong> có hợp lý với năng lực của Natcom + RingMe không? Có cần kéo dài Phase 1 sang 8 tháng để giảm áp lực?</li>
-          <li><strong>Feature Map 49 tính năng:</strong> có muốn cắt/thêm tính năng nào? Đặc biệt các Could (Nano-loan, Micro-insurance, Casual Game Suite, Karaoke) — anh muốn giữ trong Đợt 1 hay đẩy sang Đợt 2?</li>
-          <li><strong>Nguyên tắc thiết kế chéo:</strong> có nguyên tắc nào anh muốn bổ sung hoặc bỏ?</li>
+          <li><strong>Bổ sung Persona 6 (Patrick)</strong> đại diện phân khúc B2B/SME — chiếm ~3% base nhưng ARPU cao gấp 5–10 lần khách hàng cá nhân.</li>
+          <li><strong>Giãn roadmap từ 6 sang 8 tháng</strong>, chia thành 4 giai đoạn × 2 tháng — giảm áp lực kỹ thuật, có thời gian phối hợp pháp lý với BRH.</li>
+          <li><strong>Tách Natcash basic vs advanced:</strong> Đợt 1 chỉ giữ 7 tính năng cốt lõi; 5 tính năng nâng cao (kiều hối quốc tế, sòl, nano-loan, micro-insurance, tiết kiệm) chuyển sang Đợt 2.</li>
+          <li><strong>10 nguyên tắc thiết kế chéo</strong> được Natcom thông qua, áp dụng cho toàn bộ tính năng trong Bước 1.B.</li>
         </ol>
-        <p style="margin-bottom:0">Khi anh có câu trả lời, em điều chỉnh tài liệu này rồi chạy Bước 1.B ngay.</p>
+        <p style="margin-bottom:0">RingMe đang sẵn sàng triển khai Bước 1.B ngay sau khi Natcom xác nhận bản v2 này. Mọi câu hỏi và điều chỉnh thêm xin gửi về team RingMe để cập nhật tài liệu trước khi đi vào chi tiết tính năng.</p>
       </div>
     </section>
 
@@ -629,7 +677,7 @@
 
 <footer>
   <div class="container">
-    <strong>RingMe Vietnam</strong> · Đề xuất chi tiết My Natcom 2.0 — Phase 2, Đợt 1, Bước 1.A · 28/05/2026 · Tài liệu nội bộ, dùng để trình lãnh đạo Natcom.
+    <strong>RingMe Vietnam</strong> · Đề xuất chi tiết My Natcom 2.0 — Phase 2, Đợt 1, Bước 1.A (v2) · 28/05/2026 · Tài liệu chính thức trình Ban Lãnh đạo Natcom.
   </div>
 </footer>
 
