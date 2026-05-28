@@ -1,1035 +1,757 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Description" content="Đề xuất chiến lược nâng cấp ứng dụng My Natcom thành superapp toàn diện cho thị trường Haiti — RingMe Vietnam x Natcom.">
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.6">
-  <style type="text/css">
-    body {background-color: #0b0d18}
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff; min-height: 15.0px}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #9aa4cf; -webkit-text-stroke: #9aa4cf}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #9aa4cf; -webkit-text-stroke: #9aa4cf; background-color: #fc4219; min-height: 15.0px}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #9aa4cf; -webkit-text-stroke: #9aa4cf}
-    p.p7 {margin: 0.0px 0.0px 10.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #9aa4cf; -webkit-text-stroke: #9aa4cf}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #9aa4cf; -webkit-text-stroke: #9aa4cf; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02)}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #fc4219; -webkit-text-stroke: #fc4219}
-    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Helvetica Neue'; color: #fc4219; -webkit-text-stroke: #fc4219}
-    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #6771a9; -webkit-text-stroke: #6771a9}
-    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff}
-    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #6771a9; -webkit-text-stroke: #6771a9}
-    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #fc4219; -webkit-text-stroke: #fc4219}
-    p.p18 {margin: 0.0px 0.0px 10.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #9aa4cf; -webkit-text-stroke: #9aa4cf}
-    p.p19 {margin: 0.0px 0.0px 0.0px 0.0px; font: 28.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff}
-    p.p22 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #40cfb5; -webkit-text-stroke: #40cfb5}
-    p.p25 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff}
-    p.p26 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #fc4219; -webkit-text-stroke: #fc4219}
-    p.p27 {margin: 0.0px 0.0px 10.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #6771a9; -webkit-text-stroke: #6771a9}
-    p.p32 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px '.Apple Color Emoji UI'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff}
-    p.p35 {margin: 0.0px 0.0px 10.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #6771a9; -webkit-text-stroke: #6771a9}
-    p.p37 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px '.SF NS'; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p38 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #6771a9; -webkit-text-stroke: #6771a9}
-    p.p39 {margin: 0.0px 0.0px 10.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff}
-    li.li15 {margin: 0.0px 0.0px 6.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #9aa4cf; -webkit-text-stroke: #9aa4cf}
-    li.li24 {margin: 0.0px 0.0px 6.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #9aa4cf; -webkit-text-stroke: #9aa4cf}
-    li.li29 {margin: 0.0px 0.0px 6.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff}
-    li.li31 {margin: 0.0px 0.0px 6.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #9aa4cf}
-    span.s1 {font-kerning: none}
-    span.s2 {font-kerning: none; background-color: rgba(11, 13, 24, 0.7)}
-    span.s3 {font: 12.0px 'Helvetica Neue'; font-kerning: none; color: #e2e7ff; background-color: rgba(11, 13, 24, 0.7); -webkit-text-stroke: 0px #e2e7ff}
-    span.s4 {font-kerning: none; color: #e2e7ff; -webkit-text-stroke: 0px #e2e7ff}
-    span.s5 {font-kerning: none; background-color: rgba(255, 255, 255, 0.02)}
-    span.s6 {-webkit-text-stroke: 0px #000000}
-    span.s7 {font-kerning: none; background-color: rgba(64, 207, 181, 0.078)}
-    span.s8 {font-kerning: none; background-color: #0f1328}
-    span.s9 {font-kerning: none; color: #e2e7ff; background-color: #0f1328; -webkit-text-stroke: 0px #e2e7ff}
-    span.s10 {color: #e2e7ff; -webkit-text-stroke: 0px #000000}
-    span.s11 {color: #e2e7ff; background-color: rgba(255, 255, 255, 0.02); -webkit-text-stroke: 0px #000000}
-    span.s12 {font-kerning: none; color: #e2e7ff; background-color: rgba(255, 255, 255, 0.02); -webkit-text-stroke: 0px #e2e7ff}
-    span.s13 {background-color: rgba(255, 255, 255, 0.02); -webkit-text-stroke: 0px #000000}
-    span.s14 {color: #9aa4cf; background-color: rgba(255, 255, 255, 0.02); -webkit-text-stroke: 0px #000000}
-    span.s15 {font-kerning: none; color: #9aa4cf; background-color: rgba(255, 255, 255, 0.02); -webkit-text-stroke: 0px #9aa4cf}
-    span.s16 {font-kerning: none; color: #9aa4cf; -webkit-text-stroke: 0px #9aa4cf}
-    span.s17 {font-kerning: none; -webkit-text-stroke: 0px #e2e7ff}
-    span.s18 {font-kerning: none; color: #9aa4cf}
-    span.s19 {font: 11.0px 'Helvetica Neue'; font-kerning: none; color: #fc4219; background-color: rgba(252, 66, 25, 0.15); -webkit-text-stroke: 0px #fc4219}
-    span.s20 {font: 16.0px '.Apple Color Emoji UI'; font-kerning: none; background-color: #0f1328}
-    span.s21 {font-kerning: none; background-color: #fc4219}
-    span.s22 {font: 12.0px 'Helvetica Neue'; font-kerning: none; color: #e2e7ff; -webkit-text-stroke: 0px #e2e7ff}
-    table.t1 {margin: 14.0px 0.0px 14.0px 0.0px; border-collapse: collapse}
-    td.td1 {width: 136.7px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td2 {width: 352.2px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td3 {width: 294.1px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td4 {width: 136.7px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td5 {width: 352.2px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td6 {width: 294.1px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td7 {width: 313.2px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td8 {width: 469.8px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td9 {width: 313.2px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td10 {width: 469.8px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td11 {width: 185.0px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td12 {width: 254.3px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td13 {width: 343.8px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td14 {width: 185.0px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td15 {width: 254.3px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td16 {width: 343.8px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td17 {width: 172.2px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td18 {width: 438.5px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td19 {width: 172.2px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td20 {width: 438.5px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td21 {width: 172.3px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td22 {width: 172.3px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td23 {width: 113.3px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td24 {width: 299.5px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td25 {width: 370.2px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td26 {width: 113.3px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td27 {width: 299.5px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td28 {width: 370.2px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td29 {width: 172.6px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td30 {width: 62.7px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td31 {width: 547.8px; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.02); border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #6771a9 #6771a9 #1b2251 #6771a9; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td32 {width: 172.6px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td33 {width: 62.7px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    td.td34 {width: 547.8px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #e2e7ff #e2e7ff #1b2251 #e2e7ff; padding: 10.0px 12.0px 10.0px 12.0px}
-    ol.ol1 {list-style-type: decimal}
-    ul.ul1 {list-style-type: disc}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Đề xuất tổng quan: My Natcom thế hệ mới — Superapp số cho Haiti</title>
+<meta name="description" content="Đề xuất chiến lược nâng cấp ứng dụng My Natcom thành superapp toàn diện cho thị trường Haiti — RingMe Vietnam x Natcom." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b1020;
+    --bg-2:#0f1530;
+    --surface:#121935;
+    --surface-2:#172046;
+    --line:#243064;
+    --text:#e8ecff;
+    --text-dim:#aab4d8;
+    --text-mute:#7a86b8;
+    --brand:#ff5a1f;          /* Natcom orange */
+    --brand-2:#ffb199;
+    --accent:#4ad6c2;
+    --accent-2:#7c5cff;
+    --danger:#ff6b6b;
+    --warn:#ffc857;
+    --ok:#3ddc97;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+    --max:1180px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 10% -10%, #1a2356 0%, transparent 60%), radial-gradient(1200px 600px at 110% 10%, #2a1840 0%, transparent 55%), var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  code,pre{font-family:'JetBrains Mono',ui-monospace,Consolas,monospace}
+  .container{max-width:var(--max);margin:0 auto;padding:0 28px}
+  /* Top bar */
+  .topbar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(10px);background:rgba(11,16,32,.7);border-bottom:1px solid var(--line)}
+  .topbar-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+  .brand-dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--accent-2));box-shadow:0 0 16px var(--brand)}
+  .topbar nav a{margin-left:18px;color:var(--text-dim);font-size:14px}
+  .topbar nav a:hover{color:var(--text)}
+  /* Hero */
+  .hero{padding:72px 0 40px}
+  .hero-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:48px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--text-dim);font-size:12px;letter-spacing:.4px;text-transform:uppercase}
+  .eyebrow .pulse{width:8px;height:8px;background:var(--brand);border-radius:50%;box-shadow:0 0 0 0 rgba(255,90,31,.6);animation:pulse 1.8s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,90,31,.6)}70%{box-shadow:0 0 0 12px rgba(255,90,31,0)}100%{box-shadow:0 0 0 0 rgba(255,90,31,0)}}
+  h1.hero-title{font-size:54px;line-height:1.08;margin:18px 0 14px;font-weight:800;letter-spacing:-.5px}
+  .hero-title span{background:linear-gradient(90deg,var(--brand),var(--accent-2) 60%,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero-sub{color:var(--text-dim);font-size:18px;max-width:62ch}
+  .hero-meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px}
+  .chip{padding:8px 12px;border-radius:999px;border:1px solid var(--line);font-size:13px;color:var(--text-dim);background:rgba(255,255,255,.02)}
+  .hero-card{background:linear-gradient(180deg,var(--surface),var(--surface-2));border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .stat{padding:14px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02)}
+  .stat .num{font-size:24px;font-weight:700;color:var(--text)}
+  .stat .lbl{font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:.4px}
+  /* Layout with sidebar */
+  .doc{display:grid;grid-template-columns:240px 1fr;gap:48px;padding:40px 0 96px}
+  .toc{position:sticky;top:80px;align-self:start;border-left:1px solid var(--line);padding-left:18px;max-height:calc(100vh - 100px);overflow:auto}
+  .toc h4{font-size:11px;letter-spacing:1.4px;color:var(--text-mute);text-transform:uppercase;margin:0 0 12px}
+  .toc ol{list-style:none;padding:0;margin:0;counter-reset:item}
+  .toc li{margin:6px 0;font-size:13px;counter-increment:item}
+  .toc li a{color:var(--text-dim);display:flex;gap:8px;padding:6px 8px;border-radius:8px}
+  .toc li a::before{content:counter(item, decimal-leading-zero);color:var(--text-mute);font-variant-numeric:tabular-nums;font-weight:600}
+  .toc li a:hover{background:rgba(255,255,255,.04);color:var(--text);text-decoration:none}
+  .toc li a.active{background:rgba(255,90,31,.1);color:var(--text)}
+  /* Sections */
+  section.block{padding:36px 0;border-bottom:1px dashed var(--line)}
+  section.block:last-child{border-bottom:none}
+  .kicker{font-size:12px;letter-spacing:1.4px;color:var(--brand);text-transform:uppercase;font-weight:700}
+  h2.section{font-size:32px;line-height:1.2;margin:6px 0 6px;font-weight:800;letter-spacing:-.3px}
+  h3{font-size:20px;margin:28px 0 8px;font-weight:700}
+  h4{font-size:16px;margin:18px 0 6px;font-weight:700;color:var(--text)}
+  p{margin:10px 0;color:var(--text-dim)}
+  p strong, li strong{color:var(--text)}
+  ul,ol{color:var(--text-dim);padding-left:22px}
+  ul li, ol li{margin:6px 0}
+  blockquote{margin:18px 0;padding:14px 18px;border-left:3px solid var(--brand);background:rgba(255,90,31,.06);border-radius:8px;color:var(--text)}
+  blockquote em{color:var(--text-dim);font-style:normal}
+  /* Cards */
+  .grid{display:grid;gap:18px}
+  .grid.cols-2{grid-template-columns:1fr 1fr}
+  .grid.cols-3{grid-template-columns:1fr 1fr 1fr}
+  .grid.cols-4{grid-template-columns:repeat(4,1fr)}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;transition:transform .15s ease,border-color .15s ease}
+  .card:hover{transform:translateY(-2px);border-color:#3a4a99}
+  .card .tag{display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--accent);background:rgba(74,214,194,.08);padding:4px 8px;border-radius:6px;font-weight:600}
+  .card h4{margin:10px 0 6px}
+  .card p{margin:0;color:var(--text-dim);font-size:14px}
+  .card .footer{margin-top:12px;font-size:12px;color:var(--text-mute)}
+  /* Big number */
+  .big-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 6px}
+  .big-stats .b{padding:18px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,rgba(124,92,255,.08),transparent)}
+  .big-stats .b .v{font-size:28px;font-weight:800;color:var(--text)}
+  .big-stats .b .k{font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:.6px;margin-top:4px}
+  /* Pros/Cons */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .pros, .cons{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:rgba(255,255,255,.02)}
+  .pros h4{color:var(--ok)}
+  .cons h4{color:var(--danger)}
+  /* Tables */
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--text-mute);background:rgba(255,255,255,.02)}
+  /* Roadmap */
+  .roadmap{position:relative;margin-top:18px}
+  .roadmap::before{content:'';position:absolute;left:18px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--brand),var(--accent-2),var(--accent))}
+  .phase{position:relative;padding:0 0 22px 50px}
+  .phase::before{content:'';position:absolute;left:12px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 3px rgba(255,90,31,.2)}
+  .phase h4{margin:0}
+  .phase .when{font-size:12px;color:var(--text-mute);text-transform:uppercase;letter-spacing:.6px}
+  /* Feature group icons */
+  .fg{display:flex;gap:14px;align-items:flex-start;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+  .fg .ic{flex-shrink:0;width:42px;height:42px;border-radius:10px;display:grid;place-items:center;font-size:20px;background:linear-gradient(135deg,rgba(255,90,31,.18),rgba(124,92,255,.18));border:1px solid var(--line)}
+  .fg .body h4{margin:0 0 4px}
+  .fg .body p{margin:0;font-size:14px}
+  /* CTA */
+  .cta{margin-top:48px;padding:28px;border-radius:16px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(255,90,31,.12),rgba(124,92,255,.12))}
+  .cta h3{margin-top:0}
+  .btn{display:inline-block;padding:12px 18px;border-radius:10px;font-weight:600;background:var(--brand);color:#fff;border:none;cursor:pointer}
+  .btn.outline{background:transparent;color:var(--text);border:1px solid var(--line);margin-left:10px}
+  /* Footer */
+  footer{padding:24px 0 60px;color:var(--text-mute);font-size:13px;border-top:1px solid var(--line)}
+  .source-list{margin-top:8px;font-size:13px;color:var(--text-mute)}
+  .source-list a{color:var(--text-dim)}
+  /* Mobile */
+  @media (max-width: 980px){
+    .hero-grid, .doc, .grid.cols-2, .grid.cols-3, .grid.cols-4, .duo, .big-stats{grid-template-columns:1fr}
+    .toc{position:static;border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:14px}
+    h1.hero-title{font-size:38px}
+  }
+  /* Print: single column, white background */
+  @media print{
+    body{background:#fff;color:#111}
+    .topbar, .toc, .cta, .hero-card{display:none}
+    .doc{grid-template-columns:1fr;padding:0}
+    section.block{break-inside:avoid;page-break-inside:avoid;border-color:#ddd}
+    .card, .fg, .pros, .cons, .big-stats .b{background:#fff;border-color:#ddd;box-shadow:none}
+    p, ul li, ol li, .hero-sub{color:#222}
+    .kicker, .hero-title span{color:#d24a14 !important;-webkit-text-fill-color:#d24a14}
+  }
+</style>
 </head>
 <body>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s2">RingMe × Natcom  ·  My Natcom 2.0</span></p>
-<p class="p3"><span class="s2">Tóm tắt</span><span class="s3"> </span><span class="s2">Thị trường</span><span class="s3"> </span><span class="s2">Case study</span><span class="s3"> </span><span class="s2">Lập luận</span><span class="s3"> </span><span class="s2">Tính năng</span><span class="s3"> </span><span class="s2">Lộ trình</span></p>
-<p class="p4"><span class="s1"></span><br></p>
-<p class="p5"><span class="s1">ĐỀ XUẤT TỔNG QUAN · V1.0 · 28/05/2026</span></p>
-<h1 style="margin: 0.0px 0.0px 14.0px 0.0px; font: 38.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">My Natcom thế hệ mới — Superapp số cho người dân Haiti</span></h1>
-<p class="p7"><span class="s1">Tái định vị My Natcom từ một ứng dụng selfcare thuần túy thành </span><span class="s4">nền tảng số toàn diện</span><span class="s1"> phục vụ đời sống hàng ngày của khách hàng Natcom — kết hợp viễn thông, tài chính, giải trí và tiện ích sống, trên kiến trúc </span><span class="s4">superapp – miniapp</span><span class="s1"> mở cho đối tác thứ ba.</span></p>
-<p class="p8"><span class="s1">Đối tượng: Lãnh đạo Natcom</span></p>
-<p class="p8"><span class="s1">Cấp độ: Tổng quan chiến lược</span></p>
-<p class="p8"><span class="s1">Bước tiếp theo: Phê duyệt định hướng</span></p>
-<p class="p9"><span class="s1">NATCOM HÔM NAY (HẾT 2025)</span></p>
-<p class="p10"><span class="s5">#1</span></p>
-<p class="p11"><span class="s5">NHÀ MẠNG HAITI</span></p>
-<p class="p10"><span class="s5">51%</span></p>
-<p class="p11"><span class="s5">THỊ PHẦN DI ĐỘNG</span></p>
-<p class="p12"><span class="s5">4 tr+</span></p>
-<p class="p11"><span class="s5">THUÊ BAO DI ĐỘNG</span></p>
-<p class="p12"><span class="s5">2 tr</span></p>
-<p class="p11"><span class="s5">USER NATCASH GIAO DỊCH</span></p>
-<p class="p13"><span class="s1">BỐI CẢNH THỊ TRƯỜNG HAITI 2025</span></p>
-<p class="p12"><span class="s5">11,9 tr</span></p>
-<p class="p11"><span class="s5">DÂN SỐ</span></p>
-<p class="p12"><span class="s5">30,8%</span></p>
-<p class="p11"><span class="s5">DƯỚI 15 TUỔI</span></p>
-<p class="p12"><span class="s5">86%</span></p>
-<p class="p11"><span class="s5">THUÊ BAO DĐ/DÂN</span></p>
-<p class="p12"><span class="s5">39,3%</span></p>
-<p class="p11"><span class="s5">INTERNET PENETRATION</span></p>
-<p class="p11"><span class="s1">Nguồn: Natcom; DataReportal Digital 2025; Mordor Intelligence; Population Pyramids.</span></p>
-<h4 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #6771a9; -webkit-text-stroke: #6771a9"><span class="s1">MỤC LỤC</span></h4>
-<ol class="ol1">
-  <li class="li15"><span class="s6"></span><span class="s1">Tóm tắt điều hành</span></li>
-  <li class="li15"><span class="s6"></span><span class="s1">Bối cảnh &amp; vấn đề</span></li>
-  <li class="li15"><span class="s6"></span><span class="s1">Nghiên cứu thị trường Haiti</span></li>
-  <li class="li15"><span class="s6"></span><span class="s1">Bài học từ 3 case study</span></li>
-  <li class="li15"><span class="s6"></span><span class="s1">Lập luận đề xuất</span></li>
-  <li class="li15"><span class="s6"></span><span class="s1">Tầm nhìn &amp; định vị mới</span></li>
-  <li class="li15"><span class="s6"></span><span class="s1">6 nhóm tính năng trọng tâm</span></li>
-  <li class="li15"><span class="s6"></span><span class="s1">Nguyên tắc kiến trúc</span></li>
-  <li class="li15"><span class="s6"></span><span class="s1">Lộ trình triển khai</span></li>
-  <li class="li15"><span class="s6"></span><span class="s1">Rủi ro &amp; cách hóa giải</span></li>
-  <li class="li15"><span class="s6"></span><span class="s1">KPI thành công</span></li>
-  <li class="li15"><span class="s6"></span><span class="s1">Đề xuất bước tiếp theo</span></li>
-</ol>
-<p class="p16"><span class="s1">01 · EXECUTIVE SUMMARY</span></p>
-<h2 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 32.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Tóm tắt điều hành</span></h2>
-<p class="p18"><span class="s1">Natcom đang ở thời điểm vàng. Hết 2025, Natcom là </span><span class="s4">nhà mạng số 1 Haiti với 51% thị phần và hơn 4 triệu thuê bao</span><span class="s1">, đồng thời sở hữu </span><span class="s4">Natcash với ~2 triệu người dùng giao dịch</span><span class="s1"> — ngang ngửa MonCash của Digicel. Vị thế kép "thuê bao #1 + ví có sẵn" này là tài sản hiếm: rất ít nhà mạng tại các thị trường emerging market có được điều kiện khởi đầu thuận lợi như vậy. Vấn đề không phải phòng thủ trước đối thủ, mà là </span><span class="s4">tận dụng vị thế dẫn đầu để định hình thị trường dịch vụ số Haiti</span><span class="s1"> — trước khi Digicel kịp xoay sở.</span></p>
-<p class="p18"><span class="s1">Đề xuất này khuyến nghị tái thiết My Natcom thành một </span><span class="s4">superapp</span><span class="s1"> với kiến trúc </span><span class="s4">miniapp</span><span class="s1"> mở, lấy Natcash làm trái tim thanh toán, cho phép Natcom và đối tác thứ ba nhanh chóng đưa dịch vụ vào ứng dụng mà không cần phát hành app riêng. Tầng frontend tái cấu trúc trên Flutter, backend chuyển sang microservices, đảm bảo khả năng mở rộng, tốc độ ra tính năng và độ ổn định trên hạ tầng mạng Haiti. Đi kèm là cỗ máy </span><span class="s4">Engagement Engine</span><span class="s1"> được thiết kế riêng cho văn hóa Haiti, chuyên trách 4 chỉ số tăng trưởng: install, activation, DAU, MAU.</span></p>
-<p class="p19"><span class="s1">7 nhóm</span></p>
-<p class="p11"><span class="s1">TÍNH NĂNG TRỌNG TÂM</span></p>
-<p class="p19"><span class="s1">3 phases</span></p>
-<p class="p11"><span class="s1">LỘ TRÌNH 18 THÁNG</span></p>
-<p class="p19"><span class="s1">1 nền tảng</span></p>
-<p class="p11"><span class="s1">CHO MỌI DỊCH VỤ NATCOM</span></p>
-<p class="p19"><span class="s1">N đối tác</span></p>
-<p class="p11"><span class="s1">QUA MINIAPP MARKETPLACE</span></p>
-<blockquote style="margin: 0.0px 0.0px 18.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff; background-color: #fc4219; background-color: rgba(252, 66, 25, 0.059)"><span class="s1">Tóm gọn trong một câu: Biến My Natcom thành ứng dụng mà mỗi người Haiti đều mở vài lần mỗi ngày — không chỉ để nạp tiền, mà để sống.</span></blockquote>
-<p class="p16"><span class="s1">02 · CONTEXT</span></p>
-<h2 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 32.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Bối cảnh &amp; vấn đề</span></h2>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Vì sao thời điểm này là thích hợp</span></h3>
-<p class="p22"><span class="s7">VỊ THẾ</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Vị thế #1 cần được củng cố bằng dịch vụ số</span></h4>
-<p class="p3"><span class="s8">Natcom đã là nhà mạng số 1 Haiti với 51% thị phần và hơn 4 triệu thuê bao. Vị thế này được xây bằng hạ tầng và chất lượng mạng, nhưng nếu chỉ dừng ở "ống dẫn data" thì lợi thế sẽ bị bào mòn. Mở rộng sang dịch vụ số là cách biến vị thế hiện tại thành </span><span class="s9">rào chắn dài hạn</span><span class="s8">.</span></p>
-<p class="p22"><span class="s7">DOANH THU</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">ARPU voice/SMS suy giảm</span></h4>
-<p class="p3"><span class="s8">Cuộc đua data đang ép biên lợi nhuận. Mô hình superapp giúp tạo các dòng doanh thu mới: hoa hồng đối tác, phí miniapp, quảng cáo nội bộ, tài chính số, nội dung số.</span></p>
-<p class="p22"><span class="s7">KHÁCH HÀNG</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">App My Natcom hiện tại đã lạc hậu</span></h4>
-<p class="p3"><span class="s8">Phiên bản hiện thời chủ yếu phục vụ selfcare cơ bản. UI/UX, kiến trúc và tốc độ ra tính năng không còn đáp ứng kỳ vọng người dùng smartphone trẻ — vốn là lớp khách hàng đang tăng nhanh nhất.</span></p>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Vấn đề cốt lõi cần giải quyết</span></h3>
-<ul class="ul1">
-  <li class="li24"><span class="s10"></span><span class="s4">Cửa ngõ tương tác với khách hàng đang yếu.</span><span class="s1"> App selfcare chỉ được mở khi cần nạp tiền hay tra cứu — tần suất quá thấp để xây gắn bó.</span></li>
-  <li class="li24"><span class="s10"></span><span class="s4">Không có kênh phân phối dịch vụ số riêng.</span><span class="s1"> Mỗi khi muốn ra dịch vụ mới (video, music, fintech, content), Natcom phải làm app riêng hoặc phụ thuộc bên thứ ba — chậm và đắt.</span></li>
-  <li class="li24"><span class="s10"></span><span class="s4">Dữ liệu khách hàng phân tán.</span><span class="s1"> CRM, billing, OTT, gói cước nằm rời rạc — khó cá nhân hóa, khó cross-sell, khó tạo trải nghiệm liền mạch.</span></li>
-  <li class="li24"><span class="s10"></span><span class="s4">Khó tích hợp đối tác.</span><span class="s1"> Mỗi dịch vụ đối tác cần dự án tích hợp riêng kéo dài hàng tháng — không khả thi nếu muốn 50+ dịch vụ trong 1 năm.</span></li>
-</ul>
-<p class="p16"><span class="s1">03 · MARKET</span></p>
-<h2 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 32.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Nghiên cứu thị trường Haiti</span></h2>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">3.1 Quy mô và nhân khẩu học</span></h3>
-<p class="p18"><span class="s1">Haiti là thị trường </span><span class="s4">11,9 triệu dân, dân số trẻ</span><span class="s1"> với 30,8% dưới 15 tuổi và 64,4% trong độ tuổi lao động. Đây chính là lớp người dùng smartphone sẽ định hình thị trường số 5–10 năm tới. GDP bình quân đầu người còn thấp (~1.155 USD năm 2024) nhưng dự báo tăng đều, có nghĩa </span><span class="s4">sản phẩm phải vừa rẻ, vừa nhẹ, vừa hữu ích hằng ngày</span><span class="s1">.</span></p>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">3.2 Mức độ kết nối</span></h3>
-<p class="p18"><span class="s1">Đầu 2025, Haiti có 10,2 triệu kết nối di động (~86% dân số) nhưng tỷ lệ người dùng internet mới đạt 39,3%. Khoảng chênh lệch giữa SIM di động và internet user chính là </span><span class="s4">dư địa tăng trưởng data và smartphone</span><span class="s1"> trong 3–5 năm tới — và là cơ hội để My Natcom trở thành ứng dụng đầu tiên người dùng cài khi mua smartphone đầu tiên.</span></p>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">3.3 Cấu trúc cạnh tranh viễn thông — Natcom là số 1</span></h3>
-<p class="p18"><span class="s1">Sau gần 15 năm, Natcom đã vươn lên dẫn đầu thị trường Haiti cả về thuê bao di động lẫn quy mô ví điện tử — một thế đứng kép mà ít nhà mạng emerging market đạt được.</span></p>
-<table cellspacing="0" cellpadding="0" class="t1">
-  <tbody>
-    <tr>
-      <td valign="top" class="td1">
-        <p class="p11"><span class="s1">TIÊU CHÍ</span></p>
-      </td>
-      <td valign="top" class="td2">
-        <p class="p11"><span class="s1">NATCOM</span></p>
-      </td>
-      <td valign="top" class="td3">
-        <p class="p11"><span class="s1">DIGICEL</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td4">
-        <p class="p25"><span class="s1">Sở hữu</span></p>
-      </td>
-      <td valign="top" class="td5">
-        <p class="p25"><span class="s1">Liên doanh nhà nước Haiti × Viettel</span></p>
-      </td>
-      <td valign="top" class="td6">
-        <p class="p25"><span class="s1">Tập đoàn Digicel (Jamaica)</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td4">
-        <p class="p25"><span class="s1">Hạ tầng</span></p>
-      </td>
-      <td valign="top" class="td5">
-        <p class="p25"><span class="s1">~6.000 km cáp quang quốc gia, ~1.550 trạm BTS, phủ ~93% lãnh thổ</span></p>
-      </td>
-      <td valign="top" class="td6">
-        <p class="p25"><span class="s1">Phủ di động rộng, vừa nâng cấp subsea cable</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td4">
-        <p class="p25"><span class="s1">Thị phần di động (hết 2025)</span></p>
-      </td>
-      <td valign="top" class="td5">
-        <p class="p26"><span class="s1">51% — số 1 thị trường, hơn 4 triệu thuê bao</span></p>
-      </td>
-      <td valign="top" class="td6">
-        <p class="p25"><span class="s1">~49%, đứng thứ 2</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td4">
-        <p class="p25"><span class="s1">Ví điện tử</span></p>
-      </td>
-      <td valign="top" class="td5">
-        <p class="p25"><span class="s1">Natcash — ~2 triệu user giao dịch</span></p>
-      </td>
-      <td valign="top" class="td6">
-        <p class="p25"><span class="s1">MonCash — ~2 triệu user giao dịch</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td4">
-        <p class="p25"><span class="s1">Tài sản số khác</span></p>
-      </td>
-      <td valign="top" class="td5">
-        <p class="p25"><span class="s1">SuperData45, FTTH, hạ tầng cáp quang quốc gia</span></p>
-      </td>
-      <td valign="top" class="td6">
-        <p class="p25"><span class="s1">Thương hiệu lâu năm, hệ sinh thái Caribbean</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td4">
-        <p class="p25"><span class="s1">Điểm mạnh chiến lược</span></p>
-      </td>
-      <td valign="top" class="td5">
-        <p class="p25"><span class="s1">Vị thế #1, fiber toàn quốc, kinh nghiệm Viettel toàn cầu, ví Natcash sẵn sàng</span></p>
-      </td>
-      <td valign="top" class="td6">
-        <p class="p25"><span class="s1">Lợi thế thâm niên, marketing đại chúng</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td4">
-        <p class="p25"><span class="s1">Điểm yếu cần khai thác</span></p>
-      </td>
-      <td valign="top" class="td5">
-        <p class="p25"><span class="s1">App selfcare hiện tại còn yếu, Natcash chưa kết nối hệ sinh thái dịch vụ số rộng</span></p>
-      </td>
-      <td valign="top" class="td6">
-        <p class="p25"><span class="s1">Trải nghiệm dịch vụ số phi-thanh-toán còn rời rạc, thiếu superapp</span></p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">3.4 Tài chính số: thế cờ ngang ngửa, ai gắn sâu vào đời sống sẽ thắng</span></h3>
-<p class="p18"><span class="s1">Khác với phần lớn thị trường viễn thông emerging market — nơi telco thường thua fintech của đối thủ — Haiti có thế cờ rất đặc biệt: </span><span class="s4">cả hai nhà mạng đều có ví điện tử cùng quy mô ~2 triệu người dùng giao dịch</span><span class="s1">. Natcom có Natcash, Digicel có MonCash. Volume giao dịch toàn ngành đã tăng hàng nghìn phần trăm trong những năm gần đây, nhưng </span><span class="s4">thị trường vẫn còn rất "underbanked"</span><span class="s1"> — phần lớn dân số chưa có tài khoản ngân hàng.</span></p>
-<p class="p18"><span class="s1">Hệ quả chiến lược: </span><span class="s4">Natcom đang ở vị thế ngang bằng — thậm chí có cửa vượt — Digicel về fintech</span><span class="s1">. Vấn đề không phải xây ví mới, mà là biến Natcash từ một ứng dụng thanh toán riêng lẻ thành </span><span class="s4">trái tim của superapp</span><span class="s1">, nơi mọi miniapp, gói cước, marketplace, nội dung số đều thanh toán qua Natcash. Bên nào tích hợp ví sâu hơn vào đời sống số sẽ thắng — và Natcom có lợi thế "viễn thông #1 + ví có sẵn" mà MonCash khó sánh được.</span></p>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">3.5 Insight thị trường rút ra</span></h3>
-<p class="p22"><span class="s7">INSIGHT 1</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Khách hàng Haiti cần "all-in-one", không phải nhiều app riêng lẻ</span></h4>
-<p class="p3"><span class="s8">Smartphone tầm trung-thấp, dung lượng hạn chế, data đắt. Một app nặng nhưng đa dụng sẽ thắng nhiều app nhẹ rời rạc.</span></p>
-<p class="p22"><span class="s7">INSIGHT 2</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Tiền mặt vẫn vua, ví là cầu nối</span></h4>
-<p class="p3"><span class="s8">Chiến thắng không nằm ở "bỏ tiền mặt" mà ở "đưa tiền mặt vào hệ thống số" — qua đại lý nạp/rút, kiều hối, QR merchant.</span></p>
-<p class="p22"><span class="s7">INSIGHT 3</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Người Haiti ở nước ngoài là một thị trường riêng</span></h4>
-<p class="p3"><span class="s8">Kiều hối chiếm tỷ trọng lớn trong nền kinh tế. Tích hợp nhận kiều hối quốc tế vào ví trong app là điểm khác biệt rất mạnh.</span></p>
-<p class="p22"><span class="s7">INSIGHT 4</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Giới trẻ đói nội dung số bản địa hóa</span></h4>
-<p class="p3"><span class="s8">30,8% dân dưới 15 tuổi. Video ngắn, game nhẹ, nội dung tiếng Creole, livestream sự kiện sẽ là kênh giữ chân và tăng data.</span></p>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">3.6 Văn hóa &amp; lối sống Haiti — kim chỉ nam thiết kế sản phẩm</span></h3>
-<p class="p18"><span class="s1">Phần này không phải "lý thuyết". Mỗi đặc điểm văn hóa dưới đây </span><span class="s4">buộc phải dẫn xuất sang một quyết định thiết kế cụ thể</span><span class="s1"> — nếu không, My Natcom sẽ chỉ là bản copy tính năng từ ứng dụng khác có dán nhãn Haiti.</span></p>
-<table cellspacing="0" cellpadding="0" class="t1">
-  <tbody>
-    <tr>
-      <td valign="top" class="td7">
-        <p class="p11"><span class="s1">ĐẶC ĐIỂM VĂN HÓA &amp; LỐI SỐNG</span></p>
-      </td>
-      <td valign="top" class="td8">
-        <p class="p11"><span class="s1">DẪN XUẤT SANG TÍNH NĂNG / NGUYÊN TẮC THIẾT KẾ</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td9">
-        <p class="p25"><span class="s1">Tiếng Creole là ngôn ngữ đời sống, tiếng Pháp chỉ dùng trong văn bản chính thức</span></p>
-      </td>
-      <td valign="top" class="td10">
-        <p class="p25"><span class="s1">Creole là ngôn ngữ mặc định của app; Pháp/Anh là lựa chọn. Tên dịch vụ, push, voice prompt — ưu tiên Creole tự nhiên, không dịch thô.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td9">
-        <p class="p25"><span class="s1">Diaspora khổng lồ (~3–4 triệu người Haiti ở Mỹ, CH Dominica, Canada, Pháp); kiều hối chiếm ~20% GDP</span></p>
-      </td>
-      <td valign="top" class="td10">
-        <p class="p25"><span class="s1">Miniapp kiều hối ở vị trí home. Phiên bản dành cho diaspora ở nước ngoài: gửi data, gói cước, Natcash cho người thân tại Haiti.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td9">
-        <p class="p25"><span class="s1">Âm nhạc là trái tim văn hóa: Kompa, Rabòday, Rasin</span></p>
-      </td>
-      <td valign="top" class="td10">
-        <p class="p25"><span class="s1">Music miniapp ưu tiên nội dung Haiti, hợp tác nghệ sĩ bản địa. Loyalty thưởng cho thời lượng nghe nhạc Haiti.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td9">
-        <p class="p25"><span class="s1">Borlette (xổ số) là sinh hoạt hằng ngày của đa số người dân</span></p>
-      </td>
-      <td valign="top" class="td10">
-        <p class="p25"><span class="s1">Tích hợp dịch vụ borlette chính thức qua đại lý có license — tham gia, kiểm tra kết quả, nhận thưởng qua Natcash. Tự nhiên kéo user mở app hằng ngày.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td9">
-        <p class="p25"><span class="s1">Gia đình mở rộng &amp; cộng đồng lakou; văn hóa konbit (lao động chung)</span></p>
-      </td>
-      <td valign="top" class="td10">
-        <p class="p25"><span class="s1">Tài khoản gia đình share data/gói cước; nhóm tiết kiệm cộng đồng (sòl/sangue) trên Natcash; tính năng "konbit" hỗ trợ hàng xóm khi thiên tai.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td9">
-        <p class="p25"><span class="s1">Cuồng nhiệt bóng đá — đội tuyển Haiti, Brazil, CLB châu Âu</span></p>
-      </td>
-      <td valign="top" class="td10">
-        <p class="p25"><span class="s1">Sports miniapp: lịch giải, livestream (khi có bản quyền), dự đoán tỉ số đổi Points, tin tức bóng đá Creole.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td9">
-        <p class="p25"><span class="s1">Carnival (Kanaval) và nhiều ngày lễ truyền thống</span></p>
-      </td>
-      <td valign="top" class="td10">
-        <p class="p25"><span class="s1">Cultural calendar trong app; mỗi mùa lễ là 1 campaign loyalty + livestream + voucher merchant theo theme.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td9">
-        <p class="p25"><span class="s1">Tỷ lệ đọc-viết thấp ở nông thôn; văn hóa truyền miệng &amp; WhatsApp voice mạnh</span></p>
-      </td>
-      <td valign="top" class="td10">
-        <p class="p25"><span class="s1">Giao diện ưu tiên icon trực quan; voice search, voice messaging trong miniapp; phiên bản nhẹ cho 2G/3G; USSD fallback cho người không smartphone.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td9">
-        <p class="p25"><span class="s1">Vodou &amp; Công giáo đan xen trong đời sống tinh thần</span></p>
-      </td>
-      <td valign="top" class="td10">
-        <p class="p25"><span class="s1">Loyalty và content tôn trọng, không khai thác tâm linh. Lịch lễ tôn giáo tích hợp tự nhiên (Fèt Gede, Toussaint, Pâques).</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td9">
-        <p class="p25"><span class="s1">Tiền mặt vẫn vua; mạng đại lý cash-in/cash-out là kênh sống</span></p>
-      </td>
-      <td valign="top" class="td10">
-        <p class="p25"><span class="s1">Bản đồ đại lý Natcash trong app; mở rộng đại lý làm "ATM dân sinh"; giữ tiền mặt là cách nạp/rút mặc định, không ép số hóa.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td9">
-        <p class="p25"><span class="s1">Hạ tầng điện không ổn định; người dân chia sẻ smartphone trong gia đình</span></p>
-      </td>
-      <td valign="top" class="td10">
-        <p class="p25"><span class="s1">App phải mở được offline cơ bản; multi-profile / quick switch user trên cùng thiết bị; tiết kiệm pin tối đa.</span></p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<p class="p27"><span class="s1">Bảng này là </span><span class="s4">"hợp đồng thiết kế"</span><span class="s1"> mà mọi nhóm tính năng phải tham chiếu lại. Nếu một tính năng được đề xuất nhưng không trả lời được câu hỏi "phục vụ đặc điểm văn hóa nào", tính năng đó phải bị xem xét lại.</span></p>
-<p class="p16"><span class="s1">04 · CASE STUDIES</span></p>
-<h2 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 32.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Bài học từ 3 case study superapp</span></h2>
-<p class="p18"><span class="s1">Ba case study được chọn vì phản ánh ba "lớp bài học" khác nhau mà My Natcom mới cần kế thừa: </span><span class="s4">MyID</span><span class="s1"> (telco superapp ở thị trường mới nổi tương đồng Haiti), </span><span class="s4">Gojek</span><span class="s1"> (cách bắt đầu từ một dịch vụ rồi tiến hóa thành hệ sinh thái), và </span><span class="s4">MoMo</span><span class="s1"> (mô hình miniapp marketplace mở cho hàng nghìn đối tác).</span></p>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">4.1 MyID — Mytel Myanmar (case study trực tiếp nhất)</span></h3>
-<p class="p18"><span class="s1">MyID là superapp do Mytel — công ty Viettel tại Myanmar — phát triển. App được trao Stevie Award 2023 với danh hiệu "telco superapp phổ biến nhất Myanmar", đạt mức tải </span><span class="s4">23–29 triệu lượt</span><span class="s1">, đánh giá 4,49/5 với hơn 760 nghìn lượt rating.</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #38d885; -webkit-text-stroke: #38d885"><span class="s5">Bài học áp dụng được cho Natcom</span></h4>
-<ul class="ul1">
-  <li class="li24"><span class="s11"></span><span class="s12">Bundle "selfcare + ví + giải trí"</span><span class="s5"> giúp tăng thời gian sử dụng và ARPU pha trộn.</span></li>
-  <li class="li24"><span class="s13"></span><span class="s5">Lấy ID Mytel làm "One ID" cho toàn hệ sinh thái — xóa bỏ đăng nhập rời rạc.</span></li>
-  <li class="li24"><span class="s13"></span><span class="s5">Tận dụng </span><span class="s12">loyalty và voucher</span><span class="s5"> để biến app thành điểm chạm hằng ngày, không chỉ khi cần selfcare.</span></li>
-  <li class="li29"><span class="s14"></span><span class="s15">Đưa </span><span class="s5">game zone, OTT nhắn tin/gọi miễn phí</span><span class="s15"> vào để giữ chân giới trẻ.</span></li>
-  <li class="li24"><span class="s11"></span><span class="s12">Natcom có lợi thế MyID không có:</span><span class="s5"> Natcash đã có 2 triệu user giao dịch sẵn sàng dùng — superapp đạt traction ngay từ ngày 1, không cần thu hút từ con số 0 như MyID phải làm.</span></li>
-</ul>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #fc5258; -webkit-text-stroke: #fc5258"><span class="s5">Điều cần làm khác đi ở Haiti</span></h4>
-<ul class="ul1">
-  <li class="li24"><span class="s13"></span><span class="s5">MyID nặng ~135MB — quá lớn cho thiết bị low-end và data đắt ở Haiti. My Natcom cần </span><span class="s12">core mỏng, miniapp tải động</span><span class="s5">.</span></li>
-  <li class="li24"><span class="s13"></span><span class="s5">MyID làm ở thị trường ít cạnh tranh fintech; tại Haiti, MonCash đã ngang ngửa Natcash về quy mô — chiến lược ví cần khác biệt bằng </span><span class="s12">tích hợp sâu vào superapp</span><span class="s5">, không cạnh tranh đối đầu trên kênh thanh toán đơn thuần.</span></li>
-  <li class="li24"><span class="s13"></span><span class="s5">Haiti có văn hóa rất riêng (Borlette, Konbit, Kanaval, Creole) — không bê y nguyên feature set MyID mà cần thiết kế lại theo bảng "kim chỉ nam văn hóa" ở mục 3.6.</span></li>
-</ul>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">4.2 Gojek — Indonesia (bài học về tiến hóa hệ sinh thái)</span></h3>
-<p class="p18"><span class="s1">Gojek bắt đầu chỉ là một dịch vụ gọi xe máy, sau đó mở rộng thành </span><span class="s4">20+ dịch vụ</span><span class="s1"> bao gồm GoFood, GoPay, GoSend, GoMart, GoTix… trở thành công ty công nghệ giá trị nhất Indonesia.</span></p>
-<ul class="ul1">
-  <li class="li29"><span class="s6"></span><span class="s1">Bắt đầu từ một "pain point" rõ ràng nhất, rồi mới mở rộng.</span><span class="s16"> Đừng phóng 20 dịch vụ cùng lúc.</span></li>
-  <li class="li24"><span class="s10"></span><span class="s4">Local adaptation là yếu tố sống còn.</span><span class="s1"> Uber thất bại vì áp model thẻ tín dụng; Gojek thắng vì hỗ trợ tiền mặt, top-up, payment phương thức Indonesia. Bài học cho Haiti: thiết kế cho người chưa có tài khoản ngân hàng.</span></li>
-  <li class="li24"><span class="s10"></span><span class="s4">Hệ sinh thái phải có lợi cho cả ba bên</span><span class="s1">: người dùng, đối tác (driver, merchant), nền tảng.</span></li>
-</ul>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">4.3 MoMo — Việt Nam (bài học về miniapp marketplace)</span></h3>
-<p class="p18"><span class="s1">MoMo có hơn </span><span class="s4">31 triệu người dùng</span><span class="s1">, là superapp được mở nhiều nhất tại Việt Nam (~4,16 lần/tuần). Điểm bứt phá là nền tảng </span><span class="s4">Mini App từ 2020</span><span class="s1">: hiện đã có hơn </span><span class="s4">100 miniapp</span><span class="s1"> và </span><span class="s4">10.000+ đối tác</span><span class="s1"> tích hợp.</span></p>
-<blockquote style="margin: 0.0px 0.0px 18.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff; background-color: #fc4219; background-color: rgba(252, 66, 25, 0.059)"><span class="s1">"Đối tác có thể tiết kiệm hơn 75% chi phí khi triển khai trên nền tảng Mini App MoMo so với tự xây app riêng." — Vietnam News, 2024</span></blockquote>
-<ul class="ul1">
-  <li class="li29"><span class="s6"></span><span class="s1">Mini App là cách duy nhất để mở rộng nhanh sang trăm dịch vụ</span><span class="s16"> mà không phá vỡ codebase hay tăng kích thước app vô tận.</span></li>
-  <li class="li29"><span class="s6"></span><span class="s1">Đối tác được hưởng lợi: tiếp cận hàng triệu user, tiết kiệm chi phí, được AI/Data nền tảng hỗ trợ.</span><span class="s16"> Lập luận này dùng được nguyên xi để mời gọi đối tác Haiti.</span></li>
-  <li class="li31"><span class="s6"></span><span class="s17">Tần suất mở app cao = quảng cáo và cross-sell hiệu quả.</span><span class="s18"> Đây là một dòng doanh thu mới mà Natcom hiện không có.</span></li>
-</ul>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">4.4 Mẫu chung của ba case</span></h3>
-<p class="p19"><span class="s1">1 ID</span></p>
-<p class="p11"><span class="s1">ĐĂNG NHẬP MỘT LẦN CHO MỌI DỊCH VỤ</span></p>
-<p class="p19"><span class="s1">1 ví</span></p>
-<p class="p11"><span class="s1">LÀ "MÁU" CỦA HỆ SINH THÁI</span></p>
-<p class="p19"><span class="s1">N miniapp</span></p>
-<p class="p11"><span class="s1">MỞ RỘNG NHANH KHÔNG SỬA CORE</span></p>
-<p class="p19"><span class="s1">Data + AI</span></p>
-<p class="p11"><span class="s1">CÁ NHÂN HÓA &amp; CROSS-SELL</span></p>
-<p class="p16"><span class="s1">05 · LẬP LUẬN</span></p>
-<h2 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 32.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Vì sao Natcom phải làm — và làm ngay</span></h2>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">5.1 Bốn lập luận chiến lược</span></h3>
-<p class="p22"><span class="s7">LẬP LUẬN 1</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Biến vị thế #1 thành rào chắn dài hạn</span></h4>
-<p class="p3"><span class="s8">Natcom là nhà mạng số 1 Haiti với 51% thị phần và Natcash có sẵn 2tr users. Vị thế quy mô kép này khi kết hợp superapp sẽ tạo hệ sinh thái </span><span class="s9">khó đảo ngược</span><span class="s8">: càng nhiều user, càng nhiều đối tác, càng tăng giá trị cho từng user mới. Hiệu ứng mạng là rào chắn cạnh tranh bền vững nhất.</span></p>
-<p class="p22"><span class="s7">LẬP LUẬN 2</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Mở dòng doanh thu mới ngoài viễn thông</span></h4>
-<p class="p3"><span class="s8">Hoa hồng từ đối tác miniapp, phí giao dịch ví, doanh thu nội dung số, quảng cáo trong app — đều là dòng tiền bổ sung, biên lợi nhuận cao hơn voice/data.</span></p>
-<p class="p22"><span class="s7">LẬP LUẬN 3</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Tận dụng kinh nghiệm Viettel toàn cầu</span></h4>
-<p class="p3"><span class="s8">MyID đã chứng minh mô hình ở Myanmar, các thị trường Viettel khác cũng đang dịch chuyển. Natcom thừa hưởng playbook đã có, rút ngắn 12–18 tháng học thử-sai.</span></p>
-<p class="p22"><span class="s7">LẬP LUẬN 4</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Cửa sổ thời gian đang đóng dần</span></h4>
-<p class="p3"><span class="s8">Mỗi năm trôi qua, người dùng Haiti cài thêm app của đối thủ, hình thành thói quen mới. Càng để muộn, chi phí giành lại càng lớn. Hành động trong 2026 là tối ưu.</span></p>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">5.2 Ba phương án và lý do chọn superapp</span></h3>
-<table cellspacing="0" cellpadding="0" class="t1">
-  <tbody>
-    <tr>
-      <td valign="top" class="td11">
-        <p class="p11"><span class="s1">PHƯƠNG ÁN</span></p>
-      </td>
-      <td valign="top" class="td12">
-        <p class="p11"><span class="s1">ĐẶC ĐIỂM</span></p>
-      </td>
-      <td valign="top" class="td13">
-        <p class="p11"><span class="s1">ĐÁNH GIÁ</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td14">
-        <p class="p25"><span class="s1">A. Nâng cấp UI/UX My Natcom hiện tại</span></p>
-      </td>
-      <td valign="top" class="td15">
-        <p class="p25"><span class="s1">Giữ kiến trúc cũ, chỉ làm mới giao diện và thêm 5–10 tính năng selfcare.</span></p>
-      </td>
-      <td valign="top" class="td16">
-        <p class="p25"><span class="s1">Rẻ và nhanh, nhưng không giải bài toán chiến lược. Vẫn chỉ là app selfcare.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td14">
-        <p class="p25"><span class="s1">B. Làm nhiều app riêng (My Natcom + ví + giải trí)</span></p>
-      </td>
-      <td valign="top" class="td15">
-        <p class="p25"><span class="s1">Tách dịch vụ thành các app riêng biệt.</span></p>
-      </td>
-      <td valign="top" class="td16">
-        <p class="p25"><span class="s1">Tốn chi phí marketing đẩy cài đặt nhiều app; trải nghiệm rời rạc; không tạo hệ sinh thái.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td14">
-        <p class="p25"><span class="s1">C. Superapp + miniapp (đề xuất)</span></p>
-      </td>
-      <td valign="top" class="td15">
-        <p class="p25"><span class="s1">Một app duy nhất, kiến trúc mở để chứa miniapp Natcom và đối tác.</span></p>
-      </td>
-      <td valign="top" class="td16">
-        <p class="p25"><span class="s1">Lựa chọn tối ưu. Chi phí dài hạn thấp nhất, tốc độ ra dịch vụ cao nhất, hiệu ứng mạng mạnh nhất.</span></p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<p class="p16"><span class="s1">06 · VISION</span></p>
-<h2 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 32.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Tầm nhìn &amp; định vị mới</span></h2>
-<blockquote style="margin: 0.0px 0.0px 18.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff; background-color: #fc4219; background-color: rgba(252, 66, 25, 0.059)"><span class="s1">My Natcom 2.0 là ứng dụng số đồng hành mỗi người Haiti — nơi họ giao tiếp, thanh toán, giải trí, và xử lý mọi việc trong đời sống hằng ngày, từ thành thị đến nông thôn.</span></blockquote>
-<p class="p22"><span class="s7">ĐỊNH VỊ</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">"Digital Companion"</span></h4>
-<p class="p3"><span class="s8">Không chỉ là app của nhà mạng. Là người bạn số của 11,9 triệu người Haiti.</span></p>
-<p class="p22"><span class="s7">LỜI HỨA</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Mở mỗi ngày, không chỉ khi nạp tiền</span></h4>
-<p class="p3"><span class="s8">Mục tiêu tần suất mở app: tối thiểu 5–7 lần/tuần/người dùng hoạt động.</span></p>
-<p class="p22"><span class="s7">CHỖ ĐỨNG</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Trung lập về thanh toán, mạnh về phân phối dịch vụ</span></h4>
-<p class="p3"><span class="s8">Ví riêng nhưng cũng cho phép kết nối nguồn tiền khác. Đối tác bất kỳ đều có thể lên hệ sinh thái.</span></p>
-<p class="p16"><span class="s1">07 · FEATURES</span></p>
-<h2 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 32.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">7 nhóm tính năng trọng tâm</span></h2>
-<p class="p18"><span class="s1">Tài liệu này chỉ trình bày </span><span class="s4">định hướng và lý do</span><span class="s1"> của từng nhóm. Chi tiết tính năng cụ thể, user flow, mockup sẽ trình bày trong bản đề xuất chi tiết phase 2. Riêng nhóm </span><span class="s4">Engagement Engine</span><span class="s1"> (nhóm 6) được mở chi tiết hơn ngay trong tài liệu này vì là cỗ máy phục vụ trực tiếp 4 KPI tăng trưởng cốt lõi của Natcom.</span></p>
-<p class="p32"><span class="s8">📱</span></p>
-<h4 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">1. Selfcare nhà mạng — nền tảng đáng tin</span></h4>
-<p class="p3"><span class="s8">Quản lý số, tra cứu cước, mua/đổi gói data, gọi/SMS, FTTH, hóa đơn doanh nghiệp. Đây là "lý do căn bản" để khách hàng vẫn cài app — phải </span><span class="s9">nhanh, ổn định, và bảo mật tuyệt đối</span><span class="s8">. Mở rộng so với hiện tại: lịch sử giao dịch chi tiết, gợi ý gói cước theo hành vi, quản lý nhiều số trong một tài khoản.</span></p>
-<p class="p32"><span class="s8">💳</span></p>
-<h4 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">2. Natcash trong My Natcom — biến ví thành trái tim hệ sinh thái</span></h4>
-<p class="p3"><span class="s8">Natcash đã có ~2 triệu người dùng giao dịch — đây là lợi thế chiến lược cực hiếm: Natcom </span><span class="s9">không phải xây ví mới</span><span class="s8"> mà tích hợp sâu Natcash sẵn có làm phương thức thanh toán mặc định cho toàn superapp. Mọi miniapp, gói cước, nội dung số, marketplace đều chạy qua Natcash. Mở rộng sang kiều hối quốc tế (diaspora Haiti ở Mỹ/CH Dominica/Canada/Pháp), hụi số (sòl/sangue), nano-loan, micro-insurance. </span><span class="s9">Đây là vũ khí mà MyID, MoMo từng phải mất nhiều năm mới có — Natcom có sẵn ngay từ ngày 1.</span></p>
-<p class="p32"><span class="s8">🎬</span></p>
-<h4 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">3. Giải trí số — giữ chân &amp; tăng data</span></h4>
-<p class="p3"><span class="s8">Phim, video ngắn, âm nhạc, livestream sự kiện thể thao và văn hóa, game casual. </span><span class="s9">Ưu tiên nội dung tiếng Creole và bản địa hóa</span><span class="s8"> — đây là khoảng trống lớn ở Haiti. Có thể bắt đầu bằng tự sản xuất một số chương trình tín hiệu, sau đó mời nhà sáng tạo Haiti lên nền tảng.</span></p>
-<p class="p32"><span class="s8">🛒</span></p>
-<h4 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">4. Tiện ích đời sống — biến app thành công cụ hàng ngày</span></h4>
-<p class="p3"><span class="s8">Hóa đơn điện/nước/internet, đặt vé xe, đặt đồ ăn, giao hàng nội thành, đặt lịch khám bệnh, tra cứu giáo dục. Phần lớn các dịch vụ này triển khai qua </span><span class="s9">miniapp đối tác</span><span class="s8">, không cần Natcom tự xây.</span></p>
-<p class="p32"><span class="s8">🏪</span></p>
-<h4 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">5. Marketplace miniapp &amp; đối tác</span></h4>
-<p class="p3"><span class="s8">Một "App Store" trong My Natcom: nơi đối tác đăng ký, được duyệt, triển khai miniapp. Đi kèm là cơ chế ưu đãi merchant, livestream khuyến mãi, AI/data hỗ trợ đối tác nhắm khách hàng. </span><span class="s9">Đây là điểm khác biệt cấu trúc</span><span class="s8"> so với mọi giải pháp Digicel đang có.</span></p>
-<p class="p32"><span class="s1">🎮</span></p>
-<h4 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">6. Engagement Engine — Loyalty, minigame &amp; cộng đồng </span><span class="s19">TRỌNG TÂM</span></h4>
-<p class="p3"><span class="s1">Một cỗ máy chuyên trách </span><span class="s4">4 chỉ số tăng trưởng cốt lõi</span><span class="s1">: install rate, activation rate, DAU, MAU. Mọi cơ chế đều thiết kế riêng cho văn hóa Haiti (Borlette, Konbit, Kanaval, Kompa, gia đình lakou) — không sao chép từ MyID hay MoMo. </span><span class="s4">Tạo khác biệt cảm xúc</span><span class="s1"> và là rào chắn khó copy nhất với đối thủ. Chi tiết phễu A→E ngay sau bảng.</span></p>
-<p class="p32"><span class="s8">🏛️</span></p>
-<h4 style="margin: 0.0px 0.0px 4.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">7. Dịch vụ công &amp; cộng đồng (tùy chọn dài hạn)</span></h4>
-<p class="p3"><span class="s8">Hợp tác với chính quyền Haiti để cung cấp dịch vụ công cơ bản (tra cứu giấy tờ, đăng ký SIM chính chủ, thông báo khẩn cấp khi thiên tai). Tăng vị thế chiến lược của Natcom với nhà nước và mở ra một lớp người dùng mới — kể cả những người chưa có nhu cầu giải trí hay tài chính.</span></p>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Engagement Engine — chi tiết phễu A→E</span></h3>
-<p class="p18"><span class="s1">Vì Engagement Engine phục vụ trực tiếp KPI lãnh đạo Natcom quan tâm nhất (install, activation, DAU, MAU), em mở chi tiết hơn các nhóm khác. Mỗi cơ chế bám đúng </span><span class="s4">một bước trong phễu tăng trưởng</span><span class="s1">.</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #fc4219; -webkit-text-stroke: #fc4219"><span class="s1">A · Acquisition — kéo cài app mới</span></h4>
-<table cellspacing="0" cellpadding="0" class="t1">
-  <tbody>
-    <tr>
-      <td valign="top" class="td17">
-        <p class="p11"><span class="s1">CƠ CHẾ</span></p>
-      </td>
-      <td valign="top" class="td18">
-        <p class="p11"><span class="s1">CÁCH HOẠT ĐỘNG</span></p>
-      </td>
-      <td valign="top" class="td17">
-        <p class="p11"><span class="s1">KPI CHÍNH</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">"Zanmi Mwen"</span></p>
-        <p class="p25"><span class="s1">Mời bạn</span></p>
-      </td>
-      <td valign="top" class="td20">
-        <p class="p25"><span class="s1">Mời bạn cài app + đăng ký Natcash → cả hai nhận data bonus + Natcom Points. Tier tăng theo số người mời (5/10/20). Mời được user Digicel chuyển sang Natcom → thưởng X2.</span></p>
-      </td>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">Install rate, churn từ đối thủ</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">QR đại lý SIM</span></p>
-      </td>
-      <td valign="top" class="td20">
-        <p class="p25"><span class="s1">Mỗi đại lý SIM có QR riêng. Khách mua SIM → scan = cài app + welcome bonus; đại lý cũng nhận hoa hồng. Tận dụng mạng phân phối Natcom hiện có.</span></p>
-      </td>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">Install ở ngoại thành/nông thôn</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">"Kado Lakay"</span></p>
-        <p class="p25"><span class="s1">Quà về nhà từ diaspora</span></p>
-      </td>
-      <td valign="top" class="td20">
-        <p class="p25"><span class="s1">Diaspora ở Mỹ/CH Dominica/Canada/Pháp tải app "remit" → tặng data/gói cước/Natcom Points cho người thân tại Haiti. Người thân buộc phải cài My Natcom để nhận.</span></p>
-      </td>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">Install, Natcash quốc tế</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">Welcome bonus 7 ngày</span></p>
-      </td>
-      <td valign="top" class="td20">
-        <p class="p25"><span class="s1">Cài app lần đầu: 1GB data + 1 lượt Borlette miễn phí + voucher merchant 50 HTG. Mở khóa dần theo từng ngày, không nhận hết một lúc → buộc quay lại.</span></p>
-      </td>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">Install → first-open rate</span></p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #fc4219; -webkit-text-stroke: #fc4219"><span class="s1">B · Activation — biến "cài app" thành "dùng thật"</span></h4>
-<table cellspacing="0" cellpadding="0" class="t1">
-  <tbody>
-    <tr>
-      <td valign="top" class="td17">
-        <p class="p11"><span class="s1">CƠ CHẾ</span></p>
-      </td>
-      <td valign="top" class="td18">
-        <p class="p11"><span class="s1">CÁCH HOẠT ĐỘNG</span></p>
-      </td>
-      <td valign="top" class="td17">
-        <p class="p11"><span class="s1">KPI CHÍNH</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">"Misyon Lè Premye"</span></p>
-        <p class="p25"><span class="s1">7 nhiệm vụ tuần đầu</span></p>
-      </td>
-      <td valign="top" class="td20">
-        <p class="p25"><span class="s1">Onboarding gamified: 7 ngày đầu, mỗi ngày hoàn thành 1 nhiệm vụ (link Natcash, mua 1 gói data, thanh toán 1 hóa đơn, nghe 10 phút Kompa, mời 1 bạn…) → mở khóa thưởng tích lũy. Hoàn thành cả 7 = "Sertifika Lakay" + bonus lớn.</span></p>
-      </td>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">Activation rate, D7 retention</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">First transaction cashback</span></p>
-      </td>
-      <td valign="top" class="td20">
-        <p class="p25"><span class="s1">Giao dịch Natcash đầu tiên trong superapp → cashback 50% tối đa 100 HTG. Áp dụng 1 lần duy nhất.</span></p>
-      </td>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">% new user dùng Natcash trong app</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">Profile = Points</span></p>
-      </td>
-      <td valign="top" class="td20">
-        <p class="p25"><span class="s1">Mỗi bước hoàn thiện profile (avatar, ID, sinh trắc học, link contact, link family) = points. Mở khóa các tính năng premium (hạn mức chuyển tiền cao hơn, gói gia đình…).</span></p>
-      </td>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">KYC rate, data completeness</span></p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #fc4219; -webkit-text-stroke: #fc4219"><span class="s1">C · DAU — kéo mở app mỗi ngày (cốt lõi)</span></h4>
-<p class="p18"><span class="s1">Đây là phần nặng nhất của Engagement Engine, vì DAU là chỉ số khó nhất nhưng có giá trị thương mại lớn nhất: mỗi DAU = một cơ hội cross-sell, một slot quảng cáo, một touchpoint.</span></p>
-<p class="p22"><span class="s7">DAU</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s20">🎰</span><span class="s8"> Borlette Lakou</span></h4>
-<p class="p3"><span class="s8">1 lượt quay miễn phí/ngày khi mở app. Tích đủ 7 lượt → giải lớn cuối tuần. </span><span class="s9">Bám trực tiếp vào văn hóa borlette đã ăn sâu đời sống Haiti.</span><span class="s8"> Có thể nâng cấp thành sản phẩm thương mại với loterie có license.</span></p>
-<p class="p22"><span class="s7">DAU</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s20">🔥</span><span class="s8"> Daily Streak</span></h4>
-<p class="p3"><span class="s8">Mở app + làm ít nhất 1 hành động/ngày = giữ streak. 7 ngày = 1GB data; 30 ngày = gói cước 1 tháng miễn phí. </span><span class="s9">Reset về 0 nếu bỏ 1 ngày</span><span class="s8"> — cơ chế FOMO. Push notification 20h "Streak sắp mất!".</span></p>
-<p class="p22"><span class="s7">DAU</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s20">🎡</span><span class="s8"> Wou Lachans — Vòng quay theo hành động</span></h4>
-<p class="p3"><span class="s8">Mỗi khi hoàn thành hành động giá trị cao (nạp tiền, thanh toán hóa đơn, chuyển khoản, mua gói), vòng quay tự bật → giải nhỏ ngẫu nhiên. </span><span class="s9">Variable reward</span><span class="s8"> — đã chứng minh hiệu quả nhất trong app retention.</span></p>
-<p class="p22"><span class="s7">DAU</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s20">🎫</span><span class="s8"> Tip Cash Jou — Thẻ cào số hằng ngày</span></h4>
-<p class="p3"><span class="s8">Mô phỏng thẻ cào giấy mà người Haiti quen thuộc. Mỗi ngày 1 thẻ cào ảo, cào ra: data, points, hoặc microtransfer Natcash thật (1–20 HTG). Cốt lõi là trải nghiệm cào — quen, vui, mất 5 giây.</span></p>
-<p class="p22"><span class="s7">DAU</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s20">⚽</span><span class="s8"> Devine pou Genyen — Dự đoán bóng đá</span></h4>
-<p class="p3"><span class="s8">Mỗi trận đội tuyển Haiti, CONCACAF, World Cup, CLB Brazil/châu Âu phổ biến với người Haiti: dự đoán tỉ số/cầu thủ ghi bàn → đúng = points + lượt Borlette. Leaderboard quốc gia. </span><span class="s9">Tận dụng cuồng nhiệt bóng đá Haiti.</span></p>
-<p class="p22"><span class="s7">DAU</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s20">🎮</span><span class="s8"> Casual game suite (H5)</span></h4>
-<p class="p3"><span class="s8">5 game nhẹ theme bản địa: Tap-Tap Run (endless runner trên xe tap-tap), Match Kompa (match-3 nhạc cụ Kompa), Mo Kreyòl (wordle Creole), Domino multiplayer, Kanaval Mask. Energy bar nạp bằng </span><span class="s9">hành động thật</span><span class="s8">: nạp data, thanh toán, chuyển khoản.</span></p>
-<p class="p22"><span class="s7">DAU</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s20">🎯</span><span class="s8"> Misyon Jou — Nhiệm vụ ngày</span></h4>
-<p class="p3"><span class="s8">3 quest nhỏ mỗi ngày, </span><span class="s9">cá nhân hóa bằng AI</span><span class="s8"> theo hành vi user. Hoàn thành = points + lượt quay. Cá nhân hóa là điểm khác biệt với MyID/MoMo — biến quest từ "việc bắt buộc nhàm" thành "đề xuất phù hợp".</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #fc4219; -webkit-text-stroke: #fc4219"><span class="s1">D · MAU — giữ chân theo tháng</span></h4>
-<table cellspacing="0" cellpadding="0" class="t1">
-  <tbody>
-    <tr>
-      <td valign="top" class="td21">
-        <p class="p11"><span class="s1">CƠ CHẾ</span></p>
-      </td>
-      <td valign="top" class="td18">
-        <p class="p11"><span class="s1">CÁCH HOẠT ĐỘNG</span></p>
-      </td>
-      <td valign="top" class="td21">
-        <p class="p11"><span class="s1">KPI CHÍNH</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td22">
-        <p class="p25"><span class="s1">"Defi Mwa"</span></p>
-        <p class="p25"><span class="s1">Thử thách tháng</span></p>
-      </td>
-      <td valign="top" class="td20">
-        <p class="p25"><span class="s1">Tích lũy điểm cả tháng từ mọi nguồn → 4 mốc Bronze/Silver/Gold/Diamond, thưởng tăng dần. Diamond = gói data tháng miễn phí + voucher 500 HTG + ưu tiên CSKH.</span></p>
-      </td>
-      <td valign="top" class="td22">
-        <p class="p25"><span class="s1">MAU, tier upgrade rate</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td22">
-        <p class="p25"><span class="s1">Auto-pay subscriptions</span></p>
-      </td>
-      <td valign="top" class="td20">
-        <p class="p25"><span class="s1">Auto-pay gói cước hằng tháng qua Natcash → giảm 5–10% + points X2 + miễn phí 1 dịch vụ nhỏ (music basic / 100 SMS). Lock-in nhẹ, hiệu quả cao.</span></p>
-      </td>
-      <td valign="top" class="td22">
-        <p class="p25"><span class="s1">MAU, ARPU, churn giảm</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td22">
-        <p class="p25"><span class="s1">"Pakèt Familial"</span></p>
-        <p class="p25"><span class="s1">Tài khoản gia đình</span></p>
-      </td>
-      <td valign="top" class="td20">
-        <p class="p25"><span class="s1">Add 3–5 thành viên gia đình → share data, share rewards, cùng tier-up. Phản ánh đúng cấu trúc lakou Haiti. Nếu 1 thành viên rời, cả nhà mất quyền lợi → giảm churn cá nhân.</span></p>
-      </td>
-      <td valign="top" class="td22">
-        <p class="p25"><span class="s1">MAU, household retention, ARPU/hộ</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td22">
-        <p class="p25"><span class="s1">Cultural Calendar Events</span></p>
-      </td>
-      <td valign="top" class="td20">
-        <p class="p25"><span class="s1">Mỗi tháng có 1 event lớn theo lịch văn hóa Haiti: Kanaval (T2), Fèt Drapo (T5), Fèt Endepandans (T1), Fèt Gede (T11), Christmas, World Cup. Mỗi event = 2–4 tuần campaign loyalty riêng với theme, minigame, voucher merchant đặc thù.</span></p>
-      </td>
-      <td valign="top" class="td22">
-        <p class="p25"><span class="s1">MAU theo đợt, mass engagement</span></p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #fc4219; -webkit-text-stroke: #fc4219"><span class="s1">E · Word-of-mouth — biến user thành kênh marketing</span></h4>
-<table cellspacing="0" cellpadding="0" class="t1">
-  <tbody>
-    <tr>
-      <td valign="top" class="td17">
-        <p class="p11"><span class="s1">CƠ CHẾ</span></p>
-      </td>
-      <td valign="top" class="td18">
-        <p class="p11"><span class="s1">CÁCH HOẠT ĐỘNG</span></p>
-      </td>
-      <td valign="top" class="td17">
-        <p class="p11"><span class="s1">KPI CHÍNH</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">"Konbit Challenge"</span></p>
-      </td>
-      <td valign="top" class="td20">
-        <p class="p25"><span class="s1">Nhóm 10 người (không cần là gia đình) cùng đăng ký 1 thử thách tháng. Cả nhóm cùng đạt → tất cả cùng thưởng. Lan truyền tự nhiên trong cộng đồng lakou.</span></p>
-      </td>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">Viral coefficient (K-factor)</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">"Pataje pou Genyen"</span></p>
-        <p class="p25"><span class="s1">Chia sẻ thắng</span></p>
-      </td>
-      <td valign="top" class="td20">
-        <p class="p25"><span class="s1">Khi user thắng Borlette/streak/contest → nút share lên WhatsApp/Facebook. Share = bonus points + chia sẻ kèm referral code đính kèm.</span></p>
-      </td>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">Acquisition organic</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">Gift transfer trong app</span></p>
-      </td>
-      <td valign="top" class="td20">
-        <p class="p25"><span class="s1">Gửi data, gói cước, Natcash, lượt Borlette cho bạn bè. Người nhận buộc phải có app để nhận → kéo cài app thụ động.</span></p>
-      </td>
-      <td valign="top" class="td19">
-        <p class="p25"><span class="s1">Acquisition, frequency of use</span></p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Hai nguyên tắc thiết kế then chốt</span></h4>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #38d885; -webkit-text-stroke: #38d885"><span class="s5">1. Phần thưởng là tài sản Natcom có sẵn</span></h4>
-<p class="p18"><span class="s5">Data, voice, gói cước, lượt Borlette — không phải tiền mặt thưởng trực tiếp. </span><span class="s12">Chi phí cận biên của Natcom khi thưởng 1GB data gần như bằng 0</span><span class="s5">, nhưng user nhận giá trị thật. Đây là lợi thế chiến lược MonCash không thể bắt chước vì họ không sở hữu hạ tầng viễn thông.</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #38d885; -webkit-text-stroke: #38d885"><span class="s5">2. Mọi cơ chế phải có "Haitian flavor"</span></h4>
-<p class="p18"><span class="s5">Tên gọi Creole, art bản địa, lịch văn hóa Haiti, nhạc Kompa nền. Tạo cảm giác </span><span class="s12">"app của người Haiti, do Natcom hiểu người Haiti làm ra"</span><span class="s5">. Đây là khác biệt cảm xúc rất khó copy. Tham chiếu lại bảng "kim chỉ nam văn hóa" ở mục 3.6.</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Ma trận cơ chế ↔ KPI (tổng hợp)</span></h4>
-<table cellspacing="0" cellpadding="0" class="t1">
-  <tbody>
-    <tr>
-      <td valign="top" class="td23">
-        <p class="p11"><span class="s1">KPI MỤC TIÊU</span></p>
-      </td>
-      <td valign="top" class="td24">
-        <p class="p11"><span class="s1">CƠ CHẾ CHÍNH</span></p>
-      </td>
-      <td valign="top" class="td25">
-        <p class="p11"><span class="s1">CƠ CHẾ PHỤ</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td26">
-        <p class="p25"><span class="s1">Install rate</span></p>
-      </td>
-      <td valign="top" class="td27">
-        <p class="p25"><span class="s1">Zanmi Mwen, QR đại lý, Kado Lakay</span></p>
-      </td>
-      <td valign="top" class="td28">
-        <p class="p25"><span class="s1">Pataje pou Genyen, Gift transfer</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td26">
-        <p class="p25"><span class="s1">Activation rate</span></p>
-      </td>
-      <td valign="top" class="td27">
-        <p class="p25"><span class="s1">Misyon Lè Premye, First transaction cashback</span></p>
-      </td>
-      <td valign="top" class="td28">
-        <p class="p25"><span class="s1">Profile = Points, Welcome bonus 7 ngày</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td26">
-        <p class="p25"><span class="s1">DAU</span></p>
-      </td>
-      <td valign="top" class="td27">
-        <p class="p25"><span class="s1">Borlette Lakou, Daily Streak, Wou Lachans</span></p>
-      </td>
-      <td valign="top" class="td28">
-        <p class="p25"><span class="s1">Tip Cash, Devine pou Genyen, Casual games, Misyon Jou</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td26">
-        <p class="p25"><span class="s1">MAU</span></p>
-      </td>
-      <td valign="top" class="td27">
-        <p class="p25"><span class="s1">Defi Mwa, Auto-pay, Pakèt Familial</span></p>
-      </td>
-      <td valign="top" class="td28">
-        <p class="p25"><span class="s1">Cultural Calendar</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td26">
-        <p class="p25"><span class="s1">Lan tỏa</span></p>
-      </td>
-      <td valign="top" class="td27">
-        <p class="p25"><span class="s1">Konbit Challenge</span></p>
-      </td>
-      <td valign="top" class="td28">
-        <p class="p25"><span class="s1">Pataje pou Genyen, Gift transfer</span></p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<p class="p35"><span class="s1">Mỗi nhóm sẽ được trình bày chi tiết trong bản đề xuất tiếp theo: user persona, flow nghiệp vụ, KPI, lựa chọn đối tác tiềm năng, ưu tiên phát hành.</span></p>
-<p class="p16"><span class="s1">08 · ARCHITECTURE</span></p>
-<h2 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 32.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Nguyên tắc kiến trúc (góc nhìn lãnh đạo)</span></h2>
-<p class="p18"><span class="s1">Phần này trình bày </span><span class="s4">nguyên tắc chiến lược</span><span class="s1">, không đi vào chi tiết kỹ thuật. Hồ sơ kiến trúc chi tiết sẽ kèm trong tài liệu phase 2.</span></p>
-<p class="p22"><span class="s7">FRONTEND</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Một codebase, hai nền tảng — bằng Flutter</span></h4>
-<p class="p3"><span class="s8">Tiết kiệm 40–50% chi phí phát triển so với hai team iOS/Android riêng. Ra tính năng đồng thời trên cả hai nền tảng. Sẵn sàng mở rộng sang phiên bản web khi cần.</span></p>
-<p class="p22"><span class="s7">BACKEND</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Microservices — mỗi dịch vụ độc lập</span></h4>
-<p class="p3"><span class="s8">Mỗi nghiệp vụ (ví, selfcare, content, loyalty) là một service riêng, có thể nâng cấp, scale, thay thế độc lập. Sự cố một dịch vụ không kéo cả app sập.</span></p>
-<p class="p22"><span class="s7">SUPERAPP</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Core mỏng — miniapp tải động</span></h4>
-<p class="p3"><span class="s8">App cài về chỉ chứa các dịch vụ thiết yếu. Miniapp đối tác tải khi cần dùng — giữ app gọn, tiết kiệm data người dùng, dễ ra mắt dịch vụ mới mà không cần cập nhật toàn app.</span></p>
-<p class="p22"><span class="s7">IDENTITY</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">One ID Natcom</span></h4>
-<p class="p3"><span class="s8">Đăng nhập một lần dùng cho toàn hệ sinh thái. Là tài sản dữ liệu quan trọng nhất — cho phép cá nhân hóa, cross-sell, và đo lường chính xác hành vi khách hàng.</span></p>
-<p class="p22"><span class="s7">BẢO MẬT</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Bảo mật cấp tài chính ngay từ ngày đầu</span></h4>
-<p class="p3"><span class="s8">Vì có ví và thanh toán, hệ thống phải đạt chuẩn ngân hàng (mã hóa đầu cuối, xác thực sinh trắc học, audit log đầy đủ). Đây là điều kiện để được Banque de la République d'Haïti chấp thuận.</span></p>
-<p class="p22"><span class="s7">VẬN HÀNH</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Quan sát được, phục hồi nhanh</span></h4>
-<p class="p3"><span class="s8">Monitoring, alerting, rollback tự động. Vì My Natcom sẽ là kênh phục vụ hàng triệu người dân, downtime không chỉ là thiệt hại doanh thu mà còn là vấn đề uy tín quốc gia.</span></p>
-<p class="p16"><span class="s1">09 · ROADMAP</span></p>
-<h2 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 32.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Lộ trình triển khai 3 giai đoạn</span></h2>
-<p class="p18"><span class="s1">Lộ trình ở mức tổng quan, sẽ chi tiết hóa thành kế hoạch dự án sau khi định hướng được phê duyệt. Mốc thời gian sẽ được xác lập chính thức ở phase 2.</span></p>
-<p class="p11"><span class="s1">GIAI ĐOẠN 1 · FOUNDATION (~6 THÁNG ĐẦU)</span></p>
-<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Tái cấu trúc nền móng &amp; ra MVP</span></h4>
-<p class="p18"><span class="s1">Tái thiết kế UI/UX theo định vị mới. Dựng kiến trúc Flutter + microservices, miniapp engine, One ID. Ra phiên bản đầu với nhóm </span><span class="s4">Selfcare + Ví cơ bản + 2–3 miniapp tự phát triển</span><span class="s1">. Mục tiêu: thay thế hoàn toàn My Natcom cũ, đạt parity tính năng + UX vượt trội.</span></p>
-<p class="p11"><span class="s1">GIAI ĐOẠN 2 · EXPANSION (~6 THÁNG TIẾP)</span></p>
-<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Mở rộng dịch vụ &amp; mời đối tác</span></h4>
-<p class="p18"><span class="s1">Bổ sung nhóm Giải trí (phim, music, video ngắn, game). Mở SDK miniapp cho đối tác đầu tiên: hóa đơn điện/nước, đặt vé, giao hàng. Tích hợp kiều hối quốc tế vào ví. Bắt đầu chương trình loyalty và campaign marketing quy mô lớn.</span></p>
-<p class="p11"><span class="s1">GIAI ĐOẠN 3 · ECOSYSTEM (~6 THÁNG CUỐI)</span></p>
-<h4 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Trở thành nền tảng dịch vụ số quốc gia</span></h4>
-<p class="p18"><span class="s1">Hàng chục đến hàng trăm miniapp đối tác. Tích hợp dịch vụ công nếu hợp tác được với chính quyền. Mở rộng sản phẩm tài chính (nano-loan, micro-insurance, tiết kiệm). Đo lường ROI từng nhóm dịch vụ, ra phiên bản 2.x dựa trên dữ liệu thực tế.</span></p>
-<p class="p16"><span class="s1">10 · RISKS</span></p>
-<h2 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 32.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Rủi ro chính &amp; cách hóa giải</span></h2>
-<table cellspacing="0" cellpadding="0" class="t1">
-  <tbody>
-    <tr>
-      <td valign="top" class="td29">
-        <p class="p11"><span class="s1">RỦI RO</span></p>
-      </td>
-      <td valign="top" class="td30">
-        <p class="p11"><span class="s1">MỨC ĐỘ</span></p>
-      </td>
-      <td valign="top" class="td31">
-        <p class="p11"><span class="s1">CÁCH HÓA GIẢI</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td32">
-        <p class="p25"><span class="s1">User Natcash hiện tại không chuyển sang dùng trong superapp</span></p>
-      </td>
-      <td valign="top" class="td33">
-        <p class="p25"><span class="s1">Cao</span></p>
-      </td>
-      <td valign="top" class="td34">
-        <p class="p25"><span class="s1">Migration mượt (single-sign-on Natcash ↔ My Natcom), giữ nguyên trải nghiệm Natcash hiện có như một "tab" trong superapp; ưu đãi chuyển đổi (cashback, points bonus) trong 3 tháng đầu; campaign truyền thông tại đại lý.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td32">
-        <p class="p25"><span class="s1">Digicel phản đòn bằng nâng cấp app MonCash thành superapp</span></p>
-      </td>
-      <td valign="top" class="td33">
-        <p class="p25"><span class="s1">Trung bình</span></p>
-      </td>
-      <td valign="top" class="td34">
-        <p class="p25"><span class="s1">Đi trước về tốc độ ra mắt; khác biệt bằng miniapp marketplace mở và Engagement Engine bản địa hóa văn hóa Haiti — Digicel sẽ mất 12–18 tháng để bắt kịp.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td32">
-        <p class="p25"><span class="s1">Hạ tầng mạng không đồng đều, vùng sâu chậm</span></p>
-      </td>
-      <td valign="top" class="td33">
-        <p class="p25"><span class="s1">Cao</span></p>
-      </td>
-      <td valign="top" class="td34">
-        <p class="p25"><span class="s1">App tối ưu cho 2G/3G fallback, ưu tiên USSD/SMS cho người không smartphone, miniapp tải động giảm data.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td32">
-        <p class="p25"><span class="s1">Tình hình an ninh, chính trị Haiti bất ổn</span></p>
-      </td>
-      <td valign="top" class="td33">
-        <p class="p25"><span class="s1">Cao</span></p>
-      </td>
-      <td valign="top" class="td34">
-        <p class="p25"><span class="s1">Hạ tầng phân tán, có khả năng vận hành remote; cơ chế khẩn cấp để duy trì dịch vụ trong khủng hoảng.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td32">
-        <p class="p25"><span class="s1">Khó tìm đủ đối tác miniapp ban đầu</span></p>
-      </td>
-      <td valign="top" class="td33">
-        <p class="p25"><span class="s1">Trung bình</span></p>
-      </td>
-      <td valign="top" class="td34">
-        <p class="p25"><span class="s1">Phase 1 dùng miniapp tự phát triển; phase 2 bắt đầu mời 5–10 đối tác chiến lược với điều khoản hấp dẫn; phase 3 mở rộng tự nhiên khi user base đủ lớn.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td32">
-        <p class="p25"><span class="s1">Khó tuyển/giữ nhân sự kỹ thuật chất lượng cao</span></p>
-      </td>
-      <td valign="top" class="td33">
-        <p class="p25"><span class="s1">Trung bình</span></p>
-      </td>
-      <td valign="top" class="td34">
-        <p class="p25"><span class="s1">RingMe đảm nhiệm phần lớn phát triển từ Việt Nam; chuyển giao dần cho team Natcom; xây dựng đội ngũ tại chỗ trong phase 3.</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top" class="td32">
-        <p class="p25"><span class="s1">Khung pháp lý fintech Haiti chưa rõ ràng</span></p>
-      </td>
-      <td valign="top" class="td33">
-        <p class="p25"><span class="s1">Trung bình</span></p>
-      </td>
-      <td valign="top" class="td34">
-        <p class="p25"><span class="s1">Làm việc sớm với Banque de la République d'Haïti; ra mắt ví theo chuẩn cao nhất ngay từ đầu để không phải làm lại.</span></p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<p class="p16"><span class="s1">11 · SUCCESS METRICS</span></p>
-<h2 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 32.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">KPI thành công ở cấp chiến lược</span></h2>
-<p class="p18"><span class="s1">Đề xuất một bộ 4 KPI bắc cầu giữa "sản phẩm" và "kinh doanh", phù hợp để báo cáo Hội đồng quản trị Natcom. Mục tiêu số cụ thể sẽ được đề xuất ở bản chi tiết.</span></p>
-<p class="p22"><span class="s7">SẢN PHẨM</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">MAU &amp; tần suất mở app</span></h4>
-<p class="p3"><span class="s8">Số người dùng hoạt động hàng tháng; trung bình số lần mở app/người/tuần. Đây là thước đo "vai trò trong đời sống hằng ngày".</span></p>
-<p class="p22"><span class="s7">SẢN PHẨM</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Adoption miniapp &amp; dịch vụ ngoài selfcare</span></h4>
-<p class="p3"><span class="s8">% MAU dùng ít nhất 1 dịch vụ ngoài selfcare; số miniapp được dùng trung bình. Thước đo hiệu quả "superapp".</span></p>
-<p class="p22"><span class="s7">KINH DOANH</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">ARPU pha trộn (viễn thông + dịch vụ số)</span></h4>
-<p class="p3"><span class="s8">Doanh thu trung bình/người dùng tính cả hoa hồng đối tác, phí ví, nội dung, quảng cáo. Mục tiêu: tăng vượt mức Telco-only.</span></p>
-<p class="p22"><span class="s7">KINH DOANH</span></p>
-<h4 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s8">Tỷ trọng doanh thu phi-viễn-thông</span></h4>
-<p class="p3"><span class="s8">% tổng doanh thu Natcom đến từ các dịch vụ số trên app. Thước đo dịch chuyển mô hình kinh doanh.</span></p>
-<p class="p16"><span class="s1">12 · NEXT STEPS</span></p>
-<h2 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 32.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Đề xuất bước tiếp theo</span></h2>
-<ol class="ol1">
-  <li class="li24"><span class="s10"></span><span class="s4">Phê duyệt định hướng chiến lược</span><span class="s1"> trong tài liệu này (định vị, mô hình superapp + miniapp, 6 nhóm tính năng, lộ trình 3 giai đoạn).</span></li>
-  <li class="li24"><span class="s10"></span><span class="s4">Thành lập tổ công tác chung</span><span class="s1"> giữa Natcom và RingMe Vietnam để chuẩn bị bản đề xuất chi tiết.</span></li>
-  <li class="li24"><span class="s10"></span><span class="s4">RingMe phát hành bản đề xuất chi tiết phase 2</span><span class="s1"> trong vòng 3–4 tuần kể từ ngày phê duyệt định hướng: gồm thiết kế UX wireframe, đặc tả tính năng từng nhóm, lộ trình kèm timeline, ước lượng nguồn lực và đầu tư, kế hoạch quản trị rủi ro chi tiết.</span></li>
-  <li class="li24"><span class="s10"></span><span class="s4">Thống nhất mô hình hợp tác RingMe – Natcom</span><span class="s1">: phạm vi RingMe đảm nhiệm, cơ chế chuyển giao, phương án vận hành dài hạn.</span></li>
-  <li class="li24"><span class="s10"></span><span class="s4">Khởi động đàm phán đối tác chiến lược ưu tiên</span><span class="s1"> (đối tác nội dung, đối tác hóa đơn, đối tác kiều hối) song song với phase thiết kế.</span></li>
-</ol>
-<h3 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #e2e7ff; -webkit-text-stroke: #e2e7ff"><span class="s1">Đề xuất phê duyệt</span></h3>
-<p class="p18"><span class="s1">Đề nghị lãnh đạo Natcom phê duyệt </span><span class="s4">định hướng chuyển đổi My Natcom thành superapp số toàn diện</span><span class="s1"> theo các nội dung tại tài liệu này, để RingMe Vietnam bắt tay xây dựng đề xuất chi tiết phase 2.</span></p>
-<p class="p37"><span class="s21"><b>In bản đề xuất (PDF)</b></span><span class="s22"> Quay về đầu trang</span></p>
-<p class="p38"><span class="s1">RingMe Vietnam · Đề xuất tổng quan My Natcom 2.0 · 28/05/2026 · Tài liệu nội bộ, dùng để trình lãnh đạo Natcom.</span></p>
-<p class="p39"><span class="s1">Nguồn dữ liệu nghiên cứu:</span></p>
-<ul class="ul1">
-  <li class="li15"><span class="s6"><a href="https://datareportal.com/reports/digital-2025-haiti"><span class="s1">DataReportal — Digital 2025: Haiti</span></a></span></li>
-  <li class="li15"><span class="s6"><a href="https://www.mordorintelligence.com/industry-reports/haiti-telecom-mno-market"><span class="s1">Mordor Intelligence — Haiti Telecom MNO Market Report 2025</span></a></span></li>
-  <li class="li15"><span class="s6"><a href="https://en.wikipedia.org/wiki/Telecommunications_in_Haiti"><span class="s1">Telecommunications in Haiti — Wikipedia</span></a></span></li>
-  <li class="li15"><span class="s6"><a href="https://www.gsma.com/solutions-and-impact/connectivity-for-good/mobile-for-development/blog/digicel-haiti-moncash-turnaround-story/"><span class="s1">GSMA — Digicel Haiti MonCash turnaround story</span></a></span></li>
-  <li class="li15"><span class="s6"><a href="https://www.cgap.org/sites/default/files/2025-09/CC-Guide/CGAP_Digicel-Case-Study.pdf.pdf"><span class="s1">CGAP — Digicel Mobile Money (MonCash) Case Study</span></a></span></li>
-  <li class="li15"><span class="s6"><a href="https://play.google.com/store/apps/details?id=com.mytel.myid"><span class="s1">Mytel MyID — Google Play</span></a></span></li>
-  <li class="li15"><span class="s6"><a href="https://mobile.stevieawards.com/iba/viettel-national-telecom-sa-best-new-telecommunications-product"><span class="s1">Stevie Awards — Natcom (Viettel)</span></a></span></li>
-  <li class="li15"><span class="s6"><a href="https://publishing.insead.edu/case/gojek-ride-sharing-super-app-fintech-ecosystem-leader"><span class="s1">INSEAD — Gojek case study</span></a></span></li>
-  <li class="li15"><span class="s6"><a href="https://vietnamnews.vn/bizhub/1268580/momo-connects-retailers-with-mini-app-technology.html"><span class="s1">Vietnam News — MoMo mini-app technology</span></a></span></li>
-  <li class="li15"><span class="s6"><a href="https://populationpyramids.org/haiti"><span class="s1">Population Pyramids — Haiti 2025</span></a></span></li>
-</ul>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="brand"><span class="brand-dot"></span> RingMe × Natcom &nbsp;·&nbsp; My Natcom 2.0</div>
+    <nav>
+      <a href="#summary">Tóm tắt</a>
+      <a href="#market">Thị trường</a>
+      <a href="#cases">Case study</a>
+      <a href="#why">Lập luận</a>
+      <a href="#features">Tính năng</a>
+      <a href="#roadmap">Lộ trình</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero container">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow"><span class="pulse"></span> Đề xuất tổng quan · v1.0 · 28/05/2026</span>
+      <h1 class="hero-title">My Natcom <span>thế hệ mới</span> — Superapp số cho người dân Haiti</h1>
+      <p class="hero-sub">Tái định vị My Natcom từ một ứng dụng selfcare thuần túy thành <strong>nền tảng số toàn diện</strong> phục vụ đời sống hàng ngày của khách hàng Natcom — kết hợp viễn thông, tài chính, giải trí và tiện ích sống, trên kiến trúc <strong>superapp – miniapp</strong> mở cho đối tác thứ ba.</p>
+      <div class="hero-meta">
+        <span class="chip">Đối tượng: Lãnh đạo Natcom</span>
+        <span class="chip">Cấp độ: Tổng quan chiến lược</span>
+        <span class="chip">Bước tiếp theo: Phê duyệt định hướng</span>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <div style="font-size:11px;color:var(--brand);letter-spacing:1.4px;text-transform:uppercase;margin-bottom:10px;font-weight:700">Natcom hôm nay (hết 2025)</div>
+      <div class="stat-grid">
+        <div class="stat" style="border-color:rgba(255,90,31,.4)"><div class="num" style="color:var(--brand)">#1</div><div class="lbl">Nhà mạng Haiti</div></div>
+        <div class="stat" style="border-color:rgba(255,90,31,.4)"><div class="num" style="color:var(--brand)">51%</div><div class="lbl">Thị phần di động</div></div>
+        <div class="stat"><div class="num">4 tr+</div><div class="lbl">Thuê bao di động</div></div>
+        <div class="stat"><div class="num">2 tr</div><div class="lbl">User Natcash giao dịch</div></div>
+      </div>
+      <div style="margin-top:18px;font-size:11px;color:var(--text-mute);letter-spacing:1.4px;text-transform:uppercase;font-weight:600">Bối cảnh thị trường Haiti 2025</div>
+      <div class="stat-grid" style="margin-top:8px">
+        <div class="stat"><div class="num">11,9 tr</div><div class="lbl">Dân số</div></div>
+        <div class="stat"><div class="num">30,8%</div><div class="lbl">Dưới 15 tuổi</div></div>
+        <div class="stat"><div class="num">86%</div><div class="lbl">Thuê bao DĐ/dân</div></div>
+        <div class="stat"><div class="num">39,3%</div><div class="lbl">Internet penetration</div></div>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--text-mute)">Nguồn: Natcom; DataReportal Digital 2025; Mordor Intelligence; Population Pyramids.</div>
+    </aside>
+  </div>
+</section>
+
+<!-- DOC -->
+<div class="container doc">
+  <aside class="toc">
+    <h4>Mục lục</h4>
+    <ol>
+      <li><a href="#summary">Tóm tắt điều hành</a></li>
+      <li><a href="#context">Bối cảnh & vấn đề</a></li>
+      <li><a href="#market">Nghiên cứu thị trường Haiti</a></li>
+      <li><a href="#cases">Bài học từ 3 case study</a></li>
+      <li><a href="#why">Lập luận đề xuất</a></li>
+      <li><a href="#vision">Tầm nhìn & định vị mới</a></li>
+      <li><a href="#features">6 nhóm tính năng trọng tâm</a></li>
+      <li><a href="#arch">Nguyên tắc kiến trúc</a></li>
+      <li><a href="#roadmap">Lộ trình triển khai</a></li>
+      <li><a href="#risk">Rủi ro & cách hóa giải</a></li>
+      <li><a href="#kpi">KPI thành công</a></li>
+      <li><a href="#next">Đề xuất bước tiếp theo</a></li>
+    </ol>
+  </aside>
+
+  <main>
+
+    <!-- 1. EXECUTIVE SUMMARY -->
+    <section id="summary" class="block">
+      <div class="kicker">01 · Executive summary</div>
+      <h2 class="section">Tóm tắt điều hành</h2>
+      <p>Natcom đang ở thời điểm vàng. Hết 2025, Natcom là <strong>nhà mạng số 1 Haiti với 51% thị phần và hơn 4 triệu thuê bao</strong>, đồng thời sở hữu <strong>Natcash với ~2 triệu người dùng giao dịch</strong> — ngang ngửa MonCash của Digicel. Vị thế kép "thuê bao #1 + ví có sẵn" này là tài sản hiếm: rất ít nhà mạng tại các thị trường emerging market có được điều kiện khởi đầu thuận lợi như vậy. Vấn đề không phải phòng thủ trước đối thủ, mà là <strong>tận dụng vị thế dẫn đầu để định hình thị trường dịch vụ số Haiti</strong> — trước khi Digicel kịp xoay sở.</p>
+      <p>Đề xuất này khuyến nghị tái thiết My Natcom thành một <strong>superapp</strong> với kiến trúc <strong>miniapp</strong> mở, lấy Natcash làm trái tim thanh toán, cho phép Natcom và đối tác thứ ba nhanh chóng đưa dịch vụ vào ứng dụng mà không cần phát hành app riêng. Tầng frontend tái cấu trúc trên Flutter, backend chuyển sang microservices, đảm bảo khả năng mở rộng, tốc độ ra tính năng và độ ổn định trên hạ tầng mạng Haiti. Đi kèm là cỗ máy <strong>Engagement Engine</strong> được thiết kế riêng cho văn hóa Haiti, chuyên trách 4 chỉ số tăng trưởng: install, activation, DAU, MAU.</p>
+      <div class="big-stats">
+        <div class="b"><div class="v">7 nhóm</div><div class="k">tính năng trọng tâm</div></div>
+        <div class="b"><div class="v">3 phases</div><div class="k">lộ trình 18 tháng</div></div>
+        <div class="b"><div class="v">1 nền tảng</div><div class="k">cho mọi dịch vụ Natcom</div></div>
+        <div class="b"><div class="v">N đối tác</div><div class="k">qua miniapp marketplace</div></div>
+      </div>
+      <blockquote><strong>Tóm gọn trong một câu:</strong> Biến My Natcom thành ứng dụng mà mỗi người Haiti đều mở vài lần mỗi ngày — không chỉ để nạp tiền, mà để sống.</blockquote>
+    </section>
+
+    <!-- 2. CONTEXT -->
+    <section id="context" class="block">
+      <div class="kicker">02 · Context</div>
+      <h2 class="section">Bối cảnh & vấn đề</h2>
+
+      <h3>Vì sao thời điểm này là thích hợp</h3>
+      <div class="grid cols-3">
+        <div class="card">
+          <span class="tag">Vị thế</span>
+          <h4>Vị thế #1 cần được củng cố bằng dịch vụ số</h4>
+          <p>Natcom đã là nhà mạng số 1 Haiti với 51% thị phần và hơn 4 triệu thuê bao. Vị thế này được xây bằng hạ tầng và chất lượng mạng, nhưng nếu chỉ dừng ở "ống dẫn data" thì lợi thế sẽ bị bào mòn. Mở rộng sang dịch vụ số là cách biến vị thế hiện tại thành <strong>rào chắn dài hạn</strong>.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Doanh thu</span>
+          <h4>ARPU voice/SMS suy giảm</h4>
+          <p>Cuộc đua data đang ép biên lợi nhuận. Mô hình superapp giúp tạo các dòng doanh thu mới: hoa hồng đối tác, phí miniapp, quảng cáo nội bộ, tài chính số, nội dung số.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Khách hàng</span>
+          <h4>App My Natcom hiện tại đã lạc hậu</h4>
+          <p>Phiên bản hiện thời chủ yếu phục vụ selfcare cơ bản. UI/UX, kiến trúc và tốc độ ra tính năng không còn đáp ứng kỳ vọng người dùng smartphone trẻ — vốn là lớp khách hàng đang tăng nhanh nhất.</p>
+        </div>
+      </div>
+
+      <h3>Vấn đề cốt lõi cần giải quyết</h3>
+      <ul>
+        <li><strong>Cửa ngõ tương tác với khách hàng đang yếu.</strong> App selfcare chỉ được mở khi cần nạp tiền hay tra cứu — tần suất quá thấp để xây gắn bó.</li>
+        <li><strong>Không có kênh phân phối dịch vụ số riêng.</strong> Mỗi khi muốn ra dịch vụ mới (video, music, fintech, content), Natcom phải làm app riêng hoặc phụ thuộc bên thứ ba — chậm và đắt.</li>
+        <li><strong>Dữ liệu khách hàng phân tán.</strong> CRM, billing, OTT, gói cước nằm rời rạc — khó cá nhân hóa, khó cross-sell, khó tạo trải nghiệm liền mạch.</li>
+        <li><strong>Khó tích hợp đối tác.</strong> Mỗi dịch vụ đối tác cần dự án tích hợp riêng kéo dài hàng tháng — không khả thi nếu muốn 50+ dịch vụ trong 1 năm.</li>
+      </ul>
+    </section>
+
+    <!-- 3. MARKET RESEARCH -->
+    <section id="market" class="block">
+      <div class="kicker">03 · Market</div>
+      <h2 class="section">Nghiên cứu thị trường Haiti</h2>
+
+      <h3>3.1 Quy mô và nhân khẩu học</h3>
+      <p>Haiti là thị trường <strong>11,9 triệu dân, dân số trẻ</strong> với 30,8% dưới 15 tuổi và 64,4% trong độ tuổi lao động. Đây chính là lớp người dùng smartphone sẽ định hình thị trường số 5–10 năm tới. GDP bình quân đầu người còn thấp (~1.155 USD năm 2024) nhưng dự báo tăng đều, có nghĩa <strong>sản phẩm phải vừa rẻ, vừa nhẹ, vừa hữu ích hằng ngày</strong>.</p>
+
+      <h3>3.2 Mức độ kết nối</h3>
+      <p>Đầu 2025, Haiti có 10,2 triệu kết nối di động (~86% dân số) nhưng tỷ lệ người dùng internet mới đạt 39,3%. Khoảng chênh lệch giữa SIM di động và internet user chính là <strong>dư địa tăng trưởng data và smartphone</strong> trong 3–5 năm tới — và là cơ hội để My Natcom trở thành ứng dụng đầu tiên người dùng cài khi mua smartphone đầu tiên.</p>
+
+      <h3>3.3 Cấu trúc cạnh tranh viễn thông — Natcom là số 1</h3>
+      <p>Sau gần 15 năm, Natcom đã vươn lên dẫn đầu thị trường Haiti cả về thuê bao di động lẫn quy mô ví điện tử — một thế đứng kép mà ít nhà mạng emerging market đạt được.</p>
+      <table>
+        <thead>
+          <tr><th>Tiêu chí</th><th>Natcom</th><th>Digicel</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Sở hữu</td><td>Liên doanh nhà nước Haiti × Viettel</td><td>Tập đoàn Digicel (Jamaica)</td></tr>
+          <tr><td>Hạ tầng</td><td>~6.000 km cáp quang quốc gia, ~1.550 trạm BTS, phủ ~93% lãnh thổ</td><td>Phủ di động rộng, vừa nâng cấp subsea cable</td></tr>
+          <tr><td><strong>Thị phần di động (hết 2025)</strong></td><td><strong style="color:var(--brand)">51% — số 1 thị trường, hơn 4 triệu thuê bao</strong></td><td>~49%, đứng thứ 2</td></tr>
+          <tr><td>Ví điện tử</td><td><strong>Natcash — ~2 triệu user giao dịch</strong></td><td>MonCash — ~2 triệu user giao dịch</td></tr>
+          <tr><td>Tài sản số khác</td><td>SuperData45, FTTH, hạ tầng cáp quang quốc gia</td><td>Thương hiệu lâu năm, hệ sinh thái Caribbean</td></tr>
+          <tr><td>Điểm mạnh chiến lược</td><td>Vị thế #1, fiber toàn quốc, kinh nghiệm Viettel toàn cầu, ví Natcash sẵn sàng</td><td>Lợi thế thâm niên, marketing đại chúng</td></tr>
+          <tr><td>Điểm yếu cần khai thác</td><td>App selfcare hiện tại còn yếu, Natcash chưa kết nối hệ sinh thái dịch vụ số rộng</td><td>Trải nghiệm dịch vụ số phi-thanh-toán còn rời rạc, thiếu superapp</td></tr>
+        </tbody>
+      </table>
+
+      <h3>3.4 Tài chính số: thế cờ ngang ngửa, ai gắn sâu vào đời sống sẽ thắng</h3>
+      <p>Khác với phần lớn thị trường viễn thông emerging market — nơi telco thường thua fintech của đối thủ — Haiti có thế cờ rất đặc biệt: <strong>cả hai nhà mạng đều có ví điện tử cùng quy mô ~2 triệu người dùng giao dịch</strong>. Natcom có Natcash, Digicel có MonCash. Volume giao dịch toàn ngành đã tăng hàng nghìn phần trăm trong những năm gần đây, nhưng <strong>thị trường vẫn còn rất "underbanked"</strong> — phần lớn dân số chưa có tài khoản ngân hàng.</p>
+      <p>Hệ quả chiến lược: <strong>Natcom đang ở vị thế ngang bằng — thậm chí có cửa vượt — Digicel về fintech</strong>. Vấn đề không phải xây ví mới, mà là biến Natcash từ một ứng dụng thanh toán riêng lẻ thành <strong>trái tim của superapp</strong>, nơi mọi miniapp, gói cước, marketplace, nội dung số đều thanh toán qua Natcash. Bên nào tích hợp ví sâu hơn vào đời sống số sẽ thắng — và Natcom có lợi thế "viễn thông #1 + ví có sẵn" mà MonCash khó sánh được.</p>
+
+      <h3>3.5 Insight thị trường rút ra</h3>
+      <div class="grid cols-2">
+        <div class="card"><span class="tag">Insight 1</span><h4>Khách hàng Haiti cần "all-in-one", không phải nhiều app riêng lẻ</h4><p>Smartphone tầm trung-thấp, dung lượng hạn chế, data đắt. Một app nặng nhưng đa dụng sẽ thắng nhiều app nhẹ rời rạc.</p></div>
+        <div class="card"><span class="tag">Insight 2</span><h4>Tiền mặt vẫn vua, ví là cầu nối</h4><p>Chiến thắng không nằm ở "bỏ tiền mặt" mà ở "đưa tiền mặt vào hệ thống số" — qua đại lý nạp/rút, kiều hối, QR merchant.</p></div>
+        <div class="card"><span class="tag">Insight 3</span><h4>Người Haiti ở nước ngoài là một thị trường riêng</h4><p>Kiều hối chiếm tỷ trọng lớn trong nền kinh tế. Tích hợp nhận kiều hối quốc tế vào ví trong app là điểm khác biệt rất mạnh.</p></div>
+        <div class="card"><span class="tag">Insight 4</span><h4>Giới trẻ đói nội dung số bản địa hóa</h4><p>30,8% dân dưới 15 tuổi. Video ngắn, game nhẹ, nội dung tiếng Creole, livestream sự kiện sẽ là kênh giữ chân và tăng data.</p></div>
+      </div>
+
+      <h3>3.6 Văn hóa & lối sống Haiti — kim chỉ nam thiết kế sản phẩm</h3>
+      <p>Phần này không phải "lý thuyết". Mỗi đặc điểm văn hóa dưới đây <strong>buộc phải dẫn xuất sang một quyết định thiết kế cụ thể</strong> — nếu không, My Natcom sẽ chỉ là bản copy MyID/MoMo có dán nhãn Haiti.</p>
+      <table>
+        <thead>
+          <tr><th style="width:40%">Đặc điểm văn hóa & lối sống</th><th>Dẫn xuất sang tính năng / nguyên tắc thiết kế</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Tiếng Creole là ngôn ngữ đời sống</strong>, tiếng Pháp chỉ dùng trong văn bản chính thức</td><td>Creole là ngôn ngữ mặc định của app; Pháp/Anh là lựa chọn. Tên dịch vụ, push, voice prompt — ưu tiên Creole tự nhiên, không dịch thô.</td></tr>
+          <tr><td><strong>Diaspora khổng lồ</strong> (~3–4 triệu người Haiti ở Mỹ, CH Dominica, Canada, Pháp); kiều hối chiếm ~20% GDP</td><td>Miniapp kiều hối ở vị trí home. Phiên bản dành cho diaspora ở nước ngoài: gửi data, gói cước, Natcash cho người thân tại Haiti.</td></tr>
+          <tr><td><strong>Âm nhạc là trái tim văn hóa</strong>: Kompa, Rabòday, Rasin</td><td>Music miniapp ưu tiên nội dung Haiti, hợp tác nghệ sĩ bản địa. Loyalty thưởng cho thời lượng nghe nhạc Haiti.</td></tr>
+          <tr><td><strong>Borlette (xổ số)</strong> là sinh hoạt hằng ngày của đa số người dân</td><td>Tích hợp dịch vụ borlette chính thức qua đại lý có license — tham gia, kiểm tra kết quả, nhận thưởng qua Natcash. Tự nhiên kéo user mở app hằng ngày.</td></tr>
+          <tr><td><strong>Gia đình mở rộng & cộng đồng lakou</strong>; văn hóa konbit (lao động chung)</td><td>Tài khoản gia đình share data/gói cước; nhóm tiết kiệm cộng đồng (sòl/sangue) trên Natcash; tính năng "konbit" hỗ trợ hàng xóm khi thiên tai.</td></tr>
+          <tr><td><strong>Cuồng nhiệt bóng đá</strong> — đội tuyển Haiti, Brazil, CLB châu Âu</td><td>Sports miniapp: lịch giải, livestream (khi có bản quyền), dự đoán tỉ số đổi Points, tin tức bóng đá Creole.</td></tr>
+          <tr><td><strong>Carnival (Kanaval)</strong> và nhiều ngày lễ truyền thống</td><td>Cultural calendar trong app; mỗi mùa lễ là 1 campaign loyalty + livestream + voucher merchant theo theme.</td></tr>
+          <tr><td><strong>Tỷ lệ đọc-viết thấp ở nông thôn</strong>; văn hóa truyền miệng & WhatsApp voice mạnh</td><td>Giao diện ưu tiên icon trực quan; voice search, voice messaging trong miniapp; phiên bản nhẹ cho 2G/3G; USSD fallback cho người không smartphone.</td></tr>
+          <tr><td><strong>Vodou & Công giáo đan xen</strong> trong đời sống tinh thần</td><td>Loyalty và content tôn trọng, không khai thác tâm linh. Lịch lễ tôn giáo tích hợp tự nhiên (Fèt Gede, Toussaint, Pâques).</td></tr>
+          <tr><td><strong>Tiền mặt vẫn vua</strong>; mạng đại lý cash-in/cash-out là kênh sống</td><td>Bản đồ đại lý Natcash trong app; mở rộng đại lý làm "ATM dân sinh"; giữ tiền mặt là cách nạp/rút mặc định, không ép số hóa.</td></tr>
+          <tr><td><strong>Hạ tầng điện không ổn định</strong>; người dân chia sẻ smartphone trong gia đình</td><td>App phải mở được offline cơ bản; multi-profile / quick switch user trên cùng thiết bị; tiết kiệm pin tối đa.</td></tr>
+        </tbody>
+      </table>
+      <p style="color:var(--text-mute);font-size:14px;margin-top:14px">Bảng này là <strong>"hợp đồng thiết kế"</strong> mà mọi nhóm tính năng phải tham chiếu lại. Nếu một tính năng được đề xuất nhưng không trả lời được câu hỏi "phục vụ đặc điểm văn hóa nào", tính năng đó phải bị xem xét lại.</p>
+    </section>
+
+    <!-- 4. CASE STUDIES -->
+    <section id="cases" class="block">
+      <div class="kicker">04 · Case studies</div>
+      <h2 class="section">Bài học từ 3 case study superapp</h2>
+      <p>Ba case study được chọn vì phản ánh ba "lớp bài học" khác nhau mà My Natcom mới cần kế thừa: <strong>MyID</strong> (telco superapp ở thị trường mới nổi tương đồng Haiti), <strong>Gojek</strong> (cách bắt đầu từ một dịch vụ rồi tiến hóa thành hệ sinh thái), và <strong>MoMo</strong> (mô hình miniapp marketplace mở cho hàng nghìn đối tác).</p>
+
+      <h3>4.1 MyID — Mytel Myanmar (case study trực tiếp nhất)</h3>
+      <p>MyID là superapp do Mytel — công ty Viettel tại Myanmar — phát triển. App được trao Stevie Award 2023 với danh hiệu "telco superapp phổ biến nhất Myanmar", đạt mức tải <strong>23–29 triệu lượt</strong>, đánh giá 4,49/5 với hơn 760 nghìn lượt rating.</p>
+      <div class="duo">
+        <div class="pros">
+          <h4>Bài học áp dụng được cho Natcom</h4>
+          <ul>
+            <li><strong>Bundle "selfcare + ví + giải trí"</strong> giúp tăng thời gian sử dụng và ARPU pha trộn.</li>
+            <li>Lấy ID Mytel làm "One ID" cho toàn hệ sinh thái — xóa bỏ đăng nhập rời rạc.</li>
+            <li>Tận dụng <strong>loyalty và voucher</strong> để biến app thành điểm chạm hằng ngày, không chỉ khi cần selfcare.</li>
+            <li>Đưa <strong>game zone, OTT nhắn tin/gọi miễn phí</strong> vào để giữ chân giới trẻ.</li>
+            <li><strong>Natcom có lợi thế MyID không có:</strong> Natcash đã có 2 triệu user giao dịch sẵn sàng dùng — superapp đạt traction ngay từ ngày 1, không cần thu hút từ con số 0 như MyID phải làm.</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Điều cần làm khác đi ở Haiti</h4>
+          <ul>
+            <li>MyID nặng ~135MB — quá lớn cho thiết bị low-end và data đắt ở Haiti. My Natcom cần <strong>core mỏng, miniapp tải động</strong>.</li>
+            <li>MyID làm ở thị trường ít cạnh tranh fintech; tại Haiti, MonCash đã ngang ngửa Natcash về quy mô — chiến lược ví cần khác biệt bằng <strong>tích hợp sâu vào superapp</strong>, không cạnh tranh đối đầu trên kênh thanh toán đơn thuần.</li>
+            <li>Haiti có văn hóa rất riêng (Borlette, Konbit, Kanaval, Creole) — không bê y nguyên feature set MyID mà cần thiết kế lại theo bảng "kim chỉ nam văn hóa" ở mục 3.6.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>4.2 Gojek — Indonesia (bài học về tiến hóa hệ sinh thái)</h3>
+      <p>Gojek bắt đầu chỉ là một dịch vụ gọi xe máy, sau đó mở rộng thành <strong>20+ dịch vụ</strong> bao gồm GoFood, GoPay, GoSend, GoMart, GoTix… trở thành công ty công nghệ giá trị nhất Indonesia.</p>
+      <ul>
+        <li><strong>Bắt đầu từ một "pain point" rõ ràng nhất, rồi mới mở rộng.</strong> Đừng phóng 20 dịch vụ cùng lúc.</li>
+        <li><strong>Local adaptation là yếu tố sống còn.</strong> Uber thất bại vì áp model thẻ tín dụng; Gojek thắng vì hỗ trợ tiền mặt, top-up, payment phương thức Indonesia. Bài học cho Haiti: thiết kế cho người chưa có tài khoản ngân hàng.</li>
+        <li><strong>Hệ sinh thái phải có lợi cho cả ba bên</strong>: người dùng, đối tác (driver, merchant), nền tảng.</li>
+      </ul>
+
+      <h3>4.3 MoMo — Việt Nam (bài học về miniapp marketplace)</h3>
+      <p>MoMo có hơn <strong>31 triệu người dùng</strong>, là superapp được mở nhiều nhất tại Việt Nam (~4,16 lần/tuần). Điểm bứt phá là nền tảng <strong>Mini App từ 2020</strong>: hiện đã có hơn <strong>100 miniapp</strong> và <strong>10.000+ đối tác</strong> tích hợp.</p>
+      <blockquote>"Đối tác có thể tiết kiệm <strong>hơn 75% chi phí</strong> khi triển khai trên nền tảng Mini App MoMo so với tự xây app riêng." — Vietnam News, 2024</blockquote>
+      <ul>
+        <li><strong>Mini App là cách duy nhất để mở rộng nhanh sang trăm dịch vụ</strong> mà không phá vỡ codebase hay tăng kích thước app vô tận.</li>
+        <li><strong>Đối tác được hưởng lợi: tiếp cận hàng triệu user, tiết kiệm chi phí, được AI/Data nền tảng hỗ trợ.</strong> Lập luận này dùng được nguyên xi để mời gọi đối tác Haiti.</li>
+        <li><strong>Tần suất mở app cao = quảng cáo và cross-sell hiệu quả.</strong> Đây là một dòng doanh thu mới mà Natcom hiện không có.</li>
+      </ul>
+
+      <h3>4.4 Mẫu chung của ba case</h3>
+      <div class="big-stats">
+        <div class="b"><div class="v">1 ID</div><div class="k">Đăng nhập một lần cho mọi dịch vụ</div></div>
+        <div class="b"><div class="v">1 ví</div><div class="k">Là "máu" của hệ sinh thái</div></div>
+        <div class="b"><div class="v">N miniapp</div><div class="k">Mở rộng nhanh không sửa core</div></div>
+        <div class="b"><div class="v">Data + AI</div><div class="k">Cá nhân hóa & cross-sell</div></div>
+      </div>
+    </section>
+
+    <!-- 5. WHY -->
+    <section id="why" class="block">
+      <div class="kicker">05 · Lập luận</div>
+      <h2 class="section">Vì sao Natcom phải làm — và làm ngay</h2>
+
+      <h3>5.1 Bốn lập luận chiến lược</h3>
+      <div class="grid cols-2">
+        <div class="card"><span class="tag">Lập luận 1</span><h4>Biến vị thế #1 thành rào chắn dài hạn</h4><p>Natcom là nhà mạng số 1 Haiti với 51% thị phần và Natcash có sẵn 2tr users. Vị thế quy mô kép này khi kết hợp superapp sẽ tạo hệ sinh thái <strong>khó đảo ngược</strong>: càng nhiều user, càng nhiều đối tác, càng tăng giá trị cho từng user mới. Hiệu ứng mạng là rào chắn cạnh tranh bền vững nhất.</p></div>
+        <div class="card"><span class="tag">Lập luận 2</span><h4>Mở dòng doanh thu mới ngoài viễn thông</h4><p>Hoa hồng từ đối tác miniapp, phí giao dịch ví, doanh thu nội dung số, quảng cáo trong app — đều là dòng tiền bổ sung, biên lợi nhuận cao hơn voice/data.</p></div>
+        <div class="card"><span class="tag">Lập luận 3</span><h4>Tận dụng kinh nghiệm Viettel toàn cầu</h4><p>MyID đã chứng minh mô hình ở Myanmar, các thị trường Viettel khác cũng đang dịch chuyển. Natcom thừa hưởng playbook đã có, rút ngắn 12–18 tháng học thử-sai.</p></div>
+        <div class="card"><span class="tag">Lập luận 4</span><h4>Cửa sổ thời gian đang đóng dần</h4><p>Mỗi năm trôi qua, người dùng Haiti cài thêm app của đối thủ, hình thành thói quen mới. Càng để muộn, chi phí giành lại càng lớn. Hành động trong 2026 là tối ưu.</p></div>
+      </div>
+
+      <h3>5.2 Ba phương án và lý do chọn superapp</h3>
+      <table>
+        <thead><tr><th>Phương án</th><th>Đặc điểm</th><th>Đánh giá</th></tr></thead>
+        <tbody>
+          <tr><td><strong>A. Nâng cấp UI/UX My Natcom hiện tại</strong></td><td>Giữ kiến trúc cũ, chỉ làm mới giao diện và thêm 5–10 tính năng selfcare.</td><td>Rẻ và nhanh, nhưng không giải bài toán chiến lược. Vẫn chỉ là app selfcare.</td></tr>
+          <tr><td><strong>B. Làm nhiều app riêng (My Natcom + ví + giải trí)</strong></td><td>Tách dịch vụ thành các app riêng biệt.</td><td>Tốn chi phí marketing đẩy cài đặt nhiều app; trải nghiệm rời rạc; không tạo hệ sinh thái.</td></tr>
+          <tr><td><strong>C. Superapp + miniapp (đề xuất)</strong></td><td>Một app duy nhất, kiến trúc mở để chứa miniapp Natcom và đối tác.</td><td><strong>Lựa chọn tối ưu.</strong> Chi phí dài hạn thấp nhất, tốc độ ra dịch vụ cao nhất, hiệu ứng mạng mạnh nhất.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 6. VISION -->
+    <section id="vision" class="block">
+      <div class="kicker">06 · Vision</div>
+      <h2 class="section">Tầm nhìn & định vị mới</h2>
+      <blockquote>
+        <strong>My Natcom 2.0 là ứng dụng số đồng hành mỗi người Haiti — nơi họ giao tiếp, thanh toán, giải trí, và xử lý mọi việc trong đời sống hằng ngày, từ thành thị đến nông thôn.</strong>
+      </blockquote>
+      <div class="grid cols-3">
+        <div class="card"><span class="tag">Định vị</span><h4>"Digital Companion"</h4><p>Không chỉ là app của nhà mạng. Là người bạn số của 11,9 triệu người Haiti.</p></div>
+        <div class="card"><span class="tag">Lời hứa</span><h4>Mở mỗi ngày, không chỉ khi nạp tiền</h4><p>Mục tiêu tần suất mở app: tối thiểu 5–7 lần/tuần/người dùng hoạt động.</p></div>
+        <div class="card"><span class="tag">Chỗ đứng</span><h4>Trung lập về thanh toán, mạnh về phân phối dịch vụ</h4><p>Ví riêng nhưng cũng cho phép kết nối nguồn tiền khác. Đối tác bất kỳ đều có thể lên hệ sinh thái.</p></div>
+      </div>
+    </section>
+
+    <!-- 7. FEATURE GROUPS -->
+    <section id="features" class="block">
+      <div class="kicker">07 · Features</div>
+      <h2 class="section">7 nhóm tính năng trọng tâm</h2>
+      <p>Tài liệu này chỉ trình bày <strong>định hướng và lý do</strong> của từng nhóm. Chi tiết tính năng cụ thể, user flow, mockup sẽ trình bày trong bản đề xuất chi tiết phase 2. Riêng nhóm <strong>Engagement Engine</strong> (nhóm 6) được mở chi tiết hơn ngay trong tài liệu này vì là cỗ máy phục vụ trực tiếp 4 KPI tăng trưởng cốt lõi của Natcom.</p>
+
+      <div class="grid">
+        <div class="fg">
+          <div class="ic">📱</div>
+          <div class="body">
+            <h4>1. Selfcare nhà mạng — nền tảng đáng tin</h4>
+            <p>Quản lý số, tra cứu cước, mua/đổi gói data, gọi/SMS, FTTH, hóa đơn doanh nghiệp. Đây là "lý do căn bản" để khách hàng vẫn cài app — phải <strong>nhanh, ổn định, và bảo mật tuyệt đối</strong>. Mở rộng so với hiện tại: lịch sử giao dịch chi tiết, gợi ý gói cước theo hành vi, quản lý nhiều số trong một tài khoản.</p>
+          </div>
+        </div>
+
+        <div class="fg">
+          <div class="ic">💳</div>
+          <div class="body">
+            <h4>2. Natcash trong My Natcom — biến ví thành trái tim hệ sinh thái</h4>
+            <p>Natcash đã có ~2 triệu người dùng giao dịch — đây là lợi thế chiến lược cực hiếm: Natcom <strong>không phải xây ví mới</strong> mà tích hợp sâu Natcash sẵn có làm phương thức thanh toán mặc định cho toàn superapp. Mọi miniapp, gói cước, nội dung số, marketplace đều chạy qua Natcash. Mở rộng sang kiều hối quốc tế (diaspora Haiti ở Mỹ/CH Dominica/Canada/Pháp), hụi số (sòl/sangue), nano-loan, micro-insurance. <strong>Đây là vũ khí mà MyID, MoMo từng phải mất nhiều năm mới có — Natcom có sẵn ngay từ ngày 1.</strong></p>
+          </div>
+        </div>
+
+        <div class="fg">
+          <div class="ic">🎬</div>
+          <div class="body">
+            <h4>3. Giải trí số — giữ chân & tăng data</h4>
+            <p>Phim, video ngắn, âm nhạc, livestream sự kiện thể thao và văn hóa, game casual. <strong>Ưu tiên nội dung tiếng Creole và bản địa hóa</strong> — đây là khoảng trống lớn ở Haiti. Có thể bắt đầu bằng tự sản xuất một số chương trình tín hiệu, sau đó mời nhà sáng tạo Haiti lên nền tảng.</p>
+          </div>
+        </div>
+
+        <div class="fg">
+          <div class="ic">🛒</div>
+          <div class="body">
+            <h4>4. Tiện ích đời sống — biến app thành công cụ hàng ngày</h4>
+            <p>Hóa đơn điện/nước/internet, đặt vé xe, đặt đồ ăn, giao hàng nội thành, đặt lịch khám bệnh, tra cứu giáo dục. Phần lớn các dịch vụ này triển khai qua <strong>miniapp đối tác</strong>, không cần Natcom tự xây.</p>
+          </div>
+        </div>
+
+        <div class="fg">
+          <div class="ic">🏪</div>
+          <div class="body">
+            <h4>5. Marketplace miniapp & đối tác</h4>
+            <p>Một "App Store" trong My Natcom: nơi đối tác đăng ký, được duyệt, triển khai miniapp. Đi kèm là cơ chế ưu đãi merchant, livestream khuyến mãi, AI/data hỗ trợ đối tác nhắm khách hàng. <strong>Đây là điểm khác biệt cấu trúc</strong> so với mọi giải pháp Digicel đang có.</p>
+          </div>
+        </div>
+
+        <div class="fg" style="border-color:rgba(255,90,31,.5);background:linear-gradient(180deg,rgba(255,90,31,.06),rgba(124,92,255,.04))">
+          <div class="ic" style="background:linear-gradient(135deg,rgba(255,90,31,.35),rgba(124,92,255,.25))">🎮</div>
+          <div class="body">
+            <h4>6. Engagement Engine — Loyalty, minigame & cộng đồng <span style="font-size:11px;color:var(--brand);background:rgba(255,90,31,.15);padding:2px 8px;border-radius:6px;margin-left:6px;letter-spacing:.4px;text-transform:uppercase;font-weight:700">trọng tâm</span></h4>
+            <p>Một cỗ máy chuyên trách <strong>4 chỉ số tăng trưởng cốt lõi</strong>: install rate, activation rate, DAU, MAU. Mọi cơ chế đều thiết kế riêng cho văn hóa Haiti (Borlette, Konbit, Kanaval, Kompa, gia đình lakou) — không sao chép từ MyID hay MoMo. <strong>Tạo khác biệt cảm xúc</strong> và là rào chắn khó copy nhất với đối thủ. Chi tiết phễu A→E ngay sau bảng.</p>
+          </div>
+        </div>
+
+        <div class="fg">
+          <div class="ic">🏛️</div>
+          <div class="body">
+            <h4>7. Dịch vụ công & cộng đồng (tùy chọn dài hạn)</h4>
+            <p>Hợp tác với chính quyền Haiti để cung cấp dịch vụ công cơ bản (tra cứu giấy tờ, đăng ký SIM chính chủ, thông báo khẩn cấp khi thiên tai). Tăng vị thế chiến lược của Natcom với nhà nước và mở ra một lớp người dùng mới — kể cả những người chưa có nhu cầu giải trí hay tài chính.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:36px">Engagement Engine — chi tiết phễu A→E</h3>
+      <p>Vì Engagement Engine phục vụ trực tiếp KPI lãnh đạo Natcom quan tâm nhất (install, activation, DAU, MAU), em mở chi tiết hơn các nhóm khác. Mỗi cơ chế bám đúng <strong>một bước trong phễu tăng trưởng</strong>.</p>
+
+      <h4 style="color:var(--brand);margin-top:22px">A · Acquisition — kéo cài app mới</h4>
+      <table>
+        <thead><tr><th style="width:22%">Cơ chế</th><th>Cách hoạt động</th><th style="width:22%">KPI chính</th></tr></thead>
+        <tbody>
+          <tr><td><strong>"Zanmi Mwen"</strong><br/>Mời bạn</td><td>Mời bạn cài app + đăng ký Natcash → cả hai nhận data bonus + Natcom Points. Tier tăng theo số người mời (5/10/20). <strong>Mời được user Digicel chuyển sang Natcom → thưởng X2.</strong></td><td>Install rate, churn từ đối thủ</td></tr>
+          <tr><td><strong>QR đại lý SIM</strong></td><td>Mỗi đại lý SIM có QR riêng. Khách mua SIM → scan = cài app + welcome bonus; <strong>đại lý cũng nhận hoa hồng.</strong> Tận dụng mạng phân phối Natcom hiện có.</td><td>Install ở ngoại thành/nông thôn</td></tr>
+          <tr><td><strong>"Kado Lakay"</strong><br/>Quà về nhà từ diaspora</td><td>Diaspora ở Mỹ/CH Dominica/Canada/Pháp tải app "remit" → tặng data/gói cước/Natcom Points cho người thân tại Haiti. Người thân buộc phải cài My Natcom để nhận.</td><td>Install, Natcash quốc tế</td></tr>
+          <tr><td><strong>Welcome bonus 7 ngày</strong></td><td>Cài app lần đầu: 1GB data + 1 lượt Borlette miễn phí + voucher merchant 50 HTG. <strong>Mở khóa dần theo từng ngày</strong>, không nhận hết một lúc → buộc quay lại.</td><td>Install → first-open rate</td></tr>
+        </tbody>
+      </table>
+
+      <h4 style="color:var(--brand);margin-top:22px">B · Activation — biến "cài app" thành "dùng thật"</h4>
+      <table>
+        <thead><tr><th style="width:22%">Cơ chế</th><th>Cách hoạt động</th><th style="width:22%">KPI chính</th></tr></thead>
+        <tbody>
+          <tr><td><strong>"Misyon Lè Premye"</strong><br/>7 nhiệm vụ tuần đầu</td><td>Onboarding gamified: 7 ngày đầu, mỗi ngày hoàn thành 1 nhiệm vụ (link Natcash, mua 1 gói data, thanh toán 1 hóa đơn, nghe 10 phút Kompa, mời 1 bạn…) → mở khóa thưởng tích lũy. Hoàn thành cả 7 = "Sertifika Lakay" + bonus lớn.</td><td>Activation rate, D7 retention</td></tr>
+          <tr><td><strong>First transaction cashback</strong></td><td>Giao dịch Natcash đầu tiên trong superapp → <strong>cashback 50% tối đa 100 HTG</strong>. Áp dụng 1 lần duy nhất.</td><td>% new user dùng Natcash trong app</td></tr>
+          <tr><td><strong>Profile = Points</strong></td><td>Mỗi bước hoàn thiện profile (avatar, ID, sinh trắc học, link contact, link family) = points. Mở khóa các tính năng premium (hạn mức chuyển tiền cao hơn, gói gia đình…).</td><td>KYC rate, data completeness</td></tr>
+        </tbody>
+      </table>
+
+      <h4 style="color:var(--brand);margin-top:22px">C · DAU — kéo mở app mỗi ngày (cốt lõi)</h4>
+      <p>Đây là phần nặng nhất của Engagement Engine, vì DAU là chỉ số khó nhất nhưng có giá trị thương mại lớn nhất: mỗi DAU = một cơ hội cross-sell, một slot quảng cáo, một touchpoint.</p>
+      <div class="grid cols-2" style="margin-top:14px">
+        <div class="card">
+          <span class="tag">DAU</span>
+          <h4>🎰 Borlette Lakou</h4>
+          <p>1 lượt quay miễn phí/ngày khi mở app. Tích đủ 7 lượt → giải lớn cuối tuần. <strong>Bám trực tiếp vào văn hóa borlette đã ăn sâu đời sống Haiti.</strong> Có thể nâng cấp thành sản phẩm thương mại với loterie có license.</p>
+        </div>
+        <div class="card">
+          <span class="tag">DAU</span>
+          <h4>🔥 Daily Streak</h4>
+          <p>Mở app + làm ít nhất 1 hành động/ngày = giữ streak. 7 ngày = 1GB data; 30 ngày = gói cước 1 tháng miễn phí. <strong>Reset về 0 nếu bỏ 1 ngày</strong> — cơ chế FOMO. Push notification 20h "Streak sắp mất!".</p>
+        </div>
+        <div class="card">
+          <span class="tag">DAU</span>
+          <h4>🎡 Wou Lachans — Vòng quay theo hành động</h4>
+          <p>Mỗi khi hoàn thành hành động giá trị cao (nạp tiền, thanh toán hóa đơn, chuyển khoản, mua gói), vòng quay tự bật → giải nhỏ ngẫu nhiên. <strong>Variable reward</strong> — đã chứng minh hiệu quả nhất trong app retention.</p>
+        </div>
+        <div class="card">
+          <span class="tag">DAU</span>
+          <h4>🎫 Tip Cash Jou — Thẻ cào số hằng ngày</h4>
+          <p>Mô phỏng thẻ cào giấy mà người Haiti quen thuộc. Mỗi ngày 1 thẻ cào ảo, cào ra: data, points, hoặc microtransfer Natcash thật (1–20 HTG). Cốt lõi là trải nghiệm cào — quen, vui, mất 5 giây.</p>
+        </div>
+        <div class="card">
+          <span class="tag">DAU</span>
+          <h4>⚽ Devine pou Genyen — Dự đoán bóng đá</h4>
+          <p>Mỗi trận đội tuyển Haiti, CONCACAF, World Cup, CLB Brazil/châu Âu phổ biến với người Haiti: dự đoán tỉ số/cầu thủ ghi bàn → đúng = points + lượt Borlette. Leaderboard quốc gia. <strong>Tận dụng cuồng nhiệt bóng đá Haiti.</strong></p>
+        </div>
+        <div class="card">
+          <span class="tag">DAU</span>
+          <h4>🎮 Casual game suite (H5)</h4>
+          <p>5 game nhẹ theme bản địa: <em>Tap-Tap Run</em> (endless runner trên xe tap-tap), <em>Match Kompa</em> (match-3 nhạc cụ Kompa), <em>Mo Kreyòl</em> (wordle Creole), <em>Domino</em> multiplayer, <em>Kanaval Mask</em>. Energy bar nạp bằng <strong>hành động thật</strong>: nạp data, thanh toán, chuyển khoản.</p>
+        </div>
+        <div class="card">
+          <span class="tag">DAU</span>
+          <h4>🎯 Misyon Jou — Nhiệm vụ ngày</h4>
+          <p>3 quest nhỏ mỗi ngày, <strong>cá nhân hóa bằng AI</strong> theo hành vi user. Hoàn thành = points + lượt quay. Cá nhân hóa là điểm khác biệt với MyID/MoMo — biến quest từ "việc bắt buộc nhàm" thành "đề xuất phù hợp".</p>
+        </div>
+      </div>
+
+      <h4 style="color:var(--brand);margin-top:22px">D · MAU — giữ chân theo tháng</h4>
+      <table>
+        <thead><tr><th style="width:22%">Cơ chế</th><th>Cách hoạt động</th><th style="width:22%">KPI chính</th></tr></thead>
+        <tbody>
+          <tr><td><strong>"Defi Mwa"</strong><br/>Thử thách tháng</td><td>Tích lũy điểm cả tháng từ mọi nguồn → 4 mốc Bronze/Silver/Gold/Diamond, thưởng tăng dần. Diamond = gói data tháng miễn phí + voucher 500 HTG + ưu tiên CSKH.</td><td>MAU, tier upgrade rate</td></tr>
+          <tr><td><strong>Auto-pay subscriptions</strong></td><td>Auto-pay gói cước hằng tháng qua Natcash → giảm 5–10% + points X2 + miễn phí 1 dịch vụ nhỏ (music basic / 100 SMS). Lock-in nhẹ, hiệu quả cao.</td><td>MAU, ARPU, churn giảm</td></tr>
+          <tr><td><strong>"Pakèt Familial"</strong><br/>Tài khoản gia đình</td><td>Add 3–5 thành viên gia đình → share data, share rewards, cùng tier-up. <strong>Phản ánh đúng cấu trúc lakou Haiti.</strong> Nếu 1 thành viên rời, cả nhà mất quyền lợi → giảm churn cá nhân.</td><td>MAU, household retention, ARPU/hộ</td></tr>
+          <tr><td><strong>Cultural Calendar Events</strong></td><td>Mỗi tháng có 1 event lớn theo lịch văn hóa Haiti: Kanaval (T2), Fèt Drapo (T5), Fèt Endepandans (T1), Fèt Gede (T11), Christmas, World Cup. Mỗi event = 2–4 tuần campaign loyalty riêng với theme, minigame, voucher merchant đặc thù.</td><td>MAU theo đợt, mass engagement</td></tr>
+        </tbody>
+      </table>
+
+      <h4 style="color:var(--brand);margin-top:22px">E · Word-of-mouth — biến user thành kênh marketing</h4>
+      <table>
+        <thead><tr><th style="width:22%">Cơ chế</th><th>Cách hoạt động</th><th style="width:22%">KPI chính</th></tr></thead>
+        <tbody>
+          <tr><td><strong>"Konbit Challenge"</strong></td><td>Nhóm 10 người (không cần là gia đình) cùng đăng ký 1 thử thách tháng. Cả nhóm cùng đạt → tất cả cùng thưởng. <strong>Lan truyền tự nhiên trong cộng đồng lakou.</strong></td><td>Viral coefficient (K-factor)</td></tr>
+          <tr><td><strong>"Pataje pou Genyen"</strong><br/>Chia sẻ thắng</td><td>Khi user thắng Borlette/streak/contest → nút share lên WhatsApp/Facebook. Share = bonus points + chia sẻ kèm referral code đính kèm.</td><td>Acquisition organic</td></tr>
+          <tr><td><strong>Gift transfer trong app</strong></td><td>Gửi data, gói cước, Natcash, lượt Borlette cho bạn bè. Người nhận buộc phải có app để nhận → kéo cài app thụ động.</td><td>Acquisition, frequency of use</td></tr>
+        </tbody>
+      </table>
+
+      <h4 style="margin-top:28px">Hai nguyên tắc thiết kế then chốt</h4>
+      <div class="duo">
+        <div class="pros">
+          <h4>1. Phần thưởng là tài sản Natcom có sẵn</h4>
+          <p>Data, voice, gói cước, lượt Borlette — không phải tiền mặt thưởng trực tiếp. <strong>Chi phí cận biên của Natcom khi thưởng 1GB data gần như bằng 0</strong>, nhưng user nhận giá trị thật. Đây là lợi thế chiến lược MonCash không thể bắt chước vì họ không sở hữu hạ tầng viễn thông.</p>
+        </div>
+        <div class="pros">
+          <h4>2. Mọi cơ chế phải có "Haitian flavor"</h4>
+          <p>Tên gọi Creole, art bản địa, lịch văn hóa Haiti, nhạc Kompa nền. Tạo cảm giác <strong>"app của người Haiti, do Natcom hiểu người Haiti làm ra"</strong>. Đây là khác biệt cảm xúc rất khó copy. Tham chiếu lại bảng "kim chỉ nam văn hóa" ở mục 3.6.</p>
+        </div>
+      </div>
+
+      <h4 style="margin-top:28px">Ma trận cơ chế ↔ KPI (tổng hợp)</h4>
+      <table>
+        <thead><tr><th>KPI mục tiêu</th><th>Cơ chế chính</th><th>Cơ chế phụ</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Install rate</strong></td><td>Zanmi Mwen, QR đại lý, Kado Lakay</td><td>Pataje pou Genyen, Gift transfer</td></tr>
+          <tr><td><strong>Activation rate</strong></td><td>Misyon Lè Premye, First transaction cashback</td><td>Profile = Points, Welcome bonus 7 ngày</td></tr>
+          <tr><td><strong>DAU</strong></td><td>Borlette Lakou, Daily Streak, Wou Lachans</td><td>Tip Cash, Devine pou Genyen, Casual games, Misyon Jou</td></tr>
+          <tr><td><strong>MAU</strong></td><td>Defi Mwa, Auto-pay, Pakèt Familial</td><td>Cultural Calendar</td></tr>
+          <tr><td><strong>Lan tỏa</strong></td><td>Konbit Challenge</td><td>Pataje pou Genyen, Gift transfer</td></tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:18px;color:var(--text-mute);font-size:13px">Mỗi nhóm sẽ được trình bày chi tiết trong bản đề xuất tiếp theo: user persona, flow nghiệp vụ, KPI, lựa chọn đối tác tiềm năng, ưu tiên phát hành.</p>
+    </section>
+
+    <!-- 8. ARCHITECTURE -->
+    <section id="arch" class="block">
+      <div class="kicker">08 · Architecture</div>
+      <h2 class="section">Nguyên tắc kiến trúc (góc nhìn lãnh đạo)</h2>
+      <p>Phần này trình bày <strong>nguyên tắc chiến lược</strong>, không đi vào chi tiết kỹ thuật. Hồ sơ kiến trúc chi tiết sẽ kèm trong tài liệu phase 2.</p>
+
+      <div class="grid cols-2">
+        <div class="card">
+          <span class="tag">Frontend</span>
+          <h4>Một codebase, hai nền tảng — bằng Flutter</h4>
+          <p>Tiết kiệm 40–50% chi phí phát triển so với hai team iOS/Android riêng. Ra tính năng đồng thời trên cả hai nền tảng. Sẵn sàng mở rộng sang phiên bản web khi cần.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Backend</span>
+          <h4>Microservices — mỗi dịch vụ độc lập</h4>
+          <p>Mỗi nghiệp vụ (ví, selfcare, content, loyalty) là một service riêng, có thể nâng cấp, scale, thay thế độc lập. Sự cố một dịch vụ không kéo cả app sập.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Superapp</span>
+          <h4>Core mỏng — miniapp tải động</h4>
+          <p>App cài về chỉ chứa các dịch vụ thiết yếu. Miniapp đối tác tải khi cần dùng — giữ app gọn, tiết kiệm data người dùng, dễ ra mắt dịch vụ mới mà không cần cập nhật toàn app.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Identity</span>
+          <h4>One ID Natcom</h4>
+          <p>Đăng nhập một lần dùng cho toàn hệ sinh thái. Là tài sản dữ liệu quan trọng nhất — cho phép cá nhân hóa, cross-sell, và đo lường chính xác hành vi khách hàng.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Bảo mật</span>
+          <h4>Bảo mật cấp tài chính ngay từ ngày đầu</h4>
+          <p>Vì có ví và thanh toán, hệ thống phải đạt chuẩn ngân hàng (mã hóa đầu cuối, xác thực sinh trắc học, audit log đầy đủ). Đây là điều kiện để được Banque de la République d'Haïti chấp thuận.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Vận hành</span>
+          <h4>Quan sát được, phục hồi nhanh</h4>
+          <p>Monitoring, alerting, rollback tự động. Vì My Natcom sẽ là kênh phục vụ hàng triệu người dân, downtime không chỉ là thiệt hại doanh thu mà còn là vấn đề uy tín quốc gia.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. ROADMAP -->
+    <section id="roadmap" class="block">
+      <div class="kicker">09 · Roadmap</div>
+      <h2 class="section">Lộ trình triển khai 3 giai đoạn</h2>
+      <p>Lộ trình ở mức tổng quan, sẽ chi tiết hóa thành kế hoạch dự án sau khi định hướng được phê duyệt. Mốc thời gian sẽ được xác lập chính thức ở phase 2.</p>
+
+      <div class="roadmap">
+        <div class="phase">
+          <div class="when">Giai đoạn 1 · Foundation (~6 tháng đầu)</div>
+          <h4>Tái cấu trúc nền móng & ra MVP</h4>
+          <p>Tái thiết kế UI/UX theo định vị mới. Dựng kiến trúc Flutter + microservices, miniapp engine, One ID. Ra phiên bản đầu với nhóm <strong>Selfcare + Ví cơ bản + 2–3 miniapp tự phát triển</strong>. Mục tiêu: thay thế hoàn toàn My Natcom cũ, đạt parity tính năng + UX vượt trội.</p>
+        </div>
+        <div class="phase">
+          <div class="when">Giai đoạn 2 · Expansion (~6 tháng tiếp)</div>
+          <h4>Mở rộng dịch vụ & mời đối tác</h4>
+          <p>Bổ sung nhóm Giải trí (phim, music, video ngắn, game). Mở SDK miniapp cho đối tác đầu tiên: hóa đơn điện/nước, đặt vé, giao hàng. Tích hợp kiều hối quốc tế vào ví. Bắt đầu chương trình loyalty và campaign marketing quy mô lớn.</p>
+        </div>
+        <div class="phase">
+          <div class="when">Giai đoạn 3 · Ecosystem (~6 tháng cuối)</div>
+          <h4>Trở thành nền tảng dịch vụ số quốc gia</h4>
+          <p>Hàng chục đến hàng trăm miniapp đối tác. Tích hợp dịch vụ công nếu hợp tác được với chính quyền. Mở rộng sản phẩm tài chính (nano-loan, micro-insurance, tiết kiệm). Đo lường ROI từng nhóm dịch vụ, ra phiên bản 2.x dựa trên dữ liệu thực tế.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. RISK -->
+    <section id="risk" class="block">
+      <div class="kicker">10 · Risks</div>
+      <h2 class="section">Rủi ro chính & cách hóa giải</h2>
+      <table>
+        <thead><tr><th>Rủi ro</th><th>Mức độ</th><th>Cách hóa giải</th></tr></thead>
+        <tbody>
+          <tr><td><strong>User Natcash hiện tại không chuyển sang dùng trong superapp</strong></td><td>Cao</td><td>Migration mượt (single-sign-on Natcash ↔ My Natcom), giữ nguyên trải nghiệm Natcash hiện có như một "tab" trong superapp; ưu đãi chuyển đổi (cashback, points bonus) trong 3 tháng đầu; campaign truyền thông tại đại lý.</td></tr>
+          <tr><td><strong>Digicel phản đòn bằng nâng cấp app MonCash thành superapp</strong></td><td>Trung bình</td><td>Đi trước về tốc độ ra mắt; khác biệt bằng miniapp marketplace mở và Engagement Engine bản địa hóa văn hóa Haiti — Digicel sẽ mất 12–18 tháng để bắt kịp.</td></tr>
+          <tr><td><strong>Hạ tầng mạng không đồng đều, vùng sâu chậm</strong></td><td>Cao</td><td>App tối ưu cho 2G/3G fallback, ưu tiên USSD/SMS cho người không smartphone, miniapp tải động giảm data.</td></tr>
+          <tr><td><strong>Tình hình an ninh, chính trị Haiti bất ổn</strong></td><td>Cao</td><td>Hạ tầng phân tán, có khả năng vận hành remote; cơ chế khẩn cấp để duy trì dịch vụ trong khủng hoảng.</td></tr>
+          <tr><td><strong>Khó tìm đủ đối tác miniapp ban đầu</strong></td><td>Trung bình</td><td>Phase 1 dùng miniapp tự phát triển; phase 2 bắt đầu mời 5–10 đối tác chiến lược với điều khoản hấp dẫn; phase 3 mở rộng tự nhiên khi user base đủ lớn.</td></tr>
+          <tr><td><strong>Khó tuyển/giữ nhân sự kỹ thuật chất lượng cao</strong></td><td>Trung bình</td><td>RingMe đảm nhiệm phần lớn phát triển từ Việt Nam; chuyển giao dần cho team Natcom; xây dựng đội ngũ tại chỗ trong phase 3.</td></tr>
+          <tr><td><strong>Khung pháp lý fintech Haiti chưa rõ ràng</strong></td><td>Trung bình</td><td>Làm việc sớm với Banque de la République d'Haïti; ra mắt ví theo chuẩn cao nhất ngay từ đầu để không phải làm lại.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 11. KPI -->
+    <section id="kpi" class="block">
+      <div class="kicker">11 · Success metrics</div>
+      <h2 class="section">KPI thành công ở cấp chiến lược</h2>
+      <p>Đề xuất một bộ 4 KPI bắc cầu giữa "sản phẩm" và "kinh doanh", phù hợp để báo cáo Hội đồng quản trị Natcom. Mục tiêu số cụ thể sẽ được đề xuất ở bản chi tiết.</p>
+      <div class="grid cols-2">
+        <div class="card"><span class="tag">Sản phẩm</span><h4>MAU & tần suất mở app</h4><p>Số người dùng hoạt động hàng tháng; trung bình số lần mở app/người/tuần. Đây là thước đo "vai trò trong đời sống hằng ngày".</p></div>
+        <div class="card"><span class="tag">Sản phẩm</span><h4>Adoption miniapp & dịch vụ ngoài selfcare</h4><p>% MAU dùng ít nhất 1 dịch vụ ngoài selfcare; số miniapp được dùng trung bình. Thước đo hiệu quả "superapp".</p></div>
+        <div class="card"><span class="tag">Kinh doanh</span><h4>ARPU pha trộn (viễn thông + dịch vụ số)</h4><p>Doanh thu trung bình/người dùng tính cả hoa hồng đối tác, phí ví, nội dung, quảng cáo. Mục tiêu: tăng vượt mức Telco-only.</p></div>
+        <div class="card"><span class="tag">Kinh doanh</span><h4>Tỷ trọng doanh thu phi-viễn-thông</h4><p>% tổng doanh thu Natcom đến từ các dịch vụ số trên app. Thước đo dịch chuyển mô hình kinh doanh.</p></div>
+      </div>
+    </section>
+
+    <!-- 12. NEXT -->
+    <section id="next" class="block">
+      <div class="kicker">12 · Next steps</div>
+      <h2 class="section">Đề xuất bước tiếp theo</h2>
+      <ol>
+        <li><strong>Phê duyệt định hướng chiến lược</strong> trong tài liệu này (định vị, mô hình superapp + miniapp, 6 nhóm tính năng, lộ trình 3 giai đoạn).</li>
+        <li><strong>Thành lập tổ công tác chung</strong> giữa Natcom và RingMe Vietnam để chuẩn bị bản đề xuất chi tiết.</li>
+        <li><strong>RingMe phát hành bản đề xuất chi tiết phase 2</strong> trong vòng 3–4 tuần kể từ ngày phê duyệt định hướng: gồm thiết kế UX wireframe, đặc tả tính năng từng nhóm, lộ trình kèm timeline, ước lượng nguồn lực và đầu tư, kế hoạch quản trị rủi ro chi tiết.</li>
+        <li><strong>Thống nhất mô hình hợp tác RingMe – Natcom</strong>: phạm vi RingMe đảm nhiệm, cơ chế chuyển giao, phương án vận hành dài hạn.</li>
+        <li><strong>Khởi động đàm phán đối tác chiến lược ưu tiên</strong> (đối tác nội dung, đối tác hóa đơn, đối tác kiều hối) song song với phase thiết kế.</li>
+      </ol>
+
+      <div class="cta">
+        <h3>Đề xuất phê duyệt</h3>
+        <p>Đề nghị lãnh đạo Natcom phê duyệt <strong>định hướng chuyển đổi My Natcom thành superapp số toàn diện</strong> theo các nội dung tại tài liệu này, để RingMe Vietnam bắt tay xây dựng đề xuất chi tiết phase 2.</p>
+        <div style="margin-top:14px">
+          <button class="btn" onclick="window.print()">In bản đề xuất (PDF)</button>
+          <a class="btn outline" href="#summary">Quay về đầu trang</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="container">
+    <div><strong>RingMe Vietnam</strong> · Đề xuất tổng quan My Natcom 2.0 · 28/05/2026 · Tài liệu nội bộ, dùng để trình lãnh đạo Natcom.</div>
+    <div class="source-list">
+      <p style="margin-top:14px"><strong>Nguồn dữ liệu nghiên cứu:</strong></p>
+      <ul>
+        <li><a href="https://datareportal.com/reports/digital-2025-haiti" target="_blank" rel="noopener">DataReportal — Digital 2025: Haiti</a></li>
+        <li><a href="https://www.mordorintelligence.com/industry-reports/haiti-telecom-mno-market" target="_blank" rel="noopener">Mordor Intelligence — Haiti Telecom MNO Market Report 2025</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Telecommunications_in_Haiti" target="_blank" rel="noopener">Telecommunications in Haiti — Wikipedia</a></li>
+        <li><a href="https://www.gsma.com/solutions-and-impact/connectivity-for-good/mobile-for-development/blog/digicel-haiti-moncash-turnaround-story/" target="_blank" rel="noopener">GSMA — Digicel Haiti MonCash turnaround story</a></li>
+        <li><a href="https://www.cgap.org/sites/default/files/2025-09/CC-Guide/CGAP_Digicel-Case-Study.pdf.pdf" target="_blank" rel="noopener">CGAP — Digicel Mobile Money (MonCash) Case Study</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.mytel.myid" target="_blank" rel="noopener">Mytel MyID — Google Play</a></li>
+        <li><a href="https://mobile.stevieawards.com/iba/viettel-national-telecom-sa-best-new-telecommunications-product" target="_blank" rel="noopener">Stevie Awards — Natcom (Viettel)</a></li>
+        <li><a href="https://publishing.insead.edu/case/gojek-ride-sharing-super-app-fintech-ecosystem-leader" target="_blank" rel="noopener">INSEAD — Gojek case study</a></li>
+        <li><a href="https://vietnamnews.vn/bizhub/1268580/momo-connects-retailers-with-mini-app-technology.html" target="_blank" rel="noopener">Vietnam News — MoMo mini-app technology</a></li>
+        <li><a href="https://populationpyramids.org/haiti" target="_blank" rel="noopener">Population Pyramids — Haiti 2025</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Highlight active TOC link as user scrolls
+  const links = document.querySelectorAll('.toc a');
+  const targets = [...links].map(a => document.querySelector(a.getAttribute('href')));
+  function onScroll(){
+    let idx = 0;
+    const y = window.scrollY + 120;
+    targets.forEach((el,i) => { if(el && el.offsetTop <= y) idx = i; });
+    links.forEach(l => l.classList.remove('active'));
+    if(links[idx]) links[idx].classList.add('active');
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+</script>
+
 </body>
 </html>
