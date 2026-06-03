@@ -37,8 +37,8 @@
 <div class="container">
   <section class="block">
     <div class="notice">
-      <h3>Trang chi tiết — đang chuẩn bị phát hành</h3>
-      <p>Trang này hiện liệt kê danh sách tính năng của nhóm. <strong>Chi tiết đầy đủ theo template 10 mục</strong> (định nghĩa, persona, user flow, wireframe, edge case, phụ thuộc, acceptance criteria, KPI riêng, priority, phase) sẽ được RingMe phát hành trong các turn tiếp theo của Bước 1.B sau khi Natcom phê duyệt khung sườn ở <a href="index.html">trang chủ Đợt 1</a>.</p>
+      <h3>Trang chi tiết — đã phát hành đầy đủ 6/6 tính năng</h3>
+      <p>Toàn bộ 6 tính năng Giải trí số đã có chi tiết theo <strong>template 10 mục</strong> ngay dưới bảng danh sách, kèm 3 wireframe SVG cho 3 tính năng Must (Music Kompa, VOD, Video ngắn). <strong>Lưu ý quan trọng:</strong> RingMe đề xuất tận dụng <em>TVPaw (OTT có sẵn của Natcom S.A)</em> cho #2 VOD và <em>Okara Haiti (karaoke có sẵn)</em> cho #6 — giảm 40-50% effort tổng thể và leverage catalog đã có.</p>
     </div>
 
     <div class="kicker">Danh sách tính năng</div>
@@ -109,7 +109,898 @@
     </table>
     </div>
 
-    <p style="margin-top:24px;color:var(--text-mute);font-size:13px"><strong>Bước tiếp theo:</strong> Khi Natcom duyệt khung sườn ở trang chủ Đợt 1, RingMe sẽ phát hành chi tiết từng tính năng theo template 10 mục đã thống nhất, kèm 2–3 wireframe SVG cho các màn hình then chốt của nhóm này.</p>
+    <!-- ====== BƯỚC 1.B · GIẢI TRÍ — TOÀN BỘ 6 TÍNH NĂNG ====== -->
+<div class="batch-banner" style="margin-top:32px">
+  <div class="num">E</div>
+  <div>
+    <h3>Giải trí số · 6 tính năng — 1 batch duy nhất</h3>
+    <p>Nội dung Haiti bản địa hóa làm trọng tâm: <strong>Music Kompa</strong>, <strong>VOD</strong> (tích hợp TVPaw có sẵn), <strong>Video ngắn creator</strong>, <strong>Livestream</strong>, <strong>Podcast/Radio Creole</strong>, <strong>Karaoke</strong> (tích hợp Okara có sẵn). Đặc biệt tận dụng 2 sản phẩm Natcom S.A đang chạy để tiết kiệm effort + leverage catalog có sẵn.</p>
+  </div>
+</div>
+<div class="batch-progress" aria-label="Tiến độ 1 batch Giải trí">
+  <span class="on" title="Giải trí · 6 tính năng"></span>
+</div>
+
+<!-- ===== FEATURE #1 — MUSIC STREAMING ===== -->
+<article class="feature-card" id="e1-music-streaming">
+  <header>
+    <div>
+      <h3>#1 — Music streaming <span style="color:var(--text-dim);font-weight:400;font-size:15px">(Kompa · Rabòday · Rasin + Latin/Caribbean)</span></h3>
+      <div class="meta">
+        <span class="badge b-must">Must</span>
+        <span class="badge b-sz">Effort L</span>
+        <span class="badge b-sz">KPI: DAU · Session length · Artist Haiti share</span>
+        <span class="badge b-sz">Phase: G3 — sprint 9–11</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ten-grid">
+    <div class="item">
+      <h4>1. Định nghĩa</h4>
+      <p>In-app music streaming với <strong>catalog tập trung Haiti</strong> (Kompa, Rabòday, Rasin, Twoubadou) làm trọng tâm, mở rộng Caribbean (Reggae, Reggaeton, Bachata) + Latin/Hip-hop quốc tế. Gói thuê bao tháng (49-99 HTG) qua Natcash. <strong>Đặc biệt: zero-rated data trên mạng Natcom</strong> — không tốn data nếu user dùng SIM Natcom (lợi thế carrier-owned content).</p>
+    </div>
+    <div class="item">
+      <h4>2. Persona phục vụ</h4>
+      <p>Stephania (P3 — chính, social heavy nghe TikTok music), Jean (P2 — lái xe nghe Kompa cả ngày), Marie (P1 — listen background bán hàng), Wisline (P5 — kết nối văn hóa Haiti từ US/CA). Patrick (P6) ít. Pierre (P4) phục vụ qua Podcast/Radio (#5) thay vì streaming.</p>
+    </div>
+    <div class="item span2">
+      <h4>3. User flow chính</h4>
+      <ol>
+        <li>Tab "Mizik" → Home với 6 genre tiles (Kompa, Rabòday, Rasin, Twoubadou, Latin, Hip-hop) — Haiti genres highlighted với gradient brand.</li>
+        <li>Search + autocomplete + voice search Creole (cho Pierre nếu accessibility on).</li>
+        <li>Tap song → player full-screen với <strong>lyrics Creole sync</strong> nếu có.</li>
+        <li>Save offline (require subscription) → DRM-protected.</li>
+        <li>Playlist: <em>"Made for you"</em> (AI personalized), curated by editorial team Natcom, social ("Mizik zanmi w ap koute").</li>
+        <li>Share song → kết nối <a href="engagement.html#f20-pataje-pou-genyen">#20 Pataje pou Genyen</a> với +20 Points.</li>
+        <li>Background play với lockscreen controls + Bluetooth audio.</li>
+        <li><strong>Zero-rated badge</strong> "Pa peye done" hiển thị trên mọi stream cho user Natcom SIM.</li>
+      </ol>
+    </div>
+    <div class="item">
+      <h4>4. Wireframe</h4>
+      <p>Xem <strong>E1</strong> — Music player Kompa với album art, lyrics Creole, controls, zero-rated badge, queue + playlist sidebar.</p>
+    </div>
+    <div class="item">
+      <h4>5. Edge case</h4>
+      <ul>
+        <li>Roaming international → zero-rated không apply, prompt user <em>"Done ap chaje · ou nan roaming"</em>.</li>
+        <li>Offline cache full → suggest cleanup oldest tracks.</li>
+        <li>Copyright Haiti artists: chương trình royalty share — Natcom phải đàm phán với label/SIBADO (sociedad recolectora).</li>
+        <li>Free tier 30 phút/ngày với ads → upgrade nudge sau 25 phút.</li>
+        <li>Family plan share qua <a href="engagement.html#f17-paket-familial">#17 Pakèt Familial</a> — 5 user share 1 sub.</li>
+        <li>Diaspora Wisline → catalog có thể bị geo-restrict (license labels) → fallback Haiti-only catalog.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>6. Phụ thuộc</h4>
+      <ul>
+        <li>Music catalog license (Haiti labels + global Warner/Sony/UMG).</li>
+        <li>CDN audio delivery + caching layer.</li>
+        <li>Music streaming engine (audio decoder + buffering smart).</li>
+        <li>Natcash subscription engine.</li>
+        <li><strong>Zero-rating infrastructure</strong> (Natcom data policy + DPI classifier).</li>
+        <li>Offline DRM (Widevine audio).</li>
+        <li>Lyrics provider (Creole — RingMe đề xuất Natcom thuê team biên tập lyrics).</li>
+        <li>AI recommendation (chung <a href="engagement.html#f14-misyon-jou-ai">#14</a>).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>7. Acceptance criteria</h4>
+      <ul>
+        <li><strong>AC1:</strong> Song start &lt;2s trên 4G Haiti.</li>
+        <li><strong>AC2:</strong> Background play stable, không bị kill khi switch app.</li>
+        <li><strong>AC3:</strong> Offline DRM secure, không cho extract MP3.</li>
+        <li><strong>AC4:</strong> Zero-rating correctly excluded từ data usage billing.</li>
+        <li><strong>AC5:</strong> Family plan max 5 user/sub enforce cứng.</li>
+        <li><strong>AC6:</strong> Voice search Creole accuracy ≥ 80% cho top 100 song titles.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>8. KPI riêng</h4>
+      <ul>
+        <li><strong>DAU lift:</strong> +12 points (vs no-music baseline).</li>
+        <li><strong>Avg session length:</strong> ≥ 25 phút/day/user (heavy listeners).</li>
+        <li><strong>% Stephania persona daily:</strong> ≥ 65%.</li>
+        <li><strong>Subscription rate:</strong> ≥ 18% MAU.</li>
+        <li><strong>Artist Haiti play share:</strong> ≥ 55% (bản sắc — đo thành công cultural positioning).</li>
+        <li><strong>Royalty payout</strong> Haiti artists/tháng: ≥ 80.000 HTG (signal ecosystem).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>9. Priority</h4>
+      <p><span class="badge b-must">Must</span> — Music là feature Engagement mạnh nhất cho Stephania (P3 — 20% base). Zero-rating là lợi thế <em>"unbeatable"</em> vs Spotify/Apple Music.</p>
+    </div>
+    <div class="item">
+      <h4>10. Phase</h4>
+      <p><strong>Đợt 1 — Giai đoạn 3 (Growth Build), sprint 9–11.</strong> Cần 2-3 tháng đàm phán catalog license + tích hợp zero-rating.</p>
+    </div>
+  </div>
+
+  <div class="principles-line">
+    <strong>Nguyên tắc thiết kế áp dụng (6/10)</strong>
+    <span class="p-tag">1 · Creole mặc định (lyrics + UI)</span>
+    <span class="p-tag">2 · Offline-capable (download cache)</span>
+    <span class="p-tag">3 · Battery & data efficient (audio compression + zero-rated)</span>
+    <span class="p-tag">4 · Voice search Creole (Pierre accessibility)</span>
+    <span class="p-tag">9 · Push có giới hạn (chỉ artist mới release)</span>
+    <span class="p-tag">10 · Observable (royalty audit)</span>
+  </div>
+
+  <div class="wf-wrap">
+    <h4>Wireframe E1 — Music Player Kompa (with lyrics + zero-rated)</h4>
+    <svg viewBox="0 0 360 720" xmlns="http://www.w3.org/2000/svg" width="320" role="img" aria-label="Wireframe Music Player">
+      <defs>
+        <linearGradient id="eg1" x1="0" x2="1"><stop offset="0" stop-color="#ff5a1f"/><stop offset="1" stop-color="#7c5cff"/></linearGradient>
+        <linearGradient id="eg1art" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#ff5a1f"/><stop offset="0.5" stop-color="#7c5cff"/><stop offset="1" stop-color="#4ad6c2"/></linearGradient>
+      </defs>
+      <rect x="0" y="0" width="360" height="720" rx="28" fill="#0b1020" stroke="#243064"/>
+      <text x="20" y="24" fill="#aab4d8" font-size="11" font-family="Inter">9:41</text>
+      <text x="340" y="24" fill="#aab4d8" font-size="11" font-family="Inter" text-anchor="end">100%</text>
+      <text x="20" y="62" fill="#e8ecff" font-size="14" font-family="Inter">⌄</text>
+      <text x="180" y="62" fill="#aab4d8" font-size="10" font-family="Inter" letter-spacing="1" text-anchor="middle">KAP JWE DEPI</text>
+      <text x="180" y="76" fill="#e8ecff" font-size="11" font-family="Inter" font-weight="700" text-anchor="middle">Lis "Kompa Klasik"</text>
+      <text x="340" y="62" fill="#aab4d8" font-size="14" font-family="Inter" text-anchor="end">≡</text>
+      <!-- Album art -->
+      <rect x="60" y="100" width="240" height="240" rx="20" fill="url(#eg1art)"/>
+      <text x="180" y="190" fill="rgba(255,255,255,.95)" font-size="14" font-family="Inter" font-weight="700" text-anchor="middle" letter-spacing="3">KOMPA</text>
+      <text x="180" y="220" fill="rgba(255,255,255,.95)" font-size="28" font-family="Inter" font-weight="800" text-anchor="middle">🎵</text>
+      <text x="180" y="262" fill="rgba(255,255,255,.85)" font-size="11" font-family="Inter" text-anchor="middle">T-Vice</text>
+      <!-- Zero-rated badge -->
+      <rect x="76" y="116" width="84" height="22" rx="11" fill="rgba(0,0,0,.5)" stroke="#3ddc97"/>
+      <text x="118" y="131" fill="#3ddc97" font-size="10" font-family="Inter" font-weight="700" text-anchor="middle">✓ Pa peye done</text>
+      <!-- Song info -->
+      <text x="180" y="370" fill="#e8ecff" font-size="20" font-family="Inter" font-weight="800" text-anchor="middle">Kite m sou ou</text>
+      <text x="180" y="392" fill="#aab4d8" font-size="13" font-family="Inter" text-anchor="middle">T-Vice · Kompa Klasik · 2018</text>
+      <!-- Lyrics Creole -->
+      <rect x="16" y="408" width="328" height="84" rx="14" fill="#172046" stroke="rgba(255,90,31,.3)"/>
+      <text x="28" y="426" fill="#ff5a1f" font-size="9" font-family="Inter" font-weight="700" letter-spacing="1">PAWÒL · KREYÒL</text>
+      <text x="180" y="446" fill="#7a86b8" font-size="12" font-family="Inter" text-anchor="middle" font-style="italic">M pa kapab dòmi nan nuit la...</text>
+      <text x="180" y="464" fill="#e8ecff" font-size="14" font-family="Inter" font-weight="700" text-anchor="middle">Kite m sou ou cherie ♪</text>
+      <text x="180" y="482" fill="#7a86b8" font-size="12" font-family="Inter" text-anchor="middle" font-style="italic">Lè m gade je w...</text>
+      <!-- Progress bar -->
+      <rect x="16" y="508" width="328" height="4" rx="2" fill="#172046"/>
+      <rect x="16" y="508" width="142" height="4" rx="2" fill="url(#eg1)"/>
+      <circle cx="158" cy="510" r="6" fill="#ff5a1f"/>
+      <text x="20" y="528" fill="#aab4d8" font-size="10" font-family="Inter">1:42</text>
+      <text x="340" y="528" fill="#aab4d8" font-size="10" font-family="Inter" text-anchor="end">3:58</text>
+      <!-- Controls -->
+      <g transform="translate(180,562)">
+        <text x="-110" y="6" fill="#aab4d8" font-size="20" text-anchor="middle" font-family="Inter">🔀</text>
+        <text x="-58" y="8" fill="#e8ecff" font-size="26" text-anchor="middle" font-family="Inter">⏮</text>
+        <circle r="28" fill="url(#eg1)"/>
+        <text y="8" fill="#fff" font-size="24" text-anchor="middle" font-family="Inter">⏸</text>
+        <text x="58" y="8" fill="#e8ecff" font-size="26" text-anchor="middle" font-family="Inter">⏭</text>
+        <text x="110" y="6" fill="#aab4d8" font-size="18" text-anchor="middle" font-family="Inter">🔁</text>
+      </g>
+      <!-- Bottom actions -->
+      <g font-family="Inter">
+        <rect x="16" y="612" width="68" height="36" rx="18" fill="#172046" stroke="#243064"/>
+        <text x="50" y="635" fill="#ff8a5a" font-size="14" text-anchor="middle">♥</text>
+        <rect x="92" y="612" width="68" height="36" rx="18" fill="#172046" stroke="#243064"/>
+        <text x="126" y="635" fill="#4ad6c2" font-size="14" text-anchor="middle">⤓</text>
+        <text x="126" y="635" fill="#4ad6c2" font-size="9" font-family="Inter" text-anchor="middle" dy="-12">Telechaje</text>
+        <rect x="168" y="612" width="68" height="36" rx="18" fill="#172046" stroke="#243064"/>
+        <text x="202" y="635" fill="#7c5cff" font-size="14" text-anchor="middle">⤴</text>
+        <rect x="244" y="612" width="100" height="36" rx="18" fill="rgba(255,90,31,.15)" stroke="rgba(255,90,31,.4)"/>
+        <text x="294" y="634" fill="#ff8a5a" font-size="10" font-weight="700" text-anchor="middle">+ Lis · Pataje</text>
+      </g>
+      <!-- Next queue hint -->
+      <text x="16" y="676" fill="#aab4d8" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">PWOCHEN NAN LIS</text>
+      <text x="16" y="694" fill="#e8ecff" font-size="12" font-family="Inter">Lakou Mizik · Tabou Combo · 4:12</text>
+      <text x="340" y="694" fill="#7a86b8" font-size="11" font-family="Inter" text-anchor="end">+24 chante</text>
+    </svg>
+    <p class="caption">E1 — Music player Kompa: album art gradient · zero-rated badge "Pa peye done" trên art · lyrics Creole 3 lines sync · progress bar · controls · 4 action chips (heart/download/share/playlist) · next queue hint.</p>
+  </div>
+</article>
+
+<!-- ===== FEATURE #2 — VIDEO ON-DEMAND (VOD) ===== -->
+<article class="feature-card" id="e2-vod">
+  <header>
+    <div>
+      <h3>#2 — Video on-demand (VOD) <span style="color:var(--text-dim);font-weight:400;font-size:15px">(Tích hợp TVPaw có sẵn)</span></h3>
+      <div class="meta">
+        <span class="badge b-must">Must</span>
+        <span class="badge b-sz">Effort XL</span>
+        <span class="badge b-sz">KPI: VOD ARPU · Subscription rate</span>
+        <span class="badge b-sz">Phase: G3–G4 — sprint 11–14</span>
+        <span class="badge" style="background:rgba(74,214,194,.15);color:#4ad6c2">Tận dụng TVPaw có sẵn</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ten-grid">
+    <div class="item">
+      <h4>1. Định nghĩa</h4>
+      <p>VOD module trong My Natcom 2.0, <strong>tận dụng TVPaw OTT đang chạy của Natcom S.A</strong> (đã có trên Apple Store + Play Store, có catalog phim sẵn). Phim Haiti + Latin + Hollywood + sport. Gói thuê bao tháng (199-499 HTG) qua Natcash. Zero-rating data Natcom. RingMe đề xuất 2 phương án: <strong>(A) Deep-link sang TVPaw</strong> (effort thấp, UX rời rạc), <strong>(B) Tích hợp catalog TVPaw vào My Natcom 2.0 qua API</strong> (effort cao, UX nhất quán) — khuyến nghị (B).</p>
+    </div>
+    <div class="item">
+      <h4>2. Persona phục vụ</h4>
+      <p>Stephania (P3 — phim Latin/Hollywood), Marie (P1 — phim Haiti background), Wisline (P5 — chính, kết nối phim Haiti từ Mỹ — driver subscription cao nhất), Patrick (P6 — ít, family entertainment).</p>
+    </div>
+    <div class="item span2">
+      <h4>3. User flow chính</h4>
+      <ol>
+        <li>Tab "Video" → tận dụng catalog TVPaw existing qua API integration.</li>
+        <li>Home: 6 rows — Trending · Phim Haiti · Phim Latin · Phim Mỹ · Sport · Kids.</li>
+        <li>Detail page: poster, synopsis Creole/Pháp/Anh, cast, rating, trailer.</li>
+        <li>Watch → fullscreen player với <strong>adaptive bitrate</strong>.</li>
+        <li><strong>Continue watching cross-device</strong> (phone → FTTH STB nếu có).</li>
+        <li>Download offline (sub required).</li>
+        <li>Multi-profile (4 profile/family, kid-safe filter cho Patrick family).</li>
+        <li>Cast to Chromecast/AirPlay/FireTV.</li>
+        <li>Subscription tiers:
+          <ul style="margin:4px 0 0;padding-left:18px">
+            <li><strong>Free</strong> w/ads (limited catalog)</li>
+            <li><strong>Basic 199 HTG</strong> · ads-free, 1 device, HD</li>
+            <li><strong>Premium 499 HTG</strong> · 4K + offline + 4 profile family</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+    <div class="item">
+      <h4>4. Wireframe</h4>
+      <p>Xem <strong>E2</strong> — VOD detail screen với poster + synopsis + cast + 3 CTA (Watch/Trailer/Watchlist) + episodes nếu series + subscription tier suggest.</p>
+    </div>
+    <div class="item">
+      <h4>5. Edge case</h4>
+      <ul>
+        <li>Region lock: phim Hollywood có thể bị geo-block → fallback alternatives.</li>
+        <li>Bandwidth low → adaptive bitrate (4K → 1080p → 720p → 480p → 360p), label <em>"Kalite ap diminye"</em>.</li>
+        <li>Subscription expired → continue free with ads cap 2h/ngày.</li>
+        <li>Sub-account family — kid-safe content filter (≤PG-13 cho Patrick children).</li>
+        <li>Diaspora user (Wisline) ở US → check geo qua IP, catalog có thể khác (license restrictive).</li>
+        <li>Download offline expiry: 30 ngày sau khi download, 48h sau khi bắt đầu play.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>6. Phụ thuộc</h4>
+      <ul>
+        <li><strong>TVPaw OTT existing</strong> — integration API hoặc deep-link (cần coordinate với team TVPaw nội bộ Natcom).</li>
+        <li>Catalog license (Haiti distributors + Latin Univision/Telemundo + studios Disney/Warner).</li>
+        <li>CDN multi-tier (origin + edge).</li>
+        <li>Adaptive bitrate engine (HLS/DASH).</li>
+        <li>DRM (Widevine L1 cho 4K, L3 cho HD).</li>
+        <li>Geo-IP service (CloudFlare hoặc MaxMind).</li>
+        <li>Natcash subscription engine + recurring billing.</li>
+        <li>Chromecast/AirPlay SDK.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>7. Acceptance criteria</h4>
+      <ul>
+        <li><strong>AC1:</strong> Stream start &lt;3s on 4G Haiti.</li>
+        <li><strong>AC2:</strong> Adaptive bitrate transition seamless (no buffering pause).</li>
+        <li><strong>AC3:</strong> Continue watching sync &lt;30s cross-device.</li>
+        <li><strong>AC4:</strong> Geo-block enforce correctly với fallback message.</li>
+        <li><strong>AC5:</strong> Family kid-safe filter active per profile.</li>
+        <li><strong>AC6:</strong> Subscription tier change apply trong &lt;5 phút.</li>
+        <li><strong>AC7:</strong> TVPaw catalog sync delta ≤ 24h.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>8. KPI riêng</h4>
+      <ul>
+        <li><strong>VOD ARPU:</strong> ≥ 250 HTG/sub/tháng.</li>
+        <li><strong>Subscription rate:</strong> ≥ 8% MAU.</li>
+        <li><strong>Avg session length:</strong> ≥ 45 phút/sub.</li>
+        <li><strong>Diaspora subscription:</strong> ≥ 12% Wisline persona (high LTV).</li>
+        <li><strong>Phim Haiti view share:</strong> ≥ 30% (bản sắc).</li>
+        <li><strong>TVPaw migration rate</strong> (TVPaw user dùng My Natcom 2.0): ≥ 60% trong 6 tháng.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>9. Priority</h4>
+      <p><span class="badge b-must">Must</span> · ARPU driver cao. Tận dụng asset có sẵn (TVPaw) giảm 40-50% effort. Wisline persona LTV cao nhất.</p>
+    </div>
+    <div class="item">
+      <h4>10. Phase</h4>
+      <p><strong>Đợt 1 — Giai đoạn 3-4, sprint 11–14.</strong> XL effort do integration TVPaw + license deals. Khuyến nghị Natcom mở thảo luận với team TVPaw từ G1.</p>
+    </div>
+  </div>
+
+  <div class="principles-line">
+    <strong>Nguyên tắc thiết kế áp dụng (6/10)</strong>
+    <span class="p-tag">1 · Creole mặc định (synopsis + subtitle)</span>
+    <span class="p-tag">2 · Offline-capable (download Basic+)</span>
+    <span class="p-tag">3 · Adaptive bitrate (data efficient)</span>
+    <span class="p-tag">5 · Multi-profile family</span>
+    <span class="p-tag">8 · Accessibility (subtitle, audio description)</span>
+    <span class="p-tag">10 · Observable (DRM audit)</span>
+  </div>
+
+  <div class="wf-wrap">
+    <h4>Wireframe E2 — VOD Detail Screen (Phim Haiti)</h4>
+    <svg viewBox="0 0 360 720" xmlns="http://www.w3.org/2000/svg" width="320" role="img" aria-label="Wireframe VOD Detail">
+      <defs>
+        <linearGradient id="eg2" x1="0" x2="1"><stop offset="0" stop-color="#ff5a1f"/><stop offset="1" stop-color="#4ad6c2"/></linearGradient>
+        <linearGradient id="eg2hero" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#1f5aff" stop-opacity="0.4"/><stop offset="0.6" stop-color="#0b1020" stop-opacity="0"/></linearGradient>
+        <linearGradient id="eg2poster" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff5a1f"/><stop offset="0.5" stop-color="#7c5cff"/><stop offset="1" stop-color="#1f5aff"/></linearGradient>
+      </defs>
+      <rect x="0" y="0" width="360" height="720" rx="28" fill="#0b1020" stroke="#243064"/>
+      <text x="20" y="24" fill="#aab4d8" font-size="11" font-family="Inter">9:41</text>
+      <text x="340" y="24" fill="#aab4d8" font-size="11" font-family="Inter" text-anchor="end">100%</text>
+      <text x="20" y="62" fill="#fff" font-size="14" font-family="Inter">←</text>
+      <text x="180" y="62" fill="#fff" font-size="14" font-family="Inter" font-weight="700" text-anchor="middle">Detay Fim</text>
+      <text x="340" y="62" fill="#fff" font-size="14" font-family="Inter" text-anchor="end">⤴</text>
+      <line x1="0" y1="78" x2="360" y2="78" stroke="#243064"/>
+      <!-- Hero backdrop -->
+      <rect x="0" y="78" width="360" height="280" fill="url(#eg2poster)" opacity="0.85"/>
+      <rect x="0" y="78" width="360" height="280" fill="url(#eg2hero)"/>
+      <!-- Poster placeholder -->
+      <rect x="32" y="118" width="100" height="148" rx="10" fill="url(#eg2poster)" stroke="rgba(255,255,255,.2)"/>
+      <text x="82" y="180" fill="rgba(255,255,255,.95)" font-size="11" font-family="Inter" font-weight="700" text-anchor="middle">FILM</text>
+      <text x="82" y="200" fill="rgba(255,255,255,.95)" font-size="18" font-family="Inter" font-weight="800" text-anchor="middle">🎬</text>
+      <text x="82" y="220" fill="rgba(255,255,255,.85)" font-size="9" font-family="Inter" text-anchor="middle">2024</text>
+      <!-- Title + meta -->
+      <text x="146" y="138" fill="#4ad6c2" font-size="9" font-family="Inter" font-weight="700" letter-spacing="1.5">🇭🇹 FILM AYISYEN · 2024</text>
+      <text x="146" y="166" fill="#fff" font-size="20" font-family="Inter" font-weight="800">Lakay Mwen</text>
+      <text x="146" y="186" fill="#aab4d8" font-size="11" font-family="Inter">1h 48m · Drama · TVPA</text>
+      <!-- Rating -->
+      <g transform="translate(146,200)">
+        <text x="0" y="0" fill="#ffc857" font-size="11">★★★★</text>
+        <text x="38" y="0" fill="#243064" font-size="11">★</text>
+        <text x="56" y="0" fill="#e8ecff" font-size="11" font-weight="700">4.6</text>
+        <text x="80" y="0" fill="#aab4d8" font-size="10">· 2.4k votes</text>
+      </g>
+      <!-- Watch CTAs (3 buttons) -->
+      <rect x="16" y="298" width="206" height="48" rx="24" fill="#ff5a1f"/>
+      <text x="119" y="328" fill="#fff" font-size="14" font-family="Inter" font-weight="800" text-anchor="middle">▶ Gade kounye a</text>
+      <rect x="232" y="298" width="56" height="48" rx="24" fill="#172046" stroke="rgba(255,255,255,.3)"/>
+      <text x="260" y="328" fill="#fff" font-size="14" font-family="Inter" text-anchor="middle">▶ ◌</text>
+      <rect x="296" y="298" width="48" height="48" rx="24" fill="#172046" stroke="rgba(255,255,255,.3)"/>
+      <text x="320" y="328" fill="#fff" font-size="14" font-family="Inter" text-anchor="middle">+</text>
+      <!-- Synopsis -->
+      <text x="16" y="384" fill="#ff5a1f" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">SOMÈ · KREYÒL</text>
+      <text x="16" y="406" fill="#e8ecff" font-size="13" font-family="Inter" lengthAdjust="spacingAndGlyphs">Yon jenn fanm ki te abite Miami depi 15</text>
+      <text x="16" y="424" fill="#e8ecff" font-size="13" font-family="Inter">ane retounen nan Ayiti pou jwenn fanmi-l</text>
+      <text x="16" y="442" fill="#e8ecff" font-size="13" font-family="Inter">epi dekouvri yon sekrè ki ka chanje tout</text>
+      <text x="16" y="460" fill="#e8ecff" font-size="13" font-family="Inter">bagay...</text>
+      <text x="16" y="478" fill="#4ad6c2" font-size="11" font-family="Inter" font-weight="700">Wè plis →</text>
+      <!-- Cast -->
+      <text x="16" y="504" fill="#ff5a1f" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">AKTÈ YO</text>
+      <g font-family="Inter">
+        <circle cx="32" cy="528" r="14" fill="#ff5a1f" opacity="0.7"/>
+        <text x="32" y="552" fill="#aab4d8" font-size="9" text-anchor="middle">Magalie</text>
+
+        <circle cx="80" cy="528" r="14" fill="#7c5cff" opacity="0.7"/>
+        <text x="80" y="552" fill="#aab4d8" font-size="9" text-anchor="middle">Jean-Luc</text>
+
+        <circle cx="128" cy="528" r="14" fill="#4ad6c2" opacity="0.7"/>
+        <text x="128" y="552" fill="#aab4d8" font-size="9" text-anchor="middle">Wisline</text>
+
+        <circle cx="176" cy="528" r="14" fill="#ffc857" opacity="0.7"/>
+        <text x="176" y="552" fill="#aab4d8" font-size="9" text-anchor="middle">Régis</text>
+
+        <text x="208" y="532" fill="#7a86b8" font-size="11">+8</text>
+      </g>
+      <!-- Subscription suggest -->
+      <rect x="16" y="566" width="328" height="74" rx="14" fill="url(#eg2)" opacity="0.15"/>
+      <rect x="16" y="566" width="328" height="74" rx="14" fill="none" stroke="rgba(255,90,31,.45)"/>
+      <text x="28" y="588" fill="#ff8a5a" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">UPGRADE POU 4K + OFFLINE</text>
+      <text x="28" y="608" fill="#e8ecff" font-size="14" font-family="Inter" font-weight="700">Premium · 499 HTG/mwa</text>
+      <text x="28" y="626" fill="#aab4d8" font-size="11" font-family="Inter">+ 4 pwofil fanmi · pa peye done Natcom</text>
+      <text x="332" y="624" fill="#ff5a1f" font-size="11" font-family="Inter" text-anchor="end" font-weight="700">Eseye →</text>
+      <!-- Continue watching -->
+      <text x="16" y="664" fill="#ff5a1f" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">KONTINYE GADE</text>
+      <rect x="16" y="676" width="200" height="36" rx="10" fill="#121935"/>
+      <text x="28" y="691" fill="#e8ecff" font-size="11" font-family="Inter" font-weight="700">Lakay Mwen · 47 min</text>
+      <rect x="28" y="699" width="172" height="3" rx="2" fill="#243064"/>
+      <rect x="28" y="699" width="74" height="3" rx="2" fill="#4ad6c2"/>
+      <text x="332" y="700" fill="#4ad6c2" font-size="11" font-family="Inter" text-anchor="end" font-weight="700">Kontinye ▶</text>
+    </svg>
+    <p class="caption">E2 — VOD detail "Lakay Mwen" phim Haiti: hero backdrop + poster · title/genre/rating 4.6★ · 3 CTA (Watch/Trailer/Watchlist) · synopsis Creole 4 lines · cast strip 4+8 · Premium upgrade card 499 HTG · continue watching progress.</p>
+  </div>
+</article>
+
+<!-- ===== FEATURE #3 — VIDEO NGẮN CREATOR ===== -->
+<article class="feature-card" id="e3-short-video">
+  <header>
+    <div>
+      <h3>#3 — Video ngắn — Creator Haiti <span style="color:var(--text-dim);font-weight:400;font-size:15px">(Klip · TikTok-style Creole)</span></h3>
+      <div class="meta">
+        <span class="badge b-should">Should</span>
+        <span class="badge b-sz">Effort L</span>
+        <span class="badge b-sz">KPI: Session length · Creator tips GTV</span>
+        <span class="badge b-sz">Phase: G3–G4 — sprint 11–14</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ten-grid">
+    <div class="item">
+      <h4>1. Định nghĩa</h4>
+      <p>Feed video ngắn TikTok-style (15-60s) với content tiếng Creole. <strong>Creator hub</strong> cho Haitian creators upload + analytics + earnings. Monetization qua <strong>tips từ viewer</strong> (5/10/50 HTG/lượt) qua Natcash, creator nhận 70% (Natcom 30% trừ chi phí infra + payment + moderation). Đây là phản công trực diện TikTok — đối thủ chính đang chiếm thời gian của Stephania (P3).</p>
+    </div>
+    <div class="item">
+      <h4>2. Persona phục vụ</h4>
+      <p>Stephania (P3 — chính, daily user của TikTok), Jean (P2 — view khi rảnh), Marie (P1 — view trending Haiti). Creator chủ yếu là Stephania-persona trẻ urban có smartphone tốt.</p>
+    </div>
+    <div class="item span2">
+      <h4>3. User flow chính</h4>
+      <ol>
+        <li>Tab "Klip" → feed full-screen vertical swipe (giống TikTok).</li>
+        <li>AI personalized feed (cộng hưởng <a href="engagement.html#f14-misyon-jou-ai">#14 Misyon Jou AI engine</a>).</li>
+        <li>Tap heart · comment · share · save · "+ Follow".</li>
+        <li>Tap creator avatar → profile + feed của creator.</li>
+        <li><strong>Tips:</strong> tap tip button → chọn 5/10/50 HTG → confirm Natcash PIN → creator nhận trong &lt;10s.</li>
+        <li><strong>Creator Hub</strong> (Stephania nếu là creator): tab "Studio" → upload, analytics (views, engagement, earnings), fanbase.</li>
+        <li>Hashtag trends + challenges (vd <em>"#KanavalChallenge"</em>).</li>
+        <li>Music library licensed (chung <a href="#e1-music-streaming">#1 Music</a>) — creator dùng track không lo copyright.</li>
+      </ol>
+    </div>
+    <div class="item">
+      <h4>4. Wireframe</h4>
+      <p>Xem <strong>E3</strong> — Feed video ngắn vertical với video preview, creator info, tips/like/comment/share buttons, tab navigation bottom, hashtag overlay.</p>
+    </div>
+    <div class="item">
+      <h4>5. Edge case</h4>
+      <ul>
+        <li>Content moderation Creole: AI moderation cần Creole training data; fallback human review &lt;30s post-upload.</li>
+        <li>Underage creator (15-17) → guardian consent + earnings to guardian Natcash account.</li>
+        <li>Copyright music: bắt buộc dùng music library Natcom licensed (chặn upload audio ngoài).</li>
+        <li>Tips fraud: Natcom hold tips 24h trước khi cho creator withdraw (anti-chargeback).</li>
+        <li>Diaspora creator (Wisline upload từ US) → tips quốc tế qua <a href="engagement.html#f3-kado-lakay">#3 Kado Lakay</a> infrastructure.</li>
+        <li>Creator payout: monthly auto-payout hoặc on-demand khi balance &gt;500 HTG.</li>
+        <li>Hate speech/violence content: auto-flag + 24/7 moderation team Creole-fluent.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>6. Phụ thuộc</h4>
+      <ul>
+        <li>Video CDN + transcoder (multi-resolution).</li>
+        <li>AI feed recommendation (chung <a href="engagement.html#f14-misyon-jou-ai">#14 Misyon Jou AI</a>).</li>
+        <li>Content moderation (AI Creole + human review pipeline).</li>
+        <li>Natcash tips engine (chung <a href="engagement.html#f21-gift-transfer">#21 Gift transfer</a>).</li>
+        <li>Creator analytics dashboard.</li>
+        <li>Music library licensed (chung <a href="#e1-music-streaming">#1</a>).</li>
+        <li>KYC2 cho creator (anti-abuse + tax compliance).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>7. Acceptance criteria</h4>
+      <ul>
+        <li><strong>AC1:</strong> Feed scroll smooth 60fps Android 7+ RAM 1.5GB.</li>
+        <li><strong>AC2:</strong> Video preload next 3 trong queue (smart prefetch).</li>
+        <li><strong>AC3:</strong> Tips Natcash settlement &lt;10s.</li>
+        <li><strong>AC4:</strong> Creator payout monthly hoặc on-demand &gt;500 HTG.</li>
+        <li><strong>AC5:</strong> Content moderation flag &lt;30s post-upload.</li>
+        <li><strong>AC6:</strong> AI feed personalization improve CTR ≥ 35% sau 30 ngày.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>8. KPI riêng</h4>
+      <ul>
+        <li><strong>DAU lift:</strong> +9 points (TikTok cannibalization).</li>
+        <li><strong>Avg session length:</strong> ≥ 35 phút/day (target TikTok-level).</li>
+        <li><strong>% Stephania persona daily:</strong> ≥ 55%.</li>
+        <li><strong>Creator active</strong> (≥1 upload/tuần): ≥ 1.500 đầu Đợt 1.</li>
+        <li><strong>Tips GTV:</strong> ≥ 50.000 HTG/tháng cuối Đợt 1.</li>
+        <li><strong>Avg tips/video viral:</strong> ≥ 80 HTG.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>9. Priority</h4>
+      <p><span class="badge b-should">Should</span> · TikTok cannibalization là chiến lược dài hạn. Effort lớn nhưng nếu trượt sang Đợt 2 vẫn OK — Music + VOD đủ cho Đợt 1.</p>
+    </div>
+    <div class="item">
+      <h4>10. Phase</h4>
+      <p><strong>Đợt 1 — Giai đoạn 3-4, sprint 11–14.</strong> Cần AI feed engine đã train từ Engagement features trước.</p>
+    </div>
+  </div>
+
+  <div class="principles-line">
+    <strong>Nguyên tắc thiết kế áp dụng (6/10)</strong>
+    <span class="p-tag">1 · Creole mặc định</span>
+    <span class="p-tag">3 · Battery & data efficient (adaptive preload)</span>
+    <span class="p-tag">7 · Bảo mật cấp banking (tips Natcash + KYC2 creator)</span>
+    <span class="p-tag">8 · Accessibility</span>
+    <span class="p-tag">9 · Push có giới hạn (chỉ creator follow)</span>
+    <span class="p-tag">10 · Observable (moderation audit)</span>
+  </div>
+
+  <div class="wf-wrap">
+    <h4>Wireframe E3 — Klip Feed (Vertical short video)</h4>
+    <svg viewBox="0 0 360 720" xmlns="http://www.w3.org/2000/svg" width="320" role="img" aria-label="Wireframe Short Video Feed">
+      <defs>
+        <linearGradient id="eg3" x1="0" x2="1"><stop offset="0" stop-color="#ff5a1f"/><stop offset="1" stop-color="#7c5cff"/></linearGradient>
+        <linearGradient id="eg3vid" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#4ad6c2"/><stop offset="0.5" stop-color="#7c5cff"/><stop offset="1" stop-color="#ff5a1f"/></linearGradient>
+        <linearGradient id="eg3overlay" x1="0" x2="0" y1="0.5" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.7"/></linearGradient>
+      </defs>
+      <rect x="0" y="0" width="360" height="720" rx="28" fill="#0b1020" stroke="#243064"/>
+      <!-- Full screen video -->
+      <rect x="0" y="0" width="360" height="720" rx="28" fill="url(#eg3vid)" opacity="0.5"/>
+      <rect x="0" y="0" width="360" height="720" rx="28" fill="url(#eg3overlay)"/>
+      <!-- Status bar -->
+      <text x="20" y="24" fill="#fff" font-size="11" font-family="Inter">9:41</text>
+      <text x="340" y="24" fill="#fff" font-size="11" font-family="Inter" text-anchor="end">100%</text>
+      <!-- Top tabs -->
+      <text x="120" y="62" fill="#aab4d8" font-size="13" font-family="Inter" text-anchor="middle">Suiv</text>
+      <text x="180" y="62" fill="#fff" font-size="13" font-family="Inter" font-weight="800" text-anchor="middle">Pou ou</text>
+      <rect x="156" y="68" width="48" height="3" rx="1.5" fill="#ff5a1f"/>
+      <text x="240" y="62" fill="#aab4d8" font-size="13" font-family="Inter" text-anchor="middle">Live</text>
+      <text x="340" y="62" fill="#fff" font-size="14" font-family="Inter" text-anchor="end">🔍</text>
+      <!-- Video center placeholder (visual marker) -->
+      <g transform="translate(180,260)">
+        <circle r="48" fill="rgba(255,255,255,.15)" stroke="#fff" stroke-width="1.5"/>
+        <text y="8" fill="#fff" font-size="36" text-anchor="middle" font-family="Inter">▶</text>
+      </g>
+      <text x="180" y="338" fill="rgba(255,255,255,.7)" font-size="11" font-family="Inter" text-anchor="middle">Tape pou kanpe</text>
+      <!-- Right side actions -->
+      <g transform="translate(322,420)" font-family="Inter">
+        <circle r="22" fill="rgba(255,255,255,.18)" stroke="#fff" stroke-width="1.5"/>
+        <text y="6" fill="#fff" font-size="16" text-anchor="middle">S</text>
+        <circle cx="14" cy="14" r="9" fill="#ff5a1f"/>
+        <text x="14" y="18" fill="#fff" font-size="11" font-weight="800" text-anchor="middle">+</text>
+
+        <text y="60" fill="#fff" font-size="22" text-anchor="middle">♥</text>
+        <text y="76" fill="#fff" font-size="10" font-weight="700" text-anchor="middle">24.8K</text>
+
+        <text y="108" fill="#fff" font-size="22" text-anchor="middle">💬</text>
+        <text y="124" fill="#fff" font-size="10" font-weight="700" text-anchor="middle">1.2K</text>
+
+        <circle cy="156" r="22" fill="url(#eg3)" stroke="#fff" stroke-width="1.5"/>
+        <text y="162" fill="#fff" font-size="18" text-anchor="middle">💰</text>
+        <text y="190" fill="#ffc857" font-size="10" font-weight="800" text-anchor="middle">Tips</text>
+
+        <text y="222" fill="#fff" font-size="22" text-anchor="middle">↪</text>
+        <text y="238" fill="#fff" font-size="10" font-weight="700" text-anchor="middle">Pataje</text>
+
+        <text y="270" fill="#fff" font-size="22" text-anchor="middle">⌥</text>
+        <text y="286" fill="#fff" font-size="10" font-weight="700" text-anchor="middle">+ Lis</text>
+      </g>
+      <!-- Bottom info area -->
+      <text x="20" y="580" fill="#fff" font-size="14" font-family="Inter" font-weight="800">@stephania_kompa</text>
+      <text x="166" y="580" fill="#aab4d8" font-size="11" font-family="Inter">· 24K abone</text>
+      <text x="20" y="602" fill="#fff" font-size="13" font-family="Inter">Kèk pa dans Kompa pou anseye nou jodi a 💃</text>
+      <text x="20" y="622" fill="#fff" font-size="13" font-family="Inter">#KompaChallenge #LakouHaiti #Kanaval2026</text>
+      <!-- Music track -->
+      <text x="20" y="650" fill="#fff" font-size="11" font-family="Inter">🎵 Tabou Combo · Kanaval 2025</text>
+      <!-- Tips quick chips -->
+      <rect x="16" y="664" width="328" height="38" rx="19" fill="rgba(0,0,0,.45)" stroke="rgba(255,200,87,.4)"/>
+      <text x="32" y="687" fill="#ffc857" font-size="12" font-family="Inter" font-weight="700">💰 Voye kado:</text>
+      <rect x="118" y="672" width="52" height="22" rx="11" fill="rgba(255,200,87,.18)" stroke="rgba(255,200,87,.5)"/>
+      <text x="144" y="687" fill="#ffc857" font-size="11" font-family="Inter" font-weight="700" text-anchor="middle">5 HTG</text>
+      <rect x="178" y="672" width="52" height="22" rx="11" fill="rgba(255,200,87,.18)" stroke="rgba(255,200,87,.5)"/>
+      <text x="204" y="687" fill="#ffc857" font-size="11" font-family="Inter" font-weight="700" text-anchor="middle">10 HTG</text>
+      <rect x="238" y="672" width="56" height="22" rx="11" fill="#ffc857"/>
+      <text x="266" y="687" fill="#0b1020" font-size="11" font-family="Inter" font-weight="800" text-anchor="middle">50 HTG ⚡</text>
+      <text x="328" y="687" fill="#ffc857" font-size="12" font-family="Inter" font-weight="700" text-anchor="middle">…</text>
+      <!-- Bottom tab bar -->
+      <text x="40" y="710" fill="#fff" font-size="11" font-family="Inter" font-weight="700" text-anchor="middle">Klip</text>
+      <text x="100" y="710" fill="#aab4d8" font-size="11" font-family="Inter" text-anchor="middle">Mizik</text>
+      <circle cx="180" cy="700" r="14" fill="#ff5a1f"/>
+      <text x="180" y="705" fill="#fff" font-size="14" font-weight="800" text-anchor="middle" font-family="Inter">+</text>
+      <text x="180" y="722" fill="#aab4d8" font-size="9" font-family="Inter" text-anchor="middle">Kreye</text>
+      <text x="260" y="710" fill="#aab4d8" font-size="11" font-family="Inter" text-anchor="middle">Studio</text>
+      <text x="320" y="710" fill="#aab4d8" font-size="11" font-family="Inter" text-anchor="middle">Pwofil</text>
+    </svg>
+    <p class="caption">E3 — Klip feed: top tabs (Suiv/Pou ou/Live) · video full-screen với play button · right side actions (avatar+follow, heart 24.8K, comment 1.2K, tips highlighted, share, save) · creator info + caption + hashtags · music track · quick tips chips (5/10/50 HTG) · bottom tab nav với creator "+" button.</p>
+  </div>
+</article>
+
+<!-- ===== FEATURE #4 — LIVESTREAM ===== -->
+<article class="feature-card" id="e4-livestream">
+  <header>
+    <div>
+      <h3>#4 — Livestream sự kiện <span style="color:var(--text-dim);font-weight:400;font-size:15px">(Live Evenman · Kanaval, bóng đá, concert)</span></h3>
+      <div class="meta">
+        <span class="badge b-should">Should</span>
+        <span class="badge b-sz">Effort L</span>
+        <span class="badge b-sz">KPI: Peak DAU · Concurrent viewers</span>
+        <span class="badge b-sz">Phase: G4 — sprint 13–15</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ten-grid">
+    <div class="item">
+      <h4>1. Định nghĩa</h4>
+      <p>Livestream event lớn ở Haiti: <strong>Kanaval</strong>, <strong>bóng đá đội tuyển Haiti</strong> (kết hợp <a href="engagement.html#f12-devine-pou-genyen">#12 Devine pou Genyen</a>), concert Kompa, lễ tôn giáo (vodou/Catholic), discourse politique. Free hoặc <strong>PPV (5-50 HTG/event premium)</strong>. Đây là feature tạo peak DAU lớn nhất (Kanaval có thể 40-60K concurrent).</p>
+    </div>
+    <div class="item">
+      <h4>2. Persona phục vụ</h4>
+      <p>Jean (P2 — bóng đá, lễ tôn giáo), Marie (P1 — Kanaval), Patrick (P6 — concert business), Stephania (P3), Wisline (P5 — kết nối Haiti từ xa, driver chính cho PPV).</p>
+    </div>
+    <div class="item span2">
+      <h4>3. User flow chính</h4>
+      <ol>
+        <li>Tab "Live" → list event live + 3 upcoming.</li>
+        <li>Event detail: schedule, PPV pricing nếu có, reminder push, share intent.</li>
+        <li>Watch → fullscreen player với:
+          <ul style="margin:4px 0 0;padding-left:18px">
+            <li><strong>Chat</strong> (moderated, anti-spam, Creole filter)</li>
+            <li><strong>Reactions</strong> (animated emoji floating)</li>
+            <li><strong>Share intent</strong> (kết nối <a href="engagement.html#f20-pataje-pou-genyen">#20 Pataje</a>)</li>
+            <li><strong>Multi-camera</strong> cho sport (switch angle)</li>
+          </ul>
+        </li>
+        <li>Reminder push: <em>"Match Ayiti vs Jamayik kòmanse nan 1h"</em></li>
+        <li>Replay sau event 7 ngày (cho user không xem live).</li>
+        <li>PPV: confirm Natcash debit trước khi join stream.</li>
+      </ol>
+    </div>
+    <div class="item">
+      <h4>4. Wireframe</h4>
+      <p>Không có wireframe riêng — pattern player full-screen + chat side panel quen thuộc.</p>
+    </div>
+    <div class="item">
+      <h4>5. Edge case</h4>
+      <ul>
+        <li>Bandwidth limit: adaptive bitrate, prefer 360p mặc định cho 3G rural.</li>
+        <li>Massive concurrent (Kanaval 50K+): CDN burst capacity — cần partner (Akamai/CloudFlare Stream).</li>
+        <li>Religious content sensitivity: moderation chat tăng cường.</li>
+        <li>Diaspora geo-blocking nếu license restrict (vd FIFA rights).</li>
+        <li>PPV refund: nếu stream fail &gt;30 phút → auto-refund 100%.</li>
+        <li>Chat flood: rate limit 5 messages/min/user.</li>
+        <li>Server overload Kanaval: pre-scale CDN 24h trước event lớn.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>6. Phụ thuộc</h4>
+      <ul>
+        <li><strong>Live streaming infrastructure</strong> (RTMP ingest + HLS distribution).</li>
+        <li><strong>CDN burst capacity</strong> partner (Akamai/CloudFlare Stream).</li>
+        <li>Chat moderation (AI Creole + human review).</li>
+        <li>PPV gateway (Natcash recurring + one-time).</li>
+        <li><strong>Content rights deals</strong>: Federation Haïtienne de Football (FHF), concert promoters, religious orgs.</li>
+        <li>Multi-camera switching (sport events).</li>
+        <li>DRM cho PPV content.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>7. Acceptance criteria</h4>
+      <ul>
+        <li><strong>AC1:</strong> Live latency &lt;10s end-to-end.</li>
+        <li><strong>AC2:</strong> Concurrent 50K+ users on Kanaval, 25K+ regular events.</li>
+        <li><strong>AC3:</strong> PPV charging accurate, no double-charge.</li>
+        <li><strong>AC4:</strong> Replay available &lt;2h sau event end.</li>
+        <li><strong>AC5:</strong> Chat moderation rate &lt;5s.</li>
+        <li><strong>AC6:</strong> Multi-camera switch &lt;2s.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>8. KPI riêng</h4>
+      <ul>
+        <li><strong>Peak DAU event days:</strong> ≥ +60% so với baseline.</li>
+        <li><strong>Concurrent peak:</strong> ≥ 25K (Kanaval, Gold Cup match).</li>
+        <li><strong>PPV conversion:</strong> ≥ 8% viewers.</li>
+        <li><strong>Avg viewer minutes:</strong> ≥ 18 phút/event.</li>
+        <li><strong>Diaspora PPV share:</strong> ≥ 30% (Wisline persona driver).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>9. Priority</h4>
+      <p><span class="badge b-should">Should</span> · Peak DAU + cultural moment. Effort lớn (CDN + rights). Có thể trượt sang Đợt 2 nếu rights deals chậm.</p>
+    </div>
+    <div class="item">
+      <h4>10. Phase</h4>
+      <p><strong>Đợt 1 — Giai đoạn 4, sprint 13–15.</strong> Timing với Kanaval 2027 (T2) hoặc Gold Cup hè 2026.</p>
+    </div>
+  </div>
+
+  <div class="principles-line">
+    <strong>Nguyên tắc thiết kế áp dụng (4/10)</strong>
+    <span class="p-tag">1 · Creole mặc định (chat + UI)</span>
+    <span class="p-tag">3 · Adaptive bitrate cho 3G rural</span>
+    <span class="p-tag">9 · Push có giới hạn (reminder + event start)</span>
+    <span class="p-tag">10 · Observable (rights compliance + replay audit)</span>
+  </div>
+</article>
+
+<!-- ===== FEATURE #5 — PODCAST & RADIO CREOLE ===== -->
+<article class="feature-card" id="e5-podcast-radio">
+  <header>
+    <div>
+      <h3>#5 — Podcast & Radio Creole <span style="color:var(--text-dim);font-weight:400;font-size:15px">(Radyo FM + Podcast tin tức Creole)</span></h3>
+      <div class="meta">
+        <span class="badge b-must">Must</span>
+        <span class="badge b-sz">Effort M</span>
+        <span class="badge b-sz">KPI: Rural DAU · Pierre persona</span>
+        <span class="badge b-sz">Phase: G3 — sprint 9–10</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ten-grid">
+    <div class="item">
+      <h4>1. Định nghĩa</h4>
+      <p>Đài radio FM Haiti livestream (Radio Métropole, Magik 9, Caraïbes FM, Radyo Lakou Tribinal Pèp...) + podcast tin tức/giải trí Creole. <strong>Lưu offline</strong> cho user 2G/3G chập chờn. Đặc biệt phục vụ <strong>Pierre (P4) rural</strong> — voice content phù hợp với literacy thấp, phù hợp quote của Pierre <em>"app phải gọi ra được tiếng"</em>.</p>
+    </div>
+    <div class="item">
+      <h4>2. Persona phục vụ</h4>
+      <p>Pierre (P4 — chính, voice content phù hợp), Jean (P2 — nghe khi lái tap-tap), Marie (P1 — radio bán hàng), Wisline (P5 — kết nối Haiti từ xa, nghe đài tin tức quê).</p>
+    </div>
+    <div class="item span2">
+      <h4>3. User flow chính</h4>
+      <ol>
+        <li>Tab "Radyo & Podcast" → 2 sub-tab: "Radyo Live" và "Podcast".</li>
+        <li>List FM stations với now-playing info + favorite toggle.</li>
+        <li>Tap station → live audio stream + lockscreen control.</li>
+        <li>Podcast catalog: filter theo loại (tin tức · religieux · giải trí · politique · sport).</li>
+        <li>Tap episode → play, save offline (cache 30 episodes max), transcript Creole nếu có.</li>
+        <li><strong>Voice command</strong> cho Pierre: <em>"Tande Radio Métropole"</em> → activate stream.</li>
+        <li>Background play stable, không tốn battery (audio-only).</li>
+        <li>Notification của episode mới khi follow podcast.</li>
+      </ol>
+    </div>
+    <div class="item">
+      <h4>4. Wireframe</h4>
+      <p>Không có wireframe riêng cho Giải trí (đã đủ 3). Pattern audio player + station list quen thuộc.</p>
+    </div>
+    <div class="item">
+      <h4>5. Edge case</h4>
+      <ul>
+        <li>Radio offline: cached last 30 phút loop (cho user mất sóng tạm).</li>
+        <li>Podcast Creole transcript: voice-to-text Creole chất lượng còn hạn chế — fallback no-transcript với label rõ.</li>
+        <li>Diaspora Wisline → license cross-region cho radio FM Haiti (đài có thể restrict).</li>
+        <li>Streaming bandwidth: prefer 64-96kbps mặc định (audio đủ chất, tiết kiệm data).</li>
+        <li>Pierre voice command Creole accuracy giới hạn → fallback hint visual.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>6. Phụ thuộc</h4>
+      <ul>
+        <li>Radio aggregation partners (deals với từng FM station).</li>
+        <li>Podcast hosting / CMS.</li>
+        <li>Audio CDN.</li>
+        <li>Voice control (Creole TTS/STT).</li>
+        <li>Transcription service (Creole — optional).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>7. Acceptance criteria</h4>
+      <ul>
+        <li><strong>AC1:</strong> Live stream start &lt;2s on 3G.</li>
+        <li><strong>AC2:</strong> Offline podcast cache 30 episodes.</li>
+        <li><strong>AC3:</strong> Voice command Pierre accuracy ≥ 75% top 20 stations.</li>
+        <li><strong>AC4:</strong> Background play battery efficient (≤ 1% pin/h).</li>
+        <li><strong>AC5:</strong> Lockscreen control hoạt động đầy đủ.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>8. KPI riêng</h4>
+      <ul>
+        <li><strong>Pierre persona daily:</strong> ≥ 35% (cao nhất cho persona này trong app).</li>
+        <li><strong>Avg session length:</strong> ≥ 20 phút.</li>
+        <li><strong>Podcast subscription:</strong> ≥ 12% MAU.</li>
+        <li><strong>Rural DAU lift:</strong> +15 points trong departments Artibonite, Nord, Sud.</li>
+        <li><strong>Diaspora Wisline use:</strong> ≥ 25% (kết nối quê hương).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>9. Priority</h4>
+      <p><span class="badge b-must">Must</span> · <em>Chỉ tính năng phục vụ Pierre persona mạnh nhất trong Giải trí</em>. Effort M, ROI cao cho rural penetration.</p>
+    </div>
+    <div class="item">
+      <h4>10. Phase</h4>
+      <p><strong>Đợt 1 — Giai đoạn 3 (Growth Build), sprint 9–10.</strong></p>
+    </div>
+  </div>
+
+  <div class="principles-line">
+    <strong>Nguyên tắc thiết kế áp dụng (6/10)</strong>
+    <span class="p-tag">1 · Creole mặc định</span>
+    <span class="p-tag">2 · Offline-capable (cache 30 episodes + 30 min radio)</span>
+    <span class="p-tag">3 · Battery & data efficient (audio 64-96 kbps)</span>
+    <span class="p-tag">4 · Voice-first (Pierre voice command)</span>
+    <span class="p-tag">8 · Accessibility (lockscreen + voice)</span>
+    <span class="p-tag">10 · Observable</span>
+  </div>
+</article>
+
+<!-- ===== FEATURE #6 — KARAOKE (OKARA INTEGRATION) ===== -->
+<article class="feature-card" id="e6-karaoke">
+  <header>
+    <div>
+      <h3>#6 — Karaoke <span style="color:var(--text-dim);font-weight:400;font-size:15px">(Tích hợp Okara Haiti có sẵn của Natcom S.A)</span></h3>
+      <div class="meta">
+        <span class="badge b-could">Could</span>
+        <span class="badge b-sz">Effort M</span>
+        <span class="badge b-sz">KPI: Session length · Tips per recording</span>
+        <span class="badge b-sz">Phase: G4 — sprint 14–15</span>
+        <span class="badge" style="background:rgba(74,214,194,.15);color:#4ad6c2">Tận dụng Okara có sẵn</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ten-grid">
+    <div class="item">
+      <h4>1. Định nghĩa</h4>
+      <p>Hát Kompa karaoke với <strong>Okara Haiti app hiện có của Natcom S.A</strong> (đã có trên Apple Store + Play Store). RingMe đề xuất 2 phương án: <strong>(A) Deep-link sang Okara</strong> (effort thấp), <strong>(B) Tích hợp Okara API vào My Natcom 2.0</strong> (effort M, UX nhất quán). Hát → ghi âm → share leaderboard → tips từ fans qua Natcash.</p>
+    </div>
+    <div class="item">
+      <h4>2. Persona phục vụ</h4>
+      <p>Stephania (P3 — heavy, social sharing), Jean (P2 — bạn bè đám đông), Marie (P1 — daily fun). Wisline (P5 — kết nối văn hóa Haiti).</p>
+    </div>
+    <div class="item span2">
+      <h4>3. User flow chính</h4>
+      <ol>
+        <li>Tab "Karaoke" → catalog Kompa/Rabòday songs với lyrics karaoke.</li>
+        <li>Tap song → lyric scrolling + vocal track removed (chỉ instrumental).</li>
+        <li>Record → user hát → playback preview → save/share.</li>
+        <li>Leaderboard tuần: top hát mỗi tuần (AI scoring pitch + rhythm).</li>
+        <li><strong>Tips từ fans</strong> qua Natcash (chung <a href="#e3-short-video">#3 Video ngắn</a> tips engine).</li>
+        <li>Bài hát có thể share lên feed Klip (#3) như video creator content.</li>
+      </ol>
+    </div>
+    <div class="item">
+      <h4>4. Wireframe</h4>
+      <p>Không có wireframe riêng — pattern karaoke player quen thuộc với lyric scrolling + record button + share.</p>
+    </div>
+    <div class="item">
+      <h4>5. Edge case</h4>
+      <ul>
+        <li>Vocal track removal AI: chất lượng tùy bản nhạc (master tracks cho phép AI hoạt động tốt nhất; remixes có thể fail).</li>
+        <li>Privacy: user opt-out public sharing default — chỉ private hoặc share with friends.</li>
+        <li>Copyright: vocal isolation cho phép theo license (Natcom đàm phán với labels).</li>
+        <li>Underage user → guardian consent + earnings to guardian account.</li>
+        <li>Audio quality: cần microphone tốt — low-end smartphone có thể bị nhiễu.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>6. Phụ thuộc</h4>
+      <ul>
+        <li><strong>Okara Haiti integration</strong> (deep-link hoặc API).</li>
+        <li>Music library Kompa licensed (chung <a href="#e1-music-streaming">#1</a>).</li>
+        <li>Audio recording engine (high-quality 44.1kHz).</li>
+        <li>AI scoring (pitch + rhythm detection).</li>
+        <li>Natcash tips (chung <a href="#e3-short-video">#3</a>).</li>
+        <li>Vocal isolation AI (optional, có thể start với instrumental tracks sẵn có).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>7. Acceptance criteria</h4>
+      <ul>
+        <li><strong>AC1:</strong> Lyric sync với audio &lt;100ms drift.</li>
+        <li><strong>AC2:</strong> Recording quality 44.1kHz stable.</li>
+        <li><strong>AC3:</strong> Leaderboard cập nhật weekly.</li>
+        <li><strong>AC4:</strong> AI scoring accuracy correlation với human ≥ 0.7.</li>
+        <li><strong>AC5:</strong> Privacy default = private.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>8. KPI riêng</h4>
+      <ul>
+        <li><strong>Session length:</strong> ≥ 12 phút.</li>
+        <li><strong>% Stephania weekly:</strong> ≥ 25%.</li>
+        <li><strong>Tips per recording (viral):</strong> ≥ 5 HTG avg.</li>
+        <li><strong>Recordings shared public:</strong> ≥ 15%.</li>
+        <li><strong>Okara migration:</strong> ≥ 50% Okara user dùng karaoke trong My Natcom 2.0.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>9. Priority</h4>
+      <p><span class="badge b-could">Could</span> · Effort vừa do Okara đã có sẵn. Nice-to-have cho engagement, không phải critical. Nếu cắt khỏi Đợt 1 vẫn OK — chỉ cần deep-link.</p>
+    </div>
+    <div class="item">
+      <h4>10. Phase</h4>
+      <p><strong>Đợt 1 — Giai đoạn 4, sprint 14–15.</strong> Hoặc trượt sang Đợt 2 nếu budget thắt.</p>
+    </div>
+  </div>
+
+  <div class="principles-line">
+    <strong>Nguyên tắc thiết kế áp dụng (5/10)</strong>
+    <span class="p-tag">1 · Creole mặc định (lyrics)</span>
+    <span class="p-tag">3 · Battery & data efficient (audio-only stream)</span>
+    <span class="p-tag">8 · Accessibility</span>
+    <span class="p-tag">9 · Push có giới hạn (chỉ leaderboard tuần)</span>
+    <span class="p-tag">10 · Observable</span>
+  </div>
+</article>
+
+<!-- GIẢI TRÍ HOÀN TẤT FOOTER -->
+<div style="margin-top:40px;padding:24px;border-radius:14px;background:linear-gradient(135deg,rgba(255,90,31,.08),rgba(74,214,194,.06));border:1px solid rgba(255,90,31,.4)">
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
+    <div style="width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,#ff5a1f,#4ad6c2);display:grid;place-items:center;color:#fff;font-weight:800;font-size:18px;flex-shrink:0">✓</div>
+    <div>
+      <h3 style="margin:0;color:var(--text)">Giải trí số — Phát hành đầy đủ</h3>
+      <p style="margin:4px 0 0;color:var(--text-dim);font-size:13px">6 tính năng × template 10 mục = 60 ô nội dung chi tiết · 3 wireframe SVG · mapping persona + nguyên tắc đầy đủ · tận dụng 2 sản phẩm Natcom S.A có sẵn (TVPaw, Okara).</p>
+    </div>
+  </div>
+  <p style="margin:8px 0 0;color:var(--text-dim);font-size:13px"><strong style="color:var(--text)">Một trang còn lại Bước 1.B</strong> · Natcash basic (7 tn) sẽ được phát hành ở 1-2 turn nữa. Sau đó toàn bộ 44 tính năng Đợt 1 có chi tiết template đầy đủ — đủ để đội dự án Natcom bắt đầu sprint planning kỹ thuật.</p>
+</div>
+
   </section>
 </div>
 

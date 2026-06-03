@@ -37,8 +37,8 @@
 <div class="container">
   <section class="block">
     <div class="notice">
-      <h3>Trang chi tiết — đang chuẩn bị phát hành</h3>
-      <p>Trang này hiện liệt kê danh sách tính năng của nhóm. <strong>Chi tiết đầy đủ theo template 10 mục</strong> (định nghĩa, persona, user flow, wireframe, edge case, phụ thuộc, acceptance criteria, KPI riêng, priority, phase) sẽ được RingMe phát hành trong các turn tiếp theo của Bước 1.B sau khi Natcom phê duyệt khung sườn ở <a href="index.html">trang chủ Đợt 1</a>.</p>
+      <h3>Trang chi tiết — phát hành theo 2 batch · Batch 1 đã có</h3>
+      <p>10 tính năng Selfcare được chia thành <strong>2 batch theo theme</strong>: S-B1 Daily Essentials (#1, #2, #3, #4, #10) và S-B2 Services + Trust (#5, #6, #7, #8, #9). <strong>S-B1 đã phát hành</strong> trong trang này, ngay dưới bảng. S-B2 sẽ phát hành tiếp theo. Mỗi tính năng tuân thủ <strong>template 10 mục đã thống nhất</strong> kèm <em>"Nguyên tắc thiết kế áp dụng"</em> mapping sang <a href="index.html#principles">10 nguyên tắc chéo</a>.</p>
     </div>
 
     <div class="kicker">Danh sách tính năng</div>
@@ -141,7 +141,1648 @@
     </table>
     </div>
 
-    <p style="margin-top:24px;color:var(--text-mute);font-size:13px"><strong>Bước tiếp theo:</strong> Khi Natcom duyệt khung sườn ở trang chủ Đợt 1, RingMe sẽ phát hành chi tiết từng tính năng theo template 10 mục đã thống nhất, kèm 2–3 wireframe SVG cho các màn hình then chốt của nhóm này.</p>
+    <!-- ====== BƯỚC 1.B · SELFCARE BATCH 1 — DAILY ESSENTIALS ====== -->
+<div class="batch-banner" style="margin-top:32px">
+  <div class="num">S-B1</div>
+  <div>
+    <h3>Selfcare Batch 1 / 2 · Daily Essentials</h3>
+    <p>5 tính năng — <strong>Multi-account</strong>, <strong>Cước & lịch sử</strong>, <strong>Mua gói data</strong>, <strong>Mua gói thoại/SMS</strong>, <strong>Notification Center</strong> — chiếm ≥85% lượt mở app của Persona Marie/Jean/Stephania. Đây là nền tảng kỹ thuật bắt buộc trước khi mọi Engagement feature có thể hoạt động.</p>
+  </div>
+</div>
+<div class="batch-progress" aria-label="Tiến độ 2 batch Selfcare">
+  <span class="on" title="S-B1 Daily essentials"></span>
+  <span title="S-B2 Services + Trust"></span>
+</div>
+
+<!-- ===== FEATURE #1 — MULTI-ACCOUNT ===== -->
+<article class="feature-card" id="s1-multi-account">
+  <header>
+    <div>
+      <h3>#1 — Quản lý đa thuê bao <span style="color:var(--text-dim);font-weight:400;font-size:15px">(Multi-account · Chuyển nhanh giữa các số Natcom)</span></h3>
+      <div class="meta">
+        <span class="badge b-must">Must</span>
+        <span class="badge b-sz">Effort M</span>
+        <span class="badge b-sz">KPI: Activation per number · DAU</span>
+        <span class="badge b-sz">Phase: G1 — sprint 3–4</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ten-grid">
+    <div class="item">
+      <h4>1. Định nghĩa</h4>
+      <p>Một tài khoản My Natcom 2.0 quản lý <strong>tối đa 5 số Natcom</strong> (mobile + FTTH) cùng lúc. Switch context giữa các số trong &lt;2s mà không cần đăng xuất/đăng nhập. Mỗi số có usage, gói, notification, ngôn ngữ, biometric riêng biệt. Đáp ứng văn hóa <em>"thiết bị chia sẻ trong gia đình Haiti"</em> (Nguyên tắc 5) và mô hình B2B của Patrick (P6 — quản lý số nhân viên).</p>
+    </div>
+    <div class="item">
+      <h4>2. Persona phục vụ</h4>
+      <p>Patrick (P6 — multi-employee chính), Marie (P1 — số cá nhân + shop), Pierre (P4 — share máy với con cái), Wisline (P5 — quản lý số người thân tại Haiti từ Mỹ qua remote). Stephania (P3), Jean (P2) chỉ dùng 1-2 số.</p>
+    </div>
+    <div class="item span2">
+      <h4>3. User flow chính</h4>
+      <ol>
+        <li>Profile → "Thuê bao mwen yo" → list số đã link với role (Primary/Sub).</li>
+        <li><strong>Thêm số:</strong> nhập số HT → OTP verify gửi tới số đó → confirm. Số mới link với account.</li>
+        <li>Header top có <strong>switcher chip</strong> hiển thị số hiện tại; tap → dropdown chọn số khác → context refresh &lt;2s.</li>
+        <li>Mỗi số có settings riêng: notification on/off, ngôn ngữ Creole/Pháp/Anh, biometric, auto-pay.</li>
+        <li><strong>Admin role</strong> (Patrick) có quyền xem usage tổng + per-employee, set limit per số, lock SIM remote nếu nhân viên nghỉ.</li>
+        <li>USSD fallback: <code>*155*N#</code> để switch số mặc định (N=1-5).</li>
+      </ol>
+    </div>
+    <div class="item">
+      <h4>4. Wireframe</h4>
+      <p>Xem <strong>S1</strong> — màn "Thuê bao mwen yo" với 4 active numbers + 1 add slot, switcher chip top, mỗi card hiển thị plan + balance + last activity.</p>
+    </div>
+    <div class="item">
+      <h4>5. Edge case</h4>
+      <ul>
+        <li>Số đã link với account khác → reject + hint <em>"Sa-a deja konekte ak yon kont. Kontakte CSKH."</em></li>
+        <li>Mất quyền số (chuyển SIM cho người khác) → owner cũ bị auto-remove sau 30 ngày inactive trên số đó.</li>
+        <li>Max 5 số/account cứng. Patrick có nhu cầu &gt;5 → upgrade B2B tier "Antrepriz" (Đợt 2).</li>
+        <li>Biometric: user chọn shared (1 lần unlock cả 5 số) hoặc per-number (mỗi số PIN/biometric riêng — bảo mật cao).</li>
+        <li>Switch context giữa chừng giao dịch Natcash đang chạy → confirm hủy giao dịch trước.</li>
+        <li>Wisline (diaspora) link số Haiti từ US/CA → cần KYC Tier 1 + verify ownership qua SMS đến số HT đó (chống fraud).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>6. Phụ thuộc</h4>
+      <ul>
+        <li>Telecom backend (link multi-MSISDN cho 1 user_id).</li>
+        <li>OTP gateway.</li>
+        <li>KYC light per number.</li>
+        <li>Multi-context UI state machine.</li>
+        <li>USSD gateway (*155*N#).</li>
+        <li>mBccs Haiti (Viettel back-office) — cho admin role B2B.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>7. Acceptance criteria</h4>
+      <ul>
+        <li><strong>AC1:</strong> Switch context giữa số &lt;2s.</li>
+        <li><strong>AC2:</strong> Add số + OTP verify hoàn tất &lt;30s.</li>
+        <li><strong>AC3:</strong> Settings per number isolated 100% (không leak).</li>
+        <li><strong>AC4:</strong> Max 5 số/account enforce cứng.</li>
+        <li><strong>AC5:</strong> USSD switch *155*N# hoạt động cho user feature phone.</li>
+        <li><strong>AC6:</strong> Admin B2B view usage tổng + per-employee có audit log.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>8. KPI riêng</h4>
+      <ul>
+        <li><strong>% user multi-number:</strong> ≥ 18% MAU.</li>
+        <li><strong>Avg số/user multi-account:</strong> ≥ 2.4.</li>
+        <li><strong>Activation lift per sub-number:</strong> ≥ +25% (số phụ được "ăn theo" số chính).</li>
+        <li><strong>FTTH + Mobile link rate:</strong> ≥ 35% trên FTTH user (cross-sell signal).</li>
+        <li><strong>Admin B2B adoption:</strong> ≥ 60% Patrick-persona user.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>9. Priority</h4>
+      <p><span class="badge b-must">Must</span> — Nguyên tắc 5 cốt lõi. Không có multi-account thì Pakèt Familial (#17 Engagement) và Patrick persona đều thất bại.</p>
+    </div>
+    <div class="item">
+      <h4>10. Phase</h4>
+      <p><strong>Đợt 1 — Giai đoạn 1 (Foundation), sprint 3–4.</strong> Là <em>infrastructure</em> bắt buộc trước các feature khác.</p>
+    </div>
+  </div>
+
+  <div class="principles-line">
+    <strong>Nguyên tắc thiết kế áp dụng (6/10)</strong>
+    <span class="p-tag">1 · Creole mặc định</span>
+    <span class="p-tag">5 · Multi-profile (core)</span>
+    <span class="p-tag">6 · USSD fallback *155*N#</span>
+    <span class="p-tag">7 · Bảo mật cấp banking (KYC per number)</span>
+    <span class="p-tag">8 · Accessibility</span>
+    <span class="p-tag">10 · Observable (audit admin role)</span>
+  </div>
+
+  <div class="wf-wrap">
+    <h4>Wireframe S1 — Thuê bao mwen yo (Multi-account dashboard)</h4>
+    <svg viewBox="0 0 360 720" xmlns="http://www.w3.org/2000/svg" width="320" role="img" aria-label="Wireframe Multi-account">
+      <defs>
+        <linearGradient id="sg1" x1="0" x2="1"><stop offset="0" stop-color="#ff5a1f"/><stop offset="1" stop-color="#4ad6c2"/></linearGradient>
+      </defs>
+      <rect x="0" y="0" width="360" height="720" rx="28" fill="#0b1020" stroke="#243064"/>
+      <text x="20" y="24" fill="#aab4d8" font-size="11" font-family="Inter">9:41</text>
+      <text x="340" y="24" fill="#aab4d8" font-size="11" font-family="Inter" text-anchor="end">100%</text>
+      <text x="20" y="62" fill="#e8ecff" font-size="14" font-family="Inter">←</text>
+      <text x="180" y="62" fill="#e8ecff" font-size="16" font-family="Inter" font-weight="700" text-anchor="middle">Thuê bao mwen yo</text>
+      <text x="340" y="62" fill="#aab4d8" font-size="14" font-family="Inter" text-anchor="end">+</text>
+      <line x1="0" y1="78" x2="360" y2="78" stroke="#243064"/>
+      <!-- Active switcher chip -->
+      <rect x="16" y="94" width="328" height="48" rx="24" fill="url(#sg1)" opacity="0.18"/>
+      <rect x="16" y="94" width="328" height="48" rx="24" fill="none" stroke="rgba(255,90,31,.5)"/>
+      <circle cx="38" cy="118" r="14" fill="#ff5a1f"/>
+      <text x="38" y="123" fill="#fff" font-size="11" font-weight="800" text-anchor="middle">M</text>
+      <text x="60" y="113" fill="#aab4d8" font-size="9" font-family="Inter" font-weight="700" letter-spacing="1">KOURAN — PRIMARY</text>
+      <text x="60" y="130" fill="#e8ecff" font-size="13" font-family="Inter" font-weight="700">+509 36 47 89 21 · Marie</text>
+      <text x="332" y="123" fill="#4ad6c2" font-size="11" font-family="Inter" text-anchor="end" font-weight="700">▾ Chanje</text>
+      <!-- Sub-numbers list -->
+      <text x="16" y="166" fill="#ff5a1f" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">LÒT NIMÈWO YO (3 / 5)</text>
+      <g font-family="Inter">
+        <!-- Number 2 -->
+        <rect x="16" y="176" width="328" height="76" rx="12" fill="#172046" stroke="#243064"/>
+        <circle cx="38" cy="208" r="16" fill="#7c5cff"/>
+        <text x="38" y="213" fill="#fff" font-size="13" font-weight="800" text-anchor="middle">J</text>
+        <text x="62" y="196" fill="#aab4d8" font-size="9" font-weight="700" letter-spacing="1">SUB · MOBILE</text>
+        <text x="62" y="212" fill="#e8ecff" font-size="13" font-weight="700">+509 38 12 04 56 · Jean (mari)</text>
+        <text x="62" y="228" fill="#aab4d8" font-size="11">Gòl: Combo 7-jou · 3.2 GB rete</text>
+        <text x="62" y="242" fill="#4ad6c2" font-size="10">Aktivite: 12 min pase · pa otopey</text>
+        <text x="332" y="196" fill="#aab4d8" font-size="10" text-anchor="end">⋯</text>
+        <text x="332" y="212" fill="#3ddc97" font-size="11" text-anchor="end" font-weight="700">120 HTG</text>
+        <text x="332" y="228" fill="#aab4d8" font-size="10" text-anchor="end">balans</text>
+        <!-- Number 3 (FTTH) -->
+        <rect x="16" y="258" width="328" height="76" rx="12" fill="#172046" stroke="#243064"/>
+        <rect x="22" y="266" width="32" height="32" rx="8" fill="#4ad6c2" opacity="0.18"/>
+        <text x="38" y="290" fill="#4ad6c2" font-size="16" font-weight="800" text-anchor="middle">🏠</text>
+        <text x="62" y="278" fill="#aab4d8" font-size="9" font-weight="700" letter-spacing="1">SUB · FTTH ENTÈNÈT</text>
+        <text x="62" y="294" fill="#e8ecff" font-size="13" font-weight="700">FTTH-04521 · Boutik Marie</text>
+        <text x="62" y="310" fill="#aab4d8" font-size="11">Gòl: 100 Mbps · 28 jou kite</text>
+        <text x="62" y="324" fill="#3ddc97" font-size="10">SLA: 99.4% · Otopey aktif</text>
+        <text x="332" y="294" fill="#3ddc97" font-size="11" text-anchor="end" font-weight="700">✓ Aktif</text>
+        <!-- Number 4 (daughter) -->
+        <rect x="16" y="340" width="328" height="76" rx="12" fill="#172046" stroke="#243064"/>
+        <circle cx="38" cy="372" r="16" fill="#ffc857"/>
+        <text x="38" y="377" fill="#0b1020" font-size="13" font-weight="800" text-anchor="middle">S</text>
+        <text x="62" y="360" fill="#aab4d8" font-size="9" font-weight="700" letter-spacing="1">SUB · POU TIMOUN (15)</text>
+        <text x="62" y="376" fill="#e8ecff" font-size="13" font-weight="700">+509 47 09 88 12 · Sophia</text>
+        <text x="62" y="392" fill="#aab4d8" font-size="11">Alawayans: 500 MB / mwa</text>
+        <text x="62" y="406" fill="#ff8a5a" font-size="10" font-weight="700">⚠ 80% itilize · 100 MB kite</text>
+        <text x="332" y="376" fill="#ffc857" font-size="11" text-anchor="end" font-weight="700">🔒 Admin</text>
+        <!-- Add slot -->
+        <rect x="16" y="422" width="328" height="50" rx="12" fill="none" stroke="#7c5cff" stroke-dasharray="4 4"/>
+        <text x="180" y="446" fill="#7c5cff" font-size="13" font-weight="700" text-anchor="middle">+ Ajoute yon nimèwo (2 plas kite)</text>
+        <text x="180" y="461" fill="#aab4d8" font-size="10" text-anchor="middle">OTP verify ap voye sou nimèwo nèf la</text>
+      </g>
+      <!-- USSD fallback hint -->
+      <rect x="16" y="488" width="328" height="48" rx="12" fill="#121935" stroke="rgba(74,214,194,.3)"/>
+      <text x="28" y="506" fill="#4ad6c2" font-size="11" font-family="Inter" font-weight="700">📞 Chanje nimèwo san app</text>
+      <text x="28" y="524" fill="#aab4d8" font-size="11" font-family="Inter">Konpoze *155*1# pou primary · *155*2-5# pou sub</text>
+      <!-- Admin B2B (Patrick view) toggle preview -->
+      <text x="16" y="560" fill="#ff5a1f" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">VÈSYON ADMIN B2B (PATRICK)</text>
+      <rect x="16" y="570" width="328" height="68" rx="12" fill="url(#sg1)" opacity="0.1"/>
+      <rect x="16" y="570" width="328" height="68" rx="12" fill="none" stroke="rgba(124,92,255,.35)" stroke-dasharray="3 3"/>
+      <text x="28" y="590" fill="#e8ecff" font-size="12" font-family="Inter" font-weight="700">12 anplwaye SIMs · 3 FTTH</text>
+      <text x="28" y="606" fill="#aab4d8" font-size="11" font-family="Inter">Vue lis tout itilizasyon · limit per moun</text>
+      <text x="28" y="622" fill="#aab4d8" font-size="11" font-family="Inter">Lock SIM remote si moun ki kite konpani</text>
+      <text x="332" y="610" fill="#7c5cff" font-size="11" font-family="Inter" text-anchor="end" font-weight="700">Antrepriz →</text>
+      <!-- Footer info -->
+      <text x="180" y="668" fill="#7a86b8" font-size="10" font-family="Inter" text-anchor="middle">Maks 5 nimèwo/kont · Antrepriz pou plis (Faz 2)</text>
+      <text x="180" y="684" fill="#7a86b8" font-size="10" font-family="Inter" text-anchor="middle">Switcher tan kontèks &lt; 2 segonn</text>
+    </svg>
+    <p class="caption">S1 — Multi-account: số primary chip top · 3 sub-numbers (Jean mobile · Marie FTTH · Sophia child allowance) + 1 add slot · USSD fallback hint · admin B2B preview cho Patrick.</p>
+  </div>
+</article>
+
+<!-- ===== FEATURE #2 — TRA CỨU CƯỚC & LỊCH SỬ ===== -->
+<article class="feature-card" id="s2-cuoc-lich-su">
+  <header>
+    <div>
+      <h3>#2 — Tra cứu cước & lịch sử giao dịch <span style="color:var(--text-dim);font-weight:400;font-size:15px">(Konsilte fakti ak istwa)</span></h3>
+      <div class="meta">
+        <span class="badge b-must">Must</span>
+        <span class="badge b-sz">Effort S</span>
+        <span class="badge b-sz">KPI: DAU · CSKH call -30%</span>
+        <span class="badge b-sz">Phase: G1 — sprint 3–4</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ten-grid">
+    <div class="item">
+      <h4>1. Định nghĩa</h4>
+      <p>Dashboard cước trực quan: 3 chỉ số (hôm nay, tuần, tháng) trên home + chi tiết sao kê theo dịch vụ (voice/data/SMS/VAS/roaming). Xuất file PDF/CSV qua email cho user/kế toán (Patrick persona). Hiển thị đa ngôn ngữ Creole/Pháp/Anh. Đây là feature gốc rễ giảm CSKH call về cước — chi phí hỗ trợ lớn nhất của Natcom hiện tại.</p>
+    </div>
+    <div class="item">
+      <h4>2. Persona phục vụ</h4>
+      <p>Marie (P1 — quản lý dòng tiền hằng ngày), Patrick (P6 — báo cáo doanh nghiệp hàng tháng), Jean (P2 — kiểm tra nhanh balance), Stephania (P3 — track gói data đã dùng), Pierre (P4 — qua USSD nếu literacy thấp).</p>
+    </div>
+    <div class="item span2">
+      <h4>3. User flow chính</h4>
+      <ol>
+        <li>Home tab → card "Fakti mwen" ở top hiển thị 3 KPI: jodi a, semèn sa, mwa sa (HTG).</li>
+        <li>Tap → dashboard chi tiết: pie chart usage theo dịch vụ + list giao dịch 30 ngày.</li>
+        <li>Filter: theo dịch vụ (voice/data/SMS/VAS), theo khoảng thời gian, theo số (nếu multi-account).</li>
+        <li>Tap giao dịch → detail: thời gian, dịch vụ, destination (nếu voice), gói áp dụng.</li>
+        <li><strong>Export:</strong> PDF (Creole/Pháp/Anh) hoặc CSV → gửi email user (mặc định) hoặc kế toán (Patrick set up).</li>
+        <li>Push tự động: <em>"Gòl data ou rete 200 MB · 20% kite"</em> khi gói còn 20% / 10% / 5%.</li>
+        <li>USSD fallback: <code>*155*1#</code> show balance, <code>*155*2#</code> show usage tháng.</li>
+      </ol>
+    </div>
+    <div class="item">
+      <h4>4. Wireframe</h4>
+      <p>Xem <strong>S2</strong> — Fakti dashboard với 3 KPI top, pie chart usage 6 services, transaction list 30 ngày + filter, export CTA.</p>
+    </div>
+    <div class="item">
+      <h4>5. Edge case</h4>
+      <ul>
+        <li>Lịch sử quá dài (Patrick 12 tháng) → pagination + filter, không render full list (perf).</li>
+        <li>Offline → show cached snapshot last sync + label <em>"Dènye mizajou: 2h ago"</em>.</li>
+        <li>Cước chưa update realtime (billing delay) → label <em>"Fakti pa fini mete-a-jou"</em> + estimated.</li>
+        <li>Export file lớn &gt;5 MB → email link download thay vì attachment trực tiếp (mobile data save).</li>
+        <li>Export PDF tiếng Creole → font Unicode support đầy đủ (test Pháp accents + Creole quirks).</li>
+        <li>Roaming charges chậm 24-72h (settlement với partner) → label rõ "Roaming charges may take up to 72h".</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>6. Phụ thuộc</h4>
+      <ul>
+        <li>Billing backend (real-time + aggregator).</li>
+        <li>BI/usage data warehouse.</li>
+        <li>File export service (PDF/CSV generator).</li>
+        <li>Email gateway.</li>
+        <li>USSD gateway.</li>
+        <li>Notification preference engine.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>7. Acceptance criteria</h4>
+      <ul>
+        <li><strong>AC1:</strong> Dashboard load &lt;2s với 30 ngày data.</li>
+        <li><strong>AC2:</strong> Filter realtime &lt;500ms.</li>
+        <li><strong>AC3:</strong> Export PDF/CSV gửi email &lt;30s.</li>
+        <li><strong>AC4:</strong> Offline cache giữ 7 ngày, label rõ ràng "Pa konekte".</li>
+        <li><strong>AC5:</strong> Push usage warning đúng 3 mức 20%/10%/5%.</li>
+        <li><strong>AC6:</strong> USSD *155*1# / *155*2# hoạt động 24/7 (legacy core path).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>8. KPI riêng</h4>
+      <ul>
+        <li><strong>DAU lift</strong> (mở dashboard ≥1 lần/ngày): ≥ +20 points trên baseline.</li>
+        <li><strong>CSKH call về cước:</strong> giảm ≥ 30% trong 90 ngày sau launch.</li>
+        <li><strong>Export usage rate:</strong> ≥ 12% MAU (sign of trust).</li>
+        <li><strong>% Patrick persona export hằng tháng:</strong> ≥ 65%.</li>
+        <li><strong>Push CTR usage warning:</strong> ≥ 35% (drive top-up).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>9. Priority</h4>
+      <p><span class="badge b-must">Must</span> · Effort thấp, ROI cao nhất batch (giảm CSKH cost). Là feature gốc rễ niềm tin user vào Natcom.</p>
+    </div>
+    <div class="item">
+      <h4>10. Phase</h4>
+      <p><strong>Đợt 1 — Giai đoạn 1 (Foundation), sprint 3–4.</strong> Launch sớm cùng Multi-account.</p>
+    </div>
+  </div>
+
+  <div class="principles-line">
+    <strong>Nguyên tắc thiết kế áp dụng (6/10)</strong>
+    <span class="p-tag">1 · Creole mặc định</span>
+    <span class="p-tag">2 · Offline-capable (cache 7 ngày)</span>
+    <span class="p-tag">6 · USSD fallback *155*1#/*2#</span>
+    <span class="p-tag">8 · Accessibility (font adjustable, WCAG)</span>
+    <span class="p-tag">9 · Push có giới hạn (chỉ 3 mức)</span>
+    <span class="p-tag">10 · Observable</span>
+  </div>
+
+  <div class="wf-wrap">
+    <h4>Wireframe S2 — Fakti mwen Dashboard</h4>
+    <svg viewBox="0 0 360 720" xmlns="http://www.w3.org/2000/svg" width="320" role="img" aria-label="Wireframe Cước dashboard">
+      <defs>
+        <linearGradient id="sg2" x1="0" x2="1"><stop offset="0" stop-color="#4ad6c2"/><stop offset="1" stop-color="#7c5cff"/></linearGradient>
+      </defs>
+      <rect x="0" y="0" width="360" height="720" rx="28" fill="#0b1020" stroke="#243064"/>
+      <text x="20" y="24" fill="#aab4d8" font-size="11" font-family="Inter">9:41</text>
+      <text x="340" y="24" fill="#aab4d8" font-size="11" font-family="Inter" text-anchor="end">100%</text>
+      <text x="20" y="62" fill="#e8ecff" font-size="14" font-family="Inter">←</text>
+      <text x="180" y="62" fill="#e8ecff" font-size="16" font-family="Inter" font-weight="700" text-anchor="middle">Fakti mwen 📊</text>
+      <text x="340" y="62" fill="#aab4d8" font-size="14" font-family="Inter" text-anchor="end">⤓</text>
+      <line x1="0" y1="78" x2="360" y2="78" stroke="#243064"/>
+      <!-- 3 KPI cards -->
+      <g font-family="Inter">
+        <rect x="16" y="94" width="104" height="80" rx="12" fill="#172046" stroke="#243064"/>
+        <text x="68" y="114" fill="#aab4d8" font-size="9" font-weight="700" text-anchor="middle">JODI A</text>
+        <text x="68" y="142" fill="#e8ecff" font-size="20" font-weight="800" text-anchor="middle">28</text>
+        <text x="68" y="160" fill="#aab4d8" font-size="10" text-anchor="middle">HTG</text>
+
+        <rect x="128" y="94" width="104" height="80" rx="12" fill="#172046" stroke="#243064"/>
+        <text x="180" y="114" fill="#aab4d8" font-size="9" font-weight="700" text-anchor="middle">SEMÈN SA</text>
+        <text x="180" y="142" fill="#ffc857" font-size="20" font-weight="800" text-anchor="middle">185</text>
+        <text x="180" y="160" fill="#aab4d8" font-size="10" text-anchor="middle">HTG · ▲ 8%</text>
+
+        <rect x="240" y="94" width="104" height="80" rx="12" fill="url(#sg2)" opacity="0.18"/>
+        <rect x="240" y="94" width="104" height="80" rx="12" fill="none" stroke="rgba(74,214,194,.4)"/>
+        <text x="292" y="114" fill="#4ad6c2" font-size="9" font-weight="700" text-anchor="middle">MWA SA</text>
+        <text x="292" y="142" fill="#4ad6c2" font-size="20" font-weight="800" text-anchor="middle">740</text>
+        <text x="292" y="160" fill="#aab4d8" font-size="10" text-anchor="middle">HTG · ▼ 4%</text>
+      </g>
+      <!-- Pie chart -->
+      <text x="16" y="200" fill="#ff5a1f" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">RIPATISYON 30 JOU</text>
+      <g transform="translate(110,278)">
+        <!-- Pie via paths: 5 sectors -->
+        <path d="M 0 0 L 0 -60 A 60 60 0 0 1 57 -18 Z" fill="#ff5a1f"/>
+        <path d="M 0 0 L 57 -18 A 60 60 0 0 1 36 49 Z" fill="#7c5cff"/>
+        <path d="M 0 0 L 36 49 A 60 60 0 0 1 -36 49 Z" fill="#4ad6c2"/>
+        <path d="M 0 0 L -36 49 A 60 60 0 0 1 -57 -18 Z" fill="#ffc857"/>
+        <path d="M 0 0 L -57 -18 A 60 60 0 0 1 0 -60 Z" fill="#aab4d8"/>
+        <circle r="26" fill="#0b1020"/>
+        <text y="-2" fill="#e8ecff" font-size="14" font-weight="800" text-anchor="middle" font-family="Inter">740</text>
+        <text y="14" fill="#aab4d8" font-size="9" text-anchor="middle" font-family="Inter">HTG</text>
+      </g>
+      <!-- Legend -->
+      <g font-family="Inter">
+        <rect x="200" y="232" width="10" height="10" rx="2" fill="#ff5a1f"/>
+        <text x="216" y="241" fill="#e8ecff" font-size="11">Done · 320 HTG</text>
+        <text x="334" y="241" fill="#aab4d8" font-size="10" text-anchor="end">43%</text>
+
+        <rect x="200" y="252" width="10" height="10" rx="2" fill="#7c5cff"/>
+        <text x="216" y="261" fill="#e8ecff" font-size="11">Apèl · 168 HTG</text>
+        <text x="334" y="261" fill="#aab4d8" font-size="10" text-anchor="end">23%</text>
+
+        <rect x="200" y="272" width="10" height="10" rx="2" fill="#4ad6c2"/>
+        <text x="216" y="281" fill="#e8ecff" font-size="11">FTTH · 150 HTG</text>
+        <text x="334" y="281" fill="#aab4d8" font-size="10" text-anchor="end">20%</text>
+
+        <rect x="200" y="292" width="10" height="10" rx="2" fill="#ffc857"/>
+        <text x="216" y="301" fill="#e8ecff" font-size="11">SMS · 62 HTG</text>
+        <text x="334" y="301" fill="#aab4d8" font-size="10" text-anchor="end">8%</text>
+
+        <rect x="200" y="312" width="10" height="10" rx="2" fill="#aab4d8"/>
+        <text x="216" y="321" fill="#e8ecff" font-size="11">VAS · 40 HTG</text>
+        <text x="334" y="321" fill="#aab4d8" font-size="10" text-anchor="end">6%</text>
+      </g>
+      <!-- Filter chips -->
+      <text x="16" y="360" fill="#ff5a1f" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">ISTWA TRANZAKSYON</text>
+      <g font-family="Inter">
+        <rect x="16" y="370" width="62" height="22" rx="11" fill="#ff5a1f"/>
+        <text x="47" y="385" fill="#fff" font-size="10" font-weight="700" text-anchor="middle">Tout</text>
+        <rect x="84" y="370" width="62" height="22" rx="11" fill="none" stroke="#243064"/>
+        <text x="115" y="385" fill="#aab4d8" font-size="10" text-anchor="middle">Done</text>
+        <rect x="152" y="370" width="62" height="22" rx="11" fill="none" stroke="#243064"/>
+        <text x="183" y="385" fill="#aab4d8" font-size="10" text-anchor="middle">Apèl</text>
+        <rect x="220" y="370" width="62" height="22" rx="11" fill="none" stroke="#243064"/>
+        <text x="251" y="385" fill="#aab4d8" font-size="10" text-anchor="middle">FTTH</text>
+        <rect x="288" y="370" width="56" height="22" rx="11" fill="none" stroke="#243064"/>
+        <text x="316" y="385" fill="#aab4d8" font-size="10" text-anchor="middle">SMS</text>
+      </g>
+      <!-- Transaction list -->
+      <g font-family="Inter">
+        <rect x="16" y="402" width="328" height="42" rx="10" fill="#121935"/>
+        <text x="28" y="420" fill="#e8ecff" font-size="12" font-weight="700">Achte gòl Combo 7 jou</text>
+        <text x="28" y="434" fill="#aab4d8" font-size="10">31/05 · 18:42 · Natcash</text>
+        <text x="332" y="425" fill="#ff8a5a" font-size="12" text-anchor="end" font-weight="700">-50 HTG</text>
+
+        <rect x="16" y="450" width="328" height="42" rx="10" fill="#121935"/>
+        <text x="28" y="468" fill="#e8ecff" font-size="12" font-weight="700">Apèl entènasyonal — Dominika</text>
+        <text x="28" y="482" fill="#aab4d8" font-size="10">31/05 · 12:08 · 4 min 32s</text>
+        <text x="332" y="473" fill="#ff8a5a" font-size="12" text-anchor="end" font-weight="700">-32 HTG</text>
+
+        <rect x="16" y="498" width="328" height="42" rx="10" fill="#121935"/>
+        <text x="28" y="516" fill="#e8ecff" font-size="12" font-weight="700">FTTH renive — Mas (otopey)</text>
+        <text x="28" y="530" fill="#aab4d8" font-size="10">30/05 · 0:00 · -5% rabè</text>
+        <text x="332" y="521" fill="#ff8a5a" font-size="12" text-anchor="end" font-weight="700">-2.375 HTG</text>
+
+        <rect x="16" y="546" width="328" height="42" rx="10" fill="#121935"/>
+        <text x="28" y="564" fill="#e8ecff" font-size="12" font-weight="700">15 SMS local</text>
+        <text x="28" y="578" fill="#aab4d8" font-size="10">29/05 · tout jou</text>
+        <text x="332" y="569" fill="#ff8a5a" font-size="12" text-anchor="end" font-weight="700">-15 HTG</text>
+      </g>
+      <!-- Usage warning -->
+      <rect x="16" y="600" width="328" height="44" rx="10" fill="rgba(255,200,87,.1)" stroke="rgba(255,200,87,.45)"/>
+      <text x="28" y="620" fill="#ffc857" font-size="11" font-family="Inter" font-weight="700">⚠ Gòl data ou rete 200 MB · 20% kite</text>
+      <text x="28" y="636" fill="#aab4d8" font-size="10" font-family="Inter">Renive kounye a pou pa pèdi koneksyon</text>
+      <!-- Export CTA -->
+      <rect x="16" y="654" width="158" height="44" rx="22" fill="#172046" stroke="rgba(74,214,194,.4)"/>
+      <text x="95" y="680" fill="#4ad6c2" font-size="11" font-family="Inter" font-weight="700" text-anchor="middle">📧 Voye PDF nan email</text>
+      <rect x="186" y="654" width="158" height="44" rx="22" fill="url(#sg2)"/>
+      <text x="265" y="680" fill="#fff" font-size="11" font-family="Inter" font-weight="700" text-anchor="middle">⤓ Eksporte CSV</text>
+    </svg>
+    <p class="caption">S2 — Fakti mwen: 3 KPI cards (today/week/month) · pie chart 5 services · filter chips · 30-day transaction list · usage warning 20% · export PDF/CSV CTA.</p>
+  </div>
+</article>
+
+<!-- ===== FEATURE #3 — MUA/ĐỔI GÓI DATA ===== -->
+<article class="feature-card" id="s3-mua-data">
+  <header>
+    <div>
+      <h3>#3 — Mua/đổi gói data <span style="color:var(--text-dim);font-weight:400;font-size:15px">(Achte gòl Done · catalog + AI gợi ý)</span></h3>
+      <div class="meta">
+        <span class="badge b-must">Must</span>
+        <span class="badge b-sz">Effort M</span>
+        <span class="badge b-sz">KPI: ARPU data · Conversion</span>
+        <span class="badge b-sz">Phase: G1–G2 — sprint 4–6</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ten-grid">
+    <div class="item">
+      <h4>1. Định nghĩa</h4>
+      <p>Catalog tất cả gói data (daily/weekly/monthly/topup), filter theo nhu cầu (giá rẻ / tốc độ / total GB), mua nhanh thanh toán qua Natcash hoặc top-up code. <strong>AI gợi ý gói cá nhân hóa</strong> dựa trên usage pattern user. Lịch sử gói cũ + spending chart. Tích hợp Auto-pay (#16 Engagement) để giảm 5-10% giá.</p>
+    </div>
+    <div class="item">
+      <h4>2. Persona phục vụ</h4>
+      <p>Stephania (P3 — heavy data, TikTok/IG), Jean (P2 — cần data rẻ), Marie (P1 — daily check), Patrick (P6 — gói B2B). Pierre (P4) qua đại lý hoặc USSD.</p>
+    </div>
+    <div class="item span2">
+      <h4>3. User flow chính</h4>
+      <ol>
+        <li>Home tab → card "Gòl Done" hiển thị status gói hiện tại + AI gợi ý "Pou ou" (Recommended for you).</li>
+        <li>Tap → catalog full screen với 3 tab: <strong>Pou ou (AI)</strong>, <strong>Pi popilè</strong>, <strong>Tout</strong>.</li>
+        <li>Filter chips: Price &lt;50 / &lt;100 / &lt;200 HTG · Speed 4G/5G · Duration daily/weekly/monthly.</li>
+        <li>Tap gói → detail: data total, validity, speed cap, terms.</li>
+        <li>Confirm → Natcash debit với PIN/biometric → gói activate &lt;30s + push xác nhận.</li>
+        <li>Auto-pay toggle inline: <em>"🔁 Renive otomatik? Jwenn 5% rabè + X2 Points"</em></li>
+        <li>Lịch sử gói + spending pattern chart 12 tháng.</li>
+        <li>USSD fallback: <code>*155*3#</code> để mua quick gói last-bought.</li>
+      </ol>
+    </div>
+    <div class="item">
+      <h4>4. Wireframe</h4>
+      <p>Xem <strong>S3</strong> — Catalog với AI recommendation badge "Pou ou" trên 2 gói, filter chips, 4 gói trong list (current/recommended/popular/discount), Auto-pay CTA.</p>
+    </div>
+    <div class="item">
+      <h4>5. Edge case</h4>
+      <ul>
+        <li>Active gói còn hiệu lực → mua mới sẽ stack (cộng dồn) hoặc replace (user chọn) → confirm rõ.</li>
+        <li>Natcash balance thiếu → suggest nạp + payment alternative: top-up code, agent, card Visa.</li>
+        <li>Gói promotional → countdown expiry "Pri sa-a ap fini nan 2j".</li>
+        <li>AI gợi ý fail (engine down) → fallback top-3 best sellers + label "Pi popilè".</li>
+        <li>Roaming user → catalog hiển thị thêm gói roaming inline.</li>
+        <li>Patrick B2B → catalog có tab "Antrepriz" với volume discount.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>6. Phụ thuộc</h4>
+      <ul>
+        <li>Catalog service (CMS-driven).</li>
+        <li>Natcash core (debit + auto-pay).</li>
+        <li>AI recommendation engine (chung <a href="engagement.html#f14-misyon-jou-ai">#14 Misyon Jou AI</a>).</li>
+        <li>Auto-pay engine (chung <a href="engagement.html#f16-auto-pay">#16 Engagement</a>).</li>
+        <li>Push notification + activation confirmation.</li>
+        <li>USSD gateway (*155*3#).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>7. Acceptance criteria</h4>
+      <ul>
+        <li><strong>AC1:</strong> Activate gói &lt;30s sau Natcash debit success.</li>
+        <li><strong>AC2:</strong> Catalog filter realtime &lt;300ms.</li>
+        <li><strong>AC3:</strong> AI fallback &lt;2s khi engine fail.</li>
+        <li><strong>AC4:</strong> Lịch sử 12 tháng accessible &lt;3s.</li>
+        <li><strong>AC5:</strong> Auto-pay toggle apply discount 5%/10% đúng.</li>
+        <li><strong>AC6:</strong> USSD *155*3# quick buy hoạt động.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>8. KPI riêng</h4>
+      <ul>
+        <li><strong>ARPU data lift:</strong> ≥ +18% so với app cũ.</li>
+        <li><strong>Conversion catalog → purchase:</strong> ≥ 25%.</li>
+        <li><strong>AI recommendation CTR:</strong> ≥ 38% (vs ~22% no-AI baseline).</li>
+        <li><strong>Auto-pay attach rate:</strong> ≥ 30% gói mới.</li>
+        <li><strong>Avg purchase value:</strong> ≥ +15% (AI nudge sang gói cao hơn).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>9. Priority</h4>
+      <p><span class="badge b-must">Must</span> — ARPU driver chính. Đây là feature mà 60-70% revenue Natcom Đợt 1 phụ thuộc vào.</p>
+    </div>
+    <div class="item">
+      <h4>10. Phase</h4>
+      <p><strong>Đợt 1 — Giai đoạn 1-2, sprint 4–6.</strong> Catalog cơ bản + Natcash debit ở sprint 4-5; AI recommendation thêm vào sprint 6 khi có data baseline.</p>
+    </div>
+  </div>
+
+  <div class="principles-line">
+    <strong>Nguyên tắc thiết kế áp dụng (6/10)</strong>
+    <span class="p-tag">1 · Creole mặc định</span>
+    <span class="p-tag">3 · Battery & data efficient (catalog lazy-load)</span>
+    <span class="p-tag">6 · USSD fallback *155*3#</span>
+    <span class="p-tag">7 · Bảo mật cấp banking (Natcash debit)</span>
+    <span class="p-tag">9 · Push có giới hạn</span>
+    <span class="p-tag">10 · Observable</span>
+  </div>
+
+  <div class="wf-wrap">
+    <h4>Wireframe S3 — Gòl Done Catalog (AI recommendation + Auto-pay)</h4>
+    <svg viewBox="0 0 360 720" xmlns="http://www.w3.org/2000/svg" width="320" role="img" aria-label="Wireframe Data Catalog">
+      <defs>
+        <linearGradient id="sg3" x1="0" x2="1"><stop offset="0" stop-color="#ff5a1f"/><stop offset="1" stop-color="#ffc857"/></linearGradient>
+      </defs>
+      <rect x="0" y="0" width="360" height="720" rx="28" fill="#0b1020" stroke="#243064"/>
+      <text x="20" y="24" fill="#aab4d8" font-size="11" font-family="Inter">9:41</text>
+      <text x="340" y="24" fill="#aab4d8" font-size="11" font-family="Inter" text-anchor="end">100%</text>
+      <text x="20" y="62" fill="#e8ecff" font-size="14" font-family="Inter">←</text>
+      <text x="180" y="62" fill="#e8ecff" font-size="16" font-family="Inter" font-weight="700" text-anchor="middle">Achte Gòl Done 📶</text>
+      <text x="340" y="62" fill="#aab4d8" font-size="14" font-family="Inter" text-anchor="end">⋯</text>
+      <line x1="0" y1="78" x2="360" y2="78" stroke="#243064"/>
+      <!-- Current plan -->
+      <rect x="16" y="94" width="328" height="62" rx="14" fill="#172046" stroke="rgba(74,214,194,.35)"/>
+      <text x="28" y="114" fill="#aab4d8" font-size="9" font-family="Inter" font-weight="700" letter-spacing="1">GÒL KOURAN</text>
+      <text x="28" y="134" fill="#e8ecff" font-size="14" font-family="Inter" font-weight="700">Combo 7 jou · 5 GB + 200 min</text>
+      <rect x="28" y="142" width="200" height="6" rx="3" fill="#243064"/>
+      <rect x="28" y="142" width="100" height="6" rx="3" fill="#4ad6c2"/>
+      <text x="332" y="134" fill="#3ddc97" font-size="11" font-family="Inter" text-anchor="end" font-weight="700">3.2 GB rete</text>
+      <text x="332" y="150" fill="#aab4d8" font-size="10" font-family="Inter" text-anchor="end">4 jou kite</text>
+      <!-- Tabs -->
+      <g font-family="Inter">
+        <rect x="16" y="170" width="108" height="34" rx="17" fill="url(#sg3)"/>
+        <text x="70" y="191" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">🤖 Pou ou (AI)</text>
+        <rect x="132" y="170" width="100" height="34" rx="17" fill="none" stroke="#243064"/>
+        <text x="182" y="191" fill="#aab4d8" font-size="11" text-anchor="middle">Pi popilè</text>
+        <rect x="240" y="170" width="104" height="34" rx="17" fill="none" stroke="#243064"/>
+        <text x="292" y="191" fill="#aab4d8" font-size="11" text-anchor="middle">Tout (32)</text>
+      </g>
+      <!-- Filter chips -->
+      <g font-family="Inter">
+        <rect x="16" y="216" width="60" height="22" rx="11" fill="#172046" stroke="#243064"/>
+        <text x="46" y="231" fill="#aab4d8" font-size="9" text-anchor="middle">≤ 50 HTG</text>
+        <rect x="82" y="216" width="60" height="22" rx="11" fill="#172046" stroke="#243064"/>
+        <text x="112" y="231" fill="#aab4d8" font-size="9" text-anchor="middle">≤ 100</text>
+        <rect x="148" y="216" width="44" height="22" rx="11" fill="#ff5a1f"/>
+        <text x="170" y="231" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">4G</text>
+        <rect x="198" y="216" width="44" height="22" rx="11" fill="#172046" stroke="#243064"/>
+        <text x="220" y="231" fill="#aab4d8" font-size="9" text-anchor="middle">5G</text>
+        <rect x="248" y="216" width="56" height="22" rx="11" fill="#172046" stroke="#243064"/>
+        <text x="276" y="231" fill="#aab4d8" font-size="9" text-anchor="middle">Mwa-an</text>
+        <rect x="310" y="216" width="34" height="22" rx="11" fill="#172046" stroke="#243064"/>
+        <text x="327" y="231" fill="#aab4d8" font-size="9" text-anchor="middle">⚙</text>
+      </g>
+      <!-- Package 1 - AI recommended -->
+      <rect x="16" y="252" width="328" height="92" rx="14" fill="url(#sg3)" opacity="0.15"/>
+      <rect x="16" y="252" width="328" height="92" rx="14" fill="none" stroke="rgba(255,90,31,.5)"/>
+      <rect x="28" y="262" width="92" height="20" rx="10" fill="#ff5a1f"/>
+      <text x="74" y="276" fill="#fff" font-size="10" font-family="Inter" font-weight="700" text-anchor="middle">🤖 AI · POU OU</text>
+      <text x="332" y="276" fill="#3ddc97" font-size="10" font-family="Inter" text-anchor="end" font-weight="700">⭐ -10%</text>
+      <text x="28" y="304" fill="#e8ecff" font-size="15" font-family="Inter" font-weight="800">Combo Premye 10 GB + Apèl ilimite</text>
+      <text x="28" y="322" fill="#aab4d8" font-size="11" font-family="Inter">30 jou · 4G+ · Wisline tou wè video</text>
+      <text x="28" y="338" fill="#4ad6c2" font-size="10" font-family="Inter">⚙ AI: ou itilize 8 GB/mwa · X2 streaming swa</text>
+      <text x="332" y="304" fill="#ffc857" font-size="18" font-family="Inter" font-weight="800" text-anchor="end">425 HTG</text>
+      <text x="332" y="320" fill="#7a86b8" font-size="10" font-family="Inter" text-anchor="end"><tspan style="text-decoration:line-through">475</tspan></text>
+      <rect x="240" y="328" width="98" height="22" rx="11" fill="#ff5a1f"/>
+      <text x="289" y="343" fill="#fff" font-size="10" font-weight="700" text-anchor="middle" font-family="Inter">Achte kounye a</text>
+      <!-- Package 2 - Popular -->
+      <rect x="16" y="354" width="328" height="74" rx="14" fill="#172046" stroke="#243064"/>
+      <rect x="28" y="364" width="68" height="18" rx="9" fill="#ffc857" opacity="0.18"/>
+      <text x="62" y="377" fill="#ffc857" font-size="9" font-family="Inter" font-weight="700" text-anchor="middle">🔥 PI POPILÈ</text>
+      <text x="28" y="398" fill="#e8ecff" font-size="14" font-family="Inter" font-weight="700">Combo 7 jou — 5 GB + 200 min</text>
+      <text x="28" y="414" fill="#aab4d8" font-size="11" font-family="Inter">7 jou · 4G · gòl ki popilè ak Jean (P2)</text>
+      <text x="332" y="398" fill="#ff8a5a" font-size="16" font-family="Inter" font-weight="800" text-anchor="end">175 HTG</text>
+      <text x="332" y="416" fill="#3ddc97" font-size="10" font-family="Inter" text-anchor="end" font-weight="700">8.4K acheté/jou</text>
+      <!-- Package 3 - daily -->
+      <rect x="16" y="438" width="328" height="62" rx="14" fill="#172046" stroke="#243064"/>
+      <text x="28" y="462" fill="#e8ecff" font-size="14" font-family="Inter" font-weight="700">Daily 1 GB</text>
+      <text x="28" y="480" fill="#aab4d8" font-size="11" font-family="Inter">24 èdtan · 4G · pi bon pou esè</text>
+      <text x="332" y="462" fill="#ff8a5a" font-size="14" font-family="Inter" font-weight="800" text-anchor="end">38 HTG</text>
+      <text x="332" y="480" fill="#aab4d8" font-size="10" font-family="Inter" text-anchor="end">38 HTG/GB</text>
+      <!-- Package 4 - promo -->
+      <rect x="16" y="510" width="328" height="62" rx="14" fill="#172046" stroke="rgba(124,92,255,.4)"/>
+      <text x="28" y="528" fill="#7c5cff" font-size="9" font-family="Inter" font-weight="700" letter-spacing="1">⏳ PWOMOSYON · FINI NAN 2 JOU</text>
+      <text x="28" y="546" fill="#e8ecff" font-size="14" font-family="Inter" font-weight="700">Mega 50 GB · 5G</text>
+      <text x="28" y="562" fill="#aab4d8" font-size="11" font-family="Inter">30 jou · Wisline tou ka Facebook + TikTok</text>
+      <text x="332" y="546" fill="#ffc857" font-size="14" font-family="Inter" font-weight="800" text-anchor="end">1.250 HTG</text>
+      <text x="332" y="562" fill="#7c5cff" font-size="10" font-family="Inter" text-anchor="end" font-weight="700">-20% pwomo</text>
+      <!-- Auto-pay toggle -->
+      <rect x="16" y="586" width="328" height="56" rx="14" fill="rgba(74,214,194,.08)" stroke="rgba(74,214,194,.4)"/>
+      <text x="28" y="606" fill="#4ad6c2" font-size="12" font-family="Inter" font-weight="700">🔁 Renive otomatik chak peryòd</text>
+      <text x="28" y="624" fill="#aab4d8" font-size="10" font-family="Inter">Jwenn 5% rabè + X2 Points sou Defi Mwa</text>
+      <rect x="296" y="600" width="36" height="20" rx="10" fill="#4ad6c2"/>
+      <circle cx="320" cy="610" r="8" fill="#fff"/>
+      <text x="314" y="638" fill="#3ddc97" font-size="10" font-family="Inter" font-weight="700" text-anchor="end">AKTIF</text>
+      <!-- USSD hint -->
+      <text x="180" y="664" fill="#7a86b8" font-size="10" font-family="Inter" text-anchor="middle">⚡ Achte rapid san app: konpoze *155*3#</text>
+      <text x="180" y="682" fill="#7a86b8" font-size="10" font-family="Inter" text-anchor="middle">Pou itilizatè feature phone (Pierre P4)</text>
+    </svg>
+    <p class="caption">S3 — Gòl Done Catalog: gói current + 3 tabs (AI/Popular/All) · filter chips · 4 gói (AI recommended highlighted + Popular + Daily + Promo) · Auto-pay toggle + USSD fallback hint.</p>
+  </div>
+</article>
+
+<!-- ===== FEATURE #4 — MUA GÓI THOẠI & SMS ===== -->
+<article class="feature-card" id="s4-mua-voice-sms">
+  <header>
+    <div>
+      <h3>#4 — Mua gói thoại & SMS <span style="color:var(--text-dim);font-weight:400;font-size:15px">(Achte Gòl Apèl ak SMS)</span></h3>
+      <div class="meta">
+        <span class="badge b-must">Must</span>
+        <span class="badge b-sz">Effort S</span>
+        <span class="badge b-sz">KPI: ARPU voice · Combo attach</span>
+        <span class="badge b-sz">Phase: G1–G2 — sprint 4–6</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ten-grid">
+    <div class="item">
+      <h4>1. Định nghĩa</h4>
+      <p>Catalog gói voice (nội mạng Natcom-Natcom, ngoại mạng Natcom-Digicel, quốc tế), gói SMS, combo voice+data. Cùng pattern UX với #3 nhưng tab riêng. Quan trọng cho Pierre (P4 — gọi gia đình diaspora), Jean (P2), và Patrick (P6 — gọi đối tác Dominica).</p>
+    </div>
+    <div class="item">
+      <h4>2. Persona phục vụ</h4>
+      <p>Jean (P2 — chính), Pierre (P4 — gọi gia đình ở nước ngoài), Marie (P1 — gọi cung ứng), Patrick (P6 — gọi đối tác CH Dominica nhập hàng), Wisline (P5 — gọi về Haiti từ US, gói inbound).</p>
+    </div>
+    <div class="item span2">
+      <h4>3. User flow chính</h4>
+      <ol>
+        <li>Tab "Gòl Apèl & SMS" → tương tự #3 với 3 tab: <strong>Pou ou (AI)</strong>, <strong>Pi popilè</strong>, <strong>Tout</strong>.</li>
+        <li>Filter: <em>Sib (Local/Diaspora/Domèn)</em>, Duration, Price.</li>
+        <li>Gói quốc tế hiển thị giá per minute theo quốc gia (US/CA/FR/DO/CL được highlight cho diaspora corridor).</li>
+        <li>Combo voice+data có badge "Bundle save -15%".</li>
+        <li>Pierre persona — UX simplified: 4 gói cố định (nội, ngoại, quốc tế Dominica, quốc tế US/CA) với voice prompt "Tape 1 pou gòl entèn".</li>
+        <li>USSD fallback: <code>*155*4#</code>.</li>
+      </ol>
+    </div>
+    <div class="item">
+      <h4>4. Wireframe</h4>
+      <p>Không có wireframe riêng — pattern catalog giống <strong>S3</strong>. Chỉ khác: filter "Sib" với flags US/CA/FR/DO hiển thị inline.</p>
+    </div>
+    <div class="item">
+      <h4>5. Edge case</h4>
+      <ul>
+        <li>Gói quốc tế cần <strong>KYC Tier 1</strong> (anti-fraud roaming abuse) — block nếu chưa KYC.</li>
+        <li>Combo gói → bundle discount auto-apply trong cart.</li>
+        <li>Pierre persona accessibility on → simplified UX 4 gói cố định.</li>
+        <li>Gói quốc tế peak hour (Pháp tối) → có thể đắt hơn 20% — show rõ.</li>
+        <li>FX rate update daily cho gói quốc tế thanh toán USD.</li>
+        <li>Số đích trong blocklist (sanctions) → reject + log audit.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>6. Phụ thuộc</h4>
+      <ul>
+        <li>Catalog service (chung #3).</li>
+        <li>Natcash core.</li>
+        <li>Routing engine quốc tế (interconnect partners).</li>
+        <li>FX engine (gói USD).</li>
+        <li>Sanctions screening (chung <a href="engagement.html#f3-kado-lakay">#3 Kado Lakay</a>).</li>
+        <li>KYC Tier 1 check.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>7. Acceptance criteria</h4>
+      <ul>
+        <li><strong>AC1:</strong> Activate gói &lt;30s sau Natcash debit.</li>
+        <li><strong>AC2:</strong> KYC block hiển thị hint nâng cấp Tier 1.</li>
+        <li><strong>AC3:</strong> Combo discount apply auto.</li>
+        <li><strong>AC4:</strong> Pierre simplified UX hiển thị đúng khi accessibility on.</li>
+        <li><strong>AC5:</strong> Sanctions reject &lt;500ms + log audit.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>8. KPI riêng</h4>
+      <ul>
+        <li><strong>ARPU voice lift:</strong> ≥ +12%.</li>
+        <li><strong>Combo attach rate:</strong> ≥ 20% (voice+data bundle).</li>
+        <li><strong>Gói quốc tế:</strong> ≥ 8% MAU mua ≥1 lần/tháng.</li>
+        <li><strong>Pierre simplified UX adoption:</strong> ≥ 75% Pierre-persona user dùng simplified.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>9. Priority</h4>
+      <p><span class="badge b-must">Must</span> — Voice + SMS vẫn chiếm ~25% revenue Natcom. Không thể bỏ.</p>
+    </div>
+    <div class="item">
+      <h4>10. Phase</h4>
+      <p><strong>Đợt 1 — Giai đoạn 1-2, sprint 4–6.</strong> Cùng #3 (cùng catalog engine).</p>
+    </div>
+  </div>
+
+  <div class="principles-line">
+    <strong>Nguyên tắc thiết kế áp dụng (7/10)</strong>
+    <span class="p-tag">1 · Creole mặc định</span>
+    <span class="p-tag">4 · Voice-first (Pierre simplified UX + voice prompt)</span>
+    <span class="p-tag">6 · USSD fallback *155*4#</span>
+    <span class="p-tag">7 · Bảo mật + sanctions screening</span>
+    <span class="p-tag">8 · Accessibility (Pierre simplified)</span>
+    <span class="p-tag">9 · Push có giới hạn</span>
+    <span class="p-tag">10 · Observable</span>
+  </div>
+</article>
+
+<!-- ===== FEATURE #10 — NOTIFICATION CENTER ===== -->
+<article class="feature-card" id="s10-notification-center">
+  <header>
+    <div>
+      <h3>#10 — Notification Center <span style="color:var(--text-dim);font-weight:400;font-size:15px">(Sant notifikasyon)</span></h3>
+      <div class="meta">
+        <span class="badge b-must">Must</span>
+        <span class="badge b-sz">Effort S</span>
+        <span class="badge b-sz">KPI: DAU · CTR notif CTA</span>
+        <span class="badge b-sz">Phase: G1 — sprint 3–4</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ten-grid">
+    <div class="item">
+      <h4>1. Định nghĩa</h4>
+      <p>Hộp thư app categorized: <strong>Fakti</strong> (cước, gói sắp hết), <strong>Pwomosyon</strong> (ưu đãi cá nhân hóa), <strong>Sèvis</strong> (FTTH maintenance, network update), <strong>Sekirite</strong> (alerts đăng nhập, KYC). User có quyền tắt từng nhóm trừ Sekirite (compliance). Đồng bộ với SMS legacy. Áp dụng <a href="index.html#principles">Nguyên tắc 9 push limited</a>.</p>
+    </div>
+    <div class="item">
+      <h4>2. Persona phục vụ</h4>
+      <p>Mọi user. Marie (P1 — alerts giao dịch quan trọng), Patrick (P6 — FTTH SLA alerts), Stephania (P3 — promo gói data trẻ).</p>
+    </div>
+    <div class="item span2">
+      <h4>3. User flow chính</h4>
+      <ol>
+        <li>Top bar có icon 🔔 + badge số chưa đọc.</li>
+        <li>Tap → list categorized với 4 tab (Tout · Fakti · Pwomosyon · Sèvis).</li>
+        <li>Mỗi notification có CTA inline (vd "Renive gòl la" → flow #3).</li>
+        <li>Settings → toggle per category (Sekirite force-on, không tắt được).</li>
+        <li>Long-press notification → archive / mark read / mute source.</li>
+        <li>Push system override (vd Critical: payment fail, KYC requested) → vẫn hiển thị ngay cả khi user tắt category.</li>
+      </ol>
+    </div>
+    <div class="item">
+      <h4>4. Wireframe</h4>
+      <p>Không có wireframe riêng cho B1 Selfcare — pattern category list quen thuộc, sẽ rảnh sẽ vẽ trong B2 hoặc khi Natcom yêu cầu.</p>
+    </div>
+    <div class="item">
+      <h4>5. Edge case</h4>
+      <ul>
+        <li>Notification quá nhiều (Patrick 100+/tháng) → pagination + filter.</li>
+        <li>Critical alerts không cho tắt: payment fail, KYC required, security login.</li>
+        <li>Offline → queue local, sync khi online (TTL 7 ngày).</li>
+        <li>Multi-account: notification context theo số active hiện tại, có option "Tout nimèwo" để xem tất cả.</li>
+        <li>SMS legacy sync: SMS quan trọng của Natcom (vd OTP) cũng ghi vào Notification Center, có badge "Soti nan SMS".</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>6. Phụ thuộc</h4>
+      <ul>
+        <li>Push gateway (FCM).</li>
+        <li>In-app messaging service.</li>
+        <li>Notification preference engine (kết nối mọi feature).</li>
+        <li>Aggregator (tổng hợp event từ billing/security/promo).</li>
+        <li>SMS legacy sync bridge.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>7. Acceptance criteria</h4>
+      <ul>
+        <li><strong>AC1:</strong> Load &lt;2s với 50 notifications recent.</li>
+        <li><strong>AC2:</strong> Mark read realtime &lt;500ms.</li>
+        <li><strong>AC3:</strong> Critical alerts force-show ngay cả khi category off.</li>
+        <li><strong>AC4:</strong> Settings toggle apply &lt;30s.</li>
+        <li><strong>AC5:</strong> SMS legacy sync vào center trong &lt;5 phút.</li>
+        <li><strong>AC6:</strong> Quota 3 push/ngày/user enforce (Nguyên tắc 9), trừ Critical.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>8. KPI riêng</h4>
+      <ul>
+        <li><strong>% user mở notification daily:</strong> ≥ 40% MAU.</li>
+        <li><strong>CTR notification CTA:</strong> ≥ 15%.</li>
+        <li><strong>% Critical alerts dismissed within 1h:</strong> ≥ 90% (security/payment).</li>
+        <li><strong>% user customize preference</strong> (tắt category): ≥ 25% (tôn trọng user choice).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>9. Priority</h4>
+      <p><span class="badge b-must">Must</span> · Hub cho mọi push từ các feature khác. Không có Notification Center thì push của các Engagement/Selfcare features sẽ rời rạc, hỗn loạn.</p>
+    </div>
+    <div class="item">
+      <h4>10. Phase</h4>
+      <p><strong>Đợt 1 — Giai đoạn 1 (Foundation), sprint 3–4.</strong> Launch cùng Multi-account + Cước dashboard.</p>
+    </div>
+  </div>
+
+  <div class="principles-line">
+    <strong>Nguyên tắc thiết kế áp dụng (5/10)</strong>
+    <span class="p-tag">1 · Creole mặc định</span>
+    <span class="p-tag">8 · Accessibility (font, contrast)</span>
+    <span class="p-tag">9 · Push có giới hạn (core feature này thực thi)</span>
+    <span class="p-tag">10 · Observable (audit notif log)</span>
+    <span class="p-tag">+ Privacy (user control category)</span>
+  </div>
+</article>
+
+<!-- ====== BƯỚC 1.B · SELFCARE BATCH 2 — SERVICES + TRUST ====== -->
+<div class="batch-banner" style="margin-top:48px">
+  <div class="num">S-B2</div>
+  <div>
+    <h3>Selfcare Batch 2 / 2 · Services + Trust</h3>
+    <p>5 tính năng — <strong>FTTH</strong>, <strong>Roaming quốc tế</strong>, <strong>VAS</strong>, <strong>SIM chính chủ KYC</strong>, <strong>Báo sự cố + Coverage map</strong> — xây dựng niềm tin dài hạn và phục vụ các persona đặc thù (Patrick B2B FTTH, Wisline diaspora roaming, Pierre rural coverage). KYC chính chủ là pháp lý cứng theo CONATEL.</p>
+  </div>
+</div>
+<div class="batch-progress" aria-label="Tiến độ 2 batch Selfcare">
+  <span class="on" title="S-B1 Daily essentials · xong"></span>
+  <span class="on" title="S-B2 Services + Trust"></span>
+</div>
+
+<!-- ===== FEATURE #5 — QUẢN LÝ FTTH ===== -->
+<article class="feature-card" id="s5-ftth-management">
+  <header>
+    <div>
+      <h3>#5 — Quản lý FTTH <span style="color:var(--text-dim);font-weight:400;font-size:15px">(Jesyon Entènèt Fib · Status + SLA + Ticket)</span></h3>
+      <div class="meta">
+        <span class="badge b-must">Must</span>
+        <span class="badge b-sz">Effort M</span>
+        <span class="badge b-sz">KPI: FTTH retention · B2B SLA satisfaction</span>
+        <span class="badge b-sz">Phase: G2 — sprint 7–8</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ten-grid">
+    <div class="item">
+      <h4>1. Định nghĩa</h4>
+      <p>Tab riêng cho thuê bao FTTH (Fiber to the Home): status realtime (Online/Offline + speed + uptime 30 ngày), modem health (signal/temperature/last reboot), quản lý gói (upgrade/downgrade), hóa đơn FTTH riêng. Có flow báo sự cố + tracking ticket + lịch hẹn kỹ thuật. <strong>SLA dashboard cho Patrick B2B</strong> với credit Natcash tự động nếu downtime vượt SLA.</p>
+    </div>
+    <div class="item">
+      <h4>2. Persona phục vụ</h4>
+      <p>Patrick (P6 — xưởng may dùng FTTH cho POS Natcash + WhatsApp Business · core persona), Marie (P1 — boutique FTTH 50 Mbps), Stephania (P3 — gia đình urban có FTTH streaming). Jean (P2), Pierre (P4) chưa phải tệp FTTH.</p>
+    </div>
+    <div class="item span2">
+      <h4>3. User flow chính</h4>
+      <ol>
+        <li>Tab "FTTH" chỉ hiển thị nếu user có FTTH subscription (auto-detect qua multi-account #1).</li>
+        <li>Header: <strong>status badge</strong> (🟢 Online / 🔴 Offline / 🟡 Degraded) + download/upload speed realtime + uptime 30 ngày.</li>
+        <li>Modem health card: signal level (dBm), temperature, last reboot timestamp, kết nối WiFi/LAN.</li>
+        <li>Quản lý gói: current + upgrade/downgrade catalog + auto-pay toggle.</li>
+        <li>Hóa đơn FTTH: 12 tháng history, export PDF.</li>
+        <li><strong>Báo sự cố:</strong> tap "Anonse pwoblem" → form (loại sự cố / mô tả / ảnh) → submit → ticket ID + ETA.</li>
+        <li>Lịch hẹn kỹ thuật: tracking ticket với timeline (Mở → Chèche → Vini → Repare → Fini).</li>
+        <li><strong>SLA dashboard (B2B Patrick):</strong> monthly downtime · uptime % · SLA target (vd 99.5%). Nếu vượt SLA → credit Natcash auto trong &lt;24h.</li>
+      </ol>
+    </div>
+    <div class="item">
+      <h4>4. Wireframe</h4>
+      <p>Xem <strong>S4</strong> — FTTH dashboard với status hero (Online + speed gauges), modem health card, current plan card, SLA panel B2B, recent incidents.</p>
+    </div>
+    <div class="item">
+      <h4>5. Edge case</h4>
+      <ul>
+        <li>User không có FTTH → tab hide; thay bằng CTA "Eske ou enterese ak FTTH? Wè kovèti zòn ou".</li>
+        <li>Modem reboot remote — admin Patrick có quyền remote reboot từ app (kết nối CWMP/TR-069).</li>
+        <li><strong>Mass outage (bão, fiber cut)</strong>: tự detect &ge;10 tickets cùng zone → batch notification "Pann nan zòn ou · ETA 4h" + freeze thêm ticket per user (tránh ngập queue).</li>
+        <li>B2B SLA breach → credit Natcash tự động + email manager + push admin.</li>
+        <li>FTTH speed test realtime &lt; 50% advertised → flag auto, gợi ý báo sự cố.</li>
+        <li>Lịch hẹn kỹ thuật: nếu kỹ thuật no-show → tự reschedule + compensation 50 HTG voucher.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>6. Phụ thuộc</h4>
+      <ul>
+        <li>FTTH backend (modem management CWMP/TR-069).</li>
+        <li>CRM ticket system (chung với <a href="#s9-coverage-incident">#9</a>).</li>
+        <li>SLA engine + credit calculator.</li>
+        <li>Natcash core (credit auto).</li>
+        <li>Maintenance scheduler.</li>
+        <li>Push + email notification.</li>
+        <li>mBccs Haiti integration (Patrick B2B view).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>7. Acceptance criteria</h4>
+      <ul>
+        <li><strong>AC1:</strong> Status realtime cập nhật &lt;30s.</li>
+        <li><strong>AC2:</strong> Modem health refresh &lt;5 phút.</li>
+        <li><strong>AC3:</strong> Ticket create + ETA prediction &lt;2 phút.</li>
+        <li><strong>AC4:</strong> SLA credit auto-apply &lt;24h sau breach detection.</li>
+        <li><strong>AC5:</strong> Mass outage batch notification &lt;5 phút sau detection.</li>
+        <li><strong>AC6:</strong> Admin remote reboot có audit log.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>8. KPI riêng</h4>
+      <ul>
+        <li><strong>% FTTH user mở app daily:</strong> ≥ 25%.</li>
+        <li><strong>FTTH retention lift:</strong> +15% so với app cũ.</li>
+        <li><strong>Tickets resolution time:</strong> -25% so với hotline.</li>
+        <li><strong>Patrick B2B SLA satisfaction:</strong> ≥ 4.5/5.</li>
+        <li><strong>Mass outage auto-detect rate:</strong> ≥ 80% trước khi user thứ 20 báo cáo.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>9. Priority</h4>
+      <p><span class="badge b-must">Must</span> — FTTH là segment ARPU cao nhất của Natcom (~10x mobile prepaid). Patrick B2B persona phụ thuộc 100% FTTH cho POS. Mất FTTH = mất doanh thu.</p>
+    </div>
+    <div class="item">
+      <h4>10. Phase</h4>
+      <p><strong>Đợt 1 — Giai đoạn 2 (Core Build), sprint 7–8.</strong> Cần tích hợp với mBccs Haiti backend, có thể trễ 1-2 tuần nếu integration phức tạp.</p>
+    </div>
+  </div>
+
+  <div class="principles-line">
+    <strong>Nguyên tắc thiết kế áp dụng (5/10)</strong>
+    <span class="p-tag">1 · Creole mặc định</span>
+    <span class="p-tag">2 · Offline-capable (status cached last sync)</span>
+    <span class="p-tag">7 · Bảo mật cấp banking (admin remote reboot có audit)</span>
+    <span class="p-tag">9 · Push có giới hạn (chỉ critical: outage + SLA breach)</span>
+    <span class="p-tag">10 · Observable (uptime + ticket lifecycle)</span>
+  </div>
+
+  <div class="wf-wrap">
+    <h4>Wireframe S4 — FTTH Dashboard (Patrick B2B view)</h4>
+    <svg viewBox="0 0 360 720" xmlns="http://www.w3.org/2000/svg" width="320" role="img" aria-label="Wireframe FTTH Dashboard">
+      <defs>
+        <linearGradient id="sg4" x1="0" x2="1"><stop offset="0" stop-color="#4ad6c2"/><stop offset="1" stop-color="#7c5cff"/></linearGradient>
+        <linearGradient id="sg4ok" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3ddc97"/><stop offset="1" stop-color="#4ad6c2"/></linearGradient>
+      </defs>
+      <rect x="0" y="0" width="360" height="720" rx="28" fill="#0b1020" stroke="#243064"/>
+      <text x="20" y="24" fill="#aab4d8" font-size="11" font-family="Inter">9:41</text>
+      <text x="340" y="24" fill="#aab4d8" font-size="11" font-family="Inter" text-anchor="end">100%</text>
+      <text x="20" y="62" fill="#e8ecff" font-size="14" font-family="Inter">←</text>
+      <text x="180" y="62" fill="#e8ecff" font-size="16" font-family="Inter" font-weight="700" text-anchor="middle">FTTH · Boutik Marie 🏠</text>
+      <text x="340" y="62" fill="#aab4d8" font-size="14" font-family="Inter" text-anchor="end">⚙</text>
+      <line x1="0" y1="78" x2="360" y2="78" stroke="#243064"/>
+      <!-- Status hero -->
+      <rect x="16" y="94" width="328" height="118" rx="14" fill="url(#sg4ok)" opacity="0.15"/>
+      <rect x="16" y="94" width="328" height="118" rx="14" fill="none" stroke="rgba(61,220,151,.45)"/>
+      <circle cx="38" cy="124" r="10" fill="#3ddc97"/>
+      <circle cx="38" cy="124" r="14" fill="none" stroke="#3ddc97" opacity="0.4"/>
+      <text x="56" y="119" fill="#aab4d8" font-size="9" font-family="Inter" font-weight="700" letter-spacing="1">ESTATIK</text>
+      <text x="56" y="134" fill="#3ddc97" font-size="14" font-family="Inter" font-weight="800">🟢 ONLINE · estab</text>
+      <text x="332" y="124" fill="#aab4d8" font-size="10" font-family="Inter" text-anchor="end">UPTIME 30J</text>
+      <text x="332" y="142" fill="#3ddc97" font-size="14" font-family="Inter" text-anchor="end" font-weight="800">99.4%</text>
+      <!-- Speed gauges -->
+      <g font-family="Inter">
+        <rect x="28" y="150" width="146" height="52" rx="10" fill="#172046"/>
+        <text x="40" y="168" fill="#aab4d8" font-size="9">⬇ Download</text>
+        <text x="40" y="190" fill="#4ad6c2" font-size="20" font-weight="800">94.3</text>
+        <text x="92" y="190" fill="#aab4d8" font-size="11">Mbps</text>
+        <text x="160" y="194" fill="#3ddc97" font-size="9" text-anchor="end">/ 100</text>
+
+        <rect x="186" y="150" width="146" height="52" rx="10" fill="#172046"/>
+        <text x="198" y="168" fill="#aab4d8" font-size="9">⬆ Upload</text>
+        <text x="198" y="190" fill="#7c5cff" font-size="20" font-weight="800">47.8</text>
+        <text x="248" y="190" fill="#aab4d8" font-size="11">Mbps</text>
+        <text x="320" y="194" fill="#3ddc97" font-size="9" text-anchor="end">/ 50</text>
+      </g>
+      <!-- Modem health -->
+      <text x="16" y="232" fill="#ff5a1f" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">MODÈM HUAWEI HG8245H</text>
+      <rect x="16" y="242" width="328" height="64" rx="12" fill="#172046" stroke="#243064"/>
+      <g font-family="Inter">
+        <text x="28" y="262" fill="#aab4d8" font-size="10">Siyal optik</text>
+        <text x="28" y="280" fill="#3ddc97" font-size="13" font-weight="700">-18.4 dBm</text>
+        <text x="28" y="294" fill="#7a86b8" font-size="9">✓ Nòmal</text>
+
+        <text x="128" y="262" fill="#aab4d8" font-size="10">Tanperati</text>
+        <text x="128" y="280" fill="#ffc857" font-size="13" font-weight="700">52°C</text>
+        <text x="128" y="294" fill="#7a86b8" font-size="9">▲ Pi gwo nòmal</text>
+
+        <text x="228" y="262" fill="#aab4d8" font-size="10">Dènye redemar</text>
+        <text x="228" y="280" fill="#e8ecff" font-size="13" font-weight="700">3 jou</text>
+        <text x="228" y="294" fill="#7a86b8" font-size="9">22 me · 14:08</text>
+      </g>
+      <rect x="284" y="252" width="50" height="22" rx="11" fill="none" stroke="#ff5a1f"/>
+      <text x="309" y="267" fill="#ff5a1f" font-size="10" font-weight="700" text-anchor="middle">⟳ Redem</text>
+      <!-- Current plan -->
+      <text x="16" y="326" fill="#ff5a1f" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">GÒL KOURAN</text>
+      <rect x="16" y="336" width="328" height="56" rx="12" fill="#172046" stroke="#243064"/>
+      <text x="28" y="358" fill="#e8ecff" font-size="14" font-family="Inter" font-weight="700">Antrepriz 100 Mbps · ilimite</text>
+      <text x="28" y="376" fill="#aab4d8" font-size="11" font-family="Inter">Renive: 30 jen · Otopey aktif · -5%</text>
+      <text x="332" y="362" fill="#ffc857" font-size="14" font-family="Inter" text-anchor="end" font-weight="800">2.500</text>
+      <text x="332" y="378" fill="#aab4d8" font-size="10" font-family="Inter" text-anchor="end">HTG/mwa</text>
+      <!-- SLA Panel B2B -->
+      <text x="16" y="412" fill="#ff5a1f" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">🏢 SLA PANTREPRIZ · MAS 2026</text>
+      <rect x="16" y="422" width="328" height="84" rx="12" fill="url(#sg4)" opacity="0.12"/>
+      <rect x="16" y="422" width="328" height="84" rx="12" fill="none" stroke="rgba(74,214,194,.4)"/>
+      <text x="28" y="444" fill="#aab4d8" font-size="10" font-family="Inter">Uptime mwa sa</text>
+      <text x="28" y="468" fill="#4ad6c2" font-size="22" font-family="Inter" font-weight="800">99.62%</text>
+      <text x="28" y="482" fill="#3ddc97" font-size="10" font-family="Inter" font-weight="700">✓ &gt; SLA target 99.5%</text>
+      <text x="180" y="444" fill="#aab4d8" font-size="10" font-family="Inter" text-anchor="middle">Pann total mwa</text>
+      <text x="180" y="468" fill="#ffc857" font-size="22" font-family="Inter" font-weight="800" text-anchor="middle">2h 44m</text>
+      <text x="180" y="482" fill="#7a86b8" font-size="10" font-family="Inter" text-anchor="middle">3 evenman</text>
+      <text x="332" y="444" fill="#aab4d8" font-size="10" font-family="Inter" text-anchor="end">Kredi otomatik</text>
+      <text x="332" y="468" fill="#3ddc97" font-size="22" font-family="Inter" font-weight="800" text-anchor="end">0 HTG</text>
+      <text x="332" y="482" fill="#7a86b8" font-size="10" font-family="Inter" text-anchor="end">pa gen breach</text>
+      <text x="180" y="500" fill="#aab4d8" font-size="9" font-family="Inter" text-anchor="middle">SLA breach &gt; target → Natcash kredi otomatik nan 24h</text>
+      <!-- Recent incidents -->
+      <text x="16" y="526" fill="#ff5a1f" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">ENSIDAN RESAN</text>
+      <g font-family="Inter">
+        <rect x="16" y="536" width="328" height="44" rx="10" fill="#121935"/>
+        <circle cx="32" cy="558" r="6" fill="#3ddc97"/>
+        <text x="48" y="554" fill="#e8ecff" font-size="12" font-weight="700">Pann fib · zòn Pétion-Ville</text>
+        <text x="48" y="570" fill="#aab4d8" font-size="10">28/05 · Repare nan 1h 42m</text>
+        <text x="332" y="562" fill="#3ddc97" font-size="11" text-anchor="end" font-weight="700">✓ Fèmen</text>
+
+        <rect x="16" y="586" width="328" height="44" rx="10" fill="#121935"/>
+        <circle cx="32" cy="608" r="6" fill="#3ddc97"/>
+        <text x="48" y="604" fill="#e8ecff" font-size="12" font-weight="700">Modèm redemar pa ekip teknik</text>
+        <text x="48" y="620" fill="#aab4d8" font-size="10">22/05 · Fini · siyal repare</text>
+        <text x="332" y="612" fill="#3ddc97" font-size="11" text-anchor="end" font-weight="700">✓ Fèmen</text>
+      </g>
+      <!-- Report incident CTA -->
+      <rect x="16" y="642" width="158" height="50" rx="25" fill="#172046" stroke="rgba(255,90,31,.5)"/>
+      <text x="95" y="666" fill="#ff5a1f" font-size="11" font-family="Inter" font-weight="700" text-anchor="middle">⚠ Anonse pwoblem</text>
+      <text x="95" y="682" fill="#aab4d8" font-size="9" font-family="Inter" text-anchor="middle">Ticket B2B priorite 2h</text>
+      <rect x="186" y="642" width="158" height="50" rx="25" fill="url(#sg4)"/>
+      <text x="265" y="666" fill="#fff" font-size="11" font-family="Inter" font-weight="700" text-anchor="middle">📊 Wè rapò mwa</text>
+      <text x="265" y="682" fill="rgba(255,255,255,.7)" font-size="9" font-family="Inter" text-anchor="middle">PDF · email</text>
+    </svg>
+    <p class="caption">S4 — FTTH dashboard B2B Patrick: status hero Online + speed gauges · modem health · current plan · SLA panel (uptime 99.62% &gt; target, 0 credit because no breach) · 2 resolved incidents · report ticket + monthly report CTAs.</p>
+  </div>
+</article>
+
+<!-- ===== FEATURE #6 — ROAMING ===== -->
+<article class="feature-card" id="s6-roaming-intl">
+  <header>
+    <div>
+      <h3>#6 — Roaming & gói quốc tế <span style="color:var(--text-dim);font-weight:400;font-size:15px">(Roaming Entènasyonal · Smart Roaming AI)</span></h3>
+      <div class="meta">
+        <span class="badge b-should">Should</span>
+        <span class="badge b-sz">Effort M</span>
+        <span class="badge b-sz">KPI: ARPU roaming · Smart Roaming CTR</span>
+        <span class="badge b-sz">Phase: G3 — sprint 9–10</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ten-grid">
+    <div class="item">
+      <h4>1. Định nghĩa</h4>
+      <p>Bật/tắt roaming với 1 tap, mua gói roaming theo quốc gia (50+ quốc gia chính), hiển thị giá per minute/MB rõ ràng. <strong>Smart Roaming AI</strong> tự đề xuất gói tốt nhất theo lịch sử đi lại của user. Đặc biệt phục vụ corridor diaspora: US, CA, FR, CH Dominica, Chile.</p>
+    </div>
+    <div class="item">
+      <h4>2. Persona phục vụ</h4>
+      <p>Wisline (P5 — chính, diaspora Miami du lịch về Haiti hoặc inbound), Patrick (P6 — đi CH Dominica đối tác nhập hàng), Marie (P1 — du lịch hiếm), Stephania (P3 — đi học/du lịch).</p>
+    </div>
+    <div class="item span2">
+      <h4>3. User flow chính</h4>
+      <ol>
+        <li>Tab "Roaming entènasyonal" → big toggle "Roaming" với warning <em>"Chaj k ap fèt — wè pri anvan"</em>.</li>
+        <li>Hero: diaspora corridor (US 🇺🇸 / CA 🇨🇦 / FR 🇫🇷 / DO 🇩🇴 / CL 🇨🇱) highlighted top.</li>
+        <li>List 50 quốc gia với flag + giá per minute (Voice) / per MB (Data) / per SMS.</li>
+        <li>Tap quốc gia → catalog gói roaming riêng cho quốc gia đó.</li>
+        <li><strong>Smart Roaming AI:</strong> <em>"Ou pral DR semèn pwochèn? Nou rekòmande gòl 'Karayib 7 jou' · 450 HTG"</em> (dựa lịch sử đi).</li>
+        <li>Push tự động khi user landing in roaming area: <em>"Bonjou nan DR! Bezwen aktive yon gòl?"</em></li>
+        <li>USSD: <code>*155*6#</code> bật/tắt nhanh.</li>
+      </ol>
+    </div>
+    <div class="item">
+      <h4>4. Wireframe</h4>
+      <p>Không có wireframe riêng — pattern toggle + country list + catalog quen thuộc.</p>
+    </div>
+    <div class="item">
+      <h4>5. Edge case</h4>
+      <ul>
+        <li>User landing in unsupported country → graceful <em>"Roaming pa disponib nan peyi sa-a"</em> + suggest local SIM.</li>
+        <li>Auto-detect roaming country qua Cell ID (lazy detect via SIM HPLMN/VPLMN khi không có data).</li>
+        <li>Pre-paid balance không đủ → block roaming + push warning <strong>trước khi user rời Haiti</strong> (geofence départ).</li>
+        <li>KYC Tier 1 required cho roaming international (anti-fraud).</li>
+        <li>Roaming charges 48-72h delay (settlement với roaming partner) → label rõ <em>"Chaj sa-a ka pran jiska 72h"</em>.</li>
+        <li>Smart Roaming AI fail (engine down) → fallback popular packages by region.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>6. Phụ thuộc</h4>
+      <ul>
+        <li>Roaming partner interconnect (IR.21 data từ roaming partners).</li>
+        <li>Push (geo-trigger qua Cell ID).</li>
+        <li>KYC service.</li>
+        <li>Natcash core.</li>
+        <li>Anti-fraud module.</li>
+        <li>AI engine (chung <a href="engagement.html#f14-misyon-jou-ai">#14 Misyon Jou AI</a>).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>7. Acceptance criteria</h4>
+      <ul>
+        <li><strong>AC1:</strong> Toggle roaming &lt;5s.</li>
+        <li><strong>AC2:</strong> Auto-detect roaming country &lt;60s sau landing.</li>
+        <li><strong>AC3:</strong> Pricing accuracy 100% vs interconnect rate sheet.</li>
+        <li><strong>AC4:</strong> KYC block enforce cho international roaming.</li>
+        <li><strong>AC5:</strong> Smart Roaming AI fallback &lt;2s khi engine fail.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>8. KPI riêng</h4>
+      <ul>
+        <li><strong>ARPU roaming:</strong> +25% so với app cũ.</li>
+        <li><strong>% Wisline persona dùng roaming bundle:</strong> ≥ 60% trên visit.</li>
+        <li><strong>Smart Roaming CTR:</strong> ≥ 35%.</li>
+        <li><strong>Roaming dispute rate:</strong> &lt; 0.5% giao dịch.</li>
+        <li><strong>Pre-departure push CTR:</strong> ≥ 45%.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>9. Priority</h4>
+      <p><span class="badge b-should">Should</span> · ARPU roaming chiếm phần nhỏ overall nhưng cực kỳ chiến lược cho Wisline persona. Đây cũng là cách Natcom giữ chân diaspora khi họ về Haiti (không phải mua SIM local).</p>
+    </div>
+    <div class="item">
+      <h4>10. Phase</h4>
+      <p><strong>Đợt 1 — Giai đoạn 3 (Growth Build), sprint 9–10.</strong> Cần đàm phán/cập nhật roaming partner agreements trước.</p>
+    </div>
+  </div>
+
+  <div class="principles-line">
+    <strong>Nguyên tắc thiết kế áp dụng (5/10)</strong>
+    <span class="p-tag">1 · Creole mặc định (multi-lang cho diaspora)</span>
+    <span class="p-tag">6 · USSD fallback *155*6#</span>
+    <span class="p-tag">7 · KYC required + anti-fraud</span>
+    <span class="p-tag">9 · Push có giới hạn (geo-trigger landing + departure)</span>
+    <span class="p-tag">10 · Observable</span>
+  </div>
+</article>
+
+<!-- ===== FEATURE #7 — VAS ===== -->
+<article class="feature-card" id="s7-vas-management">
+  <header>
+    <div>
+      <h3>#7 — Quản lý dịch vụ phụ trợ (VAS) <span style="color:var(--text-dim);font-weight:400;font-size:15px">(Sèvis Plis · Minh bạch billing)</span></h3>
+      <div class="meta">
+        <span class="badge b-should">Should</span>
+        <span class="badge b-sz">Effort S</span>
+        <span class="badge b-sz">KPI: VAS revenue · CSKH dispute -50%</span>
+        <span class="badge b-sz">Phase: G2 — sprint 7–8</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ten-grid">
+    <div class="item">
+      <h4>1. Định nghĩa</h4>
+      <p>Bật/tắt VAS (Value-Added Services): Ringback Tone (Mizik anvan apèl), Caller ID, Voicemail, Conference Call, Call Forwarding, Missed Call Alert. Cho phép subscribe gói mới. <strong>Giải quyết vấn đề chính:</strong> user subscribe nhầm VAS qua USSD/SMS legacy và không biết tắt — gây tranh chấp lớn ở Haiti (~30% CSKH calls hiện tại).</p>
+    </div>
+    <div class="item">
+      <h4>2. Persona phục vụ</h4>
+      <p>Stephania (P3 — Ringback Tone Kompa), Marie (P1 — Voicemail bán hàng), Patrick (P6 — Conference Call), Jean (P2 — Missed Call Alert). Pierre (P4) chủ yếu legacy import từ USSD.</p>
+    </div>
+    <div class="item span2">
+      <h4>3. User flow chính</h4>
+      <ol>
+        <li>Tab "Sèvis Plis (VAS)" → 2 section: <strong>Aktif</strong> (đang dùng) + <strong>Disponib pou achte</strong>.</li>
+        <li>Mỗi card: tên, fee/tháng, last billing, toggle on/off, link "Wè istwa fakti".</li>
+        <li>Tap Off → confirm modal <em>"Eseye sèten? Sèvis sa-a ap rete jiska fen peryòd la · Pa gen ranbousman"</em>.</li>
+        <li>Catalog new VAS: filter theo loại (mizik / kominikasyon / sekirite) + bundle deal.</li>
+        <li>Lịch sử billing VAS 12 tháng — quan trọng vì user kêu trời nhiều.</li>
+        <li>Push 7 ngày trước renew: <em>"Sèvis Ringback ap renive nan 7 jou · -10 HTG · Tap pou tcheke"</em>.</li>
+        <li><strong>USSD legacy bridge</strong>: VAS subscribed via *123# tự import vào app với badge <em>"Soti nan USSD legacy"</em>.</li>
+      </ol>
+    </div>
+    <div class="item">
+      <h4>4. Wireframe</h4>
+      <p>Không có wireframe riêng — pattern toggle list quen thuộc.</p>
+    </div>
+    <div class="item">
+      <h4>5. Edge case</h4>
+      <ul>
+        <li>User tắt VAS có bundled subscription → confirm 2 lần (vd Ringback bundled trong Combo).</li>
+        <li>USSD-subscribed VAS (legacy) → auto-import + badge <em>"Soti nan USSD"</em>.</li>
+        <li>Free trial period → countdown rõ ràng "5 jou kite avan billing kòmanse".</li>
+        <li>Refund policy: tắt giữa chu kỳ → no refund (industry standard) nhưng pause renewal next cycle.</li>
+        <li>VAS content provider down → notification "Sèvis sa-a temporèman pa disponib · Pa gen billing".</li>
+        <li>Patrick B2B Conference Call → require KYC Tier 2 vì phí cao.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>6. Phụ thuộc</h4>
+      <ul>
+        <li>VAS billing engine.</li>
+        <li>USSD legacy bridge (import subscription).</li>
+        <li>Push scheduler.</li>
+        <li>Content provider integration (Kompa music for Ringback).</li>
+        <li>Bundle dependency tracker.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>7. Acceptance criteria</h4>
+      <ul>
+        <li><strong>AC1:</strong> Toggle off &lt;30s, billing ngắt chu kỳ sau.</li>
+        <li><strong>AC2:</strong> USSD-legacy import accuracy 100%.</li>
+        <li><strong>AC3:</strong> Push renew warning đúng 7 ngày trước.</li>
+        <li><strong>AC4:</strong> Lịch sử billing 12 tháng accessible &lt;2s.</li>
+        <li><strong>AC5:</strong> Bundle dependency warn 2 lần khi tắt.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>8. KPI riêng</h4>
+      <ul>
+        <li><strong>VAS voluntary churn:</strong> +20% (sign of trust — user thấy minh bạch → tắt cái không dùng).</li>
+        <li><strong>VAS revenue per user (net):</strong> +8% (sau khi user re-subscribe VAS thực sự dùng).</li>
+        <li><strong>CSKH call về VAS dispute:</strong> -50% (mục tiêu chính của tính năng).</li>
+        <li><strong>Free trial → paid conversion:</strong> ≥ 25%.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>9. Priority</h4>
+      <p><span class="badge b-should">Should</span> · Effort thấp, impact lớn cho CSKH cost + trust. Đây là <em>"low-hanging fruit"</em>.</p>
+    </div>
+    <div class="item">
+      <h4>10. Phase</h4>
+      <p><strong>Đợt 1 — Giai đoạn 2 (Core Build), sprint 7–8.</strong></p>
+    </div>
+  </div>
+
+  <div class="principles-line">
+    <strong>Nguyên tắc thiết kế áp dụng (5/10)</strong>
+    <span class="p-tag">1 · Creole mặc định</span>
+    <span class="p-tag">6 · USSD legacy bridge (import + control parallel)</span>
+    <span class="p-tag">7 · Bảo mật (KYC2 cho VAS phí cao)</span>
+    <span class="p-tag">9 · Push có giới hạn (7-day renew warning)</span>
+    <span class="p-tag">10 · Observable (audit billing)</span>
+  </div>
+</article>
+
+<!-- ===== FEATURE #8 — SIM CHÍNH CHỦ KYC ===== -->
+<article class="feature-card" id="s8-sim-kyc">
+  <header>
+    <div>
+      <h3>#8 — SIM chính chủ (KYC online) <span style="color:var(--text-dim);font-weight:400;font-size:15px">(Verifye Idantite · CONATEL compliance)</span></h3>
+      <div class="meta">
+        <span class="badge b-must">Must</span>
+        <span class="badge b-sz">Effort L</span>
+        <span class="badge b-sz">KPI: KYC completion · Fraud rate</span>
+        <span class="badge b-sz">Phase: G2 — sprint 5–6</span>
+        <span class="badge" style="background:rgba(255,107,107,.15);color:#ff6b6b">Pháp lý cứng: CONATEL</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ten-grid">
+    <div class="item">
+      <h4>1. Định nghĩa</h4>
+      <p>Đăng ký SIM chính chủ qua app: chụp CIN/Passport/Mat Konsila → OCR auto-fill, selfie + liveness, e-signature (vẽ ngón tay). Compliance với <strong>CONATEL regulation</strong> (đang chuyển dần sang KYC mandatory cho prepaid SIM). Đồng thời <strong>mở khóa Natcash Tier 1</strong> (link với <a href="engagement.html#f7-profile-points">#7 Profile=Points Engagement</a>) và unlock các feature cần ID verify (roaming international, big wins Borlette).</p>
+    </div>
+    <div class="item">
+      <h4>2. Persona phục vụ</h4>
+      <p>Mọi user (compliance). Marie (P1), Jean (P2) cần KYC để dùng Natcash &gt;100 HTG/lượt. Patrick (P6) cần KYC2 cho B2B. Pierre (P4) — flow voice-guided + đại lý hỗ trợ. Stephania (P3) sinh viên cần KYC. Wisline (P5) KYC qua passport US.</p>
+    </div>
+    <div class="item span2">
+      <h4>3. User flow chính · 7 bước</h4>
+      <ol>
+        <li>Profile → "Verifye Idantite Mwen (KYC)" → CTA card prominent.</li>
+        <li><strong>Step 1:</strong> Chọn loại ID: CIN (Carte d'Identification Nationale), Passport, Mat Konsila (consular card cho diaspora).</li>
+        <li><strong>Step 2:</strong> Chụp mặt trước ID → OCR auto-fill (CIN format Haiti).</li>
+        <li><strong>Step 3:</strong> Chụp mặt sau (nếu CIN có 2 mặt).</li>
+        <li><strong>Step 4:</strong> Selfie + liveness (prompt "Souri" / "Klin je w").</li>
+        <li><strong>Step 5:</strong> Verify info (chỉnh nếu OCR sai).</li>
+        <li><strong>Step 6:</strong> E-signature (vẽ ngón tay trên screen).</li>
+        <li><strong>Step 7:</strong> Submit → review ≤ 24h (auto-approve trong &lt;5 phút cho clean cases).</li>
+        <li>Status tracking: Pending / Approved / Rejected (kèm lý do cụ thể).</li>
+        <li>Approved → push "Idantite ou verifye!" + unlock Natcash + 100 Points Profile + Sertifika KYC.</li>
+      </ol>
+    </div>
+    <div class="item">
+      <h4>4. Wireframe</h4>
+      <p>Xem <strong>S5</strong> — KYC multi-step flow: ID type selector → photo capture → selfie liveness → review info → e-signature → submit.</p>
+    </div>
+    <div class="item">
+      <h4>5. Edge case</h4>
+      <ul>
+        <li>ID blur/cong/lóa → hint cụ thể (vd <em>"Foto pa klè · ranje limyè"</em>), retry không penalize.</li>
+        <li>Liveness fail (gọng kính phản chiếu, tóc che) → fallback <strong>assisted KYC via đại lý</strong> (kết nối <a href="engagement.html#f2-qr-dai-ly">#2 QR đại lý</a>).</li>
+        <li>Mismatch CIN với số SIM (vd SIM đăng ký tên khác) → reject + escalate CSKH với cờ "Identity mismatch".</li>
+        <li>Underage (&lt;18) → cần guardian co-sign (Multi-account family link).</li>
+        <li>Re-KYC sau 2 năm (CONATEL requirement) — push trước hạn 30 ngày + grace 14 ngày.</li>
+        <li>Pierre persona accessibility on → <strong>voice-guided flow</strong> (mỗi bước có voice prompt + audio confirm).</li>
+        <li>Wisline (diaspora) dùng passport US → OCR support format US + auto-detect.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>6. Phụ thuộc</h4>
+      <ul>
+        <li>OCR service (CIN Haiti format + passport US/CA/FR + Mat Konsila).</li>
+        <li>Liveness detection AI (chống photo/video replay).</li>
+        <li>E-signature engine + storage.</li>
+        <li>KYC review queue (manual operators 24/7).</li>
+        <li>CONATEL compliance log + reporting.</li>
+        <li>Natcash Tier 1 unlock trigger.</li>
+        <li>Voice prompt service (Creole TTS).</li>
+        <li>Đại lý assisted KYC flow (kết nối <a href="engagement.html#f2-qr-dai-ly">#2</a>).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>7. Acceptance criteria</h4>
+      <ul>
+        <li><strong>AC1:</strong> OCR accuracy ≥ 95% trên CIN clear photo.</li>
+        <li><strong>AC2:</strong> Liveness pass rate ≥ 90% first attempt.</li>
+        <li><strong>AC3:</strong> KYC review time ≤ 24h (auto-approve clean cases ≤ 5 phút).</li>
+        <li><strong>AC4:</strong> Reject reason cụ thể, ≥ 10 categories.</li>
+        <li><strong>AC5:</strong> Voice-guided flow hoạt động khi accessibility mode on.</li>
+        <li><strong>AC6:</strong> CONATEL compliance log đầy đủ, regulator có thể audit on-demand.</li>
+        <li><strong>AC7:</strong> Fraud detection (false-pass) &lt; 0.3%.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>8. KPI riêng</h4>
+      <ul>
+        <li><strong>KYC completion rate:</strong> ≥ 70% MAU (vs ~30% app cũ).</li>
+        <li><strong>KYC time-to-approval median:</strong> ≤ 4h.</li>
+        <li><strong>Pierre persona via assisted KYC:</strong> ≥ 50%.</li>
+        <li><strong>Natcash Tier 1 trigger rate:</strong> ≥ 85% từ KYC pass.</li>
+        <li><strong>Fraud rate (false-pass):</strong> &lt; 0.3%.</li>
+        <li><strong>CONATEL compliance audit pass:</strong> 100%.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>9. Priority</h4>
+      <p><span class="badge b-must">Must</span> — <em>Pháp lý cứng</em>. CONATEL đang siết regulation prepaid SIM. Đồng thời unlock toàn bộ Natcash + Engagement features.</p>
+    </div>
+    <div class="item">
+      <h4>10. Phase</h4>
+      <p><strong>Đợt 1 — Giai đoạn 2 (Core Build), sprint 5–6.</strong> Cần sớm vì là gateway cho Natcash + nhiều feature khác. RingMe khuyến nghị Natcom mở đàm phán với CONATEL về timeline compliance từ G1.</p>
+    </div>
+  </div>
+
+  <div class="principles-line">
+    <strong>Nguyên tắc thiết kế áp dụng (7/10)</strong>
+    <span class="p-tag">1 · Creole mặc định</span>
+    <span class="p-tag">4 · Voice-first (Pierre voice-guided flow)</span>
+    <span class="p-tag">6 · USSD fallback (đại lý assisted)</span>
+    <span class="p-tag">7 · Bảo mật cấp banking (KYC + liveness AI)</span>
+    <span class="p-tag">8 · Accessibility (voice prompt, font, hint)</span>
+    <span class="p-tag">9 · Push có giới hạn (status update)</span>
+    <span class="p-tag">10 · Observable (CONATEL audit)</span>
+  </div>
+
+  <div class="wf-wrap">
+    <h4>Wireframe S5 — KYC Multi-step Flow (Step 4: Selfie + Liveness)</h4>
+    <svg viewBox="0 0 360 720" xmlns="http://www.w3.org/2000/svg" width="320" role="img" aria-label="Wireframe KYC Selfie">
+      <defs>
+        <linearGradient id="sg5" x1="0" x2="1"><stop offset="0" stop-color="#4ad6c2"/><stop offset="1" stop-color="#7c5cff"/></linearGradient>
+      </defs>
+      <rect x="0" y="0" width="360" height="720" rx="28" fill="#0b1020" stroke="#243064"/>
+      <text x="20" y="24" fill="#aab4d8" font-size="11" font-family="Inter">9:41</text>
+      <text x="340" y="24" fill="#aab4d8" font-size="11" font-family="Inter" text-anchor="end">100%</text>
+      <text x="20" y="62" fill="#e8ecff" font-size="14" font-family="Inter">←</text>
+      <text x="180" y="62" fill="#e8ecff" font-size="16" font-family="Inter" font-weight="700" text-anchor="middle">Verifye Idantite 🪪</text>
+      <text x="340" y="62" fill="#aab4d8" font-size="14" font-family="Inter" text-anchor="end">ⓘ</text>
+      <line x1="0" y1="78" x2="360" y2="78" stroke="#243064"/>
+      <!-- Progress dots 7 steps -->
+      <text x="16" y="100" fill="#ff5a1f" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">ETAP 4 / 7</text>
+      <g>
+        <circle cx="40" cy="118" r="8" fill="#3ddc97"/><text x="40" y="123" fill="#0b1020" font-size="9" font-weight="800" text-anchor="middle">✓</text>
+        <line x1="48" y1="118" x2="80" y2="118" stroke="#3ddc97" stroke-width="2"/>
+        <circle cx="88" cy="118" r="8" fill="#3ddc97"/><text x="88" y="123" fill="#0b1020" font-size="9" font-weight="800" text-anchor="middle">✓</text>
+        <line x1="96" y1="118" x2="128" y2="118" stroke="#3ddc97" stroke-width="2"/>
+        <circle cx="136" cy="118" r="8" fill="#3ddc97"/><text x="136" y="123" fill="#0b1020" font-size="9" font-weight="800" text-anchor="middle">✓</text>
+        <line x1="144" y1="118" x2="176" y2="118" stroke="url(#sg5)" stroke-width="2"/>
+        <circle cx="184" cy="118" r="10" fill="#ff5a1f"/><text x="184" y="123" fill="#fff" font-size="10" font-weight="800" text-anchor="middle">4</text>
+        <line x1="194" y1="118" x2="226" y2="118" stroke="#243064" stroke-width="2"/>
+        <circle cx="234" cy="118" r="8" fill="#243064" stroke="#7a86b8"/><text x="234" y="122" fill="#7a86b8" font-size="9" text-anchor="middle">5</text>
+        <line x1="242" y1="118" x2="274" y2="118" stroke="#243064" stroke-width="2"/>
+        <circle cx="282" cy="118" r="8" fill="#243064" stroke="#7a86b8"/><text x="282" y="122" fill="#7a86b8" font-size="9" text-anchor="middle">6</text>
+        <line x1="290" y1="118" x2="322" y2="118" stroke="#243064" stroke-width="2"/>
+        <circle cx="330" cy="118" r="8" fill="#243064" stroke="#7a86b8"/><text x="330" y="122" fill="#7a86b8" font-size="9" text-anchor="middle">7</text>
+      </g>
+      <!-- Step title -->
+      <text x="16" y="158" fill="#e8ecff" font-size="20" font-family="Inter" font-weight="800">Pran yon selfie</text>
+      <text x="16" y="180" fill="#aab4d8" font-size="12" font-family="Inter">Mete figi-w nan sèk la · souri yon ti kras</text>
+      <!-- Camera frame -->
+      <g transform="translate(180,332)">
+        <!-- Outer guide -->
+        <circle r="120" fill="none" stroke="url(#sg5)" stroke-width="2" stroke-dasharray="6 4"/>
+        <circle r="120" fill="#172046" opacity="0.4"/>
+        <!-- Face oval -->
+        <ellipse cx="0" cy="-10" rx="55" ry="70" fill="none" stroke="#4ad6c2" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <!-- Face silhouette -->
+        <circle cx="0" cy="-30" r="32" fill="#243064"/>
+        <ellipse cx="-12" cy="-32" rx="3" ry="4" fill="#aab4d8"/>
+        <ellipse cx="12" cy="-32" rx="3" ry="4" fill="#aab4d8"/>
+        <path d="M -10 -16 Q 0 -8 10 -16" stroke="#aab4d8" stroke-width="2" fill="none"/>
+        <path d="M -28 12 Q 0 50 28 12 L 28 60 L -28 60 Z" fill="#243064"/>
+        <!-- Corner brackets -->
+        <path d="M -100 -100 L -100 -80 M -100 -100 L -80 -100" stroke="#4ad6c2" stroke-width="3"/>
+        <path d="M 100 -100 L 100 -80 M 100 -100 L 80 -100" stroke="#4ad6c2" stroke-width="3"/>
+        <path d="M -100 100 L -100 80 M -100 100 L -80 100" stroke="#4ad6c2" stroke-width="3"/>
+        <path d="M 100 100 L 100 80 M 100 100 L 80 100" stroke="#4ad6c2" stroke-width="3"/>
+      </g>
+      <!-- Liveness prompt -->
+      <rect x="16" y="476" width="328" height="50" rx="14" fill="url(#sg5)" opacity="0.15"/>
+      <rect x="16" y="476" width="328" height="50" rx="14" fill="none" stroke="rgba(74,214,194,.5)"/>
+      <text x="180" y="498" fill="#4ad6c2" font-size="11" font-family="Inter" font-weight="700" letter-spacing="1" text-anchor="middle">🎯 ENSTRUKSYON KOURAN</text>
+      <text x="180" y="516" fill="#e8ecff" font-size="14" font-family="Inter" font-weight="700" text-anchor="middle">Souri yon ti kras pou kontwòl viv</text>
+      <!-- Voice mode toggle -->
+      <rect x="16" y="540" width="328" height="44" rx="22" fill="#172046" stroke="rgba(124,92,255,.4)"/>
+      <text x="28" y="565" fill="#7c5cff" font-size="14" font-family="Inter">🔊</text>
+      <text x="50" y="558" fill="#e8ecff" font-size="11" font-family="Inter" font-weight="700">Mòd vwa pou Pierre</text>
+      <text x="50" y="572" fill="#aab4d8" font-size="10" font-family="Inter">Enstrukyon yo li an Kreyòl</text>
+      <rect x="296" y="552" width="36" height="20" rx="10" fill="#7c5cff"/>
+      <circle cx="320" cy="562" r="8" fill="#fff"/>
+      <!-- Camera button -->
+      <circle cx="180" cy="624" r="32" fill="#ff5a1f"/>
+      <circle cx="180" cy="624" r="32" fill="none" stroke="#fff" stroke-width="3"/>
+      <text x="180" y="630" fill="#fff" font-size="20" font-weight="800" text-anchor="middle" font-family="Inter">📷</text>
+      <!-- Skip / Assisted CTA -->
+      <text x="180" y="678" fill="#7c5cff" font-size="11" font-family="Inter" font-weight="700" text-anchor="middle">Pa kapab? Ale nan yon ajan asistans →</text>
+      <text x="180" y="694" fill="#7a86b8" font-size="10" font-family="Inter" text-anchor="middle">Konekte ak QR ajan (Feature #2)</text>
+    </svg>
+    <p class="caption">S5 — KYC Step 4/7 Selfie + Liveness: progress dots (3 done · 4 active · 5-7 locked) · camera frame với face guide + corner brackets · liveness prompt Creole "Souri yon ti kras" · voice mode toggle cho Pierre · capture button + assisted KYC fallback link.</p>
+  </div>
+</article>
+
+<!-- ===== FEATURE #9 — BÁO SỰ CỐ & COVERAGE ===== -->
+<article class="feature-card" id="s9-coverage-incident">
+  <header>
+    <div>
+      <h3>#9 — Báo sự cố & tra cứu vùng phủ <span style="color:var(--text-dim);font-weight:400;font-size:15px">(Kovèti ak Pwoblem)</span></h3>
+      <div class="meta">
+        <span class="badge b-should">Should</span>
+        <span class="badge b-sz">Effort M</span>
+        <span class="badge b-sz">KPI: NPS · CSKH call -35%</span>
+        <span class="badge b-sz">Phase: G2–G3 — sprint 7–10</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ten-grid">
+    <div class="item">
+      <h4>1. Định nghĩa</h4>
+      <p>2 sub-feature kết hợp: <strong>(a) Bản đồ vùng phủ Natcom 4G/5G/FTTH realtime</strong> — user check trước khi mua SIM hoặc kích hoạt FTTH; <strong>(b) Báo sự cố nhanh</strong>: mất sóng, tốc độ chậm, không gọi/nhận được — auto-attach location + signal info, theo dõi tiến độ xử lý. Có <strong>mass outage auto-detect</strong> để tránh ngập queue tickets.</p>
+    </div>
+    <div class="item">
+      <h4>2. Persona phục vụ</h4>
+      <p>Pierre (P4 — sóng yếu rural là pain chính), Patrick (P6 — FTTH outage = mất doanh thu), Marie (P1 — báo sự cố nhanh khi không nhận thanh toán được), all user khi mua dịch vụ mới (check coverage trước).</p>
+    </div>
+    <div class="item span2">
+      <h4>3. User flow chính</h4>
+      <ol>
+        <li>Tab "Kovèti ak Pwoblem" → 2 sub-tab: "Kovèti" và "Anonse pwoblem".</li>
+        <li><strong>Coverage Map</strong>: Mapbox/OpenStreetMap với layer 4G/5G/FTTH per area, color-coded signal strength.</li>
+        <li>Search box: nhập commune/department → zoom đến đó.</li>
+        <li>Tap area → detail panel: signal RSSI, last updated, towers count nearby.</li>
+        <li><strong>Báo sự cố button</strong>: chọn type (Pèd siyal / Siyal fèb / Pa ka rele / Entènèt dous), auto-attach GPS + cell ID + signal RSSI + device model.</li>
+        <li>Optional: ảnh + mô tả Creole.</li>
+        <li>Submit → ticket ID + ETA + tracking timeline.</li>
+        <li>Mỗi status update → push: <em>"Pwoblem ou: ekip teknik ap travay nan zòn ou · ETA 2h"</em></li>
+        <li>Resolved → satisfaction survey 1-5 stars + comment box.</li>
+        <li><strong>Mass outage detection</strong>: ≥10 tickets cùng zone trong 10 phút → batch notification toàn area + freeze thêm ticket per user.</li>
+      </ol>
+    </div>
+    <div class="item">
+      <h4>4. Wireframe</h4>
+      <p>Xem <strong>S6</strong> — Coverage Map với layer toggle (4G/5G/FTTH), search box, area detail panel, báo sự cố CTA, mass outage banner ở top nếu detect.</p>
+    </div>
+    <div class="item">
+      <h4>5. Edge case</h4>
+      <ul>
+        <li>Mass outage (bão, fiber cut) → auto-detect &ge;10 tickets cùng area trong 10 phút → batch notification "Pann nan zòn ou · ETA 4h" + block thêm ticket per user (avoid queue flood).</li>
+        <li>User không GPS → manual select commune/department.</li>
+        <li>Anti-spam: max 3 tickets/user/ngày.</li>
+        <li>Patrick B2B → priority queue (SLA 2h response vs 24h consumer) + auto-link với <a href="#s5-ftth-management">#5 FTTH SLA</a>.</li>
+        <li>Coverage map offline mode → cached last 30 days, label "Pa konekte · done resan".</li>
+        <li>User báo sự cố trong area đã có mass outage → auto-link với existing batch ticket, không tạo mới.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>6. Phụ thuộc</h4>
+      <ul>
+        <li>Coverage data feed (NMS/OSS Natcom).</li>
+        <li>GIS map provider (Mapbox or OpenStreetMap).</li>
+        <li>CRM ticket system (chung <a href="#s5-ftth-management">#5</a>).</li>
+        <li>NPS survey engine.</li>
+        <li>Mass outage detector (clustering algorithm).</li>
+        <li>Push notification (geo-fence batch).</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>7. Acceptance criteria</h4>
+      <ul>
+        <li><strong>AC1:</strong> Coverage map load &lt;3s.</li>
+        <li><strong>AC2:</strong> Ticket create &lt;30s.</li>
+        <li><strong>AC3:</strong> ETA prediction accuracy ±25% (trong 30 ngày data baseline).</li>
+        <li><strong>AC4:</strong> Mass outage detection &lt;5 phút sau ≥10 tickets cùng area.</li>
+        <li><strong>AC5:</strong> B2B priority queue enforce.</li>
+        <li><strong>AC6:</strong> Anti-spam max 3 tickets/user/ngày enforce.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>8. KPI riêng</h4>
+      <ul>
+        <li><strong>NPS sau resolve:</strong> ≥ 45 (baseline ~25).</li>
+        <li><strong>CSKH call về sự cố:</strong> -35%.</li>
+        <li><strong>Tickets self-resolved</strong> qua mass outage auto-detect: ≥ 60%.</li>
+        <li><strong>ETA accuracy ±25%:</strong> ≥ 70% tickets.</li>
+        <li><strong>Coverage map mở trước mua SIM/FTTH:</strong> ≥ 25% trong số user mới.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <h4>9. Priority</h4>
+      <p><span class="badge b-should">Should</span> · Effort vừa, impact lớn cho NPS và CSKH cost. Coverage map cũng là <em>"trust signal"</em> trước khi user mua.</p>
+    </div>
+    <div class="item">
+      <h4>10. Phase</h4>
+      <p><strong>Đợt 1 — Giai đoạn 2-3, sprint 7–10.</strong> Coverage map có thể launch sớm hơn (sprint 7-8); mass outage detection cần data 30 ngày trước khi tune algorithm (sprint 9-10).</p>
+    </div>
+  </div>
+
+  <div class="principles-line">
+    <strong>Nguyên tắc thiết kế áp dụng (5/10)</strong>
+    <span class="p-tag">1 · Creole mặc định</span>
+    <span class="p-tag">2 · Offline-capable (coverage map cached 30 ngày)</span>
+    <span class="p-tag">6 · USSD fallback (báo sự cố qua *155*9#)</span>
+    <span class="p-tag">9 · Push có giới hạn (batch mass outage)</span>
+    <span class="p-tag">10 · Observable (ETA accuracy tracking)</span>
+  </div>
+
+  <div class="wf-wrap">
+    <h4>Wireframe S6 — Coverage Map + Báo sự cố</h4>
+    <svg viewBox="0 0 360 720" xmlns="http://www.w3.org/2000/svg" width="320" role="img" aria-label="Wireframe Coverage Map">
+      <defs>
+        <linearGradient id="sg6" x1="0" x2="1"><stop offset="0" stop-color="#ff5a1f"/><stop offset="1" stop-color="#7c5cff"/></linearGradient>
+      </defs>
+      <rect x="0" y="0" width="360" height="720" rx="28" fill="#0b1020" stroke="#243064"/>
+      <text x="20" y="24" fill="#aab4d8" font-size="11" font-family="Inter">9:41</text>
+      <text x="340" y="24" fill="#aab4d8" font-size="11" font-family="Inter" text-anchor="end">100%</text>
+      <text x="20" y="62" fill="#e8ecff" font-size="14" font-family="Inter">←</text>
+      <text x="180" y="62" fill="#e8ecff" font-size="16" font-family="Inter" font-weight="700" text-anchor="middle">Kovèti ak Pwoblem 📍</text>
+      <text x="340" y="62" fill="#aab4d8" font-size="14" font-family="Inter" text-anchor="end">🔍</text>
+      <line x1="0" y1="78" x2="360" y2="78" stroke="#243064"/>
+      <!-- Mass outage banner -->
+      <rect x="16" y="94" width="328" height="56" rx="12" fill="rgba(255,107,107,.12)" stroke="rgba(255,107,107,.5)"/>
+      <text x="28" y="112" fill="#ff6b6b" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">⚠ PANN MAS · ZÒN OU</text>
+      <text x="28" y="130" fill="#e8ecff" font-size="12" font-family="Inter" font-weight="700">Pétion-Ville · Pann fib detekte 14:08</text>
+      <text x="28" y="146" fill="#aab4d8" font-size="11" font-family="Inter">14 itilizatè anonse · ETA repare 4h</text>
+      <text x="332" y="124" fill="#ff8a5a" font-size="10" font-family="Inter" text-anchor="end" font-weight="700">Wè detay →</text>
+      <text x="332" y="140" fill="#aab4d8" font-size="9" font-family="Inter" text-anchor="end">Nou genyen tikèt ou</text>
+      <!-- Layer toggle + search -->
+      <text x="16" y="174" fill="#ff5a1f" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">KOVÈTI · KOUCHE</text>
+      <g font-family="Inter">
+        <rect x="16" y="184" width="60" height="26" rx="13" fill="#ff5a1f"/>
+        <text x="46" y="201" fill="#fff" font-size="10" font-weight="700" text-anchor="middle">4G</text>
+        <rect x="84" y="184" width="60" height="26" rx="13" fill="none" stroke="#7c5cff"/>
+        <text x="114" y="201" fill="#7c5cff" font-size="10" font-weight="700" text-anchor="middle">5G</text>
+        <rect x="152" y="184" width="60" height="26" rx="13" fill="none" stroke="#4ad6c2"/>
+        <text x="182" y="201" fill="#4ad6c2" font-size="10" font-weight="700" text-anchor="middle">FTTH</text>
+        <rect x="222" y="184" width="122" height="26" rx="13" fill="#172046" stroke="#243064"/>
+        <text x="234" y="201" fill="#aab4d8" font-size="10">🔍 Chèche commune</text>
+      </g>
+      <!-- Map area -->
+      <rect x="16" y="220" width="328" height="232" rx="14" fill="#0f1530" stroke="#243064"/>
+      <!-- Simplified Haiti shape -->
+      <g transform="translate(180,336)">
+        <!-- Background grid lines -->
+        <line x1="-150" y1="-100" x2="150" y2="-100" stroke="#172046"/>
+        <line x1="-150" y1="0" x2="150" y2="0" stroke="#172046"/>
+        <line x1="-150" y1="100" x2="150" y2="100" stroke="#172046"/>
+        <line x1="-100" y1="-110" x2="-100" y2="110" stroke="#172046"/>
+        <line x1="0" y1="-110" x2="0" y2="110" stroke="#172046"/>
+        <line x1="100" y1="-110" x2="100" y2="110" stroke="#172046"/>
+        <!-- Coverage heatmap circles (4G) -->
+        <circle cx="-90" cy="-20" r="42" fill="#ff5a1f" opacity="0.35"/>
+        <circle cx="-90" cy="-20" r="28" fill="#ff5a1f" opacity="0.55"/>
+        <circle cx="40" cy="-50" r="56" fill="#ff5a1f" opacity="0.35"/>
+        <circle cx="40" cy="-50" r="38" fill="#ff5a1f" opacity="0.55"/>
+        <circle cx="100" cy="50" r="36" fill="#ff5a1f" opacity="0.3"/>
+        <circle cx="-60" cy="70" r="28" fill="#ff5a1f" opacity="0.25"/>
+        <!-- Tower markers -->
+        <circle cx="-90" cy="-20" r="4" fill="#fff"/>
+        <text x="-90" y="-12" fill="#fff" font-size="6" font-family="Inter" text-anchor="middle">▲</text>
+        <circle cx="40" cy="-50" r="4" fill="#fff"/>
+        <text x="40" y="-42" fill="#fff" font-size="6" font-family="Inter" text-anchor="middle">▲</text>
+        <circle cx="100" cy="50" r="4" fill="#fff"/>
+        <circle cx="-60" cy="70" r="4" fill="#fff"/>
+        <!-- Current location pin -->
+        <circle cx="-90" cy="-20" r="14" fill="none" stroke="#4ad6c2" stroke-width="2"/>
+        <circle cx="-90" cy="-20" r="20" fill="none" stroke="#4ad6c2" stroke-width="1" opacity="0.5"/>
+        <!-- Outage indicator (red zone) -->
+        <circle cx="-90" cy="-20" r="48" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="4 3"/>
+      </g>
+      <!-- Map labels -->
+      <text x="56" y="350" fill="#aab4d8" font-size="9" font-family="Inter" font-weight="700">Pétion-Ville</text>
+      <text x="56" y="362" fill="#ff6b6b" font-size="8" font-family="Inter" font-weight="700">⚠ Ou la</text>
+      <text x="216" y="290" fill="#aab4d8" font-size="9" font-family="Inter" font-weight="700">Port-au-Prince</text>
+      <text x="270" y="394" fill="#aab4d8" font-size="9" font-family="Inter" font-weight="700">Jacmel</text>
+      <text x="130" y="416" fill="#aab4d8" font-size="9" font-family="Inter" font-weight="700">Léogâne</text>
+      <!-- Legend -->
+      <g font-family="Inter">
+        <rect x="22" y="426" width="10" height="10" rx="2" fill="#ff5a1f" opacity="0.55"/>
+        <text x="38" y="434" fill="#aab4d8" font-size="9">Fò</text>
+        <rect x="60" y="426" width="10" height="10" rx="2" fill="#ff5a1f" opacity="0.35"/>
+        <text x="76" y="434" fill="#aab4d8" font-size="9">Mwayen</text>
+        <rect x="112" y="426" width="10" height="10" rx="2" fill="#ff5a1f" opacity="0.15"/>
+        <text x="128" y="434" fill="#aab4d8" font-size="9">Fèb</text>
+        <text x="200" y="434" fill="#7a86b8" font-size="9" text-anchor="end">▲ Antèn</text>
+        <circle cx="220" cy="431" r="4" fill="none" stroke="#4ad6c2" stroke-width="1.5"/>
+        <text x="234" y="434" fill="#aab4d8" font-size="9">Ou la</text>
+        <circle cx="278" cy="431" r="5" fill="none" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="2 2"/>
+        <text x="296" y="434" fill="#aab4d8" font-size="9">Pann</text>
+      </g>
+      <!-- Selected location info -->
+      <rect x="16" y="468" width="328" height="68" rx="12" fill="#172046" stroke="#243064"/>
+      <text x="28" y="488" fill="#aab4d8" font-size="9" font-family="Inter" font-weight="700" letter-spacing="1">POZISYON OU · PÉTION-VILLE</text>
+      <text x="28" y="508" fill="#e8ecff" font-size="12" font-family="Inter" font-weight="700">Siyal 4G: -68 dBm · Fò</text>
+      <text x="28" y="524" fill="#ff8a5a" font-size="11" font-family="Inter" font-weight="700">⚠ Pann fib: 3 antèn pa aktif</text>
+      <text x="332" y="508" fill="#3ddc97" font-size="11" font-family="Inter" text-anchor="end" font-weight="700">3 antèn nan</text>
+      <text x="332" y="524" fill="#aab4d8" font-size="10" font-family="Inter" text-anchor="end">2 km radè</text>
+      <!-- CTAs -->
+      <rect x="16" y="552" width="158" height="50" rx="25" fill="#172046" stroke="rgba(255,90,31,.5)"/>
+      <text x="95" y="576" fill="#ff5a1f" font-size="11" font-family="Inter" font-weight="700" text-anchor="middle">⚠ Anonse pwoblem</text>
+      <text x="95" y="592" fill="#aab4d8" font-size="9" font-family="Inter" text-anchor="middle">Auto-attach GPS + siyal</text>
+      <rect x="186" y="552" width="158" height="50" rx="25" fill="url(#sg6)"/>
+      <text x="265" y="576" fill="#fff" font-size="11" font-family="Inter" font-weight="700" text-anchor="middle">📋 Wè detay pann</text>
+      <text x="265" y="592" fill="rgba(255,255,255,.8)" font-size="9" font-family="Inter" text-anchor="middle">Tikèt batch · ETA</text>
+      <!-- Bottom card: recent tickets -->
+      <text x="16" y="624" fill="#ff5a1f" font-size="10" font-family="Inter" font-weight="700" letter-spacing="1">PWOBLEM OU RESAN</text>
+      <rect x="16" y="634" width="328" height="32" rx="8" fill="#121935"/>
+      <circle cx="32" cy="650" r="6" fill="#3ddc97"/>
+      <text x="48" y="654" fill="#e8ecff" font-size="11" font-family="Inter" font-weight="700">Siyal fèb · 22/05</text>
+      <text x="332" y="654" fill="#3ddc97" font-size="10" font-family="Inter" text-anchor="end" font-weight="700">✓ Fèmen</text>
+      <rect x="16" y="672" width="328" height="32" rx="8" fill="#121935"/>
+      <circle cx="32" cy="688" r="6" fill="#ffc857"/>
+      <text x="48" y="692" fill="#e8ecff" font-size="11" font-family="Inter" font-weight="700">Pann fib · 02/06 14:08</text>
+      <text x="332" y="692" fill="#ffc857" font-size="10" font-family="Inter" text-anchor="end" font-weight="700">⏳ ETA 4h</text>
+    </svg>
+    <p class="caption">S6 — Coverage + Pwoblem: mass outage banner top (Pétion-Ville fiber outage 14 user, ETA 4h) · layer toggle (4G active/5G/FTTH) · search · simplified Haiti map với heatmap 4G + 4 towers + current location pin + outage zone · legend · location info card · 2 CTAs (Anonse / Wè batch) · recent tickets list.</p>
+  </div>
+</article>
+
+<!-- SELFCARE HOÀN TẤT FOOTER -->
+<div style="margin-top:40px;padding:24px;border-radius:14px;background:linear-gradient(135deg,rgba(255,90,31,.08),rgba(74,214,194,.06));border:1px solid rgba(255,90,31,.4)">
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
+    <div style="width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,#ff5a1f,#4ad6c2);display:grid;place-items:center;color:#fff;font-weight:800;font-size:18px;flex-shrink:0">✓</div>
+    <div>
+      <h3 style="margin:0;color:var(--text)">Selfcare nhà mạng — Phát hành đầy đủ</h3>
+      <p style="margin:4px 0 0;color:var(--text-dim);font-size:13px">10 tính năng × template 10 mục = 100 ô nội dung chi tiết · 6 wireframe SVG · 2 batch (Daily Essentials + Services/Trust) · mapping persona + nguyên tắc đầy đủ.</p>
+    </div>
+  </div>
+  <p style="margin:8px 0 0;color:var(--text-dim);font-size:13px"><strong style="color:var(--text)">Hai trang còn lại Bước 1.B</strong> · Natcash basic (7 tn) và Giải trí (6 tn) sẽ được phát hành tương tự khi Natcom yêu cầu. RingMe ước 2-3 turn nữa cho mỗi nhóm.</p>
+</div>
+
+
   </section>
 </div>
 
